@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decomposerize - unitoolify</title>
+    <meta name="description" content="Convert docker-compose files into docker run commands securely in your browser.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #ec4899;
+            --primary-hover: #db2777;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #f472b6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-links a:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 350px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 1rem;
+            resize: vertical;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2FWD7FC8GL');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>unitoolify Decomposerize</h1>
+        <p class="subtitle">Convert docker-compose files into docker run commands</p>
+        <div class="nav-links">
+            <a href="../composerize/">Composerize</a>
+            <a href="../decomposerize/" class="active">Decomposerize</a>
+            <a href="../">← Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Docker Compose YAML</div>
+            </div>
+            <textarea id="inputText" placeholder="Paste your docker-compose.yml content here..."></textarea>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Docker Run Command</div>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+            </div>
+            <textarea id="outputText" readonly placeholder="Your `docker run ...` command will appear here..."></textarea>
+        </div>
+        
+        <div class="info-section">
+            <h2>About Decomposerize</h2>
+            <p>Decomposerize for unitoolify reverses the process of Composerize. It takes your existing <code>docker-compose.yml</code> file and translates it back into one or more <code>docker run</code> commands.</p>
+            <p>This is extremely useful when you want to quickly test a container without setting up a compose file, or when translating tutorials back and forth. <strong>Everything happens in your browser securely.</strong></p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 unitoolify. All rights reserved.
+    </footer>
+
+    <script type="module">
+        import decomposerize from 'https://esm.sh/decomposerize';
+
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const copyBtn = document.getElementById('copyBtn');
+
+        function convert() {
+            const yamlContent = inputText.value.trim();
+            if (!yamlContent) {
+                outputText.value = '';
+                return;
+            }
+            try {
+                // decomposerize expects a YAML string
+                const result = decomposerize(yamlContent);
+                outputText.value = result;
+            } catch (e) {
+                outputText.value = '# Error parsing YAML:\n' + e.message;
+            }
+        }
+
+        inputText.addEventListener('input', convert);
+
+        copyBtn.addEventListener('click', () => {
+            outputText.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+        });
+
+        if (inputText.value) convert();
+    </script>
+</body>
+</html>
