@@ -105,14 +105,12 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            background: var(--card-gradient, linear-gradient(to right, #60a5fa, #3b82f6));
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        .tool-card.decode::before {
-            background: linear-gradient(to right, #34d399, #10b981);
-        }
+        
 
         .tool-card:hover {
             transform: translateY(-5px);
@@ -165,6 +163,7 @@
 
         gtag('config', 'G-2FWD7FC8GL');
     </script>
+    <script src="/theme.js"></script>
 </head>
 
 <body>
@@ -182,62 +181,62 @@
                     Supports URL-safe mode and line chunking.</p>
             </a>
 
-            <a href="base64decode/" class="tool-card decode">
+            <a href="base64decode/" class="tool-card">
                 <span class="tool-icon">🔓</span>
                 <div class="tool-title">Base64 Decode</div>
                 <p class="tool-desc">Easily decode Base64 strings back to their original text or binary file formats.
                     Private and secure client-side execution.</p>
             </a>
 
-            <a href="composerize/" class="tool-card" style="--card-color: #f59e0b;">
+            <a href="composerize/" class="tool-card">
                 <span class="tool-icon">🐳</span>
                 <div class="tool-title">Composerize</div>
                 <p class="tool-desc">Convert cumbersome `docker run` commands into elegant `docker-compose.yml` files
                     instantly.</p>
             </a>
 
-            <a href="decomposerize/" class="tool-card decode" style="--card-color: #ec4899;">
+            <a href="decomposerize/" class="tool-card">
                 <span class="tool-icon">🔄</span>
                 <div class="tool-title">Decomposerize</div>
                 <p class="tool-desc">Reverse engineer your `docker-compose.yml` files back into raw `docker run`
                     commands.</p>
             </a>
 
-            <a href="prettify-json/" class="tool-card" style="--card-color: #10b981;">
+            <a href="prettify-json/" class="tool-card">
                 <span class="tool-icon">✨</span>
                 <div class="tool-title">Prettify JSON</div>
                 <p class="tool-desc">Format, validate, and beautify your raw JSON data into a clean, readable structure.
                 </p>
             </a>
 
-            <a href="prettify-yaml/" class="tool-card" style="--card-color: #8b5cf6;">
+            <a href="prettify-yaml/" class="tool-card">
                 <span class="tool-icon">✨</span>
                 <div class="tool-title">Prettify YAML</div>
                 <p class="tool-desc">Format, validate, and beautify your YAML configurations with proper indentation.
                 </p>
             </a>
 
-            <a href="convert-json-to-yaml/" class="tool-card" style="--card-color: #f59e0b;">
+            <a href="convert-json-to-yaml/" class="tool-card">
                 <span class="tool-icon">⇌</span>
                 <div class="tool-title">JSON to YAML</div>
                 <p class="tool-desc">Quickly convert valid JSON data into human-readable YAML format.</p>
             </a>
 
-            <a href="convert-yaml-to-json/" class="tool-card decode" style="--card-color: #3b82f6;">
+            <a href="convert-yaml-to-json/" class="tool-card">
                 <span class="tool-icon">⇌</span>
                 <div class="tool-title">YAML to JSON</div>
                 <p class="tool-desc">Instantly convert YAML configurations into strict JSON payloads for APIs and apps.
                 </p>
             </a>
 
-            <a href="uuid-generator/" class="tool-card" style="--card-color: #ef4444;">
+            <a href="uuid-generator/" class="tool-card">
                 <span class="tool-icon">🔑</span>
                 <div class="tool-title">UUID Generator</div>
                 <p class="tool-desc">Instantly generate secure, random v4 UUIDs in bulk. Run entirely locally on your
                     device.</p>
             </a>
 
-            <a href="bookmark-separator/" class="tool-card decode" style="--card-color: #14b8a6;">
+            <a href="bookmark-separator/" class="tool-card">
                 <span class="tool-icon">✂️</span>
                 <div class="tool-title">Bookmark Separator</div>
                 <p class="tool-desc">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</p>
