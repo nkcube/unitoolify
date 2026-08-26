@@ -227,11 +227,13 @@
 
       gtag('config', 'G-2FWD7FC8GL');
     </script>
+    <!-- js-yaml library isn't needed here, just uuid -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
 </head>
 <body>
     <header>
         <h1>UUID Generator</h1>
-        <p class="subtitle">Instantly generate secure v4 UUIDs in bulk</p>
+        <p class="subtitle">Instantly generate secure UUIDs (v1, v4) in bulk</p>
         <div class="nav-links">
             <a href="../uuid-generator/" class="active">UUID Generator</a>
             <a href="https://www.Unitoolify.com/">&larr; Home</a>
@@ -246,10 +248,17 @@
             
             <div class="options">
                 <div class="input-group">
+                    <label class="option-label" for="uuidVersion" style="color:var(--text-main)">Version:</label>
+                    <select id="uuidVersion" style="background:var(--glass-bg); color:white; border:1px solid var(--glass-border); border-radius:4px; padding:0.4rem; font-size:1rem;">
+                        <option value="4">v4 (Random)</option>
+                        <option value="1">v1 (Timestamp)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
                     <label class="option-label" for="uuidCount" style="color:var(--text-main)">How many UUIDs to generate?</label>
                     <input type="number" id="uuidCount" value="1" min="1" max="10000">
                 </div>
-                
                 <label class="option-label">
                     <input type="checkbox" id="uppercase"> Uppercase letters (e.g. A-F)
                 </label>
@@ -275,8 +284,8 @@
         
         <div class="info-section">
             <h2>About UUID Generator</h2>
-            <p>Welcome to Unitoolify's UUID Generator. A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. This tool generates standard <strong>Version 4 (random) UUIDs</strong> which are entirely based on random numbers.</p>
-            <p><strong>Secure and Private:</strong> We use the browser's native cryptographic API (`crypto.randomUUID()`) to generate these identifiers securely on your device. Nothing is sent to our servers, ensuring your generated UUIDs remain entirely private.</p>
+            <p>Welcome to Unitoolify's UUID Generator. A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. This tool generates standard <strong>Version 1 (timestamp) and Version 4 (random) UUIDs</strong>.</p>
+            <p><strong>Secure and Private:</strong> We use the standard open-source library (`uuid`) to generate these identifiers securely within your browser. Nothing is sent to our servers, ensuring your generated UUIDs remain entirely private.</p>
             <p>You can generate up to 10,000 UUIDs at once, choose to output them in uppercase, and optionally strip out the hyphen separators if your database or system requires a compact format.</p>
         </div>
     </main>
@@ -292,30 +301,22 @@
         const downloadBtn = document.getElementById('downloadBtn');
         
         const uuidCount = document.getElementById('uuidCount');
+        const uuidVersion = document.getElementById('uuidVersion');
         const uppercase = document.getElementById('uppercase');
         const noHyphens = document.getElementById('noHyphens');
-
-        // Fallback generator if crypto.randomUUID is not available in older browsers
-        function generateUUIDv4() {
-            if (typeof crypto !== 'undefined' && crypto.randomUUID) {
-                return crypto.randomUUID();
-            }
-            return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-            );
-        }
 
         function generate() {
             let count = parseInt(uuidCount.value, 10);
             if (isNaN(count) || count < 1) count = 1;
             if (count > 10000) count = 10000;
             
+            const version = uuidVersion.value;
             const isUpper = uppercase.checked;
             const noDashes = noHyphens.checked;
             
             const uuids = [];
             for (let i = 0; i < count; i++) {
-                let id = generateUUIDv4();
+                let id = version === '1' ? uuid.v1() : uuid.v4();
                 if (isUpper) id = id.toUpperCase();
                 if (noDashes) id = id.replace(/-/g, '');
                 uuids.push(id);
