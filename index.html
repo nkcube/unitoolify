@@ -56,18 +56,24 @@
 
         main {
             width: 100%;
-            max-width: 900px;
+            max-width: 1400px;
         }
 
         .tools-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         @media (min-width: 640px) {
             .tools-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .tools-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -76,7 +82,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 1.5rem;
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.3s ease;
@@ -114,21 +120,21 @@
         }
 
         .tool-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
             display: inline-block;
         }
 
         .tool-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .tool-desc {
             color: var(--text-muted);
             line-height: 1.5;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         footer {
@@ -178,6 +184,30 @@
                 <span class="tool-icon">🔄</span>
                 <div class="tool-title">Decomposerize</div>
                 <p class="tool-desc">Reverse engineer your `docker-compose.yml` files back into raw `docker run` commands.</p>
+            </a>
+
+            <a href="prettify-json/" class="tool-card" style="--card-color: #10b981;">
+                <span class="tool-icon">✨</span>
+                <div class="tool-title">Prettify JSON</div>
+                <p class="tool-desc">Format, validate, and beautify your raw JSON data into a clean, readable structure.</p>
+            </a>
+
+            <a href="prettify-yaml/" class="tool-card" style="--card-color: #8b5cf6;">
+                <span class="tool-icon">✨</span>
+                <div class="tool-title">Prettify YAML</div>
+                <p class="tool-desc">Format, validate, and beautify your YAML configurations with proper indentation.</p>
+            </a>
+
+            <a href="convert-json-to-yaml/" class="tool-card" style="--card-color: #f59e0b;">
+                <span class="tool-icon">⇌</span>
+                <div class="tool-title">JSON to YAML</div>
+                <p class="tool-desc">Quickly convert valid JSON data into human-readable YAML format.</p>
+            </a>
+
+            <a href="convert-yaml-to-json/" class="tool-card decode" style="--card-color: #3b82f6;">
+                <span class="tool-icon">⇌</span>
+                <div class="tool-title">YAML to JSON</div>
+                <p class="tool-desc">Instantly convert YAML configurations into strict JSON payloads for APIs and apps.</p>
             </a>
         </div>
     </main>

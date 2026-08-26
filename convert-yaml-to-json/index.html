@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert YAML to JSON Online - Unitoolify</title>
+    <meta name="description" content="Quickly convert YAML to JSON format online. Validate and format your data securely in your browser.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-links a:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 450px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 1rem;
+            resize: vertical;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .textarea-error {
+            border-color: #ef4444 !important;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            min-height: 1.2rem;
+            margin-top: -0.5rem;
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2FWD7FC8GL');
+    </script>
+    <!-- js-yaml library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Convert YAML to JSON</h1>
+        <p class="subtitle">Quickly transform your YAML data into readable JSON</p>
+        <div class="nav-links">
+            <a href="../prettify-json/">Prettify JSON</a>
+            <a href="../prettify-yaml/">Prettify YAML</a>
+            <a href="../convert-json-to-yaml/">JSON to YAML</a>
+            <a href="../convert-yaml-to-json/" class="active">YAML to JSON</a>
+            <a href="https://www.Unitoolify.com/">&larr; Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Input YAML</div>
+            </div>
+            <textarea id="inputText" placeholder="Paste your raw YAML here..."></textarea>
+            <div class="error-msg" id="errorMsg"></div>
+            
+            <div class="options">
+                <label class="option-label">
+                    <input type="checkbox" id="liveMode" checked> Live mode (convert as you type)
+                </label>
+                <label class="option-label">
+                    Indent space: 
+                    <select id="indentSpace" style="background:var(--glass-bg); color:white; border:1px solid var(--glass-border); border-radius:4px; padding:0.2rem;">
+                        <option value="2">2 Spaces</option>
+                        <option value="4">4 Spaces</option>
+                        <option value="\t">Tab</option>
+                        <option value="0">Minified (0 Spaces)</option>
+                    </select>
+                </label>
+            </div>
+            
+            <button class="btn" id="formatBtn">Convert to JSON</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Output JSON</div>
+                <div>
+                    <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+                    <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="downloadBtn">Download</button>
+                </div>
+            </div>
+            <textarea id="outputText" readonly placeholder="Converted JSON will appear here..."></textarea>
+        </div>
+        
+        <div class="info-section">
+            <h2>About YAML to JSON Converter</h2>
+            <p>Welcome to Unitoolify's YAML to JSON Converter. This tool allows you to instantly convert valid YAML data into JSON.</p>
+            <p><strong>Private by design:</strong> Your data is processed entirely within your browser. We never send your data to any external server.</p>
+            <p>JSON is the de facto standard for data exchange on the web. While YAML is great for human-readable configuration files, many applications and APIs only accept JSON. Use this tool to quickly translate your YAML configurations into strict JSON payloads.</p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Unitoolify. All rights reserved.
+    </footer>
+
+    <script>
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const liveMode = document.getElementById('liveMode');
+        const indentSpace = document.getElementById('indentSpace');
+        const formatBtn = document.getElementById('formatBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const errorMsg = document.getElementById('errorMsg');
+
+        function convertYAMLtoJSON() {
+            const rawVal = inputText.value.trim();
+            if (!rawVal) {
+                outputText.value = '';
+                errorMsg.textContent = '';
+                inputText.classList.remove('textarea-error');
+                return;
+            }
+
+            try {
+                const parsed = jsyaml.load(rawVal);
+                if (parsed === undefined || typeof parsed === 'string') {
+                    // It's just a string or empty
+                    outputText.value = JSON.stringify(parsed);
+                    return;
+                }
+                
+                let space = indentSpace.value;
+                if (space === "2") space = 2;
+                else if (space === "4") space = 4;
+                else if (space === "0") space = 0;
+
+                outputText.value = JSON.stringify(parsed, null, space);
+                errorMsg.textContent = '';
+                inputText.classList.remove('textarea-error');
+            } catch (e) {
+                if (!liveMode.checked) {
+                    errorMsg.textContent = 'Invalid YAML: ' + e.message;
+                    inputText.classList.add('textarea-error');
+                }
+            }
+        }
+
+        inputText.addEventListener('input', () => {
+            if (liveMode.checked) convertYAMLtoJSON();
+        });
+
+        indentSpace.addEventListener('change', () => {
+            if (inputText.value.trim() !== '') convertYAMLtoJSON();
+        });
+
+        formatBtn.addEventListener('click', () => {
+            if (!liveMode.checked) convertYAMLtoJSON();
+        });
+
+        copyBtn.addEventListener('click', () => {
+            if (!outputText.value) return;
+            outputText.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            if (!outputText.value) return;
+            const blob = new Blob([outputText.value], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
