@@ -1,1 +1,168 @@
-Coming soon.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unitoolify - Modern Web Tools</title>
+    <meta name="description" content="A premium collection of modern, fast, and secure web tools including Base64 encoders and decoders. All running completely inside your browser.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        main {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .tool-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tool-card.decode::before {
+            background: linear-gradient(to right, #34d399, #10b981);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .tool-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .tool-desc {
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>unitoolify</h1>
+        <p class="subtitle">A premium collection of essential web developer utilities. Fast, private, and beautiful.</p>
+    </header>
+
+    <main>
+        <div class="tools-grid">
+            <a href="base64encode/" class="tool-card">
+                <span class="tool-icon">🔒</span>
+                <div class="tool-title">Base64 Encode</div>
+                <p class="tool-desc">Quickly encode your text or binary files into Base64 format safely in your browser. Supports URL-safe mode and line chunking.</p>
+            </a>
+            
+            <a href="base64decode/" class="tool-card decode">
+                <span class="tool-icon">🔓</span>
+                <div class="tool-title">Base64 Decode</div>
+                <p class="tool-desc">Easily decode Base64 strings back to their original text or binary file formats. Private and secure client-side execution.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 unitoolify. All rights reserved.
+    </footer>
+</body>
+</html>

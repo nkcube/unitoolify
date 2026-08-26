@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Decode Online - unitoolify</title>
+    <meta name="description" content="Quickly and securely decode Base64 encoded strings or files back to their original format. Simple online tool, completely private.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #10b981;
+            --primary-hover: #059669;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #34d399, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-links a:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 1rem;
+            resize: vertical;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>unitoolify Base64</h1>
+        <p class="subtitle">Fast, secure, and beautiful data encoding & decoding</p>
+        <div class="nav-links">
+            <a href="../base64encode/">Encode</a>
+            <a href="../base64decode/" class="active">Decode</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Input Base64</div>
+            </div>
+            <textarea id="inputText" placeholder="Type or paste your Base64 string here to decode..."></textarea>
+            
+            <div class="file-upload">
+                <button class="btn btn-secondary">Upload Base64 File</button>
+                <input type="file" id="inputFile">
+            </div>
+            <div id="fileNameDisplay" style="font-size: 0.8rem; color: var(--text-muted);"></div>
+
+            <div class="options">
+                <label class="option-label">
+                    <input type="checkbox" id="liveMode" checked> Live mode (decode as you type)
+                </label>
+            </div>
+            
+            <button class="btn" id="decodeBtn">Decode from Base64</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Decoded Output</div>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+            </div>
+            <textarea id="outputText" readonly placeholder="Decoded text will appear here..."></textarea>
+            <button class="btn btn-secondary" id="downloadBtn" style="margin-top: 1rem;">Download Decoded File</button>
+        </div>
+        
+        <div class="info-section">
+            <h2>About Base64 Decoding</h2>
+            <p>Welcome to unitoolify's Base64 decoder. Easily reverse Base64 strings back to their original text or binary file formats. Because this operation happens locally in your browser, <strong>no data is sent to external servers</strong>, providing total confidentiality.</p>
+            <p>Our tool intelligently handles both standard Base64 and URL-safe Base64URL variants, automatically interpreting them. If the decoded content is meant to be a file (like an image or a document), you can use the "Download Decoded File" option to save it directly to your device.</p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 unitoolify. All rights reserved.
+    </footer>
+
+    <script>
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const inputFile = document.getElementById('inputFile');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const liveMode = document.getElementById('liveMode');
+        const decodeBtn = document.getElementById('decodeBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        let rawDecodedBytes = null; // Store Uint8Array for file download
+
+        function fromUrlSafe(str) {
+            let s = str.replace(/-/g, '+').replace(/_/g, '/');
+            while (s.length % 4) {
+                s += '=';
+            }
+            return s;
+        }
+
+        function performDecode() {
+            const b64Input = fromUrlSafe(inputText.value.replace(/\s+/g, ''));
+            if (!b64Input) {
+                outputText.value = '';
+                rawDecodedBytes = null;
+                return;
+            }
+
+            try {
+                // Decode base64 to binary string
+                const binString = atob(b64Input);
+                
+                // Convert to Uint8Array for file downloading if needed
+                rawDecodedBytes = Uint8Array.from(binString, (m) => m.codePointAt(0));
+
+                // Try to decode as UTF-8 text for display
+                const decodedText = new TextDecoder('utf-8', { fatal: true }).decode(rawDecodedBytes);
+                outputText.value = decodedText;
+            } catch (e) {
+                // If it fails UTF-8 decoding, it might be a binary file, so display a notice.
+                outputText.value = "[Binary data decoded. Use 'Download Decoded File' to save it.]";
+                // Note: rawDecodedBytes is still populated correctly before TextDecoder fails if atob succeeded.
+                if (e.name === 'InvalidCharacterError') {
+                    outputText.value = 'Invalid Base64 string.';
+                    rawDecodedBytes = null;
+                }
+            }
+        }
+
+        // Event listeners
+        inputText.addEventListener('input', () => {
+            fileNameDisplay.textContent = '';
+            inputFile.value = '';
+            if (liveMode.checked) performDecode();
+        });
+
+        inputFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            fileNameDisplay.textContent = `Loaded file: ${file.name}`;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                inputText.value = event.target.result;
+                if (liveMode.checked) performDecode();
+            };
+            reader.readAsText(file); // Assume base64 file is text
+        });
+
+        decodeBtn.addEventListener('click', performDecode);
+
+        copyBtn.addEventListener('click', () => {
+            outputText.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            if (!rawDecodedBytes) {
+                alert("Nothing to download.");
+                return;
+            }
+            const blob = new Blob([rawDecodedBytes]);
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'decoded_file.bin'; // generic fallback
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Encode Online - unitoolify</title>
+    <meta name="description" content="Quickly and securely encode text or files to Base64 format online. Advanced options available for URL-safe encoding and line chunking.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-links a:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 1rem;
+            resize: vertical;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>unitoolify Base64</h1>
+        <p class="subtitle">Fast, secure, and beautiful data encoding & decoding</p>
+        <div class="nav-links">
+            <a href="../base64encode/" class="active">Encode</a>
+            <a href="../base64decode/">Decode</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Input</div>
+            </div>
+            <textarea id="inputText" placeholder="Type or paste your text here to encode..."></textarea>
+            
+            <div class="file-upload">
+                <button class="btn btn-secondary">Upload a File instead</button>
+                <input type="file" id="inputFile">
+            </div>
+            <div id="fileNameDisplay" style="font-size: 0.8rem; color: var(--text-muted);"></div>
+
+            <div class="options">
+                <label class="option-label">
+                    <input type="checkbox" id="urlSafe"> URL-safe encoding (Base64URL RFC 4648)
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" id="splitLines"> Split lines into chunks (MIME 76 chars)
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" id="liveMode" checked> Live mode (encode as you type)
+                </label>
+            </div>
+            
+            <button class="btn" id="encodeBtn">Encode to Base64</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Base64 Output</div>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+            </div>
+            <textarea id="outputText" readonly placeholder="Encoded result will appear here..."></textarea>
+            <button class="btn btn-secondary" id="downloadBtn" style="display:none;">Download Result</button>
+        </div>
+        
+        <div class="info-section">
+            <h2>About Base64 Encoding</h2>
+            <p>Welcome to unitoolify's Base64 encoder. This tool allows you to quickly transform your text or binary files into Base64 encoded format entirely within your browser. <strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+            <p>Base64 is widely used on the web to transmit binary data over text-based protocols (like email via MIME, or embedded images in CSS/HTML). It converts binary data into a string of ASCII characters using a 64-character alphabet.</p>
+            <p>Use the advanced options to tailor the output to your specific needs, such as generating a URL-safe Base64 string that replaces the standard "+" and "/" characters with "-" and "_" respectively, and omits padding "=" signs.</p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 unitoolify. All rights reserved.
+    </footer>
+
+    <script>
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const inputFile = document.getElementById('inputFile');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const urlSafe = document.getElementById('urlSafe');
+        const splitLines = document.getElementById('splitLines');
+        const liveMode = document.getElementById('liveMode');
+        const encodeBtn = document.getElementById('encodeBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        let currentFileBase64 = null;
+
+        function chunkString(str, length) {
+            return str.match(new RegExp('.{1,' + length + '}', 'g'))?.join('\r\n') || '';
+        }
+
+        function toUrlSafe(base64Str) {
+            return base64Str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
+
+        function performEncode() {
+            let result = '';
+            
+            if (currentFileBase64) {
+                result = currentFileBase64;
+            } else {
+                try {
+                    // Encode text as UTF-8
+                    const utf8Str = new TextEncoder().encode(inputText.value);
+                    const binString = String.fromCodePoint(...utf8Str);
+                    result = btoa(binString);
+                } catch (e) {
+                    result = 'Error encoding input: ' + e.message;
+                }
+            }
+
+            if (urlSafe.checked) {
+                result = toUrlSafe(result);
+            }
+
+            if (splitLines.checked) {
+                result = chunkString(result, 76);
+            }
+
+            outputText.value = result;
+        }
+
+        // Event listeners
+        inputText.addEventListener('input', () => {
+            currentFileBase64 = null;
+            fileNameDisplay.textContent = '';
+            inputFile.value = '';
+            downloadBtn.style.display = 'none';
+            if (liveMode.checked) performEncode();
+        });
+
+        inputFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            fileNameDisplay.textContent = `Selected file: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+            inputText.value = ''; // Clear text input when file is chosen
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const base64Url = event.target.result;
+                // Remove data:MIME;base64, prefix
+                currentFileBase64 = base64Url.substring(base64Url.indexOf(',') + 1);
+                
+                downloadBtn.style.display = 'block';
+                downloadBtn.onclick = () => {
+                    const blob = new Blob([outputText.value], {type: 'text/plain'});
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = file.name + '.b64.txt';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                };
+
+                if (liveMode.checked) performEncode();
+            };
+            reader.readAsDataURL(file);
+        });
+
+        [urlSafe, splitLines].forEach(el => {
+            el.addEventListener('change', () => {
+                if (liveMode.checked) performEncode();
+            });
+        });
+
+        encodeBtn.addEventListener('click', performEncode);
+
+        copyBtn.addEventListener('click', () => {
+            outputText.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+        });
+    </script>
+</body>
+</html>
