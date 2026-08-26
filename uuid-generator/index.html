@@ -247,12 +247,14 @@
             </div>
             
             <div class="options">
-                <div class="input-group">
-                    <label class="option-label" for="uuidVersion" style="color:var(--text-main)">Version:</label>
-                    <select id="uuidVersion" style="background:var(--glass-bg); color:white; border:1px solid var(--glass-border); border-radius:4px; padding:0.4rem; font-size:1rem;">
-                        <option value="4">v4 (Random)</option>
-                        <option value="1">v1 (Timestamp)</option>
-                    </select>
+                <div class="input-group" style="gap: 1.5rem;">
+                    <label class="option-label" style="color:var(--text-main)">Version:</label>
+                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer;">
+                        <input type="radio" name="uuidVersion" value="4" checked> v4 (Random)
+                    </label>
+                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer;">
+                        <input type="radio" name="uuidVersion" value="1"> v1 (Timestamp)
+                    </label>
                 </div>
 
                 <div class="input-group">
@@ -301,7 +303,6 @@
         const downloadBtn = document.getElementById('downloadBtn');
         
         const uuidCount = document.getElementById('uuidCount');
-        const uuidVersion = document.getElementById('uuidVersion');
         const uppercase = document.getElementById('uppercase');
         const noHyphens = document.getElementById('noHyphens');
 
@@ -310,7 +311,7 @@
             if (isNaN(count) || count < 1) count = 1;
             if (count > 10000) count = 10000;
             
-            const version = uuidVersion.value;
+            const version = document.querySelector('input[name="uuidVersion"]:checked').value;
             const isUpper = uppercase.checked;
             const noDashes = noHyphens.checked;
             
