@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UUID Generator Online - Unitoolify</title>
+    <meta name="description" content="Generate random v4 UUIDs (Universally Unique Identifiers) instantly. Free, secure, and client-side only UUID generation.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-links a:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 350px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 1rem;
+            resize: vertical;
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .input-group input[type="number"] {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            color: white;
+            padding: 0.4rem;
+            width: 80px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2FWD7FC8GL');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>UUID Generator</h1>
+        <p class="subtitle">Instantly generate secure v4 UUIDs in bulk</p>
+        <div class="nav-links">
+            <a href="../uuid-generator/" class="active">UUID Generator</a>
+            <a href="https://www.Unitoolify.com/">&larr; Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Options</div>
+            </div>
+            
+            <div class="options">
+                <div class="input-group">
+                    <label class="option-label" for="uuidCount" style="color:var(--text-main)">How many UUIDs to generate?</label>
+                    <input type="number" id="uuidCount" value="1" min="1" max="10000">
+                </div>
+                
+                <label class="option-label">
+                    <input type="checkbox" id="uppercase"> Uppercase letters (e.g. A-F)
+                </label>
+                
+                <label class="option-label">
+                    <input type="checkbox" id="noHyphens"> Remove hyphens (e.g. no dashes)
+                </label>
+            </div>
+            
+            <button class="btn" id="generateBtn">Generate UUIDs</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Output</div>
+                <div>
+                    <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy All</button>
+                    <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="downloadBtn">Download .txt</button>
+                </div>
+            </div>
+            <textarea id="outputText" readonly placeholder="Generated UUIDs will appear here..."></textarea>
+        </div>
+        
+        <div class="info-section">
+            <h2>About UUID Generator</h2>
+            <p>Welcome to Unitoolify's UUID Generator. A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. This tool generates standard <strong>Version 4 (random) UUIDs</strong> which are entirely based on random numbers.</p>
+            <p><strong>Secure and Private:</strong> We use the browser's native cryptographic API (`crypto.randomUUID()`) to generate these identifiers securely on your device. Nothing is sent to our servers, ensuring your generated UUIDs remain entirely private.</p>
+            <p>You can generate up to 10,000 UUIDs at once, choose to output them in uppercase, and optionally strip out the hyphen separators if your database or system requires a compact format.</p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Unitoolify. All rights reserved.
+    </footer>
+
+    <script>
+        const outputText = document.getElementById('outputText');
+        const generateBtn = document.getElementById('generateBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        
+        const uuidCount = document.getElementById('uuidCount');
+        const uppercase = document.getElementById('uppercase');
+        const noHyphens = document.getElementById('noHyphens');
+
+        // Fallback generator if crypto.randomUUID is not available in older browsers
+        function generateUUIDv4() {
+            if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                return crypto.randomUUID();
+            }
+            return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+            );
+        }
+
+        function generate() {
+            let count = parseInt(uuidCount.value, 10);
+            if (isNaN(count) || count < 1) count = 1;
+            if (count > 10000) count = 10000;
+            
+            const isUpper = uppercase.checked;
+            const noDashes = noHyphens.checked;
+            
+            const uuids = [];
+            for (let i = 0; i < count; i++) {
+                let id = generateUUIDv4();
+                if (isUpper) id = id.toUpperCase();
+                if (noDashes) id = id.replace(/-/g, '');
+                uuids.push(id);
+            }
+            
+            outputText.value = uuids.join('\n');
+        }
+
+        // Generate 1 UUID on load
+        generate();
+
+        generateBtn.addEventListener('click', generate);
+
+        copyBtn.addEventListener('click', () => {
+            if (!outputText.value) return;
+            outputText.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy All', 2000);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            if (!outputText.value) return;
+            const blob = new Blob([outputText.value], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'uuids.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
