@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composerize - unitoolify</title>
-    <meta name="description" content="Convert docker run commands into docker-compose files easily and securely in your browser.">
+    <title>Composerize - Unitoolify</title>
+    <meta name="description"
+        content="Convert docker run commands into docker-compose files easily and securely in your browser.">
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -152,9 +154,9 @@
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
         }
-        
+
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .info-section {
@@ -187,21 +189,22 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-2FWD7FC8GL');
+        gtag('config', 'G-2FWD7FC8GL');
     </script>
 </head>
+
 <body>
     <header>
-        <h1>unitoolify Composerize</h1>
+        <h1>Unitoolify Composerize</h1>
         <p class="subtitle">Convert docker run commands into docker-compose files seamlessly</p>
         <div class="nav-links">
             <a href="../composerize/" class="active">Composerize</a>
             <a href="../decomposerize/">Decomposerize</a>
-            <a href="../">← Home</a>
+            <a href="https://www.unitoolify.com/">&larr; Home</a>
         </div>
     </header>
 
@@ -210,26 +213,31 @@
             <div class="card-header">
                 <div class="card-title">Docker Run Command</div>
             </div>
-            <textarea id="inputText" placeholder="Paste your `docker run ...` command here...&#10;&#10;Example:&#10;docker run -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --restart always --log-opt max-size=1g nginx"></textarea>
+            <textarea id="inputText"
+                placeholder="Paste your `docker run ...` command here...&#10;&#10;Example:&#10;docker run -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --restart always --log-opt max-size=1g nginx"></textarea>
         </div>
 
         <div class="card">
             <div class="card-header">
                 <div class="card-title">Docker Compose YAML</div>
-                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;"
+                    id="copyBtn">Copy</button>
             </div>
-            <textarea id="outputText" readonly placeholder="Your docker-compose.yml output will appear here..."></textarea>
+            <textarea id="outputText" readonly
+                placeholder="Your docker-compose.yml output will appear here..."></textarea>
         </div>
-        
+
         <div class="info-section">
             <h2>About Composerize</h2>
-            <p>Composerize for unitoolify is a fast, completely in-browser utility that converts long and complicated <code>docker run</code> commands into elegant, manageable <code>docker-compose.yml</code> files.</p>
-            <p>By executing entirely on your device, it ensures that any sensitive variables or paths in your docker commands remain 100% private. <strong>No tracking, no external server processing.</strong></p>
+            <p>Composerize for Unitoolify is a fast, completely in-browser utility that converts long and complicated
+                <code>docker run</code> commands into elegant, manageable <code>docker-compose.yml</code> files.</p>
+            <p>By executing entirely on your device, it ensures that any sensitive variables or paths in your docker
+                commands remain 100% private. <strong>No tracking, no external server processing.</strong></p>
         </div>
     </main>
 
     <footer>
-        &copy; 2026 unitoolify. All rights reserved.
+        &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script type="module">
@@ -267,4 +275,5 @@
         if (inputText.value) convert();
     </script>
 </body>
+
 </html>

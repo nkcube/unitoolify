@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decomposerize - unitoolify</title>
+    <title>Decomposerize - Unitoolify</title>
     <meta name="description" content="Convert docker-compose files into docker run commands securely in your browser.">
     <style>
         :root {
@@ -152,9 +153,9 @@
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
         }
-        
+
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .info-section {
@@ -187,21 +188,22 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-2FWD7FC8GL');
+        gtag('config', 'G-2FWD7FC8GL');
     </script>
 </head>
+
 <body>
     <header>
-        <h1>unitoolify Decomposerize</h1>
+        <h1>Unitoolify Decomposerize</h1>
         <p class="subtitle">Convert docker-compose files into docker run commands</p>
         <div class="nav-links">
             <a href="../composerize/">Composerize</a>
             <a href="../decomposerize/" class="active">Decomposerize</a>
-            <a href="../">← Home</a>
+            <a href="https://www.unitoolify.com/">&larr; Home</a>
         </div>
     </header>
 
@@ -216,20 +218,26 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">Docker Run Command</div>
-                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;"
+                    id="copyBtn">Copy</button>
             </div>
-            <textarea id="outputText" readonly placeholder="Your `docker run ...` command will appear here..."></textarea>
+            <textarea id="outputText" readonly
+                placeholder="Your `docker run ...` command will appear here..."></textarea>
         </div>
-        
+
         <div class="info-section">
             <h2>About Decomposerize</h2>
-            <p>Decomposerize for unitoolify reverses the process of Composerize. It takes your existing <code>docker-compose.yml</code> file and translates it back into one or more <code>docker run</code> commands.</p>
-            <p>This is extremely useful when you want to quickly test a container without setting up a compose file, or when translating tutorials back and forth. <strong>Everything happens in your browser securely.</strong></p>
+            <p>Decomposerize for Unitoolify reverses the process of Composerize. It takes your existing
+                <code>docker-compose.yml</code> file and translates it back into one or more <code>docker run</code>
+                commands.</p>
+            <p>This is extremely useful when you want to quickly test a container without setting up a compose file, or
+                when translating tutorials back and forth. <strong>Everything happens in your browser securely.</strong>
+            </p>
         </div>
     </main>
 
     <footer>
-        &copy; 2026 unitoolify. All rights reserved.
+        &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script type="module">
@@ -266,4 +274,5 @@
         if (inputText.value) convert();
     </script>
 </body>
+
 </html>
