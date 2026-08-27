@@ -37,26 +37,37 @@
             </div>
             
             <div class="options">
-                <div class="input-group" style="gap: 1.5rem;">
-                    <label class="option-label" style="color:var(--text-main)">Version:</label>
-                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer;">
-                        <input type="radio" name="uuidVersion" value="4" checked> v4 (Random)
-                    </label>
-                    <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer;">
-                        <input type="radio" name="uuidVersion" value="1"> v1 (Timestamp)
-                    </label>
+                <div class="input-group">
+                    <label class="option-label">Version:</label>
+                    <div class="radio-group" style="display:flex; gap:1.5rem; margin-top:0.5rem;">
+                        <label class="custom-radio">
+                            <input type="radio" name="uuidVersion" value="4" checked>
+                            <span class="radio-mark"></span>
+                            v4 (Random)
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="uuidVersion" value="1">
+                            <span class="radio-mark"></span>
+                            v1 (Timestamp)
+                        </label>
+                    </div>
                 </div>
 
                 <div class="input-group">
-                    <label class="option-label" for="uuidCount" style="color:var(--text-main)">How many UUIDs to generate?</label>
-                    <input type="number" id="uuidCount" value="1" min="1" max="10000">
+                    <label class="option-label" for="uuidCount">How many UUIDs to generate?</label>
+                    <input type="number" id="uuidCount" class="custom-input" value="1" min="1" max="10000">
                 </div>
-                <label class="option-label">
-                    <input type="checkbox" id="uppercase"> Uppercase letters (e.g. A-F)
+
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="uppercase">
+                    <span class="checkbox-mark"></span>
+                    Uppercase letters (e.g. A-F)
                 </label>
                 
-                <label class="option-label">
-                    <input type="checkbox" id="noHyphens"> Remove hyphens (e.g. no dashes)
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="noHyphens">
+                    <span class="checkbox-mark"></span>
+                    Remove hyphens (e.g. no dashes)
                 </label>
             </div>
             
