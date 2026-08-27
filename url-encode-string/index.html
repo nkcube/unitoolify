@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encode String Online - Unitoolify</title>
+    <meta name="description" content="Quickly and securely encode strings to URL-safe format online.">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.2s;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-links a:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            height: 350px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 1rem;
+            resize: vertical;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: var(--glass-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-section h2 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2FWD7FC8GL');
+    </script>
+    <script src="/theme.js"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+    <header>
+        <h1>Unitoolify URL Encode</h1>
+        <p class="subtitle">Safely encode strings for URLs</p>
+        <div class="nav-links">
+            <a href="../url-encode-string/" class="active">Encode</a>
+            <a href="../url-decode-string/" class="">Decode</a>
+            <a href="/">&larr; Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Input</div>
+            </div>
+            <textarea id="inputText" placeholder="Type or paste your text here to encode..."></textarea>
+            
+            <div class="options">
+                <label class="option-label">
+                    <input type="checkbox" id="liveMode" checked> Live mode (encode as you type)
+                </label>
+            </div>
+            
+            <button class="btn" id="actionBtn">Encode String</button>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Output</div>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+            </div>
+            <textarea id="outputText" readonly placeholder="Result will appear here..."></textarea>
+        </div>
+        
+        <div class="info-section">
+            <h2>About URL Encoding</h2>
+            <p>URL encoding (or percent-encoding) is a mechanism for encoding information in a Uniform Resource Identifier (URI). It replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits. This tool uses JavaScript's native <code>encodeURIComponent()</code> to ensure your data is safely transmitted over the internet.</p><p><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Unitoolify. All rights reserved.
+    </footer>
+
+    <script>
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const liveMode = document.getElementById('liveMode');
+        const actionBtn = document.getElementById('actionBtn');
+        const copyBtn = document.getElementById('copyBtn');
+
+        function performAction() {
+            const input = inputText.value;
+            if (!input) {
+                outputText.value = '';
+                return;
+            }
+            let result = '';
+            try {
+                result = encodeURIComponent(input);
+            } catch (e) {
+                result = 'Error: ' + e.message;
+            }
+            outputText.value = result;
+        }
+
+        // Event listeners
+        inputText.addEventListener('input', () => {
+            if (liveMode.checked) performAction();
+        });
+
+        actionBtn.addEventListener('click', performAction);
+
+        copyBtn.addEventListener('click', () => {
+            outputText.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+        });
+    </script>
+</body>
+</html>
