@@ -13,6 +13,9 @@
             --color-primary-hover: #2563eb;
             --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
         }
+        #dragLink::after {
+            content: "|";
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
@@ -39,7 +42,7 @@
             <h2 class="text-xl md:text-2xl font-medium">Vertical Separator</h2>
             <p class="text-slate-400">Drag the button below to your bookmarks bar</p>
             
-            <a href="#vert" class="bg-primary text-white border border-primary-hover py-3 px-8 rounded-lg font-bold text-xl no-underline cursor-grab transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-primary-hover active:cursor-grabbing select-none" id="dragLink" title="Drag me to your bookmarks bar">|</a>
+            <a href="#vert" class="bg-primary text-white border border-primary-hover py-3 px-8 rounded-lg font-bold text-xl no-underline cursor-grab transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-primary-hover active:cursor-grabbing select-none" id="dragLink" title="Drag me to your bookmarks bar"></a>
 
             <p class="mt-4 text-slate-400 text-sm md:text-base">
                 Looking for a horizontal separator? <a href="horz.html" class="text-blue-400 underline hover:text-blue-300">Click here</a>
