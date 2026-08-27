@@ -7,6 +7,7 @@
     <meta name="description" content="Add visual separators to your Chrome or Edge bookmarks bar easily.">
     <link id="favicon" rel="icon" href="favicon-transparent.svg" type="image/svg+xml" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
         :root {
             --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --glass-bg: rgba(255, 255, 255, 0.05);
@@ -44,6 +45,7 @@
             background: linear-gradient(to right, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Space Grotesk', 'Courier New', monospace;
         }
 
         .subtitle {
@@ -162,7 +164,11 @@
             font-size: 0.9rem;
             margin-top: auto;
         }
-    </style>
+    
+.logo-eyes {
+    font-weight: 900;
+}
+</style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
@@ -175,7 +181,7 @@
 </head>
 <body>
     <header>
-        <h1>UnitꙬlify Bookmark Separator</h1>
+        <h1>Unit<span class="logo-eyes">Ꙭ</span>lify Bookmark Separator</h1>
         <p class="subtitle">Organize your Chrome/Edge bookmarks bar with visual separators</p>
         <div class="nav-links">
             <a href="../bookmark-separator/" class="active">Bookmark Separator</a>
@@ -204,7 +210,7 @@
     </main>
 
     <footer>
-        &copy; 2026 UnitꙬlify. All rights reserved.
+        &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script>

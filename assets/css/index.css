@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
 :root {
             --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --glass-bg: rgba(255, 255, 255, 0.05);
@@ -41,6 +43,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
+            font-family: 'Space Grotesk', 'Courier New', monospace;
         }
 
         .subtitle {
@@ -156,3 +159,6 @@
             color: var(--text-muted);
             font-size: 0.9rem;
         }
+.logo-eyes {
+    font-weight: 900;
+}
