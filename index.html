@@ -164,6 +164,29 @@
     <footer class="mt-auto pt-12 md:pt-16 text-slate-400 text-sm">
         &copy; 2026 Unitoolify. All rights reserved.
     </footer>
+    <script>
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', () => {
+                if (!document.getElementById('page-loader')) {
+                    const overlay = document.createElement('div');
+                    overlay.id = 'page-loader';
+                    overlay.className = 'fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center transition-opacity duration-300';
+                    overlay.innerHTML = `
+                        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+                        <div class="text-slate-50 text-lg font-semibold animate-pulse">Loading...</div>
+                    `;
+                    document.body.appendChild(overlay);
+                }
+            });
+        });
+
+        window.addEventListener('pageshow', (event) => {
+            const loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.remove();
+            }
+        });
+    </script>
 </body>
 
 </html>
