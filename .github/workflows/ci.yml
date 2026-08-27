@@ -1,0 +1,75 @@
+name: CI Checks
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  link-checker:
+    name: Broken Link Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Run Lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress './**/*.html' './**/*.md'
+          fail: true
+
+  html-lint:
+    name: HTML Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+        
+      - name: Run HTMLHint
+        run: htmlhint "**/*.html"
+
+  format-check:
+    name: Prettier Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install Prettier
+        run: npm install -g prettier
+        
+      - name: Check Formatting
+        run: prettier --check "**/*.{html,js,css,md}"
+
+  spell-check:
+    name: Spell Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Run CSpell
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          files: '**/*.{html,md,js,css}'
+          inline_words: |
+            unitoolify
+            composerize
+            decomposerize
+            glassmorphism
+            tailwindcss
