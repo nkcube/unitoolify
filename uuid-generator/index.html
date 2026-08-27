@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UUID Generator Online - Unitoolify</title>
     <meta name="description" content="Generate random v4 UUIDs (Universally Unique Identifiers) instantly. Free, secure, and client-side only UUID generation.">
-    <link rel="stylesheet" href="/assets/css/tool.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #3b82f6;
+            --color-primary-hover: #2563eb;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-2FWD7FC8GL');
     </script>
     <!-- js-yaml library isn't needed here, just uuid -->
@@ -20,80 +26,72 @@
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
 </head>
-<body>
-    <header>
-        <h1>Unitoolify UUID Generator</h1>
-        <p class="subtitle">Instantly generate secure UUIDs (v1, v4) in bulk</p>
-        <div class="nav-links">
-            <a href="../uuid-generator/" class="active">UUID Generator</a>
-            <a href="/">&larr; Home</a>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+    <header class="py-6 px-4 md:py-8 text-center">
+        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Unitoolify UUID Generator</h1>
+        <p class="text-slate-400 mb-6 md:mb-8">Instantly generate secure UUIDs (v1, v4) in bulk</p>
+        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+            <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">UUID Generator</a>
+            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
         </div>
     </header>
 
-    <main>
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Options</div>
+    <main class="flex-1 max-w-6xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+                <div class="text-lg md:text-xl font-semibold">Options</div>
             </div>
             
-            <div class="options">
-                <div class="input-group">
-                    <label class="option-label">Version:</label>
-                    <div class="radio-group" style="display:flex; gap:1.5rem; margin-top:0.5rem;">
-                        <label class="custom-radio">
-                            <input type="radio" name="uuidVersion" value="4" checked>
-                            <span class="radio-mark"></span>
-                            v4 (Random)
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-slate-50">Version:</label>
+                    <div class="flex gap-6">
+                        <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                            <input type="radio" name="uuidVersion" value="4" checked class="accent-primary"> v4 (Random)
                         </label>
-                        <label class="custom-radio">
-                            <input type="radio" name="uuidVersion" value="1">
-                            <span class="radio-mark"></span>
-                            v1 (Timestamp)
+                        <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                            <input type="radio" name="uuidVersion" value="1" class="accent-primary"> v1 (Timestamp)
                         </label>
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <label class="option-label" for="uuidCount">How many UUIDs to generate?</label>
-                    <input type="number" id="uuidCount" class="custom-input" value="1" min="1" max="10000">
+                <div class="flex flex-col gap-1">
+                    <label class="text-sm font-medium text-slate-50" for="uuidCount">How many UUIDs to generate?</label>
+                    <input type="number" id="uuidCount" value="1" min="1" max="10000" class="w-full bg-black/20 border border-white/10 rounded-lg text-slate-50 py-2.5 px-4 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
                 </div>
 
-                <label class="custom-checkbox">
-                    <input type="checkbox" id="uppercase">
-                    <span class="checkbox-mark"></span>
-                    Uppercase letters (e.g. A-F)
+                <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                    <input type="checkbox" id="uppercase" class="accent-primary"> Uppercase letters (e.g. A-F)
                 </label>
                 
-                <label class="custom-checkbox">
-                    <input type="checkbox" id="noHyphens">
-                    <span class="checkbox-mark"></span>
-                    Remove hyphens (e.g. no dashes)
+                <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
+                    <input type="checkbox" id="noHyphens" class="accent-primary"> Remove hyphens (e.g. no dashes)
                 </label>
             </div>
             
-            <button class="btn" id="generateBtn">Generate UUIDs</button>
+            <button class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover" id="generateBtn">Generate UUIDs</button>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Output</div>
-                <div>
-                    <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy All</button>
-                    <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="downloadBtn">Download .txt</button>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+                <div class="text-lg md:text-xl font-semibold">Output</div>
+                <div class="flex gap-2">
+                    <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy All</button>
+                    <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="downloadBtn">Download .txt</button>
                 </div>
             </div>
-            <textarea id="outputText" readonly placeholder="Generated UUIDs will appear here..."></textarea>
+            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Generated UUIDs will appear here..."></textarea>
         </div>
         
-        <div class="info-section">
-            <h2>About UUID Generator</h2>
-            <p>Welcome to Unitoolify's UUID Generator. A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. This tool generates standard <strong>Version 1 (timestamp) and Version 4 (random) UUIDs</strong>.</p>
-            <p><strong>Secure and Private:</strong> We use the standard open-source library (`uuid`) to generate these identifiers securely within your browser. Nothing is sent to our servers, ensuring your generated UUIDs remain entirely private.</p>
-            <p>You can generate up to 10,000 UUIDs at once, choose to output them in uppercase, and optionally strip out the hyphen separators if your database or system requires a compact format.</p>
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About UUID Generator</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's UUID Generator. A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. This tool generates standard <strong>Version 1 (timestamp) and Version 4 (random) UUIDs</strong>.</p>
+            <p class="text-slate-400 leading-relaxed mb-4"><strong>Secure and Private:</strong> We use the standard open-source library (`uuid`) to generate these identifiers securely within your browser. Nothing is sent to our servers, ensuring your generated UUIDs remain entirely private.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">You can generate up to 10,000 UUIDs at once, choose to output them in uppercase, and optionally strip out the hyphen separators if your database or system requires a compact format.</p>
         </div>
     </main>
 
-    <footer>
+    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
         &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 

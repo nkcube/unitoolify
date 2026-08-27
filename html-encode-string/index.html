@@ -5,61 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Encode String Online - Unitoolify</title>
     <meta name="description" content="Convert HTML characters to their entity equivalents safely online.">
-    <link rel="stylesheet" href="/assets/css/tool.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #3b82f6;
+            --color-primary-hover: #2563eb;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-2FWD7FC8GL');
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
 </head>
-<body>
-    <header>
-        <h1>Unitoolify HTML Encode</h1>
-        <p class="subtitle">Convert special characters to HTML entities</p>
-        <div class="nav-links">
-            <a href="../html-encode-string/" class="active">Encode</a>
-            <a href="../html-decode-string/" class="">Decode</a>
-            <a href="/">&larr; Home</a>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+    <header class="py-6 px-4 md:py-8 text-center">
+        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Unitoolify HTML Encode</h1>
+        <p class="text-slate-400 mb-6 md:mb-8">Convert special characters to HTML entities</p>
+        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+            <a href="../html-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Encode</a>
+            <a href="../html-decode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decode</a>
+            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
         </div>
     </header>
 
-    <main>
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Input</div>
+    <main class="flex-1 max-w-6xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+                <div class="text-lg md:text-xl font-semibold">Input</div>
             </div>
-            <textarea id="inputText" placeholder="Type or paste your text here to encode..."></textarea>
-            
-            <div class="options">
-                <label class="option-label">
-                    <input type="checkbox" id="liveMode" checked> Live mode (encode as you type)
+            <textarea id="inputText" class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Type or paste your text here to encode..."></textarea>
+            <div class="flex flex-col gap-2">
+                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
+                    <input type="checkbox" id="liveMode" checked class="accent-primary"> Live mode (encode as you type)
                 </label>
             </div>
-            
-            <button class="btn" id="actionBtn">Encode String</button>
+            <button class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover" id="actionBtn">Encode String</button>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Output</div>
-                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" id="copyBtn">Copy</button>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+                <div class="text-lg md:text-xl font-semibold">Output</div>
+                <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy</button>
             </div>
-            <textarea id="outputText" readonly placeholder="Result will appear here..."></textarea>
+            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Result will appear here..."></textarea>
         </div>
         
-        <div class="info-section">
-            <h2>About HTML Encoding</h2>
-            <p>HTML encoding ensures that text is safely displayed in a browser by converting special characters (like <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>, <code>&#39;</code>) into their corresponding HTML entities (e.g., <code>&amp;lt;</code>). This prevents malicious scripts from executing (XSS protection) and maintains intended formatting.</p><p><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About HTML Encoding</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">HTML encoding ensures that text is safely displayed in a browser by converting special characters (like <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>, <code>&#39;</code>) into their corresponding HTML entities (e.g., <code>&amp;lt;</code>). This prevents malicious scripts from executing (XSS protection) and maintains intended formatting.</p><p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
         </div>
     </main>
 
-    <footer>
+    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
         &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
@@ -78,18 +82,15 @@
             }
             let result = '';
             try {
-                
                 const div = document.createElement('div');
                 div.appendChild(document.createTextNode(input));
                 result = div.innerHTML;
-        
             } catch (e) {
                 result = 'Error: ' + e.message;
             }
             outputText.value = result;
         }
 
-        // Event listeners
         inputText.addEventListener('input', () => {
             if (liveMode.checked) performAction();
         });

@@ -7,7 +7,25 @@
     <title>Unitoolify - Modern Web Tools</title>
     <meta name="description"
         content="A premium collection of essential web developer utilities. All running completely inside your browser.  Fast, private, and beautiful.">
-    <link rel="stylesheet" href="/assets/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #3b82f6;
+            --color-primary-hover: #2563eb;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        .tool-card {
+            @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 no-underline text-slate-50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/20 hover:bg-white/[0.08] relative overflow-hidden grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] gap-x-3 h-40;
+        }
+        .tool-card::before {
+            content: '';
+            @apply absolute inset-x-0 top-0 h-1 opacity-0 transition-opacity duration-300;
+            background: var(--card-gradient, linear-gradient(to right, #60a5fa, #3b82f6));
+        }
+        .tool-card:hover::before {
+            @apply opacity-100;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
@@ -21,115 +39,115 @@
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
 </head>
 
-<body>
-    <header>
-        <h1>Unitoolify</h1>
-        <p class="subtitle">A premium collection of essential web developer utilities. Fast, private, and beautiful.</p>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center p-4 md:p-8">
+    <header class="w-full max-w-7xl flex flex-wrap items-baseline gap-4 md:gap-6 mb-8 md:mb-12 mt-4 md:mt-8">
+        <h1 class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Unitoolify</h1>
+        <p class="text-slate-400 text-base md:text-xl leading-relaxed">A premium collection of essential web developer utilities. Fast, private, and beautiful.</p>
     </header>
 
-    <main>
-        <section class="category-section">
-            <h2 class="category-title">Encoders/Decoders</h2>
-            <div class="tools-grid">
+    <main class="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 items-start">
+        <section class="mb-4 md:mb-6 w-full">
+            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Encoders/Decoders</h2>
+            <div class="grid grid-cols-1 gap-4">
                 <a href="base64encode/" class="tool-card">
-                    <span class="tool-icon">🔒</span>
-                    <div class="tool-title">Base64 Encode</div>
-                    <p class="tool-desc">Quickly encode your text or binary files into Base64 format safely in your browser. Supports URL-safe mode and line chunking.</p>
+                    <span class="text-2xl">🔒</span>
+                    <div class="text-lg font-semibold">Base64 Encode</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Quickly encode your text or binary files into Base64 format safely in your browser. Supports URL-safe mode and line chunking.</p>
                 </a>
                 <a href="base64decode/" class="tool-card">
-                    <span class="tool-icon">🔓</span>
-                    <div class="tool-title">Base64 Decode</div>
-                    <p class="tool-desc">Easily decode Base64 strings back to their original text or binary file formats. Private and secure client-side execution.</p>
+                    <span class="text-2xl">🔓</span>
+                    <div class="text-lg font-semibold">Base64 Decode</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Easily decode Base64 strings back to their original text or binary file formats. Private and secure client-side execution.</p>
                 </a>
                 <a href="url-encode-string/" class="tool-card">
-                    <span class="tool-icon">🔗</span>
-                    <div class="tool-title">URL Encode</div>
-                    <p class="tool-desc">Safely encode characters into URL-safe format using percent-encoding.</p>
+                    <span class="text-2xl">🔗</span>
+                    <div class="text-lg font-semibold">URL Encode</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Safely encode characters into URL-safe format using percent-encoding.</p>
                 </a>
                 <a href="url-decode-string/" class="tool-card">
-                    <span class="tool-icon">🔗</span>
-                    <div class="tool-title">URL Decode</div>
-                    <p class="tool-desc">Convert percent-encoded strings back to their original readable characters.</p>
+                    <span class="text-2xl">🔗</span>
+                    <div class="text-lg font-semibold">URL Decode</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Convert percent-encoded strings back to their original readable characters.</p>
                 </a>
                 <a href="html-encode-string/" class="tool-card">
-                    <span class="tool-icon">🌐</span>
-                    <div class="tool-title">HTML Encode</div>
-                    <p class="tool-desc">Convert special characters into HTML entities to safely display code or prevent XSS.</p>
+                    <span class="text-2xl">🌐</span>
+                    <div class="text-lg font-semibold">HTML Encode</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Convert special characters into HTML entities to safely display code or prevent XSS.</p>
                 </a>
                 <a href="html-decode-string/" class="tool-card">
-                    <span class="tool-icon">🌐</span>
-                    <div class="tool-title">HTML Decode</div>
-                    <p class="tool-desc">Convert HTML entities back into their raw text character equivalents.</p>
+                    <span class="text-2xl">🌐</span>
+                    <div class="text-lg font-semibold">HTML Decode</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Convert HTML entities back into their raw text character equivalents.</p>
                 </a>
             </div>
         </section>
 
-        <section class="category-section">
-            <h2 class="category-title">Formatters</h2>
-            <div class="tools-grid">
+        <section class="mb-4 md:mb-6 w-full">
+            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Formatters</h2>
+            <div class="grid grid-cols-1 gap-4">
                 <a href="prettify-json/" class="tool-card">
-                    <span class="tool-icon">✨</span>
-                    <div class="tool-title">Prettify JSON</div>
-                    <p class="tool-desc">Format, validate, and beautify your raw JSON data into a clean, readable structure.</p>
+                    <span class="text-2xl">✨</span>
+                    <div class="text-lg font-semibold">Prettify JSON</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Format, validate, and beautify your raw JSON data into a clean, readable structure.</p>
                 </a>
                 <a href="prettify-yaml/" class="tool-card">
-                    <span class="tool-icon">✨</span>
-                    <div class="tool-title">Prettify YAML</div>
-                    <p class="tool-desc">Format, validate, and beautify your YAML configurations with proper indentation.</p>
+                    <span class="text-2xl">✨</span>
+                    <div class="text-lg font-semibold">Prettify YAML</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Format, validate, and beautify your YAML configurations with proper indentation.</p>
                 </a>
             </div>
         </section>
 
-        <section class="category-section">
-            <h2 class="category-title">Converters</h2>
-            <div class="tools-grid">
+        <section class="mb-4 md:mb-6 w-full">
+            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Converters</h2>
+            <div class="grid grid-cols-1 gap-4">
                 <a href="composerize/" class="tool-card">
-                    <span class="tool-icon">🐳</span>
-                    <div class="tool-title">Composerize</div>
-                    <p class="tool-desc">Convert cumbersome `docker run` commands into elegant `docker-compose.yml` files instantly.</p>
+                    <span class="text-2xl">🐳</span>
+                    <div class="text-lg font-semibold">Composerize</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Convert cumbersome `docker run` commands into elegant `docker-compose.yml` files instantly.</p>
                 </a>
                 <a href="decomposerize/" class="tool-card">
-                    <span class="tool-icon">🔄</span>
-                    <div class="tool-title">Decomposerize</div>
-                    <p class="tool-desc">Reverse engineer your `docker-compose.yml` files back into raw `docker run` commands.</p>
+                    <span class="text-2xl">🔄</span>
+                    <div class="text-lg font-semibold">Decomposerize</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Reverse engineer your `docker-compose.yml` files back into raw `docker run` commands.</p>
                 </a>
                 <a href="convert-json-to-yaml/" class="tool-card">
-                    <span class="tool-icon">⇌</span>
-                    <div class="tool-title">JSON to YAML</div>
-                    <p class="tool-desc">Quickly convert valid JSON data into human-readable YAML format.</p>
+                    <span class="text-2xl">⇌</span>
+                    <div class="text-lg font-semibold">JSON to YAML</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Quickly convert valid JSON data into human-readable YAML format.</p>
                 </a>
                 <a href="convert-yaml-to-json/" class="tool-card">
-                    <span class="tool-icon">⇌</span>
-                    <div class="tool-title">YAML to JSON</div>
-                    <p class="tool-desc">Instantly convert YAML configurations into strict JSON payloads for APIs and apps.</p>
+                    <span class="text-2xl">⇌</span>
+                    <div class="text-lg font-semibold">YAML to JSON</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Instantly convert YAML configurations into strict JSON payloads for APIs and apps.</p>
                 </a>
             </div>
         </section>
 
-        <section class="category-section">
-            <h2 class="category-title">Generators</h2>
-            <div class="tools-grid">
+        <section class="mb-4 md:mb-6 w-full">
+            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Generators</h2>
+            <div class="grid grid-cols-1 gap-4">
                 <a href="uuid-generator/" class="tool-card">
-                    <span class="tool-icon">🔑</span>
-                    <div class="tool-title">UUID Generator</div>
-                    <p class="tool-desc">Instantly generate secure, random v4 UUIDs in bulk. Run entirely locally on your device.</p>
+                    <span class="text-2xl">🔑</span>
+                    <div class="text-lg font-semibold">UUID Generator</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Instantly generate secure, random v4 UUIDs in bulk. Run entirely locally on your device.</p>
                 </a>
             </div>
         </section>
 
-        <section class="category-section">
-            <h2 class="category-title">Utilities</h2>
-            <div class="tools-grid">
+        <section class="mb-4 md:mb-6 w-full">
+            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Utilities</h2>
+            <div class="grid grid-cols-1 gap-4">
                 <a href="bookmark-separator/" class="tool-card">
-                    <span class="tool-icon">✂️</span>
-                    <div class="tool-title">Bookmark Separator</div>
-                    <p class="tool-desc">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</p>
+                    <span class="text-2xl">✂️</span>
+                    <div class="text-lg font-semibold">Bookmark Separator</div>
+                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</p>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="mt-auto pt-12 md:pt-16 text-slate-400 text-sm">
         &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 </body>

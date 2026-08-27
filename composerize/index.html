@@ -7,60 +7,65 @@
     <title>Composerize - Unitoolify</title>
     <meta name="description"
         content="Convert docker run commands into docker-compose files easily and securely in your browser.">
-    <link rel="stylesheet" href="/assets/css/tool.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #3b82f6;
+            --color-primary-hover: #2563eb;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-2FWD7FC8GL');
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
 </head>
 
-<body>
-    <header>
-        <h1>Unitoolify Composerize</h1>
-        <p class="subtitle">Convert docker run commands into docker-compose files seamlessly</p>
-        <div class="nav-links">
-            <a href="../composerize/" class="active">Composerize</a>
-            <a href="../decomposerize/">Decomposerize</a>
-            <a href="/">&larr; Home</a>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+    <header class="py-6 px-4 md:py-8 text-center">
+        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Unitoolify Composerize</h1>
+        <p class="text-slate-400 mb-6 md:mb-8">Convert docker run commands into docker-compose files seamlessly</p>
+        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+            <a href="../composerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Composerize</a>
+            <a href="../decomposerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decomposerize</a>
+            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
         </div>
     </header>
 
-    <main>
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Docker Run Command</div>
+    <main class="flex-1 max-w-6xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+                <div class="text-lg md:text-xl font-semibold">Docker Run Command</div>
             </div>
-            <textarea id="inputText"
+            <textarea id="inputText" class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                 placeholder="Paste your `docker run ...` command here...&#10;&#10;Example:&#10;docker run -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --restart always --log-opt max-size=1g nginx"></textarea>
         </div>
 
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">Docker Compose YAML</div>
-                <button class="btn btn-secondary" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;"
-                    id="copyBtn">Copy</button>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center">
+                <div class="text-lg md:text-xl font-semibold">Docker Compose YAML</div>
+                <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy</button>
             </div>
-            <textarea id="outputText" readonly
+            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                 placeholder="Your docker-compose.yml output will appear here..."></textarea>
         </div>
 
-        <div class="info-section">
-            <h2>About Composerize</h2>
-            <p>Composerize for Unitoolify is a fast, completely in-browser utility that converts long and complicated
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Composerize</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">Composerize for Unitoolify is a fast, completely in-browser utility that converts long and complicated
                 <code>docker run</code> commands into elegant, manageable <code>docker-compose.yml</code> files.</p>
-            <p>By executing entirely on your device, it ensures that any sensitive variables or paths in your docker
+            <p class="text-slate-400 leading-relaxed mb-4">By executing entirely on your device, it ensures that any sensitive variables or paths in your docker
                 commands remain 100% private. <strong>No tracking, no external server processing.</strong></p>
         </div>
     </main>
 
-    <footer>
+    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
         &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
@@ -78,7 +83,6 @@
                 return;
             }
             try {
-                // composerize expects a string command
                 const result = composerize(command);
                 outputText.value = result;
             } catch (e) {
@@ -95,7 +99,6 @@
             setTimeout(() => copyBtn.textContent = 'Copy', 2000);
         });
 
-        // Trigger initial conversion if there's text
         if (inputText.value) convert();
     </script>
 </body>

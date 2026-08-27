@@ -6,161 +6,12 @@
     <title>Chrome Bookmark Separator - Unitoolify</title>
     <meta name="description" content="Add visual separators to your Chrome or Edge bookmarks bar easily.">
     <link id="favicon" rel="icon" href="favicon-vert.svg" type="image/svg+xml" />
-    <style>
-                :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background: var(--bg-gradient);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            transition: all 0.2s;
-        }
-
-        .nav-links a.active {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .nav-links a:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        main {
-            flex: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1.5rem;
-            width: 100%;
-        }
-
-        .drag-btn {
-            background: var(--primary);
-            color: white;
-            border: 1px solid var(--primary-hover);
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.25rem;
-            text-decoration: none;
-            cursor: grab;
-            display: inline-block;
-            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            user-select: none;
-        }
-
-        .drag-btn:active {
-            cursor: grabbing;
-        }
-
-        .drag-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            background: var(--primary-hover);
-        }
-        
-        .switch-link {
-            color: #60a5fa;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .info-section {
-            background: var(--glass-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid var(--glass-border);
-            width: 100%;
-        }
-
-        .info-section h2 {
-            margin-bottom: 1rem;
-            color: #e2e8f0;
-        }
-
-        .info-section p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: auto;
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #3b82f6;
+            --color-primary-hover: #2563eb;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -173,43 +24,37 @@
     </script>
     <script src="/assets/js/theme.js"></script>
 </head>
-<body>
-    <header>
-        <h1>Unitoolify Bookmark Separator</h1>
-        <p class="subtitle">Organize your Chrome/Edge bookmarks bar with visual separators</p>
-        <div class="nav-links">
-            <a href="../bookmark-separator/" class="active">Bookmark Separator</a>
-            <a href="/">&larr; Home</a>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center">
+    <header class="py-6 px-4 md:py-8 text-center">
+        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Unitoolify Bookmark Separator</h1>
+        <p class="text-slate-400 mb-6 md:mb-8">Organize your Chrome/Edge bookmarks bar with visual separators</p>
+        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+            <a href="../bookmark-separator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Bookmark Separator</a>
+            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
         </div>
     </header>
 
-    <main>
-        <div class="card">
-            <h2 style="font-size: 1.5rem; font-weight: 500;">Vertical Separator</h2>
-            <p style="color: var(--text-muted);">Drag the button below to your bookmarks bar</p>
+    <main class="flex-1 max-w-3xl mx-auto w-full px-4 pb-8 flex flex-col gap-8 items-center">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 flex flex-col items-center text-center gap-6 w-full">
+            <h2 class="text-xl md:text-2xl font-medium">Vertical Separator</h2>
+            <p class="text-slate-400">Drag the button below to your bookmarks bar</p>
             
-            <a href="#vert" class="drag-btn" id="dragLink" title="Drag me to your bookmarks bar"></a>
+            <a href="#vert" class="bg-primary text-white border border-primary-hover py-3 px-8 rounded-lg font-bold text-xl no-underline cursor-grab transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-primary-hover active:cursor-grabbing select-none" id="dragLink" title="Drag me to your bookmarks bar">|</a>
 
-            <style>
-                        #dragLink::after {
-                    content: "|";
-                }
-            </style>
-
-            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">
-                Looking for a horizontal separator? <a href="horz.html" class="switch-link">Click here</a>
+            <p class="mt-4 text-slate-400 text-sm md:text-base">
+                Looking for a horizontal separator? <a href="horz.html" class="text-blue-400 underline hover:text-blue-300">Click here</a>
             </p>
         </div>
         
-        <div class="info-section">
-            <h2>How it works</h2>
-            <p>Chrome and Edge don't natively support adding visual separators to the bookmarks bar. This tool provides a clever workaround!</p>
-            <p>Simply drag the button above directly onto your bookmarks bar. It will appear as a minimal vertical line (`|`) separating your folders and links.</p>
-            <p><strong>Note for Edge users:</strong> Edge prevents adding duplicate bookmarks. To solve this, every time you click or drag the button, we assign it a unique random ID (UUID) so you can add as many separators as you want!</p>
+        <div class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 w-full">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">How it works</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">Chrome and Edge don't natively support adding visual separators to the bookmarks bar. This tool provides a clever workaround!</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Simply drag the button above directly onto your bookmarks bar. It will appear as a minimal vertical line (`|`) separating your folders and links.</p>
+            <p class="text-slate-400 leading-relaxed mb-4"><strong>Note for Edge users:</strong> Edge prevents adding duplicate bookmarks. To solve this, every time you click or drag the button, we assign it a unique random ID (UUID) so you can add as many separators as you want!</p>
         </div>
     </main>
 
-    <footer>
+    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm mt-auto">
         &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 

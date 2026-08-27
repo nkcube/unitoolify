@@ -24,8 +24,8 @@
     if (isToolPage) {
         const toolName = pathSegments[0];
         const colors = getColors(toolName);
-        document.documentElement.style.setProperty('--primary', colors.main);
-        document.documentElement.style.setProperty('--primary-hover', colors.hover);
+        document.documentElement.style.setProperty('--color-primary', colors.main);
+        document.documentElement.style.setProperty('--color-primary-hover', colors.hover);
         
         // Ensure h1 gradient also matches
         document.documentElement.style.setProperty('--title-gradient', colors.gradient);
