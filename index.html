@@ -147,6 +147,22 @@
             margin-top: 0.5rem;
         }
 
+        .category-section {
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            width: 100%;
+        }
+
         footer {
             margin-top: auto;
             padding-top: 4rem;
@@ -174,75 +190,85 @@
     </header>
 
     <main>
-        <div class="tools-grid">
-            <a href="base64encode/" class="tool-card">
-                <span class="tool-icon">🔒</span>
-                <div class="tool-title">Base64 Encode</div>
-                <p class="tool-desc">Quickly encode your text or binary files into Base64 format safely in your browser.
-                    Supports URL-safe mode and line chunking.</p>
-            </a>
+        <section class="category-section">
+            <h2 class="category-title">Encoders/Decoders</h2>
+            <div class="tools-grid">
+                <a href="base64encode/" class="tool-card">
+                    <span class="tool-icon">🔒</span>
+                    <div class="tool-title">Base64 Encode</div>
+                    <p class="tool-desc">Quickly encode your text or binary files into Base64 format safely in your browser. Supports URL-safe mode and line chunking.</p>
+                </a>
+                <a href="base64decode/" class="tool-card">
+                    <span class="tool-icon">🔓</span>
+                    <div class="tool-title">Base64 Decode</div>
+                    <p class="tool-desc">Easily decode Base64 strings back to their original text or binary file formats. Private and secure client-side execution.</p>
+                </a>
+            </div>
+        </section>
 
-            <a href="base64decode/" class="tool-card">
-                <span class="tool-icon">🔓</span>
-                <div class="tool-title">Base64 Decode</div>
-                <p class="tool-desc">Easily decode Base64 strings back to their original text or binary file formats.
-                    Private and secure client-side execution.</p>
-            </a>
+        <section class="category-section">
+            <h2 class="category-title">Formatters</h2>
+            <div class="tools-grid">
+                <a href="prettify-json/" class="tool-card">
+                    <span class="tool-icon">✨</span>
+                    <div class="tool-title">Prettify JSON</div>
+                    <p class="tool-desc">Format, validate, and beautify your raw JSON data into a clean, readable structure.</p>
+                </a>
+                <a href="prettify-yaml/" class="tool-card">
+                    <span class="tool-icon">✨</span>
+                    <div class="tool-title">Prettify YAML</div>
+                    <p class="tool-desc">Format, validate, and beautify your YAML configurations with proper indentation.</p>
+                </a>
+            </div>
+        </section>
 
-            <a href="composerize/" class="tool-card">
-                <span class="tool-icon">🐳</span>
-                <div class="tool-title">Composerize</div>
-                <p class="tool-desc">Convert cumbersome `docker run` commands into elegant `docker-compose.yml` files
-                    instantly.</p>
-            </a>
+        <section class="category-section">
+            <h2 class="category-title">Converters</h2>
+            <div class="tools-grid">
+                <a href="composerize/" class="tool-card">
+                    <span class="tool-icon">🐳</span>
+                    <div class="tool-title">Composerize</div>
+                    <p class="tool-desc">Convert cumbersome `docker run` commands into elegant `docker-compose.yml` files instantly.</p>
+                </a>
+                <a href="decomposerize/" class="tool-card">
+                    <span class="tool-icon">🔄</span>
+                    <div class="tool-title">Decomposerize</div>
+                    <p class="tool-desc">Reverse engineer your `docker-compose.yml` files back into raw `docker run` commands.</p>
+                </a>
+                <a href="convert-json-to-yaml/" class="tool-card">
+                    <span class="tool-icon">⇌</span>
+                    <div class="tool-title">JSON to YAML</div>
+                    <p class="tool-desc">Quickly convert valid JSON data into human-readable YAML format.</p>
+                </a>
+                <a href="convert-yaml-to-json/" class="tool-card">
+                    <span class="tool-icon">⇌</span>
+                    <div class="tool-title">YAML to JSON</div>
+                    <p class="tool-desc">Instantly convert YAML configurations into strict JSON payloads for APIs and apps.</p>
+                </a>
+            </div>
+        </section>
 
-            <a href="decomposerize/" class="tool-card">
-                <span class="tool-icon">🔄</span>
-                <div class="tool-title">Decomposerize</div>
-                <p class="tool-desc">Reverse engineer your `docker-compose.yml` files back into raw `docker run`
-                    commands.</p>
-            </a>
+        <section class="category-section">
+            <h2 class="category-title">Generators</h2>
+            <div class="tools-grid">
+                <a href="uuid-generator/" class="tool-card">
+                    <span class="tool-icon">🔑</span>
+                    <div class="tool-title">UUID Generator</div>
+                    <p class="tool-desc">Instantly generate secure, random v4 UUIDs in bulk. Run entirely locally on your device.</p>
+                </a>
+            </div>
+        </section>
 
-            <a href="prettify-json/" class="tool-card">
-                <span class="tool-icon">✨</span>
-                <div class="tool-title">Prettify JSON</div>
-                <p class="tool-desc">Format, validate, and beautify your raw JSON data into a clean, readable structure.
-                </p>
-            </a>
-
-            <a href="prettify-yaml/" class="tool-card">
-                <span class="tool-icon">✨</span>
-                <div class="tool-title">Prettify YAML</div>
-                <p class="tool-desc">Format, validate, and beautify your YAML configurations with proper indentation.
-                </p>
-            </a>
-
-            <a href="convert-json-to-yaml/" class="tool-card">
-                <span class="tool-icon">⇌</span>
-                <div class="tool-title">JSON to YAML</div>
-                <p class="tool-desc">Quickly convert valid JSON data into human-readable YAML format.</p>
-            </a>
-
-            <a href="convert-yaml-to-json/" class="tool-card">
-                <span class="tool-icon">⇌</span>
-                <div class="tool-title">YAML to JSON</div>
-                <p class="tool-desc">Instantly convert YAML configurations into strict JSON payloads for APIs and apps.
-                </p>
-            </a>
-
-            <a href="uuid-generator/" class="tool-card">
-                <span class="tool-icon">🔑</span>
-                <div class="tool-title">UUID Generator</div>
-                <p class="tool-desc">Instantly generate secure, random v4 UUIDs in bulk. Run entirely locally on your
-                    device.</p>
-            </a>
-
-            <a href="bookmark-separator/" class="tool-card">
-                <span class="tool-icon">✂️</span>
-                <div class="tool-title">Bookmark Separator</div>
-                <p class="tool-desc">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</p>
-            </a>
-        </div>
+        <section class="category-section">
+            <h2 class="category-title">Utilities</h2>
+            <div class="tools-grid">
+                <a href="bookmark-separator/" class="tool-card">
+                    <span class="tool-icon">✂️</span>
+                    <div class="tool-title">Bookmark Separator</div>
+                    <p class="tool-desc">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</p>
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
