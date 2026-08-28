@@ -122,9 +122,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About URL Encoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">URL encoding (or percent-encoding) is a mechanism for encoding information in a Uniform Resource Identifier (URI). It replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits. This tool uses JavaScript's native <code>encodeURIComponent()</code> to ensure your data is safely transmitted over the internet.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Every time you build a URL with dynamic values — search terms, user input, redirect parameters, form submissions — the text must be percent-encoded or the URL breaks. Characters like spaces, "&amp;", "=", "?", "#" and non-ASCII text all have special meaning in URLs and need encoding.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">URL encoding is just percent-encoding: any character that isn't safe in a URL becomes a "%" followed by two hex digits. A space turns into <code>%20</code>, "&amp;" into <code>%26</code>, and so on. This tool wraps JavaScript's native <code>encodeURIComponent()</code> so you don't have to open a console to try it.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">You need this any time a URL contains something you didn't type by hand — search terms, form values, redirect targets, anything with spaces or non-ASCII characters. Skip the encoding and the browser will mangle the URL, silently drop parameters, or both.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Since it all runs in your browser, there's nothing to upload — fine for URLs that embed tokens or private payloads.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

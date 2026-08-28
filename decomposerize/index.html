@@ -116,13 +116,9 @@
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Decomposerize</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Decomposerize for Unitoolify reverses the process of Composerize. It takes your existing
-                <code>docker-compose.yml</code> file and translates it back into one or more <code>docker run</code>
-                commands.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">This is extremely useful when you want to quickly test a container without setting up a compose file, or
-                when translating tutorials back and forth. <strong>Everything happens in your browser securely.</strong>
-            </p>
-            <p class="text-slate-400 leading-relaxed mb-4">It is also a great learning tool: seeing exactly which flags your compose file produces helps you understand how Compose maps services, ports, volumes and networks to the Docker engine underneath.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The reverse of Composerize: paste a <code>docker-compose.yml</code> and get the equivalent <code>docker run</code> command(s) back. Useful when you want to test a single container without spinning up compose, or when the tutorial you're following happens to be in the other format.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Each service becomes its own run command with the right flags. It's also a decent way to see what Compose is actually doing under the hood — the raw flags it maps your YAML to.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">All in the browser; nothing leaves your machine.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

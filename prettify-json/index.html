@@ -89,7 +89,7 @@
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Prettify JSON</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Format, validate, and beautify your JSON data instantly</p>
+        <p class="text-slate-400 mb-6 md:mb-8">Turn minified JSON into something you can actually read</p>
         <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
             <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Prettify JSON</a>
             <a href="../prettify-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify YAML</a>
@@ -137,10 +137,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Prettify JSON</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's JSON Prettifier. This tool helps you transform unreadable, minified JSON strings into well-structured, indented formats that are easy to read and debug.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Private by design:</strong> Your JSON data is processed entirely within your browser. We never send your data to any external server.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Whether you are debugging an API response in your console, sharing a config file in a pull request, or studying a large JSON export, a good JSON formatter saves minutes of squinting. Paste minified JSON from <code>curl</code>, Postman, browser dev tools or any webhook payload, and get a clean, indented structure back instantly.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">The tool automatically validates your JSON syntax and points out errors if the input is malformed. Use the indentation options (2 spaces, 4 spaces or tabs) to customize the formatting to your preference, then copy or download the result.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Takes minified JSON — the kind that arrives as one long unreadable line — and pretty-prints it with indentation and line breaks. If the JSON is malformed, it tells you where instead of failing silently.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Where it actually saves you time: pasting a curl or webhook response you can't parse, reviewing a config file in a pull request, or hunting for the one wrong comma in a long export. Indentation is your call — 2 spaces, 4 spaces, or tabs — and you can copy or download the result once it looks right.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Everything runs in the browser, which matters if the JSON you're formatting came from an API and contains tokens or personal data you'd rather not send to a random website.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

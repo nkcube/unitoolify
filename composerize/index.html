@@ -70,7 +70,7 @@
             {
                 "@type": "Question",
                 "name": "How do I convert docker run to docker-compose?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Paste your docker run command into the input box. The tool instantly generates the equivalent docker-compose.yml service. Copy the output into a compose file and run docker compose up -d." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Paste your docker run command into the input box and the equivalent docker-compose.yml service comes out the other side. Copy it into a compose file and run docker compose up -d." }
             },
             {
                 "@type": "Question",
@@ -90,7 +90,7 @@
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Composerize</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Convert docker run commands into docker-compose files seamlessly</p>
+        <p class="text-slate-400 mb-6 md:mb-8">Turn docker run commands into docker-compose.yml files</p>
         <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
             <a href="../composerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Composerize</a>
             <a href="../decomposerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decomposerize</a>
@@ -118,11 +118,9 @@
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Composerize</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Composerize for Unitoolify is a fast, completely in-browser utility that converts long and complicated
-                <code>docker run</code> commands into elegant, manageable <code>docker-compose.yml</code> files.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">By executing entirely on your device, it ensures that any sensitive variables or paths in your docker
-                commands remain 100% private. <strong>No tracking, no external server processing.</strong></p>
-            <p class="text-slate-400 leading-relaxed mb-4">Moving from ad-hoc <code>docker run</code> commands to Docker Compose gives you version-controlled infrastructure: services, networks and volumes declared as code, reproducible startup with <code>docker compose up</code>, and easy sharing with your team. This converter does the migration for you in seconds.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Got a <code>docker run</code> command that's grown into a wall of flags? Paste it here and get the equivalent <code>docker-compose.yml</code> service back. That's the whole tool.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">It parses the common flags — ports, volumes, env vars, restart policies, networks — and emits clean YAML you can drop into a compose file and version alongside your code. Everything runs in the browser, which matters when your command contains a token or a path you'd rather not paste into some random website.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The usual reason to bother: ad-hoc <code>docker run</code> commands don't get versioned, don't get reviewed, and die with your shell history. Compose files live in the repo where the rest of your infrastructure lives.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
@@ -134,7 +132,7 @@
                 </details>
                 <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
                     <summary class="text-slate-200 font-medium cursor-pointer">How do I convert docker run to docker-compose?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Paste your docker run command into the input box. The tool instantly generates the equivalent docker-compose.yml service. Copy the output into a compose file and run docker compose up -d.</p>
+                    <p class="text-slate-400 leading-relaxed mt-2">Paste your docker run command into the input box and the equivalent docker-compose.yml service comes out the other side. Copy it into a compose file and run docker compose up -d.</p>
                 </details>
                 <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
                     <summary class="text-slate-200 font-medium cursor-pointer">Which docker run flags are supported?</summary>

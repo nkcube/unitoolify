@@ -120,9 +120,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About HTML Encoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">HTML encoding ensures that text is safely displayed in a browser by converting special characters (like <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>, <code>&#39;</code>) into their corresponding HTML entities (e.g., <code>&amp;lt;</code>). This prevents malicious scripts from executing (XSS protection) and maintains intended formatting.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">If you render user comments, forum posts, chat messages or any untrusted input on a web page, HTML escaping is the first line of defense against XSS attacks. It is also how code blocks on blogs, documentation sites and developer forums display markup without executing it.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">HTML encoding escapes the five characters that have meaning in markup — <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code> and <code>&#39;</code> — so the browser shows them as literal text instead of interpreting them. That's the whole trick behind displaying code on a page without it rendering.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">If your site renders anything users typed — comments, forum posts, chat messages — escaping it is the first thing standing between you and an XSS mess. It's also exactly what code blocks on blogs and docs sites do under the hood.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Runs entirely in your browser; nothing you paste is uploaded anywhere.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

@@ -76,7 +76,7 @@
             {
                 "@type": "Question",
                 "name": "Can I generate many UUIDs at once?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set the count up to 10,000 and click 'Generate UUIDs' to create them in bulk — perfect for seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set the count up to 10,000 and click 'Generate UUIDs' to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file." }
             },
             {
                 "@type": "Question",
@@ -95,7 +95,7 @@
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify UUID Generator</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Instantly generate secure UUIDs (v1, v4) in bulk</p>
+        <p class="text-slate-400 mb-6 md:mb-8">Generate UUIDs (v1, v4) in bulk, right in your browser</p>
         <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
             <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">UUID Generator</a>
             <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
@@ -151,10 +151,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About UUID Generator</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's UUID Generator. A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. This tool generates standard <strong>Version 1 (timestamp) and Version 4 (random) UUIDs</strong>.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Secure and Private:</strong> We use the standard open-source library (<code>uuid</code>) to generate these identifiers securely within your browser. Nothing is sent to our servers, ensuring your generated UUIDs remain entirely private.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Developers generate UUIDs constantly: primary keys for database tables, IDs for API resources and events, session tokens, idempotency keys, test fixtures and mock data. Because a UUID is unique across space and time, it removes the need for central coordination or auto-increment counters.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">You can generate up to 10,000 UUIDs at once, choose to output them in uppercase, and optionally strip out the hyphen separators if your database or system requires a compact format.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Generates UUIDs — v4 (random) or v1 (timestamp-based) — in whatever quantity you need, up to 10,000 at a time. It all happens in the browser, so your identifiers are generated locally and never sent anywhere.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">You probably know when you need one: a primary key, an API resource ID, a session token, test fixtures. The details this tool handles are the boring but useful ones — uppercase output if your database or system prefers it, and stripping the hyphens for a compact 32-character format.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">One thing worth knowing if you pick v1: it embeds the timestamp (and the generating machine's MAC address), so values come out roughly time-ordered — but they also leak when and where they were made. v4 is random and is the safe default for almost everything.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
@@ -170,7 +169,7 @@
                 </details>
                 <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
                     <summary class="text-slate-200 font-medium cursor-pointer">Can I generate many UUIDs at once?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Set the count up to 10,000 and click "Generate UUIDs" to create them in bulk — perfect for seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file.</p>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Set the count up to 10,000 and click "Generate UUIDs" to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file.</p>
                 </details>
                 <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
                     <summary class="text-slate-200 font-medium cursor-pointer">Can I remove hyphens or use uppercase letters?</summary>

@@ -88,7 +88,7 @@
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Base64 Decode</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Fast, secure, and beautiful data encoding &amp; decoding</p>
+        <p class="text-slate-400 mb-6 md:mb-8">Decode Base64 strings and files right in your browser</p>
         <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
             <a href="../base64encode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Encode</a>
             <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Decode</a>
@@ -129,9 +129,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Base64 Decoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's Base64 decoder. Easily reverse Base64 strings back to their original text or binary file formats. Because this operation happens locally in your browser, <strong>no data is sent to external servers</strong>, providing total confidentiality.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Developers decode Base64 every day: turning <code>data:image/png;base64,...</code> data URIs back into image files, inspecting the payload of JWTs, recovering uploaded attachments, or debugging API responses that return Base64-encoded values. This free Base64 decoder handles text, images, PDFs and any other binary content.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Our tool intelligently handles both standard Base64 and URL-safe Base64URL variants, automatically interpreting them. If the decoded content is meant to be a file (like an image or a document), you can use the "Download Decoded File" option to save it directly to your device.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The reverse of the encoder: paste a Base64 string — or upload a .b64 file — and get the original text or binary data back. Everything happens locally in your browser, so the string you paste never leaves your machine.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">You'll end up here when an API returns a Base64-encoded field and you want to see what's actually inside, when a <code>data:image/png;base64,...</code> URI needs to become a real image file, or when someone hands you a JWT and you want to eyeball its payload. Text, images, PDFs — if it can be Base64'd, this can undo it.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Standard Base64 and the URL-safe Base64URL variant are both handled automatically, so there's no need to tell the tool which one you've got. If the decoded bytes turn out to be a file rather than text, hit "Download Decoded File" to save it as-is.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

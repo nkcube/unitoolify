@@ -88,7 +88,7 @@
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
         <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Base64 Encode</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Fast, secure, and beautiful data encoding &amp; decoding</p>
+        <p class="text-slate-400 mb-6 md:mb-8">Encode text or files to Base64 right in your browser</p>
         <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
             <a href="../base64encode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Encode</a>
             <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decode</a>
@@ -135,10 +135,10 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Base64 Encoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's Base64 encoder. This tool allows you to quickly transform your text or binary files into Base64 encoded format entirely within your browser. <strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Base64 is widely used on the web to transmit binary data over text-based protocols (like email via MIME, or embedded images in CSS/HTML). It converts binary data into a string of ASCII characters using a 64-character alphabet.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Base64 shows up in almost every web project: embedding images directly into CSS and HTML as <code>data:image/png;base64,...</code> data URIs, attaching binary files to emails via MIME, or storing binary data inside JSON payloads and databases. This free Base64 encoder covers all of these cases — paste text or upload a file, and get a ready-to-use Base64 string in seconds.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Use the advanced options to tailor the output to your specific needs: enable <strong>URL-safe encoding</strong> to generate a Base64URL string (RFC 4648) that replaces the standard "+" and "/" characters with "-" and "_" and omits padding "=" signs — ideal for URLs, filenames and JWTs. Use <strong>line chunking</strong> when your output must stay compatible with legacy email and MIME systems that expect lines of 76 characters or fewer.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">This is a straightforward Base64 encoder. Paste some text — or upload a file — and you get the Base64 string back. It all runs in your browser, so whatever you type or drop in never gets sent anywhere.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Base64 turns binary data into plain ASCII text using a 64-character alphabet (A-Z, a-z, 0-9, "+" and "/"). That's what makes it the go-to way to embed an image directly in HTML or CSS as a <code>data:image/png;base64,...</code> URI, to get binary attachments through MIME-based email, or to store binary values inside a JSON payload.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">In practice you'll reach for it whenever something needs to travel through a text-only channel: an icon inline in CSS, a small file tucked into a JSON document, a blob of bytes inside a database column. Paste or upload, copy, done.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The extra options exist for when plain Base64 isn't quite right. <strong>URL-safe mode</strong> swaps "+" and "/" for "-" and "_" and drops the trailing "=" padding — what you want if the string is going into a URL, a filename or a JWT. <strong>Line chunking</strong> breaks the output into 76-character lines, which some older email and MIME setups expect.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

@@ -122,9 +122,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About URL Decoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">URL decoding reverses the process of URL encoding. It takes a percent-encoded string (like "%20" for a space) and converts it back into its original character form. This tool uses JavaScript's native <code>decodeURIComponent()</code>.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">You'll need a URL decoder whenever you inspect raw HTTP logs, debug query-string parameters, parse redirect targets or read percent-encoded values from third-party APIs. Because <code>decodeURIComponent()</code> decodes complete UTF-8 sequences, the tool correctly restores text in any language, including Chinese, Japanese, Korean and accented Latin characters.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The reverse of the encoder: a percent-encoded string like <code>%20</code> goes back to a space. Under the hood it's the browser's own <code>decodeURIComponent()</code>, so the behavior matches what you'd get in JavaScript.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Handy when you're reading through access logs full of encoded URLs, when a query string arrives with %-escaped parameters you actually want to read, or when a third-party API returns percent-encoded text. UTF-8 is handled properly, so Chinese, Japanese and accented characters all come back intact.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The whole thing runs client-side — nothing you paste is sent anywhere.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">

@@ -120,9 +120,9 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About HTML Decoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">HTML decoding reverses the encoding process by taking HTML entities (like <code>&amp;lt;</code>) and converting them back into their original characters (like <code>&lt;</code>). This is useful for reading raw data that has been sanitized for the web.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Content exported from CMS platforms, wiki engines, RSS feeds and email templates is almost always entity-encoded. A decoder is what turns <code>&amp;amp;quot;Hello&amp;amp;quot;</code> into readable text so you can inspect, edit or republish the original content.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The opposite of the encoder: <code>&amp;lt;</code> goes back to <code>&lt;</code>, <code>&amp;amp;</code> back to <code>&amp;</code>, and so on. Useful whenever you're staring at escaped content and want to see what it actually says.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Almost everything exported from a CMS, wiki or RSS feed comes out entity-encoded, and email templates are full of the stuff. Paste it in here and you get the readable original back, whether the entities are named (<code>&amp;amp;</code>) or numeric (<code>&amp;#39;</code>).</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Decoding happens locally in your browser — no data leaves your machine.</p>
         </div>
 
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
