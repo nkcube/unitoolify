@@ -17,7 +17,7 @@ jobs:
       - name: Run Lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --base . './**/*.html' './**/*.md'
+          args: --verbose --no-progress --root-dir . './**/*.html' './**/*.md'
           fail: true
 
   html-lint:
@@ -67,7 +67,7 @@ jobs:
         uses: streetsidesoftware/cspell-action@v6
         with:
           files: '**/*.{html,md,js,css}'
-          inline_words: |
+          inline: |
             unitoolify
             composerize
             decomposerize
