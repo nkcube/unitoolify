@@ -1,42 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>URL Encoder Online – Percent-Encode Strings | Unitoolify</title>
-    <meta name="description" content="Free online URL encoder. Percent-encode special characters and query strings safely with encodeURIComponent. Instant results, runs 100% in your browser.">
-    <link rel="canonical" href="https://www.unitoolify.com/url-encode-string/" />
+    <meta
+      name="description"
+      content="Free online URL encoder. Percent-encode special characters and query strings safely with encodeURIComponent. Instant results, runs 100% in your browser."
+    />
+    <link
+      rel="canonical"
+      href="https://www.unitoolify.com/url-encode-string/"
+    />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="URL Encoder Online – Percent-Encode Strings Free" />
-    <meta property="og:description" content="Free online URL encoder based on encodeURIComponent. Instant percent-encoding, 100% private." />
-    <meta property="og:url" content="https://www.unitoolify.com/url-encode-string/" />
+    <meta
+      property="og:title"
+      content="URL Encoder Online – Percent-Encode Strings Free"
+    />
+    <meta
+      property="og:description"
+      content="Free online URL encoder based on encodeURIComponent. Instant percent-encoding, 100% private."
+    />
+    <meta
+      property="og:url"
+      content="https://www.unitoolify.com/url-encode-string/"
+    />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="URL Encoder Online – Percent-Encode Strings Free" />
-    <meta name="twitter:description" content="Free online URL encoder based on encodeURIComponent. Instant percent-encoding, 100% private." />
+    <meta
+      name="twitter:title"
+      content="URL Encoder Online – Percent-Encode Strings Free"
+    />
+    <meta
+      name="twitter:description"
+      content="Free online URL encoder based on encodeURIComponent. Instant percent-encoding, 100% private."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2FWD7FC8GL');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "URL Encoder Online",
@@ -46,159 +72,304 @@
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
         "description": "Free online URL encoder that percent-encodes special characters and query strings using encodeURIComponent.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "featureList": [
-            "Percent-encode special characters",
-            "Encode query strings and form data",
-            "Correct UTF-8 handling for all languages",
-            "Live mode as you type",
-            "One-click copy"
+          "Percent-encode special characters",
+          "Encode query strings and form data",
+          "Correct UTF-8 handling for all languages",
+          "Live mode as you type",
+          "One-click copy"
         ]
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is URL encoding or percent-encoding?",
-                "acceptedAnswer": { "@type": "Answer", "text": "URL encoding (percent-encoding) replaces unsafe ASCII characters in a URI with a '%' followed by two hexadecimal digits. For example, a space becomes %20 and a Chinese character is encoded as multiple percent-encoded UTF-8 bytes. This guarantees the URL is transmitted safely over the internet." }
-            },
-            {
-                "@type": "Question",
-                "name": "When should I URL-encode a string?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Encode any dynamic text you place into a URL: user input, search terms, query-string values, redirect targets and non-ASCII characters. Encoding prevents broken URLs, missing parameters and injection issues." }
-            },
-            {
-                "@type": "Question",
-                "name": "Why are spaces encoded as %20?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Spaces are not valid inside URLs. The encoder converts them to %20 (and form data typically uses '+' instead). The tool uses encodeURIComponent, which produces %20." }
-            },
-            {
-                "@type": "Question",
-                "name": "Is my data sent to a server?",
-                "acceptedAnswer": { "@type": "Answer", "text": "No. Encoding runs entirely in your browser with JavaScript. Your text is never uploaded, so you can safely encode private tokens and payloads." }
+          {
+            "@type": "Question",
+            "name": "What is URL encoding or percent-encoding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "URL encoding (percent-encoding) replaces unsafe ASCII characters in a URI with a '%' followed by two hexadecimal digits. For example, a space becomes %20 and a Chinese character is encoded as multiple percent-encoded UTF-8 bytes. This guarantees the URL is transmitted safely over the internet."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "When should I URL-encode a string?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encode any dynamic text you place into a URL: user input, search terms, query-string values, redirect targets and non-ASCII characters. Encoding prevents broken URLs, missing parameters and injection issues."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are spaces encoded as %20?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Spaces are not valid inside URLs. The encoder converts them to %20 (and form data typically uses '+' instead). The tool uses encodeURIComponent, which produces %20."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data sent to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Encoding runs entirely in your browser with JavaScript. Your text is never uploaded, so you can safely encode private tokens and payloads."
+            }
+          }
         ]
-    }
+      }
     </script>
-</head>
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+  >
     <header class="py-6 px-4 md:py-8 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify URL Encode</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Safely encode strings for URLs</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-            <a href="../url-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Encode</a>
-            <a href="../url-decode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decode</a>
-            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
-        </div>
+      <h1
+        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify URL Encode
+      </h1>
+      <p class="text-slate-400 mb-6 md:mb-8">Safely encode strings for URLs</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+        <a
+          href="../url-encode-string/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          >Encode</a
+        >
+        <a
+          href="../url-decode-string/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >Decode</a
+        >
+        <a
+          href="/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >&larr; Home</a
+        >
+      </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Input</div>
-            </div>
-            <textarea id="inputText" class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Type or paste your text here to encode..."></textarea>
-            
-            <div class="flex flex-col gap-2">
-                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
-                    <input type="checkbox" id="liveMode" checked class="accent-primary"> Live mode (encode as you type)
-                </label>
-            </div>
-            
-            <button class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover" id="actionBtn">Encode String</button>
+    <main
+      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+    >
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Input</div>
+        </div>
+        <textarea
+          id="inputText"
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Type or paste your text here to encode..."
+        ></textarea>
+
+        <div class="flex flex-col gap-2">
+          <label
+            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              id="liveMode"
+              checked
+              class="accent-primary"
+            />
+            Live mode (encode as you type)
+          </label>
         </div>
 
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Output</div>
-                <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy</button>
-            </div>
-            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Result will appear here..."></textarea>
-        </div>
-        
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About URL Encoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">URL encoding is just percent-encoding: any character that isn't safe in a URL becomes a "%" followed by two hex digits. A space turns into <code>%20</code>, "&amp;" into <code>%26</code>, and so on. This tool wraps JavaScript's native <code>encodeURIComponent()</code> so you don't have to open a console to try it.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">You need this any time a URL contains something you didn't type by hand — search terms, form values, redirect targets, anything with spaces or non-ASCII characters. Skip the encoding and the browser will mangle the URL, silently drop parameters, or both.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Since it all runs in your browser, there's nothing to upload — fine for URLs that embed tokens or private payloads.</p>
-        </div>
+        <button
+          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
+          id="actionBtn"
+        >
+          Encode String
+        </button>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is URL encoding or percent-encoding?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">URL encoding (percent-encoding) replaces unsafe ASCII characters in a URI with a "%" followed by two hexadecimal digits. For example, a space becomes %20 and a Chinese character is encoded as multiple percent-encoded UTF-8 bytes. This guarantees the URL is transmitted safely over the internet.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">When should I URL-encode a string?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Encode any dynamic text you place into a URL: user input, search terms, query-string values, redirect targets and non-ASCII characters. Encoding prevents broken URLs, missing parameters and injection issues.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Why are spaces encoded as %20?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Spaces are not valid inside URLs. The encoder converts them to %20 (and form data typically uses "+" instead). The tool uses encodeURIComponent, which produces %20.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Is my data sent to a server?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">No. Encoding runs entirely in your browser with JavaScript. Your text is never uploaded, so you can safely encode private tokens and payloads.</p>
-                </details>
-            </div>
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Output</div>
+          <button
+            class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+            id="copyBtn"
+          >
+            Copy
+          </button>
         </div>
+        <textarea
+          id="outputText"
+          readonly
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Result will appear here..."
+        ></textarea>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="../url-decode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">URL Decode</a>
-                <a href="../base64encode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Encode</a>
-                <a href="../html-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">HTML Encode</a>
-                <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">UUID Generator</a>
-            </div>
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          About URL Encoding
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          URL encoding is just percent-encoding: any character that isn't safe
+          in a URL becomes a "%" followed by two hex digits. A space turns into
+          <code>%20</code>, "&amp;" into <code>%26</code>, and so on. This tool
+          wraps JavaScript's native <code>encodeURIComponent()</code> so you
+          don't have to open a console to try it.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          You need this any time a URL contains something you didn't type by
+          hand — search terms, form values, redirect targets, anything with
+          spaces or non-ASCII characters. Skip the encoding and the browser will
+          mangle the URL, silently drop parameters, or both.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Since it all runs in your browser, there's nothing to upload — fine
+          for URLs that embed tokens or private payloads.
+        </p>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is URL encoding or percent-encoding?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              URL encoding (percent-encoding) replaces unsafe ASCII characters
+              in a URI with a "%" followed by two hexadecimal digits. For
+              example, a space becomes %20 and a Chinese character is encoded as
+              multiple percent-encoded UTF-8 bytes. This guarantees the URL is
+              transmitted safely over the internet.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              When should I URL-encode a string?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Encode any dynamic text you place into a URL: user input, search
+              terms, query-string values, redirect targets and non-ASCII
+              characters. Encoding prevents broken URLs, missing parameters and
+              injection issues.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Why are spaces encoded as %20?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Spaces are not valid inside URLs. The encoder converts them to %20
+              (and form data typically uses "+" instead). The tool uses
+              encodeURIComponent, which produces %20.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Is my data sent to a server?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              No. Encoding runs entirely in your browser with JavaScript. Your
+              text is never uploaded, so you can safely encode private tokens
+              and payloads.
+            </p>
+          </details>
         </div>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Related Tools
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="../url-decode-string/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >URL Decode</a
+          >
+          <a
+            href="../base64encode/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Base64 Encode</a
+          >
+          <a
+            href="../html-encode-string/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >HTML Encode</a
+          >
+          <a
+            href="../uuid-generator/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >UUID Generator</a
+          >
+        </div>
+      </div>
     </main>
 
     <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-        &copy; 2026 Unitoolify. All rights reserved.
+      &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script>
-        const inputText = document.getElementById('inputText');
-        const outputText = document.getElementById('outputText');
-        const liveMode = document.getElementById('liveMode');
-        const actionBtn = document.getElementById('actionBtn');
-        const copyBtn = document.getElementById('copyBtn');
+      const inputText = document.getElementById("inputText");
+      const outputText = document.getElementById("outputText");
+      const liveMode = document.getElementById("liveMode");
+      const actionBtn = document.getElementById("actionBtn");
+      const copyBtn = document.getElementById("copyBtn");
 
-        function performAction() {
-            const input = inputText.value;
-            if (!input) {
-                outputText.value = '';
-                return;
-            }
-            let result = '';
-            try {
-                result = encodeURIComponent(input);
-            } catch (e) {
-                result = 'Error: ' + e.message;
-            }
-            outputText.value = result;
+      function performAction() {
+        const input = inputText.value;
+        if (!input) {
+          outputText.value = "";
+          return;
         }
+        let result = "";
+        try {
+          result = encodeURIComponent(input);
+        } catch (e) {
+          result = "Error: " + e.message;
+        }
+        outputText.value = result;
+      }
 
-        // Event listeners
-        inputText.addEventListener('input', () => {
-            if (liveMode.checked) performAction();
-        });
+      // Event listeners
+      inputText.addEventListener("input", () => {
+        if (liveMode.checked) performAction();
+      });
 
-        actionBtn.addEventListener('click', performAction);
+      actionBtn.addEventListener("click", performAction);
 
-        copyBtn.addEventListener('click', () => {
-            outputText.select();
-            document.execCommand('copy');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-        });
+      copyBtn.addEventListener("click", () => {
+        outputText.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
+      });
     </script>
-</body>
+  </body>
 </html>

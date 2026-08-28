@@ -1,44 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UUID v4 Generator Online – Free &amp; Private | Unitoolify</title>
-    <meta name="description" content="Free online UUID generator. Create random UUID v4 and timestamp v1 identifiers in bulk (up to 10,000), with uppercase and no-hyphen options. 100% in-browser.">
+    <meta
+      name="description"
+      content="Free online UUID generator. Create random UUID v4 and timestamp v1 identifiers in bulk (up to 10,000), with uppercase and no-hyphen options. 100% in-browser."
+    />
     <link rel="canonical" href="https://www.unitoolify.com/uuid-generator/" />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="UUID v4 Generator Online – Bulk &amp; Free" />
-    <meta property="og:description" content="Generate random UUID v4 and v1 identifiers in bulk (up to 10,000), with uppercase and no-hyphen options. 100% in-browser." />
-    <meta property="og:url" content="https://www.unitoolify.com/uuid-generator/" />
+    <meta
+      property="og:title"
+      content="UUID v4 Generator Online – Bulk &amp; Free"
+    />
+    <meta
+      property="og:description"
+      content="Generate random UUID v4 and v1 identifiers in bulk (up to 10,000), with uppercase and no-hyphen options. 100% in-browser."
+    />
+    <meta
+      property="og:url"
+      content="https://www.unitoolify.com/uuid-generator/"
+    />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="UUID v4 Generator Online – Bulk &amp; Free" />
-    <meta name="twitter:description" content="Generate random UUID v4 and v1 identifiers in bulk (up to 10,000), with uppercase and no-hyphen options. 100% in-browser." />
+    <meta
+      name="twitter:title"
+      content="UUID v4 Generator Online – Bulk &amp; Free"
+    />
+    <meta
+      name="twitter:description"
+      content="Generate random UUID v4 and v1 identifiers in bulk (up to 10,000), with uppercase and no-hyphen options. 100% in-browser."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2FWD7FC8GL');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <!-- js-yaml library isn't needed here, just uuid -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "UUID Generator Online",
@@ -48,208 +71,392 @@
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
         "description": "Free online UUID generator that creates random v4 and timestamp v1 UUIDs in bulk, with uppercase and no-hyphen options.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "featureList": [
-            "Generate UUID v4 (random) and v1 (timestamp)",
-            "Bulk generation up to 10,000 UUIDs",
-            "Uppercase letters option",
-            "Remove hyphens option",
-            "Copy all or download as .txt"
+          "Generate UUID v4 (random) and v1 (timestamp)",
+          "Bulk generation up to 10,000 UUIDs",
+          "Uppercase letters option",
+          "Remove hyphens option",
+          "Copy all or download as .txt"
         ]
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a UUID?",
-                "acceptedAnswer": { "@type": "Answer", "text": "A UUID (Universally Unique Identifier) is a 128-bit label formatted as 36 characters (32 hexadecimal digits with four hyphens), for example 550e8400-e29b-41d4-a716-446655440000. UUIDs are used to identify records, entities and resources without a central registry." }
-            },
-            {
-                "@type": "Question",
-                "name": "What is the difference between UUID v1 and v4?",
-                "acceptedAnswer": { "@type": "Answer", "text": "UUID v4 is generated from random numbers and is the most common choice for database primary keys and API IDs. UUID v1 embeds the current timestamp and the generating node's MAC address, so it is roughly time-ordered but reveals when and where it was created." }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I generate many UUIDs at once?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set the count up to 10,000 and click 'Generate UUIDs' to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file." }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I remove hyphens or use uppercase letters?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enable 'Uppercase letters' to get A-F uppercase hex digits, or 'Remove hyphens' for a compact 32-character format often required by databases, file names and legacy systems." }
-            },
-            {
-                "@type": "Question",
-                "name": "Are generated UUIDs private?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Generation happens entirely in your browser with the standard uuid library. Your UUIDs are never sent to any server, so they are safe to use as tokens, keys and identifiers." }
+          {
+            "@type": "Question",
+            "name": "What is a UUID?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A UUID (Universally Unique Identifier) is a 128-bit label formatted as 36 characters (32 hexadecimal digits with four hyphens), for example 550e8400-e29b-41d4-a716-446655440000. UUIDs are used to identify records, entities and resources without a central registry."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between UUID v1 and v4?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UUID v4 is generated from random numbers and is the most common choice for database primary keys and API IDs. UUID v1 embeds the current timestamp and the generating node's MAC address, so it is roughly time-ordered but reveals when and where it was created."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I generate many UUIDs at once?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Set the count up to 10,000 and click 'Generate UUIDs' to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I remove hyphens or use uppercase letters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Enable 'Uppercase letters' to get A-F uppercase hex digits, or 'Remove hyphens' for a compact 32-character format often required by databases, file names and legacy systems."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are generated UUIDs private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Generation happens entirely in your browser with the standard uuid library. Your UUIDs are never sent to any server, so they are safe to use as tokens, keys and identifiers."
+            }
+          }
         ]
-    }
+      }
     </script>
-</head>
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+  >
     <header class="py-6 px-4 md:py-8 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify UUID Generator</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Generate UUIDs (v1, v4) in bulk, right in your browser</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-            <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">UUID Generator</a>
-            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
-        </div>
+      <h1
+        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify UUID Generator
+      </h1>
+      <p class="text-slate-400 mb-6 md:mb-8">
+        Generate UUIDs (v1, v4) in bulk, right in your browser
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+        <a
+          href="../uuid-generator/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          >UUID Generator</a
+        >
+        <a
+          href="/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >&larr; Home</a
+        >
+      </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Options</div>
-            </div>
-            
-            <div class="flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                    <label class="text-sm font-medium text-slate-50">Version:</label>
-                    <div class="flex gap-6">
-                        <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
-                            <input type="radio" name="uuidVersion" value="4" checked class="accent-primary"> v4 (Random)
-                        </label>
-                        <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
-                            <input type="radio" name="uuidVersion" value="1" class="accent-primary"> v1 (Timestamp)
-                        </label>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-1">
-                    <label class="text-sm font-medium text-slate-50" for="uuidCount">How many UUIDs to generate?</label>
-                    <input type="number" id="uuidCount" value="1" min="1" max="10000" class="w-full bg-black/20 border border-white/10 rounded-lg text-slate-50 py-2.5 px-4 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
-                </div>
-
-                <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
-                    <input type="checkbox" id="uppercase" class="accent-primary"> Uppercase letters (e.g. A-F)
-                </label>
-                
-                <label class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer">
-                    <input type="checkbox" id="noHyphens" class="accent-primary"> Remove hyphens (e.g. no dashes)
-                </label>
-            </div>
-            
-            <button class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover" id="generateBtn">Generate UUIDs</button>
+    <main
+      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+    >
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Options</div>
         </div>
 
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Output</div>
-                <div class="flex gap-2">
-                    <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy All</button>
-                    <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="downloadBtn">Download .txt</button>
-                </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-medium text-slate-50">Version:</label>
+            <div class="flex gap-6">
+              <label
+                class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="uuidVersion"
+                  value="4"
+                  checked
+                  class="accent-primary"
+                />
+                v4 (Random)
+              </label>
+              <label
+                class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="uuidVersion"
+                  value="1"
+                  class="accent-primary"
+                />
+                v1 (Timestamp)
+              </label>
             </div>
-            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Generated UUIDs will appear here..."></textarea>
-        </div>
-        
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About UUID Generator</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Generates UUIDs — v4 (random) or v1 (timestamp-based) — in whatever quantity you need, up to 10,000 at a time. It all happens in the browser, so your identifiers are generated locally and never sent anywhere.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">You probably know when you need one: a primary key, an API resource ID, a session token, test fixtures. The details this tool handles are the boring but useful ones — uppercase output if your database or system prefers it, and stripping the hyphens for a compact 32-character format.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">One thing worth knowing if you pick v1: it embeds the timestamp (and the generating machine's MAC address), so values come out roughly time-ordered — but they also leak when and where they were made. v4 is random and is the safe default for almost everything.</p>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-sm font-medium text-slate-50" for="uuidCount"
+              >How many UUIDs to generate?</label
+            >
+            <input
+              type="number"
+              id="uuidCount"
+              value="1"
+              min="1"
+              max="10000"
+              class="w-full bg-black/20 border border-white/10 rounded-lg text-slate-50 py-2.5 px-4 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+            />
+          </div>
+
+          <label
+            class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
+          >
+            <input type="checkbox" id="uppercase" class="accent-primary" />
+            Uppercase letters (e.g. A-F)
+          </label>
+
+          <label
+            class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
+          >
+            <input type="checkbox" id="noHyphens" class="accent-primary" />
+            Remove hyphens (e.g. no dashes)
+          </label>
         </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is a UUID?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">A UUID (Universally Unique Identifier) is a 128-bit label formatted as 36 characters (32 hexadecimal digits with four hyphens), for example 550e8400-e29b-41d4-a716-446655440000. UUIDs are used to identify records, entities and resources without a central registry.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is the difference between UUID v1 and v4?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">UUID v4 is generated from random numbers and is the most common choice for database primary keys and API IDs. UUID v1 embeds the current timestamp and the generating node's MAC address, so it is roughly time-ordered but reveals when and where it was created.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Can I generate many UUIDs at once?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Set the count up to 10,000 and click "Generate UUIDs" to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Can I remove hyphens or use uppercase letters?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Enable "Uppercase letters" to get A-F uppercase hex digits, or "Remove hyphens" for a compact 32-character format often required by databases, file names and legacy systems.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Are generated UUIDs private?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Generation happens entirely in your browser with the standard uuid library. Your UUIDs are never sent to any server, so they are safe to use as tokens, keys and identifiers.</p>
-                </details>
-            </div>
-        </div>
+        <button
+          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
+          id="generateBtn"
+        >
+          Generate UUIDs
+        </button>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="../base64encode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Encode</a>
-                <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Decode</a>
-                <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
-                <a href="../url-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">URL Encode</a>
-            </div>
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Output</div>
+          <div class="flex gap-2">
+            <button
+              class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+              id="copyBtn"
+            >
+              Copy All
+            </button>
+            <button
+              class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+              id="downloadBtn"
+            >
+              Download .txt
+            </button>
+          </div>
         </div>
+        <textarea
+          id="outputText"
+          readonly
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Generated UUIDs will appear here..."
+        ></textarea>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          About UUID Generator
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Generates UUIDs — v4 (random) or v1 (timestamp-based) — in whatever
+          quantity you need, up to 10,000 at a time. It all happens in the
+          browser, so your identifiers are generated locally and never sent
+          anywhere.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          You probably know when you need one: a primary key, an API resource
+          ID, a session token, test fixtures. The details this tool handles are
+          the boring but useful ones — uppercase output if your database or
+          system prefers it, and stripping the hyphens for a compact
+          32-character format.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          One thing worth knowing if you pick v1: it embeds the timestamp (and
+          the generating machine's MAC address), so values come out roughly
+          time-ordered — but they also leak when and where they were made. v4 is
+          random and is the safe default for almost everything.
+        </p>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is a UUID?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              A UUID (Universally Unique Identifier) is a 128-bit label
+              formatted as 36 characters (32 hexadecimal digits with four
+              hyphens), for example 550e8400-e29b-41d4-a716-446655440000. UUIDs
+              are used to identify records, entities and resources without a
+              central registry.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is the difference between UUID v1 and v4?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              UUID v4 is generated from random numbers and is the most common
+              choice for database primary keys and API IDs. UUID v1 embeds the
+              current timestamp and the generating node's MAC address, so it is
+              roughly time-ordered but reveals when and where it was created.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Can I generate many UUIDs at once?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. Set the count up to 10,000 and click "Generate UUIDs" to
+              create them in bulk — handy when you're seeding test data,
+              fixtures or migration scripts. Copy all or download them as a .txt
+              file.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Can I remove hyphens or use uppercase letters?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. Enable "Uppercase letters" to get A-F uppercase hex digits,
+              or "Remove hyphens" for a compact 32-character format often
+              required by databases, file names and legacy systems.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Are generated UUIDs private?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. Generation happens entirely in your browser with the standard
+              uuid library. Your UUIDs are never sent to any server, so they are
+              safe to use as tokens, keys and identifiers.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Related Tools
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="../base64encode/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Base64 Encode</a
+          >
+          <a
+            href="../base64decode/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Base64 Decode</a
+          >
+          <a
+            href="../prettify-json/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Prettify JSON</a
+          >
+          <a
+            href="../url-encode-string/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >URL Encode</a
+          >
+        </div>
+      </div>
     </main>
 
     <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-        &copy; 2026 Unitoolify. All rights reserved.
+      &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script>
-        const outputText = document.getElementById('outputText');
-        const generateBtn = document.getElementById('generateBtn');
-        const copyBtn = document.getElementById('copyBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        
-        const uuidCount = document.getElementById('uuidCount');
-        const uppercase = document.getElementById('uppercase');
-        const noHyphens = document.getElementById('noHyphens');
+      const outputText = document.getElementById("outputText");
+      const generateBtn = document.getElementById("generateBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
 
-        function generate() {
-            let count = parseInt(uuidCount.value, 10);
-            if (isNaN(count) || count < 1) count = 1;
-            if (count > 10000) count = 10000;
-            
-            const version = document.querySelector('input[name="uuidVersion"]:checked').value;
-            const isUpper = uppercase.checked;
-            const noDashes = noHyphens.checked;
-            
-            const uuids = [];
-            for (let i = 0; i < count; i++) {
-                let id = version === '1' ? uuid.v1() : uuid.v4();
-                if (isUpper) id = id.toUpperCase();
-                if (noDashes) id = id.replace(/-/g, '');
-                uuids.push(id);
-            }
-            
-            outputText.value = uuids.join('\n');
+      const uuidCount = document.getElementById("uuidCount");
+      const uppercase = document.getElementById("uppercase");
+      const noHyphens = document.getElementById("noHyphens");
+
+      function generate() {
+        let count = parseInt(uuidCount.value, 10);
+        if (isNaN(count) || count < 1) count = 1;
+        if (count > 10000) count = 10000;
+
+        const version = document.querySelector(
+          'input[name="uuidVersion"]:checked',
+        ).value;
+        const isUpper = uppercase.checked;
+        const noDashes = noHyphens.checked;
+
+        const uuids = [];
+        for (let i = 0; i < count; i++) {
+          let id = version === "1" ? uuid.v1() : uuid.v4();
+          if (isUpper) id = id.toUpperCase();
+          if (noDashes) id = id.replace(/-/g, "");
+          uuids.push(id);
         }
 
-        // Generate 1 UUID on load
-        generate();
+        outputText.value = uuids.join("\n");
+      }
 
-        generateBtn.addEventListener('click', generate);
+      // Generate 1 UUID on load
+      generate();
 
-        copyBtn.addEventListener('click', () => {
-            if (!outputText.value) return;
-            outputText.select();
-            document.execCommand('copy');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy All', 2000);
-        });
+      generateBtn.addEventListener("click", generate);
 
-        downloadBtn.addEventListener('click', () => {
-            if (!outputText.value) return;
-            const blob = new Blob([outputText.value], {type: 'text/plain'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'uuids.txt';
-            a.click();
-            URL.revokeObjectURL(url);
-        });
+      copyBtn.addEventListener("click", () => {
+        if (!outputText.value) return;
+        outputText.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy All"), 2000);
+      });
+
+      downloadBtn.addEventListener("click", () => {
+        if (!outputText.value) return;
+        const blob = new Blob([outputText.value], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "uuids.txt";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
     </script>
-</body>
+  </body>
 </html>

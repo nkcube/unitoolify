@@ -1,42 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Base64 Encoder Online – Encode Text or Files | Unitoolify</title>
-    <meta name="description" content="Free online Base64 encoder. Encode text or binary files to Base64 instantly in your browser, with URL-safe (Base64URL) and MIME line-chunking options. 100% private.">
+    <meta
+      name="description"
+      content="Free online Base64 encoder. Encode text or binary files to Base64 instantly in your browser, with URL-safe (Base64URL) and MIME line-chunking options. 100% private."
+    />
     <link rel="canonical" href="https://www.unitoolify.com/base64encode/" />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="Base64 Encoder Online – Encode Text or Files Free" />
-    <meta property="og:description" content="Free online Base64 encoder with URL-safe mode and MIME line chunking. Runs 100% in your browser." />
-    <meta property="og:url" content="https://www.unitoolify.com/base64encode/" />
+    <meta
+      property="og:title"
+      content="Base64 Encoder Online – Encode Text or Files Free"
+    />
+    <meta
+      property="og:description"
+      content="Free online Base64 encoder with URL-safe mode and MIME line chunking. Runs 100% in your browser."
+    />
+    <meta
+      property="og:url"
+      content="https://www.unitoolify.com/base64encode/"
+    />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Base64 Encoder Online – Encode Text or Files Free" />
-    <meta name="twitter:description" content="Free online Base64 encoder with URL-safe mode and MIME line chunking. Runs 100% in your browser." />
+    <meta
+      name="twitter:title"
+      content="Base64 Encoder Online – Encode Text or Files Free"
+    />
+    <meta
+      name="twitter:description"
+      content="Free online Base64 encoder with URL-safe mode and MIME line chunking. Runs 100% in your browser."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2FWD7FC8GL');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Base64 Encoder Online",
@@ -46,240 +69,424 @@
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
         "description": "Free online Base64 encoder that converts text or binary files to Base64 and URL-safe Base64URL in the browser.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "featureList": [
-            "Encode text to Base64 in real time",
-            "Encode files and images to Base64 data strings",
-            "URL-safe Base64URL (RFC 4648) output",
-            "MIME 76-character line chunking",
-            "Copy and download results"
+          "Encode text to Base64 in real time",
+          "Encode files and images to Base64 data strings",
+          "URL-safe Base64URL (RFC 4648) output",
+          "MIME 76-character line chunking",
+          "Copy and download results"
         ]
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is Base64 encoding?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Base64 is an encoding scheme that represents binary data as ASCII text using a 64-character alphabet (A-Z, a-z, 0-9, + and /). It is widely used to transmit binary data over text-only protocols such as email (MIME), and to embed images in CSS and HTML as data URIs." }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I encode an image or file to Base64?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Click the 'Upload a File instead' button, choose any image or binary file, and the tool immediately produces its Base64 string. Use 'Download Result' to save the encoded output as a .b64.txt file." }
-            },
-            {
-                "@type": "Question",
-                "name": "What is URL-safe Base64 (Base64URL)?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Base64URL (RFC 4648) replaces the '+' and '/' characters with '-' and '_' and omits the '=' padding, producing strings that are safe to use in URLs, filenames and query parameters without further encoding." }
-            },
-            {
-                "@type": "Question",
-                "name": "Is my data safe when I encode it online?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything is processed locally in your browser with JavaScript. Your text and files are never uploaded to any server, so Base64-encoding sensitive data is completely safe." }
+          {
+            "@type": "Question",
+            "name": "What is Base64 encoding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Base64 is an encoding scheme that represents binary data as ASCII text using a 64-character alphabet (A-Z, a-z, 0-9, + and /). It is widely used to transmit binary data over text-only protocols such as email (MIME), and to embed images in CSS and HTML as data URIs."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I encode an image or file to Base64?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Click the 'Upload a File instead' button, choose any image or binary file, and the tool immediately produces its Base64 string. Use 'Download Result' to save the encoded output as a .b64.txt file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is URL-safe Base64 (Base64URL)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Base64URL (RFC 4648) replaces the '+' and '/' characters with '-' and '_' and omits the '=' padding, producing strings that are safe to use in URLs, filenames and query parameters without further encoding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data safe when I encode it online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Everything is processed locally in your browser with JavaScript. Your text and files are never uploaded to any server, so Base64-encoding sensitive data is completely safe."
+            }
+          }
         ]
-    }
+      }
     </script>
-</head>
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+  >
     <header class="py-6 px-4 md:py-8 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Base64 Encode</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Encode text or files to Base64 right in your browser</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-            <a href="../base64encode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Encode</a>
-            <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decode</a>
-            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
-        </div>
+      <h1
+        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify Base64 Encode
+      </h1>
+      <p class="text-slate-400 mb-6 md:mb-8">
+        Encode text or files to Base64 right in your browser
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+        <a
+          href="../base64encode/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          >Encode</a
+        >
+        <a
+          href="../base64decode/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >Decode</a
+        >
+        <a
+          href="/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >&larr; Home</a
+        >
+      </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Input</div>
-            </div>
-            <textarea id="inputText" class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Type or paste your text here to encode..."></textarea>
-            
-            <div class="relative overflow-hidden inline-block w-full">
-                <button class="w-full bg-white/5 border border-white/10 text-slate-50 py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-white/10">Upload a File instead</button>
-                <input type="file" id="inputFile" class="text-[100px] absolute left-0 top-0 opacity-0 cursor-pointer">
-            </div>
-            <div id="fileNameDisplay" class="text-xs text-slate-400"></div>
-
-            <div class="flex flex-col gap-2">
-                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
-                    <input type="checkbox" id="urlSafe" class="accent-primary"> URL-safe encoding (Base64URL RFC 4648)
-                </label>
-                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
-                    <input type="checkbox" id="splitLines" class="accent-primary"> Split lines into chunks (MIME 76 chars)
-                </label>
-                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
-                    <input type="checkbox" id="liveMode" checked class="accent-primary"> Live mode (encode as you type)
-                </label>
-            </div>
-            
-            <button class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover" id="encodeBtn">Encode to Base64</button>
+    <main
+      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+    >
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Input</div>
         </div>
+        <textarea
+          id="inputText"
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Type or paste your text here to encode..."
+        ></textarea>
 
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Base64 Output</div>
-                <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy</button>
-            </div>
-            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Encoded result will appear here..."></textarea>
-            <button class="bg-white/5 border border-white/10 text-slate-50 py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-white/10 hidden" id="downloadBtn">Download Result</button>
+        <div class="relative overflow-hidden inline-block w-full">
+          <button
+            class="w-full bg-white/5 border border-white/10 text-slate-50 py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-white/10"
+          >
+            Upload a File instead
+          </button>
+          <input
+            type="file"
+            id="inputFile"
+            class="text-[100px] absolute left-0 top-0 opacity-0 cursor-pointer"
+          />
         </div>
-        
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Base64 Encoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">This is a straightforward Base64 encoder. Paste some text — or upload a file — and you get the Base64 string back. It all runs in your browser, so whatever you type or drop in never gets sent anywhere.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Base64 turns binary data into plain ASCII text using a 64-character alphabet (A-Z, a-z, 0-9, "+" and "/"). That's what makes it the go-to way to embed an image directly in HTML or CSS as a <code>data:image/png;base64,...</code> URI, to get binary attachments through MIME-based email, or to store binary values inside a JSON payload.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">In practice you'll reach for it whenever something needs to travel through a text-only channel: an icon inline in CSS, a small file tucked into a JSON document, a blob of bytes inside a database column. Paste or upload, copy, done.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">The extra options exist for when plain Base64 isn't quite right. <strong>URL-safe mode</strong> swaps "+" and "/" for "-" and "_" and drops the trailing "=" padding — what you want if the string is going into a URL, a filename or a JWT. <strong>Line chunking</strong> breaks the output into 76-character lines, which some older email and MIME setups expect.</p>
-        </div>
+        <div id="fileNameDisplay" class="text-xs text-slate-400"></div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is Base64 encoding?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Base64 is an encoding scheme that represents binary data as ASCII text using a 64-character alphabet (A-Z, a-z, 0-9, + and /). It is widely used to transmit binary data over text-only protocols such as email (MIME), and to embed images in CSS and HTML as data URIs.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">How do I encode an image or file to Base64?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Click the "Upload a File instead" button, choose any image or binary file, and the tool immediately produces its Base64 string. Use "Download Result" to save the encoded output as a .b64.txt file.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is URL-safe Base64 (Base64URL)?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Base64URL (RFC 4648) replaces the "+" and "/" characters with "-" and "_" and omits the "=" padding, producing strings that are safe to use in URLs, filenames and query parameters without further encoding.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Is my data safe when I encode it online?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Everything is processed locally in your browser with JavaScript. Your text and files are never uploaded to any server, so Base64-encoding sensitive data is completely safe.</p>
-                </details>
-            </div>
+        <div class="flex flex-col gap-2">
+          <label
+            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
+          >
+            <input type="checkbox" id="urlSafe" class="accent-primary" />
+            URL-safe encoding (Base64URL RFC 4648)
+          </label>
+          <label
+            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
+          >
+            <input type="checkbox" id="splitLines" class="accent-primary" />
+            Split lines into chunks (MIME 76 chars)
+          </label>
+          <label
+            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              id="liveMode"
+              checked
+              class="accent-primary"
+            />
+            Live mode (encode as you type)
+          </label>
         </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Decode</a>
-                <a href="../url-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">URL Encode</a>
-                <a href="../html-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">HTML Encode</a>
-                <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
-                <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">UUID Generator</a>
-            </div>
+        <button
+          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
+          id="encodeBtn"
+        >
+          Encode to Base64
+        </button>
+      </div>
+
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Base64 Output</div>
+          <button
+            class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+            id="copyBtn"
+          >
+            Copy
+          </button>
         </div>
+        <textarea
+          id="outputText"
+          readonly
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Encoded result will appear here..."
+        ></textarea>
+        <button
+          class="bg-white/5 border border-white/10 text-slate-50 py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-white/10 hidden"
+          id="downloadBtn"
+        >
+          Download Result
+        </button>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          About Base64 Encoding
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          This is a straightforward Base64 encoder. Paste some text — or upload
+          a file — and you get the Base64 string back. It all runs in your
+          browser, so whatever you type or drop in never gets sent anywhere.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Base64 turns binary data into plain ASCII text using a 64-character
+          alphabet (A-Z, a-z, 0-9, "+" and "/"). That's what makes it the go-to
+          way to embed an image directly in HTML or CSS as a
+          <code>data:image/png;base64,...</code> URI, to get binary attachments
+          through MIME-based email, or to store binary values inside a JSON
+          payload.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          In practice you'll reach for it whenever something needs to travel
+          through a text-only channel: an icon inline in CSS, a small file
+          tucked into a JSON document, a blob of bytes inside a database column.
+          Paste or upload, copy, done.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The extra options exist for when plain Base64 isn't quite right.
+          <strong>URL-safe mode</strong> swaps "+" and "/" for "-" and "_" and
+          drops the trailing "=" padding — what you want if the string is going
+          into a URL, a filename or a JWT. <strong>Line chunking</strong> breaks
+          the output into 76-character lines, which some older email and MIME
+          setups expect.
+        </p>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is Base64 encoding?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Base64 is an encoding scheme that represents binary data as ASCII
+              text using a 64-character alphabet (A-Z, a-z, 0-9, + and /). It is
+              widely used to transmit binary data over text-only protocols such
+              as email (MIME), and to embed images in CSS and HTML as data URIs.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              How do I encode an image or file to Base64?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Click the "Upload a File instead" button, choose any image or
+              binary file, and the tool immediately produces its Base64 string.
+              Use "Download Result" to save the encoded output as a .b64.txt
+              file.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is URL-safe Base64 (Base64URL)?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Base64URL (RFC 4648) replaces the "+" and "/" characters with "-"
+              and "_" and omits the "=" padding, producing strings that are safe
+              to use in URLs, filenames and query parameters without further
+              encoding.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Is my data safe when I encode it online?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. Everything is processed locally in your browser with
+              JavaScript. Your text and files are never uploaded to any server,
+              so Base64-encoding sensitive data is completely safe.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Related Tools
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="../base64decode/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Base64 Decode</a
+          >
+          <a
+            href="../url-encode-string/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >URL Encode</a
+          >
+          <a
+            href="../html-encode-string/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >HTML Encode</a
+          >
+          <a
+            href="../prettify-json/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Prettify JSON</a
+          >
+          <a
+            href="../uuid-generator/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >UUID Generator</a
+          >
+        </div>
+      </div>
     </main>
 
     <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-        &copy; 2026 Unitoolify. All rights reserved.
+      &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script>
-        const inputText = document.getElementById('inputText');
-        const outputText = document.getElementById('outputText');
-        const inputFile = document.getElementById('inputFile');
-        const fileNameDisplay = document.getElementById('fileNameDisplay');
-        const urlSafe = document.getElementById('urlSafe');
-        const splitLines = document.getElementById('splitLines');
-        const liveMode = document.getElementById('liveMode');
-        const encodeBtn = document.getElementById('encodeBtn');
-        const copyBtn = document.getElementById('copyBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
+      const inputText = document.getElementById("inputText");
+      const outputText = document.getElementById("outputText");
+      const inputFile = document.getElementById("inputFile");
+      const fileNameDisplay = document.getElementById("fileNameDisplay");
+      const urlSafe = document.getElementById("urlSafe");
+      const splitLines = document.getElementById("splitLines");
+      const liveMode = document.getElementById("liveMode");
+      const encodeBtn = document.getElementById("encodeBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
 
-        let currentFileBase64 = null;
+      let currentFileBase64 = null;
 
-        function chunkString(str, length) {
-            return str.match(new RegExp('.{1,' + length + '}', 'g'))?.join('\r\n') || '';
+      function chunkString(str, length) {
+        return (
+          str.match(new RegExp(".{1," + length + "}", "g"))?.join("\r\n") || ""
+        );
+      }
+
+      function toUrlSafe(base64Str) {
+        return base64Str
+          .replace(/\+/g, "-")
+          .replace(/\//g, "_")
+          .replace(/=+$/, "");
+      }
+
+      function performEncode() {
+        let result = "";
+
+        if (currentFileBase64) {
+          result = currentFileBase64;
+        } else {
+          try {
+            // Encode text as UTF-8
+            const utf8Str = new TextEncoder().encode(inputText.value);
+            const binString = String.fromCodePoint(...utf8Str);
+            result = btoa(binString);
+          } catch (e) {
+            result = "Error encoding input: " + e.message;
+          }
         }
 
-        function toUrlSafe(base64Str) {
-            return base64Str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        if (urlSafe.checked) {
+          result = toUrlSafe(result);
         }
 
-        function performEncode() {
-            let result = '';
-            
-            if (currentFileBase64) {
-                result = currentFileBase64;
-            } else {
-                try {
-                    // Encode text as UTF-8
-                    const utf8Str = new TextEncoder().encode(inputText.value);
-                    const binString = String.fromCodePoint(...utf8Str);
-                    result = btoa(binString);
-                } catch (e) {
-                    result = 'Error encoding input: ' + e.message;
-                }
-            }
-
-            if (urlSafe.checked) {
-                result = toUrlSafe(result);
-            }
-
-            if (splitLines.checked) {
-                result = chunkString(result, 76);
-            }
-
-            outputText.value = result;
+        if (splitLines.checked) {
+          result = chunkString(result, 76);
         }
 
-        // Event listeners
-        inputText.addEventListener('input', () => {
-            currentFileBase64 = null;
-            fileNameDisplay.textContent = '';
-            inputFile.value = '';
-            downloadBtn.style.display = 'none';
-            if (liveMode.checked) performEncode();
+        outputText.value = result;
+      }
+
+      // Event listeners
+      inputText.addEventListener("input", () => {
+        currentFileBase64 = null;
+        fileNameDisplay.textContent = "";
+        inputFile.value = "";
+        downloadBtn.style.display = "none";
+        if (liveMode.checked) performEncode();
+      });
+
+      inputFile.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        fileNameDisplay.textContent = `Selected file: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+        inputText.value = ""; // Clear text input when file is chosen
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const base64Url = event.target.result;
+          // Remove data:MIME;base64, prefix
+          currentFileBase64 = base64Url.substring(base64Url.indexOf(",") + 1);
+
+          downloadBtn.style.display = "block";
+          downloadBtn.onclick = () => {
+            const blob = new Blob([outputText.value], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = file.name + ".b64.txt";
+            a.click();
+            URL.revokeObjectURL(url);
+          };
+
+          if (liveMode.checked) performEncode();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      [urlSafe, splitLines].forEach((el) => {
+        el.addEventListener("change", () => {
+          if (liveMode.checked) performEncode();
         });
+      });
 
-        inputFile.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-            
-            fileNameDisplay.textContent = `Selected file: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
-            inputText.value = ''; // Clear text input when file is chosen
-            
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const base64Url = event.target.result;
-                // Remove data:MIME;base64, prefix
-                currentFileBase64 = base64Url.substring(base64Url.indexOf(',') + 1);
-                
-                downloadBtn.style.display = 'block';
-                downloadBtn.onclick = () => {
-                    const blob = new Blob([outputText.value], {type: 'text/plain'});
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = file.name + '.b64.txt';
-                    a.click();
-                    URL.revokeObjectURL(url);
-                };
+      encodeBtn.addEventListener("click", performEncode);
 
-                if (liveMode.checked) performEncode();
-            };
-            reader.readAsDataURL(file);
-        });
-
-        [urlSafe, splitLines].forEach(el => {
-            el.addEventListener('change', () => {
-                if (liveMode.checked) performEncode();
-            });
-        });
-
-        encodeBtn.addEventListener('click', performEncode);
-
-        copyBtn.addEventListener('click', () => {
-            outputText.select();
-            document.execCommand('copy');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-        });
+      copyBtn.addEventListener("click", () => {
+        outputText.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -1,46 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YAML Formatter Online – Validate &amp; Prettify | Unitoolify</title>
-    <meta name="description" content="Free online YAML formatter and validator. Beautify and lint YAML configs, docker-compose files and Kubernetes manifests with consistent indentation. 100% in-browser.">
+    <meta
+      name="description"
+      content="Free online YAML formatter and validator. Beautify and lint YAML configs, docker-compose files and Kubernetes manifests with consistent indentation. 100% in-browser."
+    />
     <link rel="canonical" href="https://www.unitoolify.com/prettify-yaml/" />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="YAML Formatter &amp; Validator Online – Free" />
-    <meta property="og:description" content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser." />
-    <meta property="og:url" content="https://www.unitoolify.com/prettify-yaml/" />
+    <meta
+      property="og:title"
+      content="YAML Formatter &amp; Validator Online – Free"
+    />
+    <meta
+      property="og:description"
+      content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser."
+    />
+    <meta
+      property="og:url"
+      content="https://www.unitoolify.com/prettify-yaml/"
+    />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="YAML Formatter &amp; Validator Online – Free" />
-    <meta name="twitter:description" content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser." />
+    <meta
+      name="twitter:title"
+      content="YAML Formatter &amp; Validator Online – Free"
+    />
+    <meta
+      name="twitter:description"
+      content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
-        .error-msg { @apply text-red-400 text-sm mt-1; }
-        .textarea-error { @apply !border-red-500/80; }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
+      .error-msg {
+        @apply text-red-400 text-sm mt-1;
+      }
+      .textarea-error {
+        @apply !border-red-500/80;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2FWD7FC8GL');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <!-- js-yaml library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "YAML Formatter Online",
@@ -50,205 +77,370 @@
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
         "description": "Free online YAML formatter and validator that beautifies YAML configs, docker-compose files and Kubernetes manifests.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "featureList": [
-            "Beautify YAML with consistent 2-space or 4-space indentation",
-            "Validate YAML syntax and catch indentation errors",
-            "Support for docker-compose and Kubernetes manifests",
-            "Live formatting as you type",
-            "Copy and download formatted YAML"
+          "Beautify YAML with consistent 2-space or 4-space indentation",
+          "Validate YAML syntax and catch indentation errors",
+          "Support for docker-compose and Kubernetes manifests",
+          "Live formatting as you type",
+          "Copy and download formatted YAML"
         ]
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a YAML formatter used for?",
-                "acceptedAnswer": { "@type": "Answer", "text": "A YAML formatter standardizes the layout of YAML files with consistent indentation so they are readable and valid. It is commonly used on configuration files, docker-compose.yml files, CI/CD pipelines and Kubernetes manifests." }
-            },
-            {
-                "@type": "Question",
-                "name": "Can it validate Kubernetes manifests?",
-                "acceptedAnswer": { "@type": "Answer", "text": "This tool validates YAML syntax and structure, which catches the most common Kubernetes manifest errors such as broken indentation, duplicate keys and malformed lists. For full schema validation against Kubernetes API objects, pair it with kubectl dry-run." }
-            },
-            {
-                "@type": "Question",
-                "name": "Why is YAML indentation so strict?",
-                "acceptedAnswer": { "@type": "Answer", "text": "YAML uses indentation (spaces, not tabs) to define structure — unlike JSON, there are no braces. One wrong space changes the meaning of the whole document, which is why a formatter that normalizes indentation is so valuable." }
-            },
-            {
-                "@type": "Question",
-                "name": "Is my YAML private?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Formatting and validation run entirely in your browser. Your YAML never leaves your device, so it is safe to format configs containing secrets or internal infrastructure details." }
+          {
+            "@type": "Question",
+            "name": "What is a YAML formatter used for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A YAML formatter standardizes the layout of YAML files with consistent indentation so they are readable and valid. It is commonly used on configuration files, docker-compose.yml files, CI/CD pipelines and Kubernetes manifests."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it validate Kubernetes manifests?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This tool validates YAML syntax and structure, which catches the most common Kubernetes manifest errors such as broken indentation, duplicate keys and malformed lists. For full schema validation against Kubernetes API objects, pair it with kubectl dry-run."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is YAML indentation so strict?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "YAML uses indentation (spaces, not tabs) to define structure — unlike JSON, there are no braces. One wrong space changes the meaning of the whole document, which is why a formatter that normalizes indentation is so valuable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my YAML private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Formatting and validation run entirely in your browser. Your YAML never leaves your device, so it is safe to format configs containing secrets or internal infrastructure details."
+            }
+          }
         ]
-    }
+      }
     </script>
-</head>
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+  >
     <header class="py-6 px-4 md:py-8 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Prettify YAML</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Make your YAML consistent and catch broken indentation</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-            <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
-            <a href="../prettify-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Prettify YAML</a>
-            <a href="../convert-json-to-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">JSON to YAML</a>
-            <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
-            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
-        </div>
+      <h1
+        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify Prettify YAML
+      </h1>
+      <p class="text-slate-400 mb-6 md:mb-8">
+        Make your YAML consistent and catch broken indentation
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+        <a
+          href="../prettify-json/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >Prettify JSON</a
+        >
+        <a
+          href="../prettify-yaml/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          >Prettify YAML</a
+        >
+        <a
+          href="../convert-json-to-yaml/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >JSON to YAML</a
+        >
+        <a
+          href="../convert-yaml-to-json/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >YAML to JSON</a
+        >
+        <a
+          href="/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >&larr; Home</a
+        >
+      </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Input YAML</div>
-            </div>
-            <textarea id="inputText" class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Paste your raw YAML here..."></textarea>
-            <div class="error-msg" id="errorMsg"></div>
-            
-            <div class="flex flex-col gap-2">
-                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
-                    <input type="checkbox" id="liveMode" checked class="accent-primary"> Live mode (format as you type)
-                </label>
-                <label class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer">
-                    Indent space: 
-                    <select id="indentSpace" class="bg-white/5 text-white border border-white/10 rounded px-2 py-1 text-sm">
-                        <option value="2">2 Spaces</option>
-                        <option value="4">4 Spaces</option>
-                    </select>
-                </label>
-            </div>
-            
-            <button class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover" id="formatBtn">Format YAML</button>
+    <main
+      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+    >
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Input YAML</div>
+        </div>
+        <textarea
+          id="inputText"
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Paste your raw YAML here..."
+        ></textarea>
+        <div class="error-msg" id="errorMsg"></div>
+
+        <div class="flex flex-col gap-2">
+          <label
+            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              id="liveMode"
+              checked
+              class="accent-primary"
+            />
+            Live mode (format as you type)
+          </label>
+          <label
+            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
+          >
+            Indent space:
+            <select
+              id="indentSpace"
+              class="bg-white/5 text-white border border-white/10 rounded px-2 py-1 text-sm"
+            >
+              <option value="2">2 Spaces</option>
+              <option value="4">4 Spaces</option>
+            </select>
+          </label>
         </div>
 
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Formatted YAML</div>
-                <div class="flex gap-2">
-                    <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy</button>
-                    <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="downloadBtn">Download</button>
-                </div>
-            </div>
-            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Formatted result will appear here..."></textarea>
-        </div>
-        
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Prettify YAML</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">YAML decides structure by indentation, which is great until one space goes missing and the whole file suddenly means something different. This tool reformats your YAML cleanly and catches the errors that would otherwise surface mid-deploy.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">You'll appreciate it most with the YAML that runs infrastructure: <code>docker-compose.yml</code> files, GitHub Actions and GitLab CI pipelines, Ansible playbooks, Kubernetes manifests. A stray tab or a misaligned key breaks all of them, and it's rarely obvious where.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">Processing happens entirely in the browser, so it's safe to run configs that contain secrets through it. Pick 2 or 4 spaces for the output, then copy or download.</p>
-        </div>
+        <button
+          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
+          id="formatBtn"
+        >
+          Format YAML
+        </button>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is a YAML formatter used for?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">A YAML formatter standardizes the layout of YAML files with consistent indentation so they are readable and valid. It is commonly used on configuration files, docker-compose.yml files, CI/CD pipelines and Kubernetes manifests.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Can it validate Kubernetes manifests?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">This tool validates YAML syntax and structure, which catches the most common Kubernetes manifest errors such as broken indentation, duplicate keys and malformed lists. For full schema validation against Kubernetes API objects, pair it with kubectl dry-run.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Why is YAML indentation so strict?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">YAML uses indentation (spaces, not tabs) to define structure — unlike JSON, there are no braces. One wrong space changes the meaning of the whole document, which is why a formatter that normalizes indentation is so valuable.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Is my YAML private?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Formatting and validation run entirely in your browser. Your YAML never leaves your device, so it is safe to format configs containing secrets or internal infrastructure details.</p>
-                </details>
-            </div>
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Formatted YAML</div>
+          <div class="flex gap-2">
+            <button
+              class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+              id="copyBtn"
+            >
+              Copy
+            </button>
+            <button
+              class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+              id="downloadBtn"
+            >
+              Download
+            </button>
+          </div>
         </div>
+        <textarea
+          id="outputText"
+          readonly
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Formatted result will appear here..."
+        ></textarea>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
-                <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
-                <a href="../convert-json-to-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">JSON to YAML</a>
-                <a href="../decomposerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decomposerize</a>
-            </div>
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          About Prettify YAML
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          YAML decides structure by indentation, which is great until one space
+          goes missing and the whole file suddenly means something different.
+          This tool reformats your YAML cleanly and catches the errors that
+          would otherwise surface mid-deploy.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          You'll appreciate it most with the YAML that runs infrastructure:
+          <code>docker-compose.yml</code> files, GitHub Actions and GitLab CI
+          pipelines, Ansible playbooks, Kubernetes manifests. A stray tab or a
+          misaligned key breaks all of them, and it's rarely obvious where.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Processing happens entirely in the browser, so it's safe to run
+          configs that contain secrets through it. Pick 2 or 4 spaces for the
+          output, then copy or download.
+        </p>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is a YAML formatter used for?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              A YAML formatter standardizes the layout of YAML files with
+              consistent indentation so they are readable and valid. It is
+              commonly used on configuration files, docker-compose.yml files,
+              CI/CD pipelines and Kubernetes manifests.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Can it validate Kubernetes manifests?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              This tool validates YAML syntax and structure, which catches the
+              most common Kubernetes manifest errors such as broken indentation,
+              duplicate keys and malformed lists. For full schema validation
+              against Kubernetes API objects, pair it with kubectl dry-run.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Why is YAML indentation so strict?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              YAML uses indentation (spaces, not tabs) to define structure —
+              unlike JSON, there are no braces. One wrong space changes the
+              meaning of the whole document, which is why a formatter that
+              normalizes indentation is so valuable.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Is my YAML private?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. Formatting and validation run entirely in your browser. Your
+              YAML never leaves your device, so it is safe to format configs
+              containing secrets or internal infrastructure details.
+            </p>
+          </details>
         </div>
+      </div>
+
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Related Tools
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="../convert-yaml-to-json/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >YAML to JSON</a
+          >
+          <a
+            href="../prettify-json/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Prettify JSON</a
+          >
+          <a
+            href="../convert-json-to-yaml/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >JSON to YAML</a
+          >
+          <a
+            href="../decomposerize/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Decomposerize</a
+          >
+        </div>
+      </div>
     </main>
 
     <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-        &copy; 2026 Unitoolify. All rights reserved.
+      &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script>
-        const inputText = document.getElementById('inputText');
-        const outputText = document.getElementById('outputText');
-        const liveMode = document.getElementById('liveMode');
-        const indentSpace = document.getElementById('indentSpace');
-        const formatBtn = document.getElementById('formatBtn');
-        const copyBtn = document.getElementById('copyBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const errorMsg = document.getElementById('errorMsg');
+      const inputText = document.getElementById("inputText");
+      const outputText = document.getElementById("outputText");
+      const liveMode = document.getElementById("liveMode");
+      const indentSpace = document.getElementById("indentSpace");
+      const formatBtn = document.getElementById("formatBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
+      const errorMsg = document.getElementById("errorMsg");
 
-        function formatYAML() {
-            const rawVal = inputText.value.trim();
-            if (!rawVal) {
-                outputText.value = '';
-                errorMsg.textContent = '';
-                inputText.classList.remove('textarea-error');
-                return;
-            }
-
-            try {
-                const parsed = jsyaml.load(rawVal);
-                if (parsed === undefined || typeof parsed === 'string') {
-                     outputText.value = rawVal;
-                     return;
-                }
-                
-                const space = parseInt(indentSpace.value, 10);
-                outputText.value = jsyaml.dump(parsed, { indent: space });
-                errorMsg.textContent = '';
-                inputText.classList.remove('textarea-error');
-            } catch (e) {
-                if (!liveMode.checked) {
-                    errorMsg.textContent = 'Invalid YAML: ' + e.message;
-                    inputText.classList.add('textarea-error');
-                }
-            }
+      function formatYAML() {
+        const rawVal = inputText.value.trim();
+        if (!rawVal) {
+          outputText.value = "";
+          errorMsg.textContent = "";
+          inputText.classList.remove("textarea-error");
+          return;
         }
 
-        inputText.addEventListener('input', () => {
-            if (liveMode.checked) formatYAML();
-        });
+        try {
+          const parsed = jsyaml.load(rawVal);
+          if (parsed === undefined || typeof parsed === "string") {
+            outputText.value = rawVal;
+            return;
+          }
 
-        indentSpace.addEventListener('change', () => {
-            if (inputText.value.trim() !== '') formatYAML();
-        });
+          const space = parseInt(indentSpace.value, 10);
+          outputText.value = jsyaml.dump(parsed, { indent: space });
+          errorMsg.textContent = "";
+          inputText.classList.remove("textarea-error");
+        } catch (e) {
+          if (!liveMode.checked) {
+            errorMsg.textContent = "Invalid YAML: " + e.message;
+            inputText.classList.add("textarea-error");
+          }
+        }
+      }
 
-        formatBtn.addEventListener('click', () => {
-            if (!liveMode.checked) formatYAML();
-        });
+      inputText.addEventListener("input", () => {
+        if (liveMode.checked) formatYAML();
+      });
 
-        copyBtn.addEventListener('click', () => {
-            if (!outputText.value) return;
-            outputText.select();
-            document.execCommand('copy');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-        });
+      indentSpace.addEventListener("change", () => {
+        if (inputText.value.trim() !== "") formatYAML();
+      });
 
-        downloadBtn.addEventListener('click', () => {
-            if (!outputText.value) return;
-            const blob = new Blob([outputText.value], {type: 'text/yaml'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'formatted.yaml';
-            a.click();
-            URL.revokeObjectURL(url);
-        });
+      formatBtn.addEventListener("click", () => {
+        if (!liveMode.checked) formatYAML();
+      });
+
+      copyBtn.addEventListener("click", () => {
+        if (!outputText.value) return;
+        outputText.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
+      });
+
+      downloadBtn.addEventListener("click", () => {
+        if (!outputText.value) return;
+        const blob = new Blob([outputText.value], { type: "text/yaml" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "formatted.yaml";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
     </script>
-</body>
+  </body>
 </html>

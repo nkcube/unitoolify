@@ -1,44 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Composerize – Docker Run to Compose Converter | Unitoolify</title>
-    <meta name="description"
-        content="Free online Composerize tool: convert docker run commands into docker-compose.yml files instantly and securely in your browser. No installation needed.">
+    <meta
+      name="description"
+      content="Free online Composerize tool: convert docker run commands into docker-compose.yml files instantly and securely in your browser. No installation needed."
+    />
     <link rel="canonical" href="https://www.unitoolify.com/composerize/" />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="Composerize – Docker Run to Compose Converter" />
-    <meta property="og:description" content="Convert docker run commands into docker-compose.yml files instantly and securely in your browser. Free, no installation." />
+    <meta
+      property="og:title"
+      content="Composerize – Docker Run to Compose Converter"
+    />
+    <meta
+      property="og:description"
+      content="Convert docker run commands into docker-compose.yml files instantly and securely in your browser. Free, no installation."
+    />
     <meta property="og:url" content="https://www.unitoolify.com/composerize/" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Composerize – Docker Run to Compose Converter" />
-    <meta name="twitter:description" content="Convert docker run commands into docker-compose.yml files instantly and securely in your browser. Free, no installation." />
+    <meta
+      name="twitter:title"
+      content="Composerize – Docker Run to Compose Converter"
+    />
+    <meta
+      name="twitter:description"
+      content="Convert docker run commands into docker-compose.yml files instantly and securely in your browser. Free, no installation."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-2FWD7FC8GL');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Composerize – Docker Run to Compose Converter",
@@ -47,151 +65,285 @@
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
         "description": "Free online tool that converts docker run commands into docker-compose.yml files entirely in the browser.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "featureList": [
-            "Convert docker run to docker-compose.yml",
-            "Supports ports, volumes, env, networks and more",
-            "100% in-browser, no server processing",
-            "Instant conversion as you paste",
-            "One-click copy"
+          "Convert docker run to docker-compose.yml",
+          "Supports ports, volumes, env, networks and more",
+          "100% in-browser, no server processing",
+          "Instant conversion as you paste",
+          "One-click copy"
         ]
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is Composerize?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Composerize is a tool that converts a long docker run command into a clean, version-controlled docker-compose.yml file. It parses flags such as ports, volumes, environment variables, restart policies and networks, and emits the equivalent YAML service definition." }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I convert docker run to docker-compose?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Paste your docker run command into the input box and the equivalent docker-compose.yml service comes out the other side. Copy it into a compose file and run docker compose up -d." }
-            },
-            {
-                "@type": "Question",
-                "name": "Which docker run flags are supported?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Common flags are supported: -p/--publish, -v/--volume, -e/--env, --name, --restart, --network, --log-opt, --privileged, --user and many others. Unsupported exotic flags are preserved in the output where possible." }
-            },
-            {
-                "@type": "Question",
-                "name": "Is my docker command private?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. The conversion runs entirely in your browser. Commands containing sensitive environment variables, tokens or paths never leave your device — no tracking, no server processing." }
+          {
+            "@type": "Question",
+            "name": "What is Composerize?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Composerize is a tool that converts a long docker run command into a clean, version-controlled docker-compose.yml file. It parses flags such as ports, volumes, environment variables, restart policies and networks, and emits the equivalent YAML service definition."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I convert docker run to docker-compose?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your docker run command into the input box and the equivalent docker-compose.yml service comes out the other side. Copy it into a compose file and run docker compose up -d."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which docker run flags are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Common flags are supported: -p/--publish, -v/--volume, -e/--env, --name, --restart, --network, --log-opt, --privileged, --user and many others. Unsupported exotic flags are preserved in the output where possible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my docker command private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The conversion runs entirely in your browser. Commands containing sensitive environment variables, tokens or paths never leave your device — no tracking, no server processing."
+            }
+          }
         ]
-    }
+      }
     </script>
-</head>
+  </head>
 
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+  >
     <header class="py-6 px-4 md:py-8 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Composerize</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Turn docker run commands into docker-compose.yml files</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-            <a href="../composerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Composerize</a>
-            <a href="../decomposerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decomposerize</a>
-            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
-        </div>
+      <h1
+        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify Composerize
+      </h1>
+      <p class="text-slate-400 mb-6 md:mb-8">
+        Turn docker run commands into docker-compose.yml files
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+        <a
+          href="../composerize/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          >Composerize</a
+        >
+        <a
+          href="../decomposerize/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >Decomposerize</a
+        >
+        <a
+          href="/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >&larr; Home</a
+        >
+      </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Docker Run Command</div>
-            </div>
-            <textarea id="inputText" class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                placeholder="Paste your `docker run ...` command here...&#10;&#10;Example:&#10;docker run -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --restart always --log-opt max-size=1g nginx"></textarea>
+    <main
+      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+    >
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">Docker Run Command</div>
         </div>
+        <textarea
+          id="inputText"
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Paste your `docker run ...` command here...&#10;&#10;Example:&#10;docker run -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --restart always --log-opt max-size=1g nginx"
+        ></textarea>
+      </div>
 
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-semibold">Docker Compose YAML</div>
-                <button class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10" id="copyBtn">Copy</button>
-            </div>
-            <textarea id="outputText" readonly class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                placeholder="Your docker-compose.yml output will appear here..."></textarea>
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
+      >
+        <div class="flex justify-between items-center">
+          <div class="text-lg md:text-xl font-semibold">
+            Docker Compose YAML
+          </div>
+          <button
+            class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
+            id="copyBtn"
+          >
+            Copy
+          </button>
         </div>
+        <textarea
+          id="outputText"
+          readonly
+          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          placeholder="Your docker-compose.yml output will appear here..."
+        ></textarea>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Composerize</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Got a <code>docker run</code> command that's grown into a wall of flags? Paste it here and get the equivalent <code>docker-compose.yml</code> service back. That's the whole tool.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">It parses the common flags — ports, volumes, env vars, restart policies, networks — and emits clean YAML you can drop into a compose file and version alongside your code. Everything runs in the browser, which matters when your command contains a token or a path you'd rather not paste into some random website.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">The usual reason to bother: ad-hoc <code>docker run</code> commands don't get versioned, don't get reviewed, and die with your shell history. Compose files live in the repo where the rest of your infrastructure lives.</p>
-        </div>
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          About Composerize
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Got a <code>docker run</code> command that's grown into a wall of
+          flags? Paste it here and get the equivalent
+          <code>docker-compose.yml</code> service back. That's the whole tool.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          It parses the common flags — ports, volumes, env vars, restart
+          policies, networks — and emits clean YAML you can drop into a compose
+          file and version alongside your code. Everything runs in the browser,
+          which matters when your command contains a token or a path you'd
+          rather not paste into some random website.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The usual reason to bother: ad-hoc <code>docker run</code> commands
+          don't get versioned, don't get reviewed, and die with your shell
+          history. Compose files live in the repo where the rest of your
+          infrastructure lives.
+        </p>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">What is Composerize?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Composerize is a tool that converts a long docker run command into a clean, version-controlled docker-compose.yml file. It parses flags such as ports, volumes, environment variables, restart policies and networks, and emits the equivalent YAML service definition.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">How do I convert docker run to docker-compose?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Paste your docker run command into the input box and the equivalent docker-compose.yml service comes out the other side. Copy it into a compose file and run docker compose up -d.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Which docker run flags are supported?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Common flags are supported: -p/--publish, -v/--volume, -e/--env, --name, --restart, --network, --log-opt, --privileged, --user and many others. Unsupported exotic flags are preserved in the output where possible.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Is my docker command private?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. The conversion runs entirely in your browser. Commands containing sensitive environment variables, tokens or paths never leave your device — no tracking, no server processing.</p>
-                </details>
-            </div>
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              What is Composerize?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Composerize is a tool that converts a long docker run command into
+              a clean, version-controlled docker-compose.yml file. It parses
+              flags such as ports, volumes, environment variables, restart
+              policies and networks, and emits the equivalent YAML service
+              definition.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              How do I convert docker run to docker-compose?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Paste your docker run command into the input box and the
+              equivalent docker-compose.yml service comes out the other side.
+              Copy it into a compose file and run docker compose up -d.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Which docker run flags are supported?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Common flags are supported: -p/--publish, -v/--volume, -e/--env,
+              --name, --restart, --network, --log-opt, --privileged, --user and
+              many others. Unsupported exotic flags are preserved in the output
+              where possible.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Is my docker command private?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. The conversion runs entirely in your browser. Commands
+              containing sensitive environment variables, tokens or paths never
+              leave your device — no tracking, no server processing.
+            </p>
+          </details>
         </div>
+      </div>
 
-        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="../decomposerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decomposerize</a>
-                <a href="../prettify-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify YAML</a>
-                <a href="../convert-json-to-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">JSON to YAML</a>
-                <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">UUID Generator</a>
-            </div>
+      <div
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Related Tools
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="../decomposerize/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Decomposerize</a
+          >
+          <a
+            href="../prettify-yaml/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Prettify YAML</a
+          >
+          <a
+            href="../convert-json-to-yaml/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >JSON to YAML</a
+          >
+          <a
+            href="../uuid-generator/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >UUID Generator</a
+          >
         </div>
+      </div>
     </main>
 
     <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-        &copy; 2026 Unitoolify. All rights reserved.
+      &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script type="module">
-        import composerize from 'https://esm.sh/composerize';
+      import composerize from "https://esm.sh/composerize";
 
-        const inputText = document.getElementById('inputText');
-        const outputText = document.getElementById('outputText');
-        const copyBtn = document.getElementById('copyBtn');
+      const inputText = document.getElementById("inputText");
+      const outputText = document.getElementById("outputText");
+      const copyBtn = document.getElementById("copyBtn");
 
-        function convert() {
-            const command = inputText.value.trim();
-            if (!command) {
-                outputText.value = '';
-                return;
-            }
-            try {
-                const result = composerize(command);
-                outputText.value = result;
-            } catch (e) {
-                outputText.value = '# Error parsing command:\n' + e.message;
-            }
+      function convert() {
+        const command = inputText.value.trim();
+        if (!command) {
+          outputText.value = "";
+          return;
         }
+        try {
+          const result = composerize(command);
+          outputText.value = result;
+        } catch (e) {
+          outputText.value = "# Error parsing command:\n" + e.message;
+        }
+      }
 
-        inputText.addEventListener('input', convert);
+      inputText.addEventListener("input", convert);
 
-        copyBtn.addEventListener('click', () => {
-            outputText.select();
-            document.execCommand('copy');
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-        });
+      copyBtn.addEventListener("click", () => {
+        outputText.select();
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
+      });
 
-        if (inputText.value) convert();
+      if (inputText.value) convert();
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,45 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chrome Bookmark Separator – Organize Bookmarks | Unitoolify</title>
-    <meta name="description" content="Free tool to add vertical separators to your Chrome or Edge bookmarks bar. Just drag and drop the button to visually organize folders and links.">
-    <link rel="canonical" href="https://www.unitoolify.com/bookmark-separator/" />
+    <meta
+      name="description"
+      content="Free tool to add vertical separators to your Chrome or Edge bookmarks bar. Just drag and drop the button to visually organize folders and links."
+    />
+    <link
+      rel="canonical"
+      href="https://www.unitoolify.com/bookmark-separator/"
+    />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="Chrome Bookmark Separator – Vertical &amp; Horizontal" />
-    <meta property="og:description" content="Add visual separators to your Chrome or Edge bookmarks bar with a simple drag and drop. Free tool." />
-    <meta property="og:url" content="https://www.unitoolify.com/bookmark-separator/" />
+    <meta
+      property="og:title"
+      content="Chrome Bookmark Separator – Vertical &amp; Horizontal"
+    />
+    <meta
+      property="og:description"
+      content="Add visual separators to your Chrome or Edge bookmarks bar with a simple drag and drop. Free tool."
+    />
+    <meta
+      property="og:url"
+      content="https://www.unitoolify.com/bookmark-separator/"
+    />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Chrome Bookmark Separator – Vertical &amp; Horizontal" />
-    <meta name="twitter:description" content="Add visual separators to your Chrome or Edge bookmarks bar with a simple drag and drop. Free tool." />
-    <link id="favicon" rel="icon" href="favicon-vert.svg" type="image/svg+xml" />
+    <meta
+      name="twitter:title"
+      content="Chrome Bookmark Separator – Vertical &amp; Horizontal"
+    />
+    <meta
+      name="twitter:description"
+      content="Add visual separators to your Chrome or Edge bookmarks bar with a simple drag and drop. Free tool."
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      href="favicon-vert.svg"
+      type="image/svg+xml"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
-        #dragLink::after {
-            content: "|";
-        }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
+      #dragLink::after {
+        content: "|";
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2FWD7FC8GL');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <script src="/assets/js/theme.js"></script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Chrome Bookmark Separator",
@@ -49,133 +80,258 @@
         "operatingSystem": "Chrome and Edge",
         "browserRequirements": "Requires JavaScript",
         "description": "Free tool that adds vertical or horizontal visual separators to the Chrome or Edge bookmarks bar via a drag-and-drop bookmarklet.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "featureList": [
-            "Vertical and horizontal separators",
-            "Drag-and-drop installation",
-            "Works around Edge duplicate-bookmark limits",
-            "Unlimited separators",
-            "Syncs like any normal bookmark"
+          "Vertical and horizontal separators",
+          "Drag-and-drop installation",
+          "Works around Edge duplicate-bookmark limits",
+          "Unlimited separators",
+          "Syncs like any normal bookmark"
         ]
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How do I add a separator to my Chrome or Edge bookmarks bar?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Open this page, then drag the separator button onto your bookmarks bar. It will appear as a small vertical line (|) between your folders and links. Repeat as many times as you want separators." }
-            },
-            {
-                "@type": "Question",
-                "name": "Why can't I add multiple separators in Edge?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Edge prevents adding duplicate bookmarks. To work around this, every time you click or drag the separator button it gets a unique random ID (UUID), so you can add as many separators as you like." }
-            },
-            {
-                "@type": "Question",
-                "name": "Will my separators sync across devices?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. The separator is stored as a normal bookmark, so it syncs through your Chrome or Edge account just like any other bookmark." }
-            },
-            {
-                "@type": "Question",
-                "name": "Does this work in Firefox or Safari?",
-                "acceptedAnswer": { "@type": "Answer", "text": "The drag-and-drop separator is designed for Chromium-based browsers (Chrome and Edge) which support the bookmarks bar. Firefox's bookmarks bar works similarly, but Safari hides its bookmarks bar by default." }
+          {
+            "@type": "Question",
+            "name": "How do I add a separator to my Chrome or Edge bookmarks bar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open this page, then drag the separator button onto your bookmarks bar. It will appear as a small vertical line (|) between your folders and links. Repeat as many times as you want separators."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Why can't I add multiple separators in Edge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Edge prevents adding duplicate bookmarks. To work around this, every time you click or drag the separator button it gets a unique random ID (UUID), so you can add as many separators as you like."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my separators sync across devices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The separator is stored as a normal bookmark, so it syncs through your Chrome or Edge account just like any other bookmark."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this work in Firefox or Safari?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The drag-and-drop separator is designed for Chromium-based browsers (Chrome and Edge) which support the bookmarks bar. Firefox's bookmarks bar works similarly, but Safari hides its bookmarks bar by default."
+            }
+          }
         ]
-    }
+      }
     </script>
-</head>
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center">
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center"
+  >
     <header class="py-6 px-4 md:py-8 text-center">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2">Unitoolify Bookmark Separator</h1>
-        <p class="text-slate-400 mb-6 md:mb-8">Organize your Chrome/Edge bookmarks bar with visual separators</p>
-        <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-            <a href="index.html" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200">Vertical Separator</a>
-            <a href="horz.html" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Horizontal Separator</a>
-            <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">&larr; Home</a>
-        </div>
+      <h1
+        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify Bookmark Separator
+      </h1>
+      <p class="text-slate-400 mb-6 md:mb-8">
+        Organize your Chrome/Edge bookmarks bar with visual separators
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
+        <a
+          href="index.html"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          >Vertical Separator</a
+        >
+        <a
+          href="horz.html"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >Horizontal Separator</a
+        >
+        <a
+          href="/"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          >&larr; Home</a
+        >
+      </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 flex flex-col gap-8 items-center">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 flex flex-col items-center text-center gap-6 max-w-5xl mx-auto w-full">
-            <h2 class="text-xl md:text-2xl font-medium">Vertical Separator</h2>
-            <p class="text-slate-400">Drag the button below to your bookmarks bar</p>
-            
-            <a href="#vert" class="bg-primary text-white border border-primary-hover py-3 px-8 rounded-lg font-bold text-xl no-underline cursor-grab transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-primary-hover active:cursor-grabbing select-none" id="dragLink" title="Drag me to your bookmarks bar"></a>
+    <main
+      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 flex flex-col gap-8 items-center"
+    >
+      <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 flex flex-col items-center text-center gap-6 max-w-5xl mx-auto w-full"
+      >
+        <h2 class="text-xl md:text-2xl font-medium">Vertical Separator</h2>
+        <p class="text-slate-400">
+          Drag the button below to your bookmarks bar
+        </p>
 
-            <p class="mt-4 text-slate-400 text-sm md:text-base">
-                Looking for a horizontal separator? <a href="horz.html" class="text-blue-400 underline hover:text-blue-300">Click here</a>
+        <a
+          href="#vert"
+          class="bg-primary text-white border border-primary-hover py-3 px-8 rounded-lg font-bold text-xl no-underline cursor-grab transition-all duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-primary-hover active:cursor-grabbing select-none"
+          id="dragLink"
+          title="Drag me to your bookmarks bar"
+        ></a>
+
+        <p class="mt-4 text-slate-400 text-sm md:text-base">
+          Looking for a horizontal separator?
+          <a
+            href="horz.html"
+            class="text-blue-400 underline hover:text-blue-300"
+            >Click here</a
+          >
+        </p>
+      </div>
+
+      <div
+        class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          How it works
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Chrome and Edge never shipped a way to put separators on the bookmarks
+          bar, so this page is the workaround: the button above is a bookmark
+          that happens to render as a thin vertical line (|). Drag it onto the
+          bar and you're done.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          <strong>Note for Edge users:</strong> Edge refuses to add duplicate
+          bookmarks, so every time you click or drag the button it gets a fresh
+          random ID (UUID). That's why you can add as many separators as you
+          want without hitting a wall.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The separator is just a normal bookmark, so it syncs through your
+          browser account and survives restarts. A couple of vertical lines are
+          usually enough to keep a busy bar organized — no extension required.
+        </p>
+      </div>
+
+      <div
+        class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              How do I add a separator to my Chrome or Edge bookmarks bar?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Open this page, then drag the separator button onto your bookmarks
+              bar. It will appear as a small vertical line (|) between your
+              folders and links. Repeat as many times as you want separators.
             </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Why can't I add multiple separators in Edge?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Edge prevents adding duplicate bookmarks. To work around this,
+              every time you click or drag the separator button it gets a unique
+              random ID (UUID), so you can add as many separators as you like.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Will my separators sync across devices?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              Yes. The separator is stored as a normal bookmark, so it syncs
+              through your Chrome or Edge account just like any other bookmark.
+            </p>
+          </details>
+          <details
+            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+          >
+            <summary class="text-slate-200 font-medium cursor-pointer">
+              Does this work in Firefox or Safari?
+            </summary>
+            <p class="text-slate-400 leading-relaxed mt-2">
+              The drag-and-drop separator is designed for Chromium-based
+              browsers (Chrome and Edge) which support the bookmarks bar.
+              Firefox's bookmarks bar works similarly, but Safari hides its
+              bookmarks bar by default.
+            </p>
+          </details>
         </div>
-        
-        <div class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">How it works</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">Chrome and Edge never shipped a way to put separators on the bookmarks bar, so this page is the workaround: the button above is a bookmark that happens to render as a thin vertical line (|). Drag it onto the bar and you're done.</p>
-            <p class="text-slate-400 leading-relaxed mb-4"><strong>Note for Edge users:</strong> Edge refuses to add duplicate bookmarks, so every time you click or drag the button it gets a fresh random ID (UUID). That's why you can add as many separators as you want without hitting a wall.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">The separator is just a normal bookmark, so it syncs through your browser account and survives restarts. A couple of vertical lines are usually enough to keep a busy bar organized — no extension required.</p>
-        </div>
+      </div>
 
-        <div class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">How do I add a separator to my Chrome or Edge bookmarks bar?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Open this page, then drag the separator button onto your bookmarks bar. It will appear as a small vertical line (|) between your folders and links. Repeat as many times as you want separators.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Why can't I add multiple separators in Edge?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Edge prevents adding duplicate bookmarks. To work around this, every time you click or drag the separator button it gets a unique random ID (UUID), so you can add as many separators as you like.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Will my separators sync across devices?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">Yes. The separator is stored as a normal bookmark, so it syncs through your Chrome or Edge account just like any other bookmark.</p>
-                </details>
-                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                    <summary class="text-slate-200 font-medium cursor-pointer">Does this work in Firefox or Safari?</summary>
-                    <p class="text-slate-400 leading-relaxed mt-2">The drag-and-drop separator is designed for Chromium-based browsers (Chrome and Edge) which support the bookmarks bar. Firefox's bookmarks bar works similarly, but Safari hides its bookmarks bar by default.</p>
-                </details>
-            </div>
+      <div
+        class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          Related Tools
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="horz.html"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >Horizontal Separator</a
+          >
+          <a
+            href="../uuid-generator/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >UUID Generator</a
+          >
+          <a
+            href="/"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            >All Developer Tools</a
+          >
         </div>
-
-        <div class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full">
-            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="horz.html" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Horizontal Separator</a>
-                <a href="../uuid-generator/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">UUID Generator</a>
-                <a href="/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">All Developer Tools</a>
-            </div>
-        </div>
+      </div>
     </main>
 
     <footer class="text-center py-6 md:py-8 text-slate-400 text-sm mt-auto">
-        &copy; 2026 Unitoolify. All rights reserved.
+      &copy; 2026 Unitoolify. All rights reserved.
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const link = document.getElementById('dragLink');
-            
-            function refreshHash() {
-                const randomKey = (typeof crypto !== 'undefined' && crypto.randomUUID) 
-                    ? crypto.randomUUID() 
-                    : Math.random().toString(36).substring(2) + Date.now().toString(36);
-                    
-                const differentiatorKey = `bookmark-separator--${randomKey}`;
-                link.setAttribute('href', `#${differentiatorKey}`);
-                window.location.replace(`#${differentiatorKey}`);
-            }
+      document.addEventListener("DOMContentLoaded", () => {
+        const link = document.getElementById("dragLink");
 
+        function refreshHash() {
+          const randomKey =
+            typeof crypto !== "undefined" && crypto.randomUUID
+              ? crypto.randomUUID()
+              : Math.random().toString(36).substring(2) +
+                Date.now().toString(36);
+
+          const differentiatorKey = `bookmark-separator--${randomKey}`;
+          link.setAttribute("href", `#${differentiatorKey}`);
+          window.location.replace(`#${differentiatorKey}`);
+        }
+
+        refreshHash();
+
+        link.addEventListener("mousedown", (event) => {
+          if (event.button === 0) {
             refreshHash();
-
-            link.addEventListener("mousedown", (event) => {
-                if (event.button === 0) {
-                    refreshHash();
-                }
-            });
+          }
         });
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -1,322 +1,838 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Online Developer Tools – Base64, JSON, UUID | Unitoolify</title>
-    <meta name="description"
-        content="Free online developer tools running 100% in your browser: Base64 encoder/decoder, JSON &amp; YAML formatter, UUID generator, URL &amp; HTML encoder, Docker compose converter. Fast, private, free.">
+    <meta
+      name="description"
+      content="Free online developer tools running 100% in your browser: Base64 encoder/decoder, JSON &amp; YAML formatter, UUID generator, URL &amp; HTML encoder, Docker compose converter. Fast, private, free."
+    />
     <link rel="canonical" href="https://www.unitoolify.com/" />
     <meta name="robots" content="index, follow" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
-    <meta property="og:title" content="Free Online Developer Tools – Base64, JSON, UUID &amp; More" />
-    <meta property="og:description"
-        content="Free, private, browser-based developer tools: Base64 encode/decode, JSON &amp; YAML formatters, UUID generator, URL encoding, Docker compose converter." />
+    <meta
+      property="og:title"
+      content="Free Online Developer Tools – Base64, JSON, UUID &amp; More"
+    />
+    <meta
+      property="og:description"
+      content="Free, private, browser-based developer tools: Base64 encode/decode, JSON &amp; YAML formatters, UUID generator, URL encoding, Docker compose converter."
+    />
     <meta property="og:url" content="https://www.unitoolify.com/" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Free Online Developer Tools – Base64, JSON, UUID &amp; More" />
-    <meta name="twitter:description"
-        content="Free, private, browser-based developer tools: Base64 encode/decode, JSON &amp; YAML formatters, UUID generator, URL encoding, Docker compose converter." />
+    <meta
+      name="twitter:title"
+      content="Free Online Developer Tools – Base64, JSON, UUID &amp; More"
+    />
+    <meta
+      name="twitter:description"
+      content="Free, private, browser-based developer tools: Base64 encode/decode, JSON &amp; YAML formatters, UUID generator, URL encoding, Docker compose converter."
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #3b82f6;
-            --color-primary-hover: #2563eb;
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-        }
-        .tool-card {
-            @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 no-underline text-slate-50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/20 hover:bg-white/[0.08] relative overflow-hidden grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] gap-x-3 items-center h-[148px];
-        }
-        .tool-card::before {
-            content: '';
-            @apply absolute inset-x-0 top-0 h-1 opacity-0 transition-opacity duration-300;
-            background: var(--card-gradient, linear-gradient(to right, #60a5fa, #3b82f6));
-        }
-        .tool-card:hover::before {
-            @apply opacity-100;
-        }
+      @theme {
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
+      .tool-card {
+        @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 no-underline text-slate-50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white/20 hover:bg-white/[0.08] relative overflow-hidden grid grid-cols-[auto_1fr] grid-rows-[auto_1fr] gap-x-3 items-center h-[148px];
+      }
+      .tool-card::before {
+        content: "";
+        @apply absolute inset-x-0 top-0 h-1 opacity-0 transition-opacity duration-300;
+        background: var(
+          --card-gradient,
+          linear-gradient(to right, #60a5fa, #3b82f6)
+        );
+      }
+      .tool-card:hover::before {
+        @apply opacity-100;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-2FWD7FC8GL');
+      gtag("config", "G-2FWD7FC8GL");
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Unitoolify",
         "url": "https://www.unitoolify.com/",
         "description": "Free online developer tools that run entirely in your browser: Base64 encoder and decoder, JSON and YAML formatters, UUID generator, URL and HTML encoder, Docker compose converter and more.",
         "inLanguage": "en"
-    }
+      }
     </script>
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Free Online Developer Tools",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Base64 Encoder", "url": "https://www.unitoolify.com/base64encode/" },
-            { "@type": "ListItem", "position": 2, "name": "Base64 Decoder", "url": "https://www.unitoolify.com/base64decode/" },
-            { "@type": "ListItem", "position": 3, "name": "URL Encoder", "url": "https://www.unitoolify.com/url-encode-string/" },
-            { "@type": "ListItem", "position": 4, "name": "URL Decoder", "url": "https://www.unitoolify.com/url-decode-string/" },
-            { "@type": "ListItem", "position": 5, "name": "HTML Encoder", "url": "https://www.unitoolify.com/html-encode-string/" },
-            { "@type": "ListItem", "position": 6, "name": "HTML Decoder", "url": "https://www.unitoolify.com/html-decode-string/" },
-            { "@type": "ListItem", "position": 7, "name": "JSON Formatter", "url": "https://www.unitoolify.com/prettify-json/" },
-            { "@type": "ListItem", "position": 8, "name": "YAML Formatter", "url": "https://www.unitoolify.com/prettify-yaml/" },
-            { "@type": "ListItem", "position": 9, "name": "JSON to YAML Converter", "url": "https://www.unitoolify.com/convert-json-to-yaml/" },
-            { "@type": "ListItem", "position": 10, "name": "YAML to JSON Converter", "url": "https://www.unitoolify.com/convert-yaml-to-json/" },
-            { "@type": "ListItem", "position": 11, "name": "Docker Run to Compose Converter", "url": "https://www.unitoolify.com/composerize/" },
-            { "@type": "ListItem", "position": 12, "name": "Docker Compose to Run Converter", "url": "https://www.unitoolify.com/decomposerize/" },
-            { "@type": "ListItem", "position": 13, "name": "UUID Generator", "url": "https://www.unitoolify.com/uuid-generator/" },
-            { "@type": "ListItem", "position": 14, "name": "Chrome Bookmark Separator", "url": "https://www.unitoolify.com/bookmark-separator/" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Base64 Encoder",
+            "url": "https://www.unitoolify.com/base64encode/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Base64 Decoder",
+            "url": "https://www.unitoolify.com/base64decode/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "URL Encoder",
+            "url": "https://www.unitoolify.com/url-encode-string/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "URL Decoder",
+            "url": "https://www.unitoolify.com/url-decode-string/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "HTML Encoder",
+            "url": "https://www.unitoolify.com/html-encode-string/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "HTML Decoder",
+            "url": "https://www.unitoolify.com/html-decode-string/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "JSON Formatter",
+            "url": "https://www.unitoolify.com/prettify-json/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "YAML Formatter",
+            "url": "https://www.unitoolify.com/prettify-yaml/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "JSON to YAML Converter",
+            "url": "https://www.unitoolify.com/convert-json-to-yaml/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "name": "YAML to JSON Converter",
+            "url": "https://www.unitoolify.com/convert-yaml-to-json/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "name": "Docker Run to Compose Converter",
+            "url": "https://www.unitoolify.com/composerize/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "name": "Docker Compose to Run Converter",
+            "url": "https://www.unitoolify.com/decomposerize/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 13,
+            "name": "UUID Generator",
+            "url": "https://www.unitoolify.com/uuid-generator/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 14,
+            "name": "Chrome Bookmark Separator",
+            "url": "https://www.unitoolify.com/bookmark-separator/"
+          }
         ]
-    }
+      }
     </script>
-</head>
+  </head>
 
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center p-4 md:p-8">
-    <header class="w-full max-w-7xl flex flex-wrap items-baseline gap-4 md:gap-6 mb-8 md:mb-12 mt-4 md:mt-8">
-        <h1 class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent pb-2">Unitoolify</h1>
-        <p class="text-slate-400 text-base md:text-xl leading-relaxed">Developer tools that run right in your browser. No sign-ups, no uploads.</p>
+  <body
+    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center p-4 md:p-8"
+  >
+    <header
+      class="w-full max-w-7xl flex flex-wrap items-baseline gap-4 md:gap-6 mb-8 md:mb-12 mt-4 md:mt-8"
+    >
+      <h1
+        class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent pb-2"
+      >
+        Unitoolify
+      </h1>
+      <p class="text-slate-400 text-base md:text-xl leading-relaxed">
+        Developer tools that run right in your browser. No sign-ups, no uploads.
+      </p>
     </header>
 
-    <main class="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 items-start">
-        <section class="mb-4 md:mb-6 w-full">
-            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Encoders/Decoders</h2>
-            <div class="grid grid-cols-1 gap-4">
-                <a href="base64encode/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🔒</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Base64 Encode</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Encode text or files to Base64 right in your browser. Includes URL-safe mode and MIME line chunking.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Encode text or files to Base64 right in your browser. Includes URL-safe mode and MIME line chunking.</div>
-                </a>
-                <a href="base64decode/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🔓</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Base64 Decode</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Decode Base64 strings back to text or binary files. Handles URL-safe Base64URL automatically, all locally.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Decode Base64 strings back to text or binary files. Handles URL-safe Base64URL automatically, all locally.</div>
-                </a>
-                <a href="url-encode-string/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🔗</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">URL Encode</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Safely encode characters into URL-safe format using percent-encoding.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Safely encode characters into URL-safe format using percent-encoding.</div>
-                </a>
-                <a href="url-decode-string/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🔗</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">URL Decode</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Convert percent-encoded strings back to their original readable characters.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Convert percent-encoded strings back to their original readable characters.</div>
-                </a>
-                <a href="html-encode-string/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🌐</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">HTML Encode</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Convert special characters into HTML entities to safely display code or prevent XSS.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Convert special characters into HTML entities to safely display code or prevent XSS.</div>
-                </a>
-                <a href="html-decode-string/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🌐</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">HTML Decode</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Convert HTML entities back into their raw text character equivalents.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Convert HTML entities back into their raw text character equivalents.</div>
-                </a>
+    <main
+      class="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 items-start"
+    >
+      <section class="mb-4 md:mb-6 w-full">
+        <h2
+          class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50"
+        >
+          Encoders/Decoders
+        </h2>
+        <div class="grid grid-cols-1 gap-4">
+          <a href="base64encode/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🔒</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Base64 Encode
             </div>
-        </section>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Encode text or files to Base64 right in your browser. Includes
+              URL-safe mode and MIME line chunking.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Encode text or files to Base64 right in your browser. Includes
+              URL-safe mode and MIME line chunking.
+            </div>
+          </a>
+          <a href="base64decode/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🔓</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Base64 Decode
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Decode Base64 strings back to text or binary files. Handles
+              URL-safe Base64URL automatically, all locally.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Decode Base64 strings back to text or binary files. Handles
+              URL-safe Base64URL automatically, all locally.
+            </div>
+          </a>
+          <a href="url-encode-string/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🔗</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              URL Encode
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Safely encode characters into URL-safe format using
+              percent-encoding.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Safely encode characters into URL-safe format using
+              percent-encoding.
+            </div>
+          </a>
+          <a href="url-decode-string/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🔗</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              URL Decode
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Convert percent-encoded strings back to their original readable
+              characters.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Convert percent-encoded strings back to their original readable
+              characters.
+            </div>
+          </a>
+          <a href="html-encode-string/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🌐</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              HTML Encode
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Convert special characters into HTML entities to safely display
+              code or prevent XSS.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Convert special characters into HTML entities to safely display
+              code or prevent XSS.
+            </div>
+          </a>
+          <a href="html-decode-string/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🌐</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              HTML Decode
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Convert HTML entities back into their raw text character
+              equivalents.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Convert HTML entities back into their raw text character
+              equivalents.
+            </div>
+          </a>
+        </div>
+      </section>
 
-        <section class="mb-4 md:mb-6 w-full">
-            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Formatters</h2>
-            <div class="grid grid-cols-1 gap-4">
-                <a href="prettify-json/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">✨</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Prettify JSON</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Pretty-print minified JSON with clean indentation and validate it at the same time.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Pretty-print minified JSON with clean indentation and validate it at the same time.</div>
-                </a>
-                <a href="prettify-yaml/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">✨</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Prettify YAML</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Reformat YAML with consistent indentation and catch broken syntax before you deploy.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Reformat YAML with consistent indentation and catch broken syntax before you deploy.</div>
-                </a>
+      <section class="mb-4 md:mb-6 w-full">
+        <h2
+          class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50"
+        >
+          Formatters
+        </h2>
+        <div class="grid grid-cols-1 gap-4">
+          <a href="prettify-json/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >✨</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Prettify JSON
             </div>
-        </section>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Pretty-print minified JSON with clean indentation and validate it
+              at the same time.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Pretty-print minified JSON with clean indentation and validate it
+              at the same time.
+            </div>
+          </a>
+          <a href="prettify-yaml/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >✨</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Prettify YAML
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Reformat YAML with consistent indentation and catch broken syntax
+              before you deploy.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Reformat YAML with consistent indentation and catch broken syntax
+              before you deploy.
+            </div>
+          </a>
+        </div>
+      </section>
 
-        <section class="mb-4 md:mb-6 w-full">
-            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Converters</h2>
-            <div class="grid grid-cols-1 gap-4">
-                <a href="convert-json-to-yaml/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">⇌</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">JSON to YAML</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Convert JSON data into YAML that's easier for humans to read and maintain.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Convert JSON data into YAML that's easier for humans to read and maintain.</div>
-                </a>
-                <a href="convert-yaml-to-json/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">⇌</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">YAML to JSON</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Convert YAML configs into strict JSON for APIs and apps, pretty-printed or minified.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Convert YAML configs into strict JSON for APIs and apps, pretty-printed or minified.</div>
-                </a>
-                <a href="composerize/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🐳</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Composerize</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Turn long docker run commands into docker-compose.yml files, ready to commit.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Turn long docker run commands into docker-compose.yml files, ready to commit.</div>
-                </a>
-                <a href="decomposerize/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🔄</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Decomposerize</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Reverse engineer your `docker-compose.yml` files back into raw `docker run` commands.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Reverse engineer your `docker-compose.yml` files back into raw `docker run` commands.</div>
-                </a>
+      <section class="mb-4 md:mb-6 w-full">
+        <h2
+          class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50"
+        >
+          Converters
+        </h2>
+        <div class="grid grid-cols-1 gap-4">
+          <a href="convert-json-to-yaml/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >⇌</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              JSON to YAML
             </div>
-        </section>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Convert JSON data into YAML that's easier for humans to read and
+              maintain.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Convert JSON data into YAML that's easier for humans to read and
+              maintain.
+            </div>
+          </a>
+          <a href="convert-yaml-to-json/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >⇌</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              YAML to JSON
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Convert YAML configs into strict JSON for APIs and apps,
+              pretty-printed or minified.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Convert YAML configs into strict JSON for APIs and apps,
+              pretty-printed or minified.
+            </div>
+          </a>
+          <a href="composerize/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🐳</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Composerize
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Turn long docker run commands into docker-compose.yml files, ready
+              to commit.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Turn long docker run commands into docker-compose.yml files, ready
+              to commit.
+            </div>
+          </a>
+          <a href="decomposerize/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🔄</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Decomposerize
+            </div>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Reverse engineer your `docker-compose.yml` files back into raw
+              `docker run` commands.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Reverse engineer your `docker-compose.yml` files back into raw
+              `docker run` commands.
+            </div>
+          </a>
+        </div>
+      </section>
 
-        <section class="mb-4 md:mb-6 w-full">
-            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Generators</h2>
-            <div class="grid grid-cols-1 gap-4">
-                <a href="uuid-generator/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">🔑</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">UUID Generator</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Generate random v4 (or timestamp v1) UUIDs in bulk, up to 10,000 at a time. All local.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Generate random v4 (or timestamp v1) UUIDs in bulk, up to 10,000 at a time. All local.</div>
-                </a>
+      <section class="mb-4 md:mb-6 w-full">
+        <h2
+          class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50"
+        >
+          Generators
+        </h2>
+        <div class="grid grid-cols-1 gap-4">
+          <a href="uuid-generator/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >🔑</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              UUID Generator
             </div>
-        </section>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Generate random v4 (or timestamp v1) UUIDs in bulk, up to 10,000
+              at a time. All local.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Generate random v4 (or timestamp v1) UUIDs in bulk, up to 10,000
+              at a time. All local.
+            </div>
+          </a>
+        </div>
+      </section>
 
-        <section class="mb-4 md:mb-6 w-full">
-            <h2 class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50">Utilities</h2>
-            <div class="grid grid-cols-1 gap-4">
-                <a href="bookmark-separator/" class="tool-card group">
-                    <span class="text-2xl flex items-center justify-center leading-none">✂️</span>
-                    <div class="text-base md:text-[17px] font-semibold whitespace-nowrap">Bookmark Separator</div>
-                    <p class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</p>
-                    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center">Organize your Chrome or Edge bookmarks bar with drag-and-drop vertical and horizontal visual separators.</div>
-                </a>
+      <section class="mb-4 md:mb-6 w-full">
+        <h2
+          class="text-lg md:text-xl font-bold mb-4 md:mb-6 pb-2 border-b border-white/10 w-full text-slate-50"
+        >
+          Utilities
+        </h2>
+        <div class="grid grid-cols-1 gap-4">
+          <a href="bookmark-separator/" class="tool-card group">
+            <span class="text-2xl flex items-center justify-center leading-none"
+              >✂️</span
+            >
+            <div
+              class="text-base md:text-[17px] font-semibold whitespace-nowrap"
+            >
+              Bookmark Separator
             </div>
-        </section>
+            <p
+              class="text-slate-400 leading-relaxed text-sm col-span-2 mt-2 line-clamp-3"
+            >
+              Organize your Chrome or Edge bookmarks bar with drag-and-drop
+              vertical and horizontal visual separators.
+            </p>
+            <div
+              class="absolute inset-0 bg-slate-900/95 backdrop-blur-sm p-4 text-sm text-slate-300 leading-relaxed opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10 flex items-center text-center justify-center"
+            >
+              Organize your Chrome or Edge bookmarks bar with drag-and-drop
+              vertical and horizontal visual separators.
+            </div>
+          </a>
+        </div>
+      </section>
     </main>
 
     <section class="w-full max-w-7xl mb-10 md:mb-14">
-        <h2 class="text-lg md:text-xl font-bold mb-4 text-slate-50 text-center">Why Unitoolify?</h2>
-        <p class="text-slate-400 text-center max-w-3xl mx-auto mb-8 leading-relaxed">Unitoolify is a small set of everyday dev utilities — encoding, formatting, converting, generating — that all run locally in your browser. Paste something in, copy the result out. That's the whole deal.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div class="bg-black/20 border border-dashed border-white/15 rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center text-lg shrink-0" aria-hidden="true">🔒</div>
-                    <h3 class="font-semibold text-slate-100">Private by default</h3>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">Every tool runs client-side in your browser. Whatever you paste — API keys, configs, tokens — is never sent to a server, so there's nothing to log, leak or hand over.</p>
+      <h2 class="text-lg md:text-xl font-bold mb-4 text-slate-50 text-center">
+        Why Unitoolify?
+      </h2>
+      <p
+        class="text-slate-400 text-center max-w-3xl mx-auto mb-8 leading-relaxed"
+      >
+        Unitoolify is a small set of everyday dev utilities — encoding,
+        formatting, converting, generating — that all run locally in your
+        browser. Paste something in, copy the result out. That's the whole deal.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div
+          class="bg-black/20 border border-dashed border-white/15 rounded-2xl p-6"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center text-lg shrink-0"
+              aria-hidden="true"
+            >
+              🔒
             </div>
-            <div class="bg-black/20 border border-dashed border-white/15 rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-lg shrink-0" aria-hidden="true">🆓</div>
-                    <h3 class="font-semibold text-slate-100">Actually free</h3>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">No accounts, no paywalls, no limits. Every tool here is free for individuals and teams alike, and that's not going to change.</p>
-            </div>
-            <div class="bg-black/20 border border-dashed border-white/15 rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-400/20 flex items-center justify-center text-lg shrink-0" aria-hidden="true">⚡</div>
-                    <h3 class="font-semibold text-slate-100">No setup at all</h3>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">Nothing to install and nothing to configure. Open a page, paste your input, get the result — most tools even update as you type.</p>
-            </div>
+            <h3 class="font-semibold text-slate-100">Private by default</h3>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Every tool runs client-side in your browser. Whatever you paste —
+            API keys, configs, tokens — is never sent to a server, so there's
+            nothing to log, leak or hand over.
+          </p>
         </div>
+        <div
+          class="bg-black/20 border border-dashed border-white/15 rounded-2xl p-6"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-lg shrink-0"
+              aria-hidden="true"
+            >
+              🆓
+            </div>
+            <h3 class="font-semibold text-slate-100">Actually free</h3>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            No accounts, no paywalls, no limits. Every tool here is free for
+            individuals and teams alike, and that's not going to change.
+          </p>
+        </div>
+        <div
+          class="bg-black/20 border border-dashed border-white/15 rounded-2xl p-6"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-400/20 flex items-center justify-center text-lg shrink-0"
+              aria-hidden="true"
+            >
+              ⚡
+            </div>
+            <h3 class="font-semibold text-slate-100">No setup at all</h3>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Nothing to install and nothing to configure. Open a page, paste your
+            input, get the result — most tools even update as you type.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="w-full max-w-7xl bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 mb-10 md:mb-14">
-        <h2 class="text-lg md:text-xl font-bold mb-6 pb-2 border-b border-white/10 text-slate-50">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                <summary class="text-slate-200 font-medium cursor-pointer">What is Unitoolify?</summary>
-                <p class="text-slate-400 leading-relaxed mt-2">A small collection of browser-based developer tools: Base64 encode/decode, URL and HTML escaping, JSON and YAML formatting, JSON/YAML conversion, UUID generation, Docker compose conversion and a bookmark-bar organizer. No installs, no accounts — open a page and use it.</p>
-            </details>
-            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                <summary class="text-slate-200 font-medium cursor-pointer">Is my data private when I use these tools?</summary>
-                <p class="text-slate-400 leading-relaxed mt-2">Yes — every tool runs client-side. Your input is processed by JavaScript in your own browser and never sent to a server, which is kind of the point of the site.</p>
-            </details>
-            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                <summary class="text-slate-200 font-medium cursor-pointer">Do I need to create an account or pay?</summary>
-                <p class="text-slate-400 leading-relaxed mt-2">No account, no payment, no usage caps. Open the tool, paste your input, copy the result.</p>
-            </details>
-            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                <summary class="text-slate-200 font-medium cursor-pointer">Do the tools work on mobile devices?</summary>
-                <p class="text-slate-400 leading-relaxed mt-2">They're responsive and run in any modern browser, so phone, tablet or laptop all behave the same.</p>
-            </details>
-            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
-                <summary class="text-slate-200 font-medium cursor-pointer">Which is the most popular tool on Unitoolify?</summary>
-                <p class="text-slate-400 leading-relaxed mt-2">The <a href="base64encode/" class="text-blue-400 underline hover:text-blue-300">Base64 encoder</a>, the <a href="base64decode/" class="text-blue-400 underline hover:text-blue-300">Base64 decoder</a> and the <a href="prettify-json/" class="text-blue-400 underline hover:text-blue-300">JSON formatter</a> get the most traffic, with the <a href="uuid-generator/" class="text-blue-400 underline hover:text-blue-300">UUID generator</a> and the <a href="composerize/" class="text-blue-400 underline hover:text-blue-300">Docker compose converter</a> not far behind.</p>
-            </details>
-        </div>
+    <section
+      class="w-full max-w-7xl bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 mb-10 md:mb-14"
+    >
+      <h2
+        class="text-lg md:text-xl font-bold mb-6 pb-2 border-b border-white/10 text-slate-50"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+        <details
+          class="group bg-black/20 rounded-lg p-4 border border-white/10"
+        >
+          <summary class="text-slate-200 font-medium cursor-pointer">
+            What is Unitoolify?
+          </summary>
+          <p class="text-slate-400 leading-relaxed mt-2">
+            A small collection of browser-based developer tools: Base64
+            encode/decode, URL and HTML escaping, JSON and YAML formatting,
+            JSON/YAML conversion, UUID generation, Docker compose conversion and
+            a bookmark-bar organizer. No installs, no accounts — open a page and
+            use it.
+          </p>
+        </details>
+        <details
+          class="group bg-black/20 rounded-lg p-4 border border-white/10"
+        >
+          <summary class="text-slate-200 font-medium cursor-pointer">
+            Is my data private when I use these tools?
+          </summary>
+          <p class="text-slate-400 leading-relaxed mt-2">
+            Yes — every tool runs client-side. Your input is processed by
+            JavaScript in your own browser and never sent to a server, which is
+            kind of the point of the site.
+          </p>
+        </details>
+        <details
+          class="group bg-black/20 rounded-lg p-4 border border-white/10"
+        >
+          <summary class="text-slate-200 font-medium cursor-pointer">
+            Do I need to create an account or pay?
+          </summary>
+          <p class="text-slate-400 leading-relaxed mt-2">
+            No account, no payment, no usage caps. Open the tool, paste your
+            input, copy the result.
+          </p>
+        </details>
+        <details
+          class="group bg-black/20 rounded-lg p-4 border border-white/10"
+        >
+          <summary class="text-slate-200 font-medium cursor-pointer">
+            Do the tools work on mobile devices?
+          </summary>
+          <p class="text-slate-400 leading-relaxed mt-2">
+            They're responsive and run in any modern browser, so phone, tablet
+            or laptop all behave the same.
+          </p>
+        </details>
+        <details
+          class="group bg-black/20 rounded-lg p-4 border border-white/10"
+        >
+          <summary class="text-slate-200 font-medium cursor-pointer">
+            Which is the most popular tool on Unitoolify?
+          </summary>
+          <p class="text-slate-400 leading-relaxed mt-2">
+            The
+            <a
+              href="base64encode/"
+              class="text-blue-400 underline hover:text-blue-300"
+              >Base64 encoder</a
+            >, the
+            <a
+              href="base64decode/"
+              class="text-blue-400 underline hover:text-blue-300"
+              >Base64 decoder</a
+            >
+            and the
+            <a
+              href="prettify-json/"
+              class="text-blue-400 underline hover:text-blue-300"
+              >JSON formatter</a
+            >
+            get the most traffic, with the
+            <a
+              href="uuid-generator/"
+              class="text-blue-400 underline hover:text-blue-300"
+              >UUID generator</a
+            >
+            and the
+            <a
+              href="composerize/"
+              class="text-blue-400 underline hover:text-blue-300"
+              >Docker compose converter</a
+            >
+            not far behind.
+          </p>
+        </details>
+      </div>
     </section>
 
     <footer class="mt-auto pt-12 md:pt-16 text-slate-400 text-sm w-full">
-        <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-white/10">
-            <div class="max-w-sm">
-                <div class="font-semibold text-slate-200 mb-2">Unitoolify</div>
-                <p class="leading-relaxed">Developer tools that run in your browser. Encode, format, convert and generate — your data never leaves your device.</p>
-            </div>
-            <nav aria-label="Popular tools">
-                <div class="font-semibold text-slate-200 mb-2">Popular Tools</div>
-                <ul class="grid grid-cols-2 gap-x-6 gap-y-1.5">
-                    <li><a href="base64encode/" class="hover:text-slate-200">Base64 Encoder</a></li>
-                    <li><a href="base64decode/" class="hover:text-slate-200">Base64 Decoder</a></li>
-                    <li><a href="prettify-json/" class="hover:text-slate-200">JSON Formatter</a></li>
-                    <li><a href="prettify-yaml/" class="hover:text-slate-200">YAML Formatter</a></li>
-                    <li><a href="uuid-generator/" class="hover:text-slate-200">UUID Generator</a></li>
-                    <li><a href="convert-json-to-yaml/" class="hover:text-slate-200">JSON to YAML</a></li>
-                    <li><a href="composerize/" class="hover:text-slate-200">Composerize</a></li>
-                    <li><a href="url-encode-string/" class="hover:text-slate-200">URL Encoder</a></li>
-                </ul>
-            </nav>
-            <nav aria-label="Popular searches">
-                <div class="font-semibold text-slate-200 mb-2">Popular Searches</div>
-                <ul class="grid grid-cols-1 gap-y-1.5">
-                    <li><a href="base64encode/" class="hover:text-slate-200">Base64 encoder online</a></li>
-                    <li><a href="uuid-generator/" class="hover:text-slate-200">UUID v4 generator online</a></li>
-                    <li><a href="prettify-json/" class="hover:text-slate-200">JSON formatter online</a></li>
-                    <li><a href="base64decode/" class="hover:text-slate-200">Base64 decoder online</a></li>
-                    <li><a href="composerize/" class="hover:text-slate-200">docker run to compose converter</a></li>
-                </ul>
-            </nav>
+      <div
+        class="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-white/10"
+      >
+        <div class="max-w-sm">
+          <div class="font-semibold text-slate-200 mb-2">Unitoolify</div>
+          <p class="leading-relaxed">
+            Developer tools that run in your browser. Encode, format, convert
+            and generate — your data never leaves your device.
+          </p>
         </div>
-        <div class="text-center py-6">&copy; 2026 Unitoolify. All rights reserved.</div>
+        <nav aria-label="Popular tools">
+          <div class="font-semibold text-slate-200 mb-2">Popular Tools</div>
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-1.5">
+            <li>
+              <a href="base64encode/" class="hover:text-slate-200"
+                >Base64 Encoder</a
+              >
+            </li>
+            <li>
+              <a href="base64decode/" class="hover:text-slate-200"
+                >Base64 Decoder</a
+              >
+            </li>
+            <li>
+              <a href="prettify-json/" class="hover:text-slate-200"
+                >JSON Formatter</a
+              >
+            </li>
+            <li>
+              <a href="prettify-yaml/" class="hover:text-slate-200"
+                >YAML Formatter</a
+              >
+            </li>
+            <li>
+              <a href="uuid-generator/" class="hover:text-slate-200"
+                >UUID Generator</a
+              >
+            </li>
+            <li>
+              <a href="convert-json-to-yaml/" class="hover:text-slate-200"
+                >JSON to YAML</a
+              >
+            </li>
+            <li>
+              <a href="composerize/" class="hover:text-slate-200"
+                >Composerize</a
+              >
+            </li>
+            <li>
+              <a href="url-encode-string/" class="hover:text-slate-200"
+                >URL Encoder</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Popular searches">
+          <div class="font-semibold text-slate-200 mb-2">Popular Searches</div>
+          <ul class="grid grid-cols-1 gap-y-1.5">
+            <li>
+              <a href="base64encode/" class="hover:text-slate-200"
+                >Base64 encoder online</a
+              >
+            </li>
+            <li>
+              <a href="uuid-generator/" class="hover:text-slate-200"
+                >UUID v4 generator online</a
+              >
+            </li>
+            <li>
+              <a href="prettify-json/" class="hover:text-slate-200"
+                >JSON formatter online</a
+              >
+            </li>
+            <li>
+              <a href="base64decode/" class="hover:text-slate-200"
+                >Base64 decoder online</a
+              >
+            </li>
+            <li>
+              <a href="composerize/" class="hover:text-slate-200"
+                >docker run to compose converter</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="text-center py-6">
+        &copy; 2026 Unitoolify. All rights reserved.
+      </div>
     </footer>
     <script>
-        document.querySelectorAll('.tool-card').forEach(card => {
-            card.addEventListener('click', () => {
-                if (!document.getElementById('page-loader')) {
-                    const overlay = document.createElement('div');
-                    overlay.id = 'page-loader';
-                    overlay.className = 'fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center transition-opacity duration-300';
-                    overlay.innerHTML = `
+      document.querySelectorAll(".tool-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          if (!document.getElementById("page-loader")) {
+            const overlay = document.createElement("div");
+            overlay.id = "page-loader";
+            overlay.className =
+              "fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center transition-opacity duration-300";
+            overlay.innerHTML = `
                         <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
                         <div class="text-slate-50 text-lg font-semibold animate-pulse">Loading...</div>
                     `;
-                    document.body.appendChild(overlay);
-                }
-            });
+            document.body.appendChild(overlay);
+          }
         });
+      });
 
-        window.addEventListener('pageshow', (event) => {
-            const loader = document.getElementById('page-loader');
-            if (loader) {
-                loader.remove();
-            }
-        });
+      window.addEventListener("pageshow", (event) => {
+        const loader = document.getElementById("page-loader");
+        if (loader) {
+          loader.remove();
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
