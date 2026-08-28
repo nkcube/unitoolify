@@ -1,5 +1,7 @@
 # Unitoolify
 
+[![CI Checks](https://github.com/nkcube/unitoolify/actions/workflows/ci.yml/badge.svg)](https://github.com/nkcube/unitoolify/actions/workflows/ci.yml)
+
 🌐 **Website:** [https://www.unitoolify.com](https://www.unitoolify.com)
 
 A premium collection of essential web developer utilities. All tools run completely inside your browser, ensuring fast, private, and secure execution.
