@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convert JSON to YAML Online - Unitoolify</title>
-    <meta name="description" content="Quickly convert JSON to YAML format online. Validate and format your data securely in your browser.">
+    <title>JSON to YAML Converter Online – Free &amp; Fast | Unitoolify</title>
+    <meta name="description" content="Free online JSON to YAML converter. Transform JSON data into clean, human-readable YAML for config files, CI/CD pipelines and Kubernetes in one click. Private.">
+    <link rel="canonical" href="https://www.unitoolify.com/convert-json-to-yaml/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="JSON to YAML Converter Online – Free &amp; Fast" />
+    <meta property="og:description" content="Convert JSON to clean YAML online. Great for config files, CI/CD pipelines and Kubernetes. 100% in-browser." />
+    <meta property="og:url" content="https://www.unitoolify.com/convert-json-to-yaml/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JSON to YAML Converter Online – Free &amp; Fast" />
+    <meta name="twitter:description" content="Convert JSON to clean YAML online. Great for config files, CI/CD pipelines and Kubernetes. 100% in-browser." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -27,6 +39,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "JSON to YAML Converter",
+        "url": "https://www.unitoolify.com/convert-json-to-yaml/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Free online JSON to YAML converter that transforms JSON data into clean, human-readable YAML.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "featureList": [
+            "Convert JSON to YAML instantly",
+            "2-space or 4-space indentation",
+            "Handles nested and complex structures",
+            "Live conversion as you type",
+            "Copy and download output"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why convert JSON to YAML?",
+                "acceptedAnswer": { "@type": "Answer", "text": "YAML is more human-readable than JSON for configuration: it supports comments, omits braces and quotes, and uses indentation for structure. Converting JSON to YAML is common when moving API data into docker-compose, GitHub Actions, Ansible or Kubernetes config files." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I choose the indentation of the output YAML?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose 2-space or 4-space indentation before converting. YAML requires spaces (never tabs) for indentation, and the converter guarantees valid output." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it support nested and complex JSON structures?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nested objects, arrays, numbers, booleans and null values are all converted correctly to their YAML equivalents, keeping the exact same data structure." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the conversion done locally?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. The conversion runs entirely in your browser with JavaScript. Your JSON is never sent to any server." }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
@@ -81,6 +141,39 @@
             <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's JSON to YAML Converter. This tool allows you to instantly convert valid JSON data into YAML.</p>
             <p class="text-slate-400 leading-relaxed mb-4"><strong>Private by design:</strong> Your data is processed entirely within your browser. We never send your data to any external server.</p>
             <p class="text-slate-400 leading-relaxed mb-4">YAML is often preferred over JSON for configuration files because it is more human-readable, supports comments, and requires less boilerplate syntax (like braces and quotes). Use this tool to quickly translate complex JSON structures into clean YAML.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Typical use cases: moving a JSON API response into a <code>docker-compose.yml</code> service definition, turning webhook payloads into GitHub Actions or GitLab CI configuration, or converting application settings exported as JSON into Ansible and Kubernetes manifests that humans can review.</p>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Why convert JSON to YAML?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">YAML is more human-readable than JSON for configuration: it supports comments, omits braces and quotes, and uses indentation for structure. Converting JSON to YAML is common when moving API data into docker-compose, GitHub Actions, Ansible or Kubernetes config files.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Can I choose the indentation of the output YAML?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Choose 2-space or 4-space indentation before converting. YAML requires spaces (never tabs) for indentation, and the converter guarantees valid output.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Does it support nested and complex JSON structures?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Nested objects, arrays, numbers, booleans and null values are all converted correctly to their YAML equivalents, keeping the exact same data structure.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Is the conversion done locally?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. The conversion runs entirely in your browser with JavaScript. Your JSON is never sent to any server.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
+                <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
+                <a href="../prettify-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify YAML</a>
+                <a href="../composerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Composerize</a>
+            </div>
         </div>
     </main>
 

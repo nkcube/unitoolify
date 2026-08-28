@@ -4,9 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unitoolify - Modern Web Tools</title>
+    <title>Free Online Developer Tools – Base64, JSON, UUID | Unitoolify</title>
     <meta name="description"
-        content="A premium collection of essential web developer utilities. All running completely inside your browser.  Fast, private, and beautiful.">
+        content="Free online developer tools running 100% in your browser: Base64 encoder/decoder, JSON &amp; YAML formatter, UUID generator, URL &amp; HTML encoder, Docker compose converter. Fast, private, free.">
+    <link rel="canonical" href="https://www.unitoolify.com/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="Free Online Developer Tools – Base64, JSON, UUID &amp; More" />
+    <meta property="og:description"
+        content="Free, private, browser-based developer tools: Base64 encode/decode, JSON &amp; YAML formatters, UUID generator, URL encoding, Docker compose converter." />
+    <meta property="og:url" content="https://www.unitoolify.com/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Free Online Developer Tools – Base64, JSON, UUID &amp; More" />
+    <meta name="twitter:description"
+        content="Free, private, browser-based developer tools: Base64 encode/decode, JSON &amp; YAML formatters, UUID generator, URL encoding, Docker compose converter." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -37,6 +51,39 @@
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Unitoolify",
+        "url": "https://www.unitoolify.com/",
+        "description": "Free online developer tools that run entirely in your browser: Base64 encoder and decoder, JSON and YAML formatters, UUID generator, URL and HTML encoder, Docker compose converter and more.",
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Free Online Developer Tools",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Base64 Encoder", "url": "https://www.unitoolify.com/base64encode/" },
+            { "@type": "ListItem", "position": 2, "name": "Base64 Decoder", "url": "https://www.unitoolify.com/base64decode/" },
+            { "@type": "ListItem", "position": 3, "name": "URL Encoder", "url": "https://www.unitoolify.com/url-encode-string/" },
+            { "@type": "ListItem", "position": 4, "name": "URL Decoder", "url": "https://www.unitoolify.com/url-decode-string/" },
+            { "@type": "ListItem", "position": 5, "name": "HTML Encoder", "url": "https://www.unitoolify.com/html-encode-string/" },
+            { "@type": "ListItem", "position": 6, "name": "HTML Decoder", "url": "https://www.unitoolify.com/html-decode-string/" },
+            { "@type": "ListItem", "position": 7, "name": "JSON Formatter", "url": "https://www.unitoolify.com/prettify-json/" },
+            { "@type": "ListItem", "position": 8, "name": "YAML Formatter", "url": "https://www.unitoolify.com/prettify-yaml/" },
+            { "@type": "ListItem", "position": 9, "name": "JSON to YAML Converter", "url": "https://www.unitoolify.com/convert-json-to-yaml/" },
+            { "@type": "ListItem", "position": 10, "name": "YAML to JSON Converter", "url": "https://www.unitoolify.com/convert-yaml-to-json/" },
+            { "@type": "ListItem", "position": 11, "name": "Docker Run to Compose Converter", "url": "https://www.unitoolify.com/composerize/" },
+            { "@type": "ListItem", "position": 12, "name": "Docker Compose to Run Converter", "url": "https://www.unitoolify.com/decomposerize/" },
+            { "@type": "ListItem", "position": 13, "name": "UUID Generator", "url": "https://www.unitoolify.com/uuid-generator/" },
+            { "@type": "ListItem", "position": 14, "name": "Chrome Bookmark Separator", "url": "https://www.unitoolify.com/bookmark-separator/" }
+        ]
+    }
+    </script>
 </head>
 
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center p-4 md:p-8">
@@ -44,6 +91,10 @@
         <h1 class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent pb-2">Unitoolify</h1>
         <p class="text-slate-400 text-base md:text-xl leading-relaxed">A premium collection of essential web developer utilities. Fast, private, and beautiful.</p>
     </header>
+
+    <section class="w-full max-w-7xl mb-10 md:mb-14 text-center">
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-4xl mx-auto">Free online developer tools for encoding, formatting, converting and generating data. Use the <a href="base64encode/" class="text-blue-400 underline hover:text-blue-300">Base64 encoder</a> and <a href="base64decode/" class="text-blue-400 underline hover:text-blue-300">decoder</a>, <a href="prettify-json/" class="text-blue-400 underline hover:text-blue-300">JSON formatter</a>, <a href="uuid-generator/" class="text-blue-400 underline hover:text-blue-300">UUID v4 generator</a>, <a href="composerize/" class="text-blue-400 underline hover:text-blue-300">Docker compose converter</a> and more. Every tool runs 100% in your browser — your data never leaves your device.</p>
+    </section>
 
     <main class="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 items-start">
         <section class="mb-4 md:mb-6 w-full">
@@ -161,8 +212,78 @@
         </section>
     </main>
 
-    <footer class="mt-auto pt-12 md:pt-16 text-slate-400 text-sm">
-        &copy; 2026 Unitoolify. All rights reserved.
+    <section class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-14">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <h2 class="text-lg md:text-xl font-bold mb-3 text-slate-50">100% Private</h2>
+            <p class="text-slate-400 leading-relaxed text-sm">All tools run entirely client-side with JavaScript. Your text, files, keys and configs are never uploaded to any server — perfect for sensitive data like API keys, tokens and database IDs.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <h2 class="text-lg md:text-xl font-bold mb-3 text-slate-50">Free Forever</h2>
+            <p class="text-slate-400 leading-relaxed text-sm">No accounts, no sign-ups, no paywalls and no usage limits. Every utility — from the Base64 encoder to the UUID generator — is completely free for developers, students and teams.</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <h2 class="text-lg md:text-xl font-bold mb-3 text-slate-50">Fast &amp; Lightweight</h2>
+            <p class="text-slate-400 leading-relaxed text-sm">Nothing to install and nothing to configure. Open a tool, paste your data and get instant results with live mode — perfect for debugging, testing and everyday developer workflows.</p>
+        </div>
+    </section>
+
+    <section class="w-full max-w-7xl bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 mb-10 md:mb-14">
+        <h2 class="text-lg md:text-xl font-bold mb-6 pb-2 border-b border-white/10 text-slate-50">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                <summary class="text-slate-200 font-medium cursor-pointer">What is Unitoolify?</summary>
+                <p class="text-slate-400 leading-relaxed mt-2">Unitoolify is a free collection of browser-based developer tools for everyday tasks: Base64 encoding and decoding, URL and HTML escaping, JSON and YAML formatting, JSON/YAML conversion, UUID generation, Docker compose conversion and bookmark organization. No downloads, no accounts.</p>
+            </details>
+            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                <summary class="text-slate-200 font-medium cursor-pointer">Is my data private when I use these tools?</summary>
+                <p class="text-slate-400 leading-relaxed mt-2">Yes. Every tool processes your data locally in your browser using JavaScript. Nothing is sent to a server, so you can safely encode, format or convert sensitive information such as API keys, tokens, credentials and private configs.</p>
+            </details>
+            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                <summary class="text-slate-200 font-medium cursor-pointer">Do I need to create an account or pay?</summary>
+                <p class="text-slate-400 leading-relaxed mt-2">No. All tools are free to use with no registration and no usage limits. Simply open the page, paste your input and copy the result.</p>
+            </details>
+            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                <summary class="text-slate-200 font-medium cursor-pointer">Do the tools work on mobile devices?</summary>
+                <p class="text-slate-400 leading-relaxed mt-2">Yes. The entire site is fully responsive, and all tools work in any modern browser with JavaScript enabled — on desktop, tablet and mobile.</p>
+            </details>
+            <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                <summary class="text-slate-200 font-medium cursor-pointer">Which is the most popular tool on Unitoolify?</summary>
+                <p class="text-slate-400 leading-relaxed mt-2">The most used utilities are the <a href="base64encode/" class="text-blue-400 underline hover:text-blue-300">Base64 encoder</a>, the <a href="base64decode/" class="text-blue-400 underline hover:text-blue-300">Base64 decoder</a>, the <a href="prettify-json/" class="text-blue-400 underline hover:text-blue-300">JSON formatter</a>, the <a href="uuid-generator/" class="text-blue-400 underline hover:text-blue-300">UUID generator</a> and the <a href="composerize/" class="text-blue-400 underline hover:text-blue-300">Docker run to compose converter</a>.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer class="mt-auto pt-12 md:pt-16 text-slate-400 text-sm w-full">
+        <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 pb-8 border-b border-white/10">
+            <div class="max-w-sm">
+                <div class="font-semibold text-slate-200 mb-2">Unitoolify</div>
+                <p class="leading-relaxed">Free, private, browser-based developer tools. Encode, format, convert and generate data without ever sending it to a server.</p>
+            </div>
+            <nav aria-label="Popular tools">
+                <div class="font-semibold text-slate-200 mb-2">Popular Tools</div>
+                <ul class="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                    <li><a href="base64encode/" class="hover:text-slate-200">Base64 Encoder</a></li>
+                    <li><a href="base64decode/" class="hover:text-slate-200">Base64 Decoder</a></li>
+                    <li><a href="prettify-json/" class="hover:text-slate-200">JSON Formatter</a></li>
+                    <li><a href="prettify-yaml/" class="hover:text-slate-200">YAML Formatter</a></li>
+                    <li><a href="uuid-generator/" class="hover:text-slate-200">UUID Generator</a></li>
+                    <li><a href="convert-json-to-yaml/" class="hover:text-slate-200">JSON to YAML</a></li>
+                    <li><a href="composerize/" class="hover:text-slate-200">Composerize</a></li>
+                    <li><a href="url-encode-string/" class="hover:text-slate-200">URL Encoder</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Popular searches">
+                <div class="font-semibold text-slate-200 mb-2">Popular Searches</div>
+                <ul class="grid grid-cols-1 gap-y-1.5">
+                    <li><a href="base64encode/" class="hover:text-slate-200">Base64 encoder online</a></li>
+                    <li><a href="uuid-generator/" class="hover:text-slate-200">UUID v4 generator online</a></li>
+                    <li><a href="prettify-json/" class="hover:text-slate-200">JSON formatter online</a></li>
+                    <li><a href="base64decode/" class="hover:text-slate-200">Base64 decoder online</a></li>
+                    <li><a href="composerize/" class="hover:text-slate-200">docker run to compose converter</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="text-center py-6">&copy; 2026 Unitoolify. All rights reserved.</div>
     </footer>
     <script>
         document.querySelectorAll('.tool-card').forEach(card => {

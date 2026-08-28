@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Decode String Online - Unitoolify</title>
-    <meta name="description" content="Quickly and securely decode URL-encoded strings online.">
+    <title>URL Decoder Online – Decode Percent-Encoding | Unitoolify</title>
+    <meta name="description" content="Free online URL decoder. Turn percent-encoded strings (%20, %E4%B8%AD) back into readable text instantly in your browser. Private, fast and free.">
+    <link rel="canonical" href="https://www.unitoolify.com/url-decode-string/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="URL Decoder Online – Decode Percent-Encoding Free" />
+    <meta property="og:description" content="Free online URL decoder based on decodeURIComponent. Decode %20, %E4%B8%AD and more instantly, 100% private." />
+    <meta property="og:url" content="https://www.unitoolify.com/url-decode-string/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="URL Decoder Online – Decode Percent-Encoding Free" />
+    <meta name="twitter:description" content="Free online URL decoder based on decodeURIComponent. Decode %20, %E4%B8%AD and more instantly, 100% private." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -23,6 +35,55 @@
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "URL Decoder Online",
+        "alternateName": "URL Decode Tool",
+        "url": "https://www.unitoolify.com/url-decode-string/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Free online URL decoder that converts percent-encoded strings back into readable text using decodeURIComponent.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "featureList": [
+            "Decode percent-encoded strings",
+            "Recover query-string values",
+            "Full UTF-8 support (including CJK characters)",
+            "Live mode as you type",
+            "One-click copy"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is URL decoding?",
+                "acceptedAnswer": { "@type": "Answer", "text": "URL decoding reverses percent-encoding: it takes strings like %20 or %E4%B8%AD and converts them back into their original characters (a space or a Chinese character). It uses the browser's native decodeURIComponent function." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I decode a query string with multiple parameters?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Paste the entire encoded query string (for example name=John%20Doe%26city%3DParis) into the input. The decoder restores every parameter to its readable form at once." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can it decode UTF-8 percent-encoding, such as Chinese characters?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. decodeURIComponent fully supports UTF-8, so sequences like %E4%B8%AD%E6%96%87 decode correctly to Chinese text." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is decoding done locally in my browser?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything runs client-side with JavaScript, and your input is never sent to any server." }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
@@ -61,7 +122,41 @@
         
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About URL Decoding</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">URL decoding reverses the process of URL encoding. It takes a percent-encoded string (like "%20" for a space) and converts it back into its original character form. This tool uses JavaScript's native <code>decodeURIComponent()</code>.</p><p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">URL decoding reverses the process of URL encoding. It takes a percent-encoded string (like "%20" for a space) and converts it back into its original character form. This tool uses JavaScript's native <code>decodeURIComponent()</code>.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">You'll need a URL decoder whenever you inspect raw HTTP logs, debug query-string parameters, parse redirect targets or read percent-encoded values from third-party APIs. Because <code>decodeURIComponent()</code> decodes complete UTF-8 sequences, the tool correctly restores text in any language, including Chinese, Japanese, Korean and accented Latin characters.</p>
+            <p class="text-slate-400 leading-relaxed mb-4"><strong>Your data is never sent to our servers</strong>, ensuring complete privacy and security.</p>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">What is URL decoding?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">URL decoding reverses percent-encoding: it takes strings like %20 or %E4%B8%AD and converts them back into their original characters (a space or a Chinese character). It uses the browser's native decodeURIComponent function.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">How do I decode a query string with multiple parameters?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Paste the entire encoded query string (for example name=John%20Doe%26city%3DParis) into the input. The decoder restores every parameter to its readable form at once.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Can it decode UTF-8 percent-encoding, such as Chinese characters?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. decodeURIComponent fully supports UTF-8, so sequences like %E4%B8%AD%E6%96%87 decode correctly to Chinese text.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Is decoding done locally in my browser?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Everything runs client-side with JavaScript, and your input is never sent to any server.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="../url-encode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">URL Encode</a>
+                <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Decode</a>
+                <a href="../html-decode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">HTML Decode</a>
+                <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
+            </div>
         </div>
     </main>
 

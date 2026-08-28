@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64 Decode Online - Unitoolify</title>
-    <meta name="description" content="Quickly and securely decode Base64 encoded strings or files back to their original format. Simple online tool, completely private.">
+    <title>Base64 Decoder Online – Decode Text &amp; Files | Unitoolify</title>
+    <meta name="description" content="Free online Base64 decoder. Convert Base64 strings or files back to text or binary in your browser, with automatic Base64URL support and file download. 100% private.">
+    <link rel="canonical" href="https://www.unitoolify.com/base64decode/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="Base64 Decoder Online – Decode Strings &amp; Files Free" />
+    <meta property="og:description" content="Free online Base64 decoder with automatic Base64URL support and file download. Runs 100% in your browser." />
+    <meta property="og:url" content="https://www.unitoolify.com/base64decode/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Base64 Decoder Online – Decode Strings &amp; Files Free" />
+    <meta name="twitter:description" content="Free online Base64 decoder with automatic Base64URL support and file download. Runs 100% in your browser." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -23,6 +35,55 @@
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Base64 Decoder Online",
+        "alternateName": "Base64 Decode Tool",
+        "url": "https://www.unitoolify.com/base64decode/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Free online Base64 decoder that converts Base64 and Base64URL strings or files back to their original text or binary format in the browser.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "featureList": [
+            "Decode Base64 strings to text instantly",
+            "Automatic URL-safe Base64URL support",
+            "Upload Base64 files for decoding",
+            "Download decoded binary files",
+            "Live mode as you type"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Base64 decoding used for?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Base64 decoding converts Base64-encoded strings back into their original text or binary form. It is commonly used to decode data URIs, inspect tokens, recover email attachments and convert Base64 images back into files." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I decode a Base64 image and download it?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Paste a Base64 string or upload a .b64 file, then use the 'Download Decoded File' button to save the decoded binary (for example a PNG or PDF) directly to your device." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the tool support URL-safe Base64URL?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. The decoder automatically detects URL-safe Base64URL strings (which use '-' and '_' instead of '+' and '/') and restores any missing padding before decoding." }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does my decoded output show as binary data?",
+                "acceptedAnswer": { "@type": "Answer", "text": "If the decoded bytes are not valid UTF-8 text, the input is probably a binary file such as an image, audio or document. Use the 'Download Decoded File' button to save it, or paste a Base64 string that encodes plain text." }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
@@ -69,7 +130,40 @@
         <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10">
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Base64 Decoding</h2>
             <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's Base64 decoder. Easily reverse Base64 strings back to their original text or binary file formats. Because this operation happens locally in your browser, <strong>no data is sent to external servers</strong>, providing total confidentiality.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Developers decode Base64 every day: turning <code>data:image/png;base64,...</code> data URIs back into image files, inspecting the payload of JWTs, recovering uploaded attachments, or debugging API responses that return Base64-encoded values. This free Base64 decoder handles text, images, PDFs and any other binary content.</p>
             <p class="text-slate-400 leading-relaxed mb-4">Our tool intelligently handles both standard Base64 and URL-safe Base64URL variants, automatically interpreting them. If the decoded content is meant to be a file (like an image or a document), you can use the "Download Decoded File" option to save it directly to your device.</p>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">What is Base64 decoding used for?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Base64 decoding converts Base64-encoded strings back into their original text or binary form. It is commonly used to decode data URIs, inspect tokens, recover email attachments and convert Base64 images back into files.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Can I decode a Base64 image and download it?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Paste a Base64 string or upload a .b64 file, then use the "Download Decoded File" button to save the decoded binary (for example a PNG or PDF) directly to your device.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Does the tool support URL-safe Base64URL?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. The decoder automatically detects URL-safe Base64URL strings (which use "-" and "_" instead of "+" and "/") and restores any missing padding before decoding.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Why does my decoded output show as binary data?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">If the decoded bytes are not valid UTF-8 text, the input is probably a binary file such as an image, audio or document. Use the "Download Decoded File" button to save it, or paste a Base64 string that encodes plain text.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="../base64encode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Encode</a>
+                <a href="../url-decode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">URL Decode</a>
+                <a href="../html-decode-string/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">HTML Decode</a>
+                <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
+            </div>
         </div>
     </main>
 

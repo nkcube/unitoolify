@@ -4,8 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decomposerize - Unitoolify</title>
-    <meta name="description" content="Convert docker-compose files into docker run commands securely in your browser.">
+    <title>Decomposerize – Docker Compose to Run Converter | Unitoolify</title>
+    <meta name="description" content="Free online Decomposerize tool: convert docker-compose.yml files back into docker run commands instantly in your browser. Great for quick testing and debugging.">
+    <link rel="canonical" href="https://www.unitoolify.com/decomposerize/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="Decomposerize – Docker Compose to Run Converter" />
+    <meta property="og:description" content="Convert docker-compose.yml files back into docker run commands instantly in your browser. Free, no installation." />
+    <meta property="og:url" content="https://www.unitoolify.com/decomposerize/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Decomposerize – Docker Compose to Run Converter" />
+    <meta name="twitter:description" content="Convert docker-compose.yml files back into docker run commands instantly in your browser. Free, no installation." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -24,6 +36,54 @@
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Decomposerize – Docker Compose to Run Converter",
+        "url": "https://www.unitoolify.com/decomposerize/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Free online tool that converts docker-compose.yml files back into docker run commands entirely in the browser.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "featureList": [
+            "Convert docker-compose.yml to docker run",
+            "Handles multi-service compose files",
+            "100% in-browser, no server processing",
+            "Instant conversion as you paste",
+            "One-click copy"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Decomposerize?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Decomposerize reverses Composerize: it takes an existing docker-compose.yml file and translates it back into one or more docker run commands." }
+            },
+            {
+                "@type": "Question",
+                "name": "When would I convert compose back to docker run?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Common reasons: quickly testing a single container without setting up compose, debugging on a server where docker compose is not available, translating tutorials between the two formats, or comparing how compose maps to raw flags." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it support multiple services in one compose file?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each service in the compose file is emitted as its own docker run command, including its ports, volumes, environment variables, networks and health checks." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the conversion private?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything happens in your browser securely. Your compose file, including any secrets or environment values, never leaves your device." }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
@@ -62,6 +122,39 @@
             <p class="text-slate-400 leading-relaxed mb-4">This is extremely useful when you want to quickly test a container without setting up a compose file, or
                 when translating tutorials back and forth. <strong>Everything happens in your browser securely.</strong>
             </p>
+            <p class="text-slate-400 leading-relaxed mb-4">It is also a great learning tool: seeing exactly which flags your compose file produces helps you understand how Compose maps services, ports, volumes and networks to the Docker engine underneath.</p>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">What is Decomposerize?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Decomposerize reverses Composerize: it takes an existing docker-compose.yml file and translates it back into one or more docker run commands.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">When would I convert compose back to docker run?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Common reasons: quickly testing a single container without setting up compose, debugging on a server where docker compose is not available, translating tutorials between the two formats, or comparing how compose maps to raw flags.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Does it support multiple services in one compose file?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Each service in the compose file is emitted as its own docker run command, including its ports, volumes, environment variables, networks and health checks.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Is the conversion private?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Everything happens in your browser securely. Your compose file, including any secrets or environment values, never leaves your device.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="../composerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Composerize</a>
+                <a href="../prettify-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify YAML</a>
+                <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
+                <a href="../convert-json-to-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">JSON to YAML</a>
+            </div>
         </div>
     </main>
 

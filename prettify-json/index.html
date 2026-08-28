@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prettify JSON Online - Unitoolify</title>
-    <meta name="description" content="Quickly format and prettify JSON online. Ensure your JSON is readable and well-structured.">
+    <title>JSON Formatter Online – Validate &amp; Prettify | Unitoolify</title>
+    <meta name="description" content="Free online JSON formatter and validator. Beautify minified JSON with 2-space, 4-space or tab indentation, catch syntax errors, and copy or download instantly.">
+    <link rel="canonical" href="https://www.unitoolify.com/prettify-json/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="JSON Formatter &amp; Validator Online – Free" />
+    <meta property="og:description" content="Free online JSON formatter and validator. Beautify minified JSON, catch syntax errors, copy or download. 100% in-browser." />
+    <meta property="og:url" content="https://www.unitoolify.com/prettify-json/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JSON Formatter &amp; Validator Online – Free" />
+    <meta name="twitter:description" content="Free online JSON formatter and validator. Beautify minified JSON, catch syntax errors, copy or download. 100% in-browser." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -25,6 +37,54 @@
     </script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "JSON Formatter Online",
+        "alternateName": "Prettify JSON Tool",
+        "url": "https://www.unitoolify.com/prettify-json/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Free online JSON formatter and validator that beautifies minified JSON and reports syntax errors.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "featureList": [
+            "Beautify minified JSON with 2-space, 4-space or tab indentation",
+            "Validate JSON syntax with detailed errors",
+            "Live formatting as you type",
+            "Copy and download formatted JSON"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a JSON formatter?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A JSON formatter (or JSON beautifier) takes minified JSON — a single unreadable line — and pretty-prints it with indentation and line breaks so the structure is easy to read and debug. This tool also validates your JSON and reports syntax errors." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix an 'Invalid JSON' error?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Turn off live mode and click 'Format JSON' to see the exact error message and location. Common mistakes are trailing commas, single quotes, unquoted keys, and mismatched braces or brackets. Fix the reported line and re-format." }
+            },
+            {
+                "@type": "Question",
+                "name": "What indentation should I use — 2 spaces, 4 spaces or tabs?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Either works for valid JSON. 2 spaces is the most common convention in JavaScript projects, 4 spaces is common in Java and Go, and tabs are a personal or team preference. You can switch freely and re-format." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my JSON uploaded anywhere?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Formatting and validation happen entirely in your browser. Your JSON never leaves your device, so you can safely format API responses containing tokens or personal data." }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
@@ -79,7 +139,40 @@
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Prettify JSON</h2>
             <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's JSON Prettifier. This tool helps you transform unreadable, minified JSON strings into well-structured, indented formats that are easy to read and debug.</p>
             <p class="text-slate-400 leading-relaxed mb-4"><strong>Private by design:</strong> Your JSON data is processed entirely within your browser. We never send your data to any external server.</p>
-            <p class="text-slate-400 leading-relaxed mb-4">The tool automatically validates your JSON syntax and points out errors if the input is malformed. Use the indentation options to customize the formatting to your preference.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">Whether you are debugging an API response in your console, sharing a config file in a pull request, or studying a large JSON export, a good JSON formatter saves minutes of squinting. Paste minified JSON from <code>curl</code>, Postman, browser dev tools or any webhook payload, and get a clean, indented structure back instantly.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">The tool automatically validates your JSON syntax and points out errors if the input is malformed. Use the indentation options (2 spaces, 4 spaces or tabs) to customize the formatting to your preference, then copy or download the result.</p>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">What is a JSON formatter?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">A JSON formatter (or JSON beautifier) takes minified JSON — a single unreadable line — and pretty-prints it with indentation and line breaks so the structure is easy to read and debug. This tool also validates your JSON and reports syntax errors.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">How do I fix an "Invalid JSON" error?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Turn off live mode and click "Format JSON" to see the exact error message and location. Common mistakes are trailing commas, single quotes, unquoted keys, and mismatched braces or brackets. Fix the reported line and re-format.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">What indentation should I use — 2 spaces, 4 spaces or tabs?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Either works for valid JSON. 2 spaces is the most common convention in JavaScript projects, 4 spaces is common in Java and Go, and tabs are a personal or team preference. You can switch freely and re-format.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Is my JSON uploaded anywhere?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">No. Formatting and validation happen entirely in your browser. Your JSON never leaves your device, so you can safely format API responses containing tokens or personal data.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="../convert-json-to-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">JSON to YAML</a>
+                <a href="../prettify-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify YAML</a>
+                <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
+                <a href="../base64decode/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Base64 Decode</a>
+            </div>
         </div>
     </main>
 

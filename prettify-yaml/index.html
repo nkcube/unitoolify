@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prettify YAML Online - Unitoolify</title>
-    <meta name="description" content="Quickly format and prettify YAML online. Validate and structure your YAML files securely in your browser.">
+    <title>YAML Formatter Online – Validate &amp; Prettify | Unitoolify</title>
+    <meta name="description" content="Free online YAML formatter and validator. Beautify and lint YAML configs, docker-compose files and Kubernetes manifests with consistent indentation. 100% in-browser.">
+    <link rel="canonical" href="https://www.unitoolify.com/prettify-yaml/" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:title" content="YAML Formatter &amp; Validator Online – Free" />
+    <meta property="og:description" content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser." />
+    <meta property="og:url" content="https://www.unitoolify.com/prettify-yaml/" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="YAML Formatter &amp; Validator Online – Free" />
+    <meta name="twitter:description" content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -27,6 +39,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="/assets/js/theme.js"></script>
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "YAML Formatter Online",
+        "alternateName": "Prettify YAML Tool",
+        "url": "https://www.unitoolify.com/prettify-yaml/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Free online YAML formatter and validator that beautifies YAML configs, docker-compose files and Kubernetes manifests.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "featureList": [
+            "Beautify YAML with consistent 2-space or 4-space indentation",
+            "Validate YAML syntax and catch indentation errors",
+            "Support for docker-compose and Kubernetes manifests",
+            "Live formatting as you type",
+            "Copy and download formatted YAML"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a YAML formatter used for?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A YAML formatter standardizes the layout of YAML files with consistent indentation so they are readable and valid. It is commonly used on configuration files, docker-compose.yml files, CI/CD pipelines and Kubernetes manifests." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can it validate Kubernetes manifests?",
+                "acceptedAnswer": { "@type": "Answer", "text": "This tool validates YAML syntax and structure, which catches the most common Kubernetes manifest errors such as broken indentation, duplicate keys and malformed lists. For full schema validation against Kubernetes API objects, pair it with kubectl dry-run." }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is YAML indentation so strict?",
+                "acceptedAnswer": { "@type": "Answer", "text": "YAML uses indentation (spaces, not tabs) to define structure — unlike JSON, there are no braces. One wrong space changes the meaning of the whole document, which is why a formatter that normalizes indentation is so valuable." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my YAML private?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Formatting and validation run entirely in your browser. Your YAML never leaves your device, so it is safe to format configs containing secrets or internal infrastructure details." }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col">
     <header class="py-6 px-4 md:py-8 text-center">
@@ -80,7 +141,40 @@
             <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">About Prettify YAML</h2>
             <p class="text-slate-400 leading-relaxed mb-4">Welcome to Unitoolify's YAML Prettifier. This tool helps you validate and standardize your YAML files into a consistent, readable format.</p>
             <p class="text-slate-400 leading-relaxed mb-4"><strong>Private by design:</strong> Your YAML data is processed entirely within your browser. We never send your data to any external server.</p>
+            <p class="text-slate-400 leading-relaxed mb-4">YAML powers modern infrastructure: <code>docker-compose.yml</code> files, GitHub Actions and GitLab CI pipelines, Ansible playbooks, and Kubernetes manifests all rely on YAML. Because structure is defined purely by indentation, a misaligned key breaks the entire file — this formatter normalizes indentation and flags problems before you deploy.</p>
             <p class="text-slate-400 leading-relaxed mb-4">YAML syntax can be tricky due to its reliance on exact indentation. This tool catches indentation errors and structural issues immediately, ensuring your config files and Kubernetes manifests are perfectly valid before you deploy them.</p>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">What is a YAML formatter used for?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">A YAML formatter standardizes the layout of YAML files with consistent indentation so they are readable and valid. It is commonly used on configuration files, docker-compose.yml files, CI/CD pipelines and Kubernetes manifests.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Can it validate Kubernetes manifests?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">This tool validates YAML syntax and structure, which catches the most common Kubernetes manifest errors such as broken indentation, duplicate keys and malformed lists. For full schema validation against Kubernetes API objects, pair it with kubectl dry-run.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Why is YAML indentation so strict?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">YAML uses indentation (spaces, not tabs) to define structure — unlike JSON, there are no braces. One wrong space changes the meaning of the whole document, which is why a formatter that normalizes indentation is so valuable.</p>
+                </details>
+                <details class="group bg-black/20 rounded-lg p-4 border border-white/10">
+                    <summary class="text-slate-200 font-medium cursor-pointer">Is my YAML private?</summary>
+                    <p class="text-slate-400 leading-relaxed mt-2">Yes. Formatting and validation run entirely in your browser. Your YAML never leaves your device, so it is safe to format configs containing secrets or internal infrastructure details.</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10">
+            <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">Related Tools</h2>
+            <div class="flex flex-wrap gap-3">
+                <a href="../convert-yaml-to-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">YAML to JSON</a>
+                <a href="../prettify-json/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Prettify JSON</a>
+                <a href="../convert-json-to-yaml/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">JSON to YAML</a>
+                <a href="../decomposerize/" class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10">Decomposerize</a>
+            </div>
         </div>
     </main>
 

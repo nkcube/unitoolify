@@ -73,3 +73,45 @@ jobs:
             decomposerize
             glassmorphism
             tailwindcss
+            base64
+            Base64URL
+            base64url
+            percent-encoding
+            percent-encoded
+            percent-encode
+            encodeURIComponent
+            decodeURIComponent
+            docker-compose
+            docker-compose.yml
+            docker run
+            docker compose
+            Kubernetes
+            kubectl
+            js-yaml
+            dockerfile
+            bookmarklet
+            bookmarks
+            prettifier
+            prettify
+            UUIDs
+            uuid
+            unminified
+            GitHub
+            GitLab
+            Postman
+            curl
+            JWT
+            JWTs
+            URI
+            URIs
+            schema.org
+            webhook
+            webhooks
+            CJK
+            Chromium
+            Ansible
+            playbooks
+            minified
+            data URI
+            data URIs
+            idempotency
