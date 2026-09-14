@@ -134,10 +134,14 @@
         ]
       }
     </script>
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="/assets/css/interface.css" />
   </head>
   <body
     class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
   >
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="py-6 px-4 md:py-8 text-center">
       <h1
         class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
@@ -150,18 +154,20 @@
       <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
         <a
           href="../uuid-generator/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-all duration-200"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
           >UUID Generator</a
         >
         <a
           href="/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
           >&larr; Home</a
         >
       </div>
     </header>
 
     <main
+      id="main-content"
+      tabindex="-1"
       class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
     >
       <div
@@ -172,8 +178,8 @@
         </div>
 
         <div class="flex flex-col gap-4">
-          <div class="flex flex-col gap-2">
-            <label class="text-sm font-medium text-slate-50">Version:</label>
+          <fieldset class="flex flex-col gap-2">
+            <legend class="text-sm font-medium text-slate-50">Version</legend>
             <div class="flex gap-6">
               <label
                 class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
@@ -199,7 +205,7 @@
                 v1 (Timestamp)
               </label>
             </div>
-          </div>
+          </fieldset>
 
           <div class="flex flex-col gap-1">
             <label class="text-sm font-medium text-slate-50" for="uuidCount"
@@ -208,6 +214,7 @@
             <input
               type="number"
               id="uuidCount"
+              name="uuidCount"
               value="1"
               min="1"
               max="10000"
@@ -218,14 +225,24 @@
           <label
             class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
           >
-            <input type="checkbox" id="uppercase" class="accent-primary" />
+            <input
+              type="checkbox"
+              id="uppercase"
+              name="uppercase"
+              class="accent-primary"
+            />
             Uppercase letters (e.g. A-F)
           </label>
 
           <label
             class="flex items-center gap-2 text-sm text-slate-300 cursor-pointer"
           >
-            <input type="checkbox" id="noHyphens" class="accent-primary" />
+            <input
+              type="checkbox"
+              id="noHyphens"
+              name="noHyphens"
+              class="accent-primary"
+            />
             Remove hyphens (e.g. no dashes)
           </label>
         </div>
@@ -242,7 +259,9 @@
         class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
       >
         <div class="flex justify-between items-center">
-          <div class="text-lg md:text-xl font-semibold">Output</div>
+          <label for="outputText" class="text-lg md:text-xl font-semibold"
+            >Output</label
+          >
           <div class="flex gap-2">
             <button
               class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
@@ -259,10 +278,13 @@
           </div>
         </div>
         <textarea
+          spellcheck="false"
+          autocomplete="off"
           id="outputText"
+          name="outputText"
           readonly
           class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Generated UUIDs will appear here..."
+          placeholder="Generated UUIDs will appear here…"
         ></textarea>
       </div>
 
@@ -376,22 +398,22 @@
         <div class="flex flex-wrap gap-3">
           <a
             href="../base64encode/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
             >Base64 Encode</a
           >
           <a
             href="../base64decode/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
             >Base64 Decode</a
           >
           <a
             href="../prettify-json/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
             >Prettify JSON</a
           >
           <a
             href="../url-encode-string/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10"
+            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
             >URL Encode</a
           >
         </div>

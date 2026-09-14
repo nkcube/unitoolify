@@ -1,0 +1,132 @@
+:root {
+  color-scheme: dark;
+  --focus-color: #93c5fd;
+}
+
+body {
+  -webkit-tap-highlight-color: rgb(147 197 253 / 25%);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  scroll-margin-top: 2rem;
+}
+
+main > *,
+.tool-card > * {
+  min-width: 0;
+}
+
+p,
+.tool-card {
+  overflow-wrap: anywhere;
+}
+
+a,
+button,
+input,
+select,
+summary,
+label {
+  touch-action: manipulation;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  color: #0f172a;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+select,
+select option {
+  background-color: #172033;
+  color: #f8fafc;
+}
+
+/* cspell:ignore nums */
+input[type="number"] {
+  font-variant-numeric: tabular-nums;
+}
+
+label:has(input[type="checkbox"], input[type="radio"]) {
+  min-height: 2.75rem;
+}
+
+.file-upload {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.file-upload label {
+  font-weight: 600;
+}
+
+.file-upload input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: #cbd5e1;
+}
+
+.file-upload input::file-selector-button {
+  margin-right: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #334155;
+  color: #f8fafc;
+  cursor: pointer;
+}
+
+.tool-card:focus-visible::before {
+  opacity: 1;
+}
+
+@media (pointer: coarse) {
+  button,
+  summary,
+  header a {
+    min-height: 2.75rem;
+  }
+
+  textarea,
+  input,
+  select {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .tool-card:hover {
+    transform: none;
+    translate: none;
+  }
+}
