@@ -36,7 +36,7 @@ jobs:
         run: npm install -g htmlhint
         
       - name: Run HTMLHint
-        run: htmlhint "**/*.html" --ignore "yandex_*.html,google*.html"
+        run: htmlhint "**/*.html" --ignore "yandex_*.html,google*.html,baidu_verify_codeva-DpypYaT0xr.html"
 
   format-check:
     name: Prettier Format Check
