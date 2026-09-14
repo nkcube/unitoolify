@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decomposerize – Docker Compose to Run Converter | Unitoolify</title>
+    <title>Decomposerize – Docker Compose to Docker Run | Unitoolify</title>
     <meta
       name="description"
-      content="Free online Decomposerize tool: convert docker-compose.yml files back into docker run commands instantly in your browser. Great for quick testing and debugging."
+      content="Convert Docker Compose to docker run commands online with Decomposerize. Paste docker-compose.yml and copy commands for testing. Free, runs in your browser."
     />
     <link rel="canonical" href="https://www.unitoolify.com/decomposerize/" />
     <meta name="robots" content="index, follow" />
@@ -15,11 +15,11 @@
     <meta property="og:site_name" content="Unitoolify" />
     <meta
       property="og:title"
-      content="Decomposerize – Docker Compose to Run Converter"
+      content="Decomposerize – Docker Compose to Docker Run"
     />
     <meta
       property="og:description"
-      content="Convert docker-compose.yml files back into docker run commands instantly in your browser. Free, no installation."
+      content="Convert Docker Compose to docker run commands online with Decomposerize. Paste docker-compose.yml and copy commands for testing. Free, runs in your browser."
     />
     <meta
       property="og:url"
@@ -29,11 +29,11 @@
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="Decomposerize – Docker Compose to Run Converter"
+      content="Decomposerize – Docker Compose to Docker Run"
     />
     <meta
       name="twitter:description"
-      content="Convert docker-compose.yml files back into docker run commands instantly in your browser. Free, no installation."
+      content="Convert Docker Compose to docker run commands online with Decomposerize. Paste docker-compose.yml and copy commands for testing. Free, runs in your browser."
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -62,12 +62,12 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Decomposerize – Docker Compose to Run Converter",
+        "name": "Decomposerize – Docker Compose to Docker Run",
         "url": "https://www.unitoolify.com/decomposerize/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free online tool that converts docker-compose.yml files back into docker run commands entirely in the browser.",
+        "description": "Convert Docker Compose to docker run commands online with Decomposerize. Paste docker-compose.yml and copy commands for testing. Free, runs in your browser.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -132,10 +132,10 @@
       <h1
         class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
       >
-        Unitoolify Decomposerize
+        Decomposerize – Docker Compose to Docker Run
       </h1>
       <p class="text-slate-400 mb-6 md:mb-8">
-        Convert docker-compose files into docker run commands
+        Convert Docker Compose to docker run commands online with Decomposerize.
       </p>
       <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
         <a
@@ -216,6 +216,29 @@
           All in the browser; nothing leaves your machine.
         </p>
       </div>
+
+      <section
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          How to use Decomposerize
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Paste your docker-compose.yml into the input to generate docker run
+          commands. Copy the command for the service you want to test and review
+          its ports, volumes, and environment variables before running it.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          For a service with image: nginx and ports: [&quot;8080:80&quot;], the
+          corresponding port mapping is docker run -p 8080:80 nginx. Generated
+          commands may include additional options from your Compose file.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Compose can coordinate multiple services. Review shared networks,
+          named volumes, and service dependencies separately when running
+          containers with individual commands.
+        </p>
+      </section>
 
       <div
         class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Composerize – Docker Run to Compose Converter | Unitoolify</title>
+    <title>Composerize – Docker Run to Docker Compose | Unitoolify</title>
     <meta
       name="description"
-      content="Free online Composerize tool: convert docker run commands into docker-compose.yml files instantly and securely in your browser. No installation needed."
+      content="Convert docker run to Docker Compose online with Composerize. Paste a command, generate docker-compose.yml, and copy the YAML. Free, in-browser conversion."
     />
     <link rel="canonical" href="https://www.unitoolify.com/composerize/" />
     <meta name="robots" content="index, follow" />
@@ -15,22 +15,22 @@
     <meta property="og:site_name" content="Unitoolify" />
     <meta
       property="og:title"
-      content="Composerize – Docker Run to Compose Converter"
+      content="Composerize – Docker Run to Docker Compose"
     />
     <meta
       property="og:description"
-      content="Convert docker run commands into docker-compose.yml files instantly and securely in your browser. Free, no installation."
+      content="Convert docker run to Docker Compose online with Composerize. Paste a command, generate docker-compose.yml, and copy the YAML. Free, in-browser conversion."
     />
     <meta property="og:url" content="https://www.unitoolify.com/composerize/" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="Composerize – Docker Run to Compose Converter"
+      content="Composerize – Docker Run to Docker Compose"
     />
     <meta
       name="twitter:description"
-      content="Convert docker run commands into docker-compose.yml files instantly and securely in your browser. Free, no installation."
+      content="Convert docker run to Docker Compose online with Composerize. Paste a command, generate docker-compose.yml, and copy the YAML. Free, in-browser conversion."
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -59,12 +59,12 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Composerize – Docker Run to Compose Converter",
+        "name": "Composerize – Docker Run to Docker Compose",
         "url": "https://www.unitoolify.com/composerize/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free online tool that converts docker run commands into docker-compose.yml files entirely in the browser.",
+        "description": "Convert docker run to Docker Compose online with Composerize. Paste a command, generate docker-compose.yml, and copy the YAML. Free, in-browser conversion.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -95,7 +95,7 @@
           },
           {
             "@type": "Question",
-            "name": "How do I convert docker run to docker-compose?",
+            "name": "How do I convert docker run to Docker Compose?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Paste your docker run command into the input box and the equivalent docker-compose.yml service comes out the other side. Copy it into a compose file and run docker compose up -d."
@@ -114,7 +114,7 @@
             "name": "Is my docker command private?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The conversion runs entirely in your browser. Commands containing sensitive environment variables, tokens or paths never leave your device — no tracking, no server processing."
+              "text": "Yes. The conversion runs entirely in your browser. Commands containing sensitive environment variables, tokens or paths never leave your device — no server processing."
             }
           }
         ]
@@ -129,10 +129,11 @@
       <h1
         class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
       >
-        Unitoolify Composerize
+        Composerize – Docker Run to Docker Compose
       </h1>
       <p class="text-slate-400 mb-6 md:mb-8">
-        Turn docker run commands into docker-compose.yml files
+        Convert docker run to Docker Compose online. Paste your command to
+        generate docker-compose.yml.
       </p>
       <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
         <a
@@ -217,6 +218,38 @@
         </p>
       </div>
 
+      <section
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          How to convert docker run to Docker Compose
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Paste your docker run command above. Composerize converts supported
+          flags into a Docker Compose service. Copy the output into
+          docker-compose.yml and review it before starting the container.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          For example, docker run --name web -p 8080:80 nginx maps the nginx
+          image, the web container name, and port 8080 on your host to port 80
+          in the container. A minimal equivalent Compose file is:
+        </p>
+        <pre
+          class="overflow-x-auto bg-black/20 rounded-lg p-4 text-sm text-slate-200 mb-4"
+        ><code>services:
+  web:
+    image: nginx
+    container_name: web
+    ports:
+      - &quot;8080:80&quot;</code></pre>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Save the file, then use docker compose config to check it and docker
+          compose up -d to start it. Review volumes, environment variables, and
+          networking for your environment; not every Docker flag has an
+          equivalent Compose setting.
+        </p>
+      </section>
+
       <div
         class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
       >
@@ -242,7 +275,7 @@
             class="group bg-black/20 rounded-lg p-4 border border-white/10"
           >
             <summary class="text-slate-200 font-medium cursor-pointer">
-              How do I convert docker run to docker-compose?
+              How do I convert docker run to Docker Compose?
             </summary>
             <p class="text-slate-400 leading-relaxed mt-2">
               Paste your docker run command into the input box and the
@@ -272,7 +305,7 @@
             <p class="text-slate-400 leading-relaxed mt-2">
               Yes. The conversion runs entirely in your browser. Commands
               containing sensitive environment variables, tokens or paths never
-              leave your device — no tracking, no server processing.
+              leave your device — no server processing.
             </p>
           </details>
         </div>

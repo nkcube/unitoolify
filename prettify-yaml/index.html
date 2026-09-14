@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YAML Formatter Online – Validate &amp; Prettify | Unitoolify</title>
+    <title>Pretty Print YAML Online – YAML Formatter | Unitoolify</title>
     <meta
       name="description"
-      content="Free online YAML formatter and validator. Beautify and lint YAML configs, docker-compose files and Kubernetes manifests with consistent indentation. 100% in-browser."
+      content="Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter."
     />
     <link rel="canonical" href="https://www.unitoolify.com/prettify-yaml/" />
     <meta name="robots" content="index, follow" />
@@ -15,11 +15,11 @@
     <meta property="og:site_name" content="Unitoolify" />
     <meta
       property="og:title"
-      content="YAML Formatter &amp; Validator Online – Free"
+      content="Pretty Print YAML Online – YAML Formatter"
     />
     <meta
       property="og:description"
-      content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser."
+      content="Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter."
     />
     <meta
       property="og:url"
@@ -29,11 +29,11 @@
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="YAML Formatter &amp; Validator Online – Free"
+      content="Pretty Print YAML Online – YAML Formatter"
     />
     <meta
       name="twitter:description"
-      content="Free online YAML formatter and validator. Lint YAML configs, docker-compose files and Kubernetes manifests. 100% in-browser."
+      content="Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter."
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -70,13 +70,13 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "YAML Formatter Online",
+        "name": "Pretty Print YAML Online – YAML Formatter",
         "alternateName": "Prettify YAML Tool",
         "url": "https://www.unitoolify.com/prettify-yaml/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free online YAML formatter and validator that beautifies YAML configs, docker-compose files and Kubernetes manifests.",
+        "description": "Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -140,10 +140,11 @@
       <h1
         class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
       >
-        Unitoolify Prettify YAML
+        Pretty Print YAML Online – YAML Formatter
       </h1>
       <p class="text-slate-400 mb-6 md:mb-8">
-        Make your YAML consistent and catch broken indentation
+        Pretty print YAML online with consistent indentation and syntax
+        checking.
       </p>
       <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
         <a
@@ -276,6 +277,38 @@
           output, then copy or download.
         </p>
       </div>
+
+      <section
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          How to pretty print YAML
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Paste YAML into the input and choose 2 or 4 spaces for indentation.
+          Live mode formats as you type; turn it off and click Format YAML to
+          check syntax explicitly. Copy or download the formatted output.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          For example, the compact YAML below can be expanded into an indented
+          mapping:
+        </p>
+        <pre
+          class="overflow-x-auto bg-black/20 rounded-lg p-4 text-sm text-slate-200 mb-4"
+        ><code>Input:
+app: {name: demo, port: 8080}
+
+Formatted with 2 spaces:
+app:
+  name: demo
+  port: 8080</code></pre>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The formatter parses and rewrites YAML, so comments and original
+          styling are not preserved. Syntax checking does not validate
+          application-specific settings in Docker Compose or Kubernetes
+          configurations.
+        </p>
+      </section>
 
       <div
         class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"

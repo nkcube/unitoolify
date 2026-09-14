@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>URL Decoder Online – Decode Percent-Encoding | Unitoolify</title>
+    <title>URL Decoder – Decode Percent Encoding Online | Unitoolify</title>
     <meta
       name="description"
-      content="Free online URL decoder. Turn percent-encoded strings (%20, %E4%B8%AD) back into readable text instantly in your browser. Private, fast and free."
+      content="Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser."
     />
     <link
       rel="canonical"
@@ -18,11 +18,11 @@
     <meta property="og:site_name" content="Unitoolify" />
     <meta
       property="og:title"
-      content="URL Decoder Online – Decode Percent-Encoding Free"
+      content="URL Decoder – Decode Percent Encoding Online"
     />
     <meta
       property="og:description"
-      content="Free online URL decoder based on decodeURIComponent. Decode %20, %E4%B8%AD and more instantly, 100% private."
+      content="Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser."
     />
     <meta
       property="og:url"
@@ -32,11 +32,11 @@
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="URL Decoder Online – Decode Percent-Encoding Free"
+      content="URL Decoder – Decode Percent Encoding Online"
     />
     <meta
       name="twitter:description"
-      content="Free online URL decoder based on decodeURIComponent. Decode %20, %E4%B8%AD and more instantly, 100% private."
+      content="Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser."
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -65,13 +65,13 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "URL Decoder Online",
+        "name": "URL Decoder – Decode Percent Encoding Online",
         "alternateName": "URL Decode Tool",
         "url": "https://www.unitoolify.com/url-decode-string/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free online URL decoder that converts percent-encoded strings back into readable text using decodeURIComponent.",
+        "description": "Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -135,10 +135,11 @@
       <h1
         class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
       >
-        Unitoolify URL Decode
+        URL Decoder – Decode Percent Encoding Online
       </h1>
       <p class="text-slate-400 mb-6 md:mb-8">
-        Decode percent-encoded strings back to normal text
+        Decode a URL encoded string online: turn percent encoding back into
+        readable text.
       </p>
       <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
         <a
@@ -239,6 +240,30 @@
           The whole thing runs client-side — nothing you paste is sent anywhere.
         </p>
       </div>
+
+      <section
+        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
+      >
+        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+          How to decode percent encoding
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Paste your URL encoded string into the input. With live mode enabled,
+          the decoded text appears as you type. For example, Hello%20World%21
+          becomes Hello World! and %2F becomes /.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          This tool uses decodeURIComponent to decode percent-encoded UTF-8
+          text. A literal plus sign (+) stays a plus sign; for form-encoded
+          values where + means a space, replace it with %20 before decoding.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Decode one layer at a time: %2520 becomes %20 on the first pass and a
+          space on the second. Incomplete escapes such as %2 or invalid UTF-8
+          sequences produce an error; check the source string before trying
+          again.
+        </p>
+      </section>
 
       <div
         class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
