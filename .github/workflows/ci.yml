@@ -61,9 +61,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # Internal links and canonicals are asserted by tests/quality.spec.mjs
+      # against the built site, so this job only has to chase outside URLs.
       - uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --root-dir . './**/*.html' './**/*.md'
+          args: >-
+            --verbose --no-progress --root-dir . --exclude-path node_modules
+            --exclude-path .workbuddy --exclude '^https://www\.unitoolify\.com'
+            --accept 200,206,429 './**/*.html' './**/*.md'
           fail: true
 
   test:
