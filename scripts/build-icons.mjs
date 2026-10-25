@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 import sharp from "sharp";
 import { accent } from "../src/site.mjs";
@@ -6,6 +7,23 @@ const data = JSON.parse(fs.readFileSync("src/data/tools.json", "utf8"));
 const { tools, categories } = data;
 
 fs.mkdirSync("assets/img/og", { recursive: true });
+
+/*
+ * Rendering text is not byte-stable across platforms: the same SVG draws
+ * with different hinting on macOS and on Linux CI, so an unconditional redraw
+ * makes every checkout dirty and the drift check meaningless. Each image is
+ * therefore keyed on a hash of its own SVG (plus size) and only redrawn when
+ * that source actually changes. `npm run build:icons -- --force` overrides.
+ */
+const MANIFEST = "assets/img/icons.manifest.json";
+const force = process.argv.includes("--force");
+let previous = {};
+try {
+  previous = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
+} catch {
+  /* first run */
+}
+const next = {};
 
 const FONT = "Helvetica Neue, Helvetica, Arial, sans-serif";
 
@@ -62,12 +80,22 @@ function ogSvg({ title, kicker, accent: accentName }) {
 }
 
 async function png(svg, file, width, height) {
+  const key = crypto
+    .createHash("sha256")
+    .update(`${width}x${height}\n${svg}`)
+    .digest("hex")
+    .slice(0, 16);
+  next[file] = key;
+
+  if (!force && previous[file] === key && fs.existsSync(file)) {
+    return fs.statSync(file).size;
+  }
+
   await sharp(Buffer.from(svg))
     .resize(width, height)
     .png({ compressionLevel: 9, palette: true })
     .toFile(file);
-  const size = fs.statSync(file).size;
-  return size;
+  return fs.statSync(file).size;
 }
 
 let total = 0;
@@ -81,7 +109,6 @@ total += await png(
   1200,
   630,
 );
-console.log("assets/img/og-default.png");
 
 for (const tool of tools) {
   const category = categories.find((c) => c.id === tool.category);
@@ -92,7 +119,6 @@ for (const tool of tools) {
     1200,
     630,
   );
-  console.log(file);
 }
 
 /* ---- app icons ---- */
@@ -121,4 +147,16 @@ fs.writeFileSync(
 
 console.log(
   `icons written · OG average ${(total / (tools.length + 1) / 1024).toFixed(1)} KB`,
+);
+
+const imageCount = Object.keys(next).length;
+const rendered = Object.entries(next).filter(
+  ([file, key]) => force || previous[file] !== key || !fs.existsSync(file),
+).length;
+
+if (rendered || JSON.stringify(previous) !== JSON.stringify(next)) {
+  fs.writeFileSync(MANIFEST, `${JSON.stringify(next, null, 2)}\n`);
+}
+console.log(
+  `${imageCount} images · ${rendered} rendered · ${imageCount - rendered} unchanged`,
 );

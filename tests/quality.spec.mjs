@@ -256,3 +256,39 @@ test("accepting loads the analytics script once and the choice sticks", async ({
     page.getByRole("dialog", { name: "Analytics consent" }),
   ).toHaveCount(0);
 });
+
+test("every page points at a real 1200x630 social image", () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      path.join(process.cwd(), "assets/img/icons.manifest.json"),
+      "utf8",
+    ),
+  );
+  const pages = [
+    "index.html",
+    ...PAGES.slice(1).map((u) => `${u.slice(1)}index.html`),
+  ];
+
+  for (const file of pages) {
+    // Prettier wraps long attribute lists onto separate lines, so normalise
+    // whitespace before matching.
+    const html = fs
+      .readFileSync(path.join(process.cwd(), file), "utf8")
+      .replace(/\s+/g, " ");
+    const src = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
+    expect(src, `no og:image on ${file}`).toBeTruthy();
+
+    const local = new URL(src).pathname.slice(1);
+    expect(
+      manifest[local],
+      `${local} is not in the icon manifest`,
+    ).toBeTruthy();
+
+    const png = fs.readFileSync(path.join(process.cwd(), local));
+    expect(png.subarray(1, 4).toString(), `${local} is not a PNG`).toBe("PNG");
+    expect(
+      [png.readUInt32BE(16), png.readUInt32BE(20)],
+      `${local} size`,
+    ).toEqual([1200, 630]);
+  }
+});

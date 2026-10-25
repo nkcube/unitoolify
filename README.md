@@ -44,11 +44,12 @@ scripts/
   build.mjs            # renders every page in place, writes sitemap.xml
   build-vendor.mjs     # bundles composerize, decomposerize, js-yaml locally
   build-css (npm)      # compiles Tailwind to assets/css/app.css
-  build-icons.mjs      # OG images, app icons, mask icon
+  build-icons.mjs      # OG images, app icons, mask icon (+ icons.manifest.json)
   serve.mjs            # local preview on :4173, replaying vercel.json
 assets/
   css/app.css          # build output (committed)
   js/*.js              # hand-written page scripts + shared app.js
+  img/                 # generated icons, OG images and their source hashes
   vendor/*.js          # build output (committed)
 tests/                 # Playwright: behaviour, metadata, axe, link integrity
 ```
@@ -69,7 +70,7 @@ palette entry cannot reach it.
 npm ci
 npm run build:all     # vendor + pages + css + icons
 npm run serve         # http://localhost:4173
-npm test              # Playwright: 31 behaviour/a11y/SEO/header tests
+npm test              # Playwright: 32 behaviour/a11y/SEO/header tests
 npm run lint:html
 npm run lint:format
 npm run lint:spell
@@ -77,6 +78,12 @@ npm run lint:spell
 
 After changing anything in `src/` or `assets/js/`, run `npm run build:all` and
 commit the generated output — CI fails if the committed build is stale.
+
+`build:icons` is the one step that is not byte-identical across machines: the
+same SVG renders with different text hinting on macOS and on Linux. Each image is
+therefore keyed on a hash of its own SVG in `assets/img/icons.manifest.json` and
+only redrawn when that source changes, so a clean checkout stays clean wherever
+it is built. `npm run build:icons -- --force` redraws everything.
 
 ## Testing
 
@@ -95,6 +102,9 @@ Two more tests pin the deployment contract. The preview server replays
 `vercel.json`, so the whole suite runs under the real CSP and fails on any
 `securitypolicyviolation`; and analytics must stay unrequested until the visitor
 accepts, loading exactly once afterwards.
+
+Every page's `og:image` is also opened and checked to be a 1200×630 PNG listed in
+`icons.manifest.json`, so a social card cannot go missing silently.
 
 ## Deployment
 
