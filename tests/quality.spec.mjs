@@ -185,3 +185,74 @@ test("sitemap lists every indexable page and internal links resolve", async ({
     }
   }
 });
+
+test("security headers are served and the CSP blocks nothing the site needs", async ({
+  page,
+}) => {
+  const res = await page.request.get("/prettify-json/");
+  const headers = res.headers();
+  expect(headers["content-security-policy"]).toContain("default-src 'self'");
+  expect(headers["content-security-policy"]).toContain("object-src 'none'");
+  expect(headers["x-content-type-options"]).toBe("nosniff");
+  expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+  expect(headers["x-frame-options"]).toBe("DENY");
+
+  // The preview server replays vercel.json, so these headers are the real ones.
+  const violations = [];
+  await page.exposeFunction("__cspViolation", (v) => violations.push(v));
+  await page.addInitScript(() => {
+    document.addEventListener("securitypolicyviolation", (event) => {
+      window.__cspViolation?.(
+        `${event.violatedDirective} blocked ${event.blockedURI}`,
+      );
+    });
+  });
+
+  for (const url of PAGES) {
+    await page.goto(url);
+    await page.waitForLoadState("networkidle");
+  }
+
+  expect(violations).toEqual([]);
+});
+
+test("analytics is never requested before the visitor accepts", async ({
+  page,
+}) => {
+  await page.addInitScript(() => localStorage.removeItem("ut-consent"));
+  const analytics = [];
+  page.on("request", (req) => {
+    if (req.url().includes("googletagmanager")) analytics.push(req.url());
+  });
+
+  await page.goto("/");
+  await expect(
+    page.getByRole("dialog", { name: "Analytics consent" }),
+  ).toBeVisible();
+  await page.waitForTimeout(1800); // the banner waits 1.2 s before appearing
+
+  expect(analytics).toEqual([]);
+});
+
+test("accepting loads the analytics script once and the choice sticks", async ({
+  page,
+}) => {
+  await page.addInitScript(() => localStorage.removeItem("ut-consent"));
+  const hits = [];
+  // Stubbed, so the suite never touches Google — this checks our own wiring
+  // (consent → script injection → persisted choice), not Google's response.
+  await page.route("https://www.googletagmanager.com/**", (route) => {
+    hits.push(route.request().url());
+    route.fulfill({ status: 200, contentType: "text/javascript", body: "" });
+  });
+
+  await page.goto("/");
+  await page.getByRole("button", { name: "Accept" }).click();
+  await expect.poll(() => hits.length).toBe(1);
+  expect(hits[0]).toContain("id=G-");
+
+  await page.reload();
+  await expect(
+    page.getByRole("dialog", { name: "Analytics consent" }),
+  ).toHaveCount(0);
+});

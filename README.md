@@ -45,7 +45,7 @@ scripts/
   build-vendor.mjs     # bundles composerize, decomposerize, js-yaml locally
   build-css (npm)      # compiles Tailwind to assets/css/app.css
   build-icons.mjs      # OG images, app icons, mask icon
-  serve.mjs            # local preview on :4173
+  serve.mjs            # local preview on :4173, replaying vercel.json
 assets/
   css/app.css          # build output (committed)
   js/*.js              # hand-written page scripts + shared app.js
@@ -69,7 +69,7 @@ palette entry cannot reach it.
 npm ci
 npm run build:all     # vendor + pages + css + icons
 npm run serve         # http://localhost:4173
-npm test              # Playwright: 28 behaviour/a11y/SEO tests
+npm test              # Playwright: 31 behaviour/a11y/SEO/header tests
 npm run lint:html
 npm run lint:format
 npm run lint:spell
@@ -90,6 +90,11 @@ metadata within length limits, an OG image, **zero third-party requests**, a
 JavaScript budget for simple tool pages, a labelled primary action whose button
 colours measure **≥ 4.5:1**, no serious axe violations, sitemap coverage and
 working internal links.
+
+Two more tests pin the deployment contract. The preview server replays
+`vercel.json`, so the whole suite runs under the real CSP and fails on any
+`securitypolicyviolation`; and analytics must stay unrequested until the visitor
+accepts, loading exactly once afterwards.
 
 ## Deployment
 
