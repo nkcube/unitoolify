@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
 import nunjucks from "nunjucks";
 import prettier from "prettier";
 import prettierConfig from "../prettier.config.mjs";
@@ -51,14 +50,10 @@ const searches = [
 const year = new Date().getFullYear();
 const globalCtx = { site: SITE, nav, popular, searches, categories, year };
 
-let headDate = new Date().toISOString().slice(0, 10);
-try {
-  headDate =
-    execSync("git log -1 --format=%cs", { encoding: "utf8" }).trim() ||
-    headDate;
-} catch {
-  /* not a git checkout */
-}
+// No <lastmod> in the sitemap: any date derived from git or the clock makes the
+// committed output stale the instant it is committed, which breaks the CI drift
+// check on every deploy. Sitemaps are valid without it, and a stale date is a
+// worse signal than none.
 
 const urlToFile = (url) =>
   url === "/" ? "index.html" : path.join(url.replace(/^\//, ""), "index.html");
@@ -350,7 +345,6 @@ ${urls
   .map(
     (u) => `  <url>
     <loc>${u}</loc>
-    <lastmod>${headDate}</lastmod>
     <changefreq>${u === abs("/") ? "weekly" : "monthly"}</changefreq>
     <priority>${u === abs("/") ? "1.0" : "0.8"}</priority>
   </url>`,
