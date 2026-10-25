@@ -196,10 +196,22 @@ for (const tool of tools) {
 </a>`,
         )
         .join("\n");
-      return `<section id="${category.id}" class="scroll-mt-8">
-  <h2 class="mb-4 text-lg font-bold text-slate-50 md:text-xl">${category.name}</h2>
-  <p class="mb-4 text-sm text-slate-400">${category.blurb}</p>
-  <div class="grid grid-cols-1 gap-4">${cards}</div>
+      // Pick the column count that divides the category evenly, so no row is
+      // left with a single stranded card and half the page empty. A category
+      // holding one tool sits half-width, which lets Generators and Utilities
+      // share a row.
+      const solo = items.length === 1;
+      const span = solo ? "md:col-span-3" : "md:col-span-6";
+      const cols = items.length % 3 === 0 ? 3 : items.length % 2 === 0 ? 2 : 3;
+      const inner = solo
+        ? "grid grid-cols-1 gap-4"
+        : `grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-${cols}`;
+      return `<section id="${category.id}" class="scroll-mt-8 ${span}">
+  <div class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:mb-5">
+    <h2 class="text-lg font-bold text-slate-50 md:text-xl">${category.name}</h2>
+    <p class="text-sm text-slate-400">${category.blurb}</p>
+  </div>
+  <div class="${inner}">${cards}</div>
 </section>`;
     })
     .join("\n");
@@ -227,7 +239,7 @@ for (const tool of tools) {
     },
     breadcrumbs: null,
     hero: false,
-    mainClass: "mx-auto w-full max-w-7xl flex-1 px-4 pb-8 md:px-8",
+    mainClass: "mx-auto w-full max-w-7xl flex-1 px-4 pb-16 md:px-8 md:pb-24",
     body,
     script: null,
     ogImage: SITE.ogImage,
