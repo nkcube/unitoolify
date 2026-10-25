@@ -1,0 +1,18 @@
+<section class="panel" aria-labelledby="faq-heading">
+  <h2
+    id="faq-heading"
+    class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+  >
+    Frequently Asked Questions
+  </h2>
+  <div class="space-y-4">
+    {% for item in page.faq %}
+    <details class="group rounded-lg border border-white/10 bg-black/20 p-4">
+      <summary class="cursor-pointer font-medium text-slate-200">
+        {{ item.q }}
+      </summary>
+      <p class="mt-2 leading-relaxed text-slate-400">{{ item.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,12 @@
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+.vercel/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Local agent notes; not part of the published site.
+.workbuddy/

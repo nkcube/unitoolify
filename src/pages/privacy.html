@@ -1,0 +1,83 @@
+<section class="panel">
+  <p class="leading-relaxed text-slate-300">
+    <strong class="text-slate-100">Short version:</strong> what you paste into a
+    tool is processed by JavaScript in your browser and is never uploaded.
+    Analytics is optional, off until you accept it, and never sees your input.
+  </p>
+</section>
+
+<section class="panel mt-6" aria-labelledby="input">
+  <h2 id="input" class="mb-4 text-lg font-semibold text-slate-200 md:text-xl">
+    Tool input
+  </h2>
+  <p class="mb-3 leading-relaxed text-slate-400">
+    Every encoder, formatter, converter and generator on this site runs as
+    client-side JavaScript. Text you type, files you select and Base64 you paste
+    stay in the browser tab: there is no API call, no upload endpoint and no
+    server-side copy. Closing the tab discards the input.
+  </p>
+  <p class="leading-relaxed text-slate-400">
+    Because of that, the tools keep working when you are offline after the page
+    has loaded, and no result is ever stored on our side.
+  </p>
+</section>
+
+<section class="panel mt-6" aria-labelledby="analytics">
+  <h2
+    id="analytics"
+    class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+  >
+    Analytics (optional)
+  </h2>
+  <p class="mb-3 leading-relaxed text-slate-400">
+    When you accept, the site loads Google Analytics 4 to count page views and
+    basic interaction events (for example "copy result"). We use it to know
+    which tools are worth maintaining. It records the page URL, referrer,
+    approximate location derived from IP, device and browser type — never the
+    contents of a tool's input or output.
+  </p>
+  <p class="mb-3 leading-relaxed text-slate-400">
+    If you decline, the analytics script is never requested. Your choice is
+    stored in <code>localStorage</code> under the key <code>ut-consent</code>;
+    no cookie is set by this site itself. You can change your mind at any time
+    with the "Cookie settings" link in the footer.
+  </p>
+  <p class="leading-relaxed text-slate-400">
+    Google may process this data outside your country; see
+    <a
+      class="text-blue-400 underline hover:text-blue-300"
+      href="https://policies.google.com/privacy"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      >Google's privacy policy</a
+    >.
+  </p>
+</section>
+
+<section class="panel mt-6" aria-labelledby="hosting">
+  <h2 id="hosting" class="mb-4 text-lg font-semibold text-slate-200 md:text-xl">
+    Hosting and server logs
+  </h2>
+  <p class="leading-relaxed text-slate-400">
+    The site is served as static files by Vercel. Like any web host, Vercel
+    processes request metadata (IP address, user agent, timestamp) to deliver
+    pages and protect against abuse. We do not combine those logs with anything
+    else, and we do not sell data.
+  </p>
+</section>
+
+<section class="panel mt-6" aria-labelledby="contact">
+  <h2 id="contact" class="mb-4 text-lg font-semibold text-slate-200 md:text-xl">
+    Contact
+  </h2>
+  <p class="leading-relaxed text-slate-400">
+    Questions or a correction? Open an issue at
+    <a
+      class="text-blue-400 underline hover:text-blue-300"
+      href="https://github.com/nkcube/unitoolify"
+      rel="noopener noreferrer"
+      target="_blank"
+      >github.com/nkcube/unitoolify</a
+    >. This policy was last updated in October 2026.
+  </p>
+</section>

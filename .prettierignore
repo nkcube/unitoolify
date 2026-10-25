@@ -1,2 +1,9 @@
+# Build output that is deliberately not hand-formatted
+node_modules
+test-results
+playwright-report
+assets/vendor
+assets/css/app.css
+
 # Preserve the exact token in the search-engine verification file.
 baidu_verify_codeva-DpypYaT0xr.html

@@ -1,0 +1,94 @@
+<div class="card">
+  <div class="flex justify-between items-center">
+    <div class="text-lg md:text-xl font-semibold">Options</div>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <fieldset class="flex flex-col gap-2">
+      <legend class="text-sm font-medium text-slate-50">Version</legend>
+      <div class="flex gap-6">
+        <label class="check text-slate-300">
+          <input
+            type="radio"
+            name="uuidVersion"
+            value="4"
+            checked
+            class="accent-primary"
+          />
+          v4 (Random)
+        </label>
+        <label class="check text-slate-300">
+          <input
+            type="radio"
+            name="uuidVersion"
+            value="1"
+            class="accent-primary"
+          />
+          v1 (Timestamp)
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm font-medium text-slate-50" for="uuidCount"
+        >How many UUIDs to generate?</label
+      >
+      <input
+        type="number"
+        id="uuidCount"
+        name="uuidCount"
+        value="1"
+        min="1"
+        max="10000"
+        class="input"
+      />
+    </div>
+
+    <label class="check text-slate-300">
+      <input
+        type="checkbox"
+        id="uppercase"
+        name="uppercase"
+        class="accent-primary"
+      />
+      Uppercase letters (e.g. A-F)
+    </label>
+
+    <label class="check text-slate-300">
+      <input
+        type="checkbox"
+        id="noHyphens"
+        name="noHyphens"
+        class="accent-primary"
+      />
+      Remove hyphens (e.g. no dashes)
+    </label>
+  </div>
+
+  <button class="btn btn-primary btn-block" id="generateBtn">
+    Generate UUIDs
+  </button>
+</div>
+
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="outputText" class="text-lg md:text-xl font-semibold"
+      >Output</label
+    >
+    <div class="flex gap-2">
+      <button class="btn btn-ghost btn-sm" id="copyBtn">Copy All</button>
+      <button class="btn btn-ghost btn-sm" id="downloadBtn">
+        Download .txt
+      </button>
+    </div>
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="outputText"
+    name="outputText"
+    readonly
+    class="textarea"
+    placeholder="Generated UUIDs will appear here…"
+  ></textarea>
+</div>

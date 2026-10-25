@@ -1,0 +1,87 @@
+<section class="pt-4 pb-2 text-center md:pt-8">
+  <h1 class="title-gradient pb-2 text-3xl font-extrabold md:text-5xl">
+    Unitoolify
+  </h1>
+  <p
+    class="mx-auto mt-2 max-w-2xl text-base leading-relaxed text-slate-400 md:text-xl"
+  >
+    {{ site.tagline }}
+  </p>
+  <div class="mt-6 flex flex-wrap justify-center gap-2">
+    <a class="btn btn-ghost btn-sm" href="/base64encode/">Base64 encode</a>
+    <a class="btn btn-ghost btn-sm" href="/prettify-json/">JSON formatter</a>
+    <a class="btn btn-ghost btn-sm" href="/uuid-generator/">UUID generator</a>
+    <a class="btn btn-ghost btn-sm" href="/composerize/"
+      >docker run to compose</a
+    >
+  </div>
+</section>
+
+<section id="tools" class="scroll-mt-8" aria-label="All tools">
+  <div class="grid gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+    {{ grid | safe }}
+  </div>
+</section>
+
+<section class="mt-4" aria-labelledby="why-heading">
+  <h2
+    id="why-heading"
+    class="mb-6 text-center text-lg font-bold text-slate-50 md:text-xl"
+  >
+    Why Unitoolify?
+  </h2>
+  <div class="grid gap-6 md:grid-cols-3">
+    <div
+      class="rounded-2xl border border-dashed border-white/15 bg-black/20 p-6"
+    >
+      <div class="mb-4 flex items-center gap-3">
+        <div
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-emerald-400/20 bg-emerald-500/10 text-lg"
+          aria-hidden="true"
+        >
+          🔒
+        </div>
+        <h3 class="font-semibold text-slate-100">Private by default</h3>
+      </div>
+      <p class="text-sm leading-relaxed text-slate-400">
+        Every tool runs client-side. Whatever you paste — API keys, configs,
+        tokens — is processed in your browser, so there is nothing on our side
+        to log or leak.
+      </p>
+    </div>
+    <div
+      class="rounded-2xl border border-dashed border-white/15 bg-black/20 p-6"
+    >
+      <div class="mb-4 flex items-center gap-3">
+        <div
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-sky-400/20 bg-sky-500/10 text-lg"
+          aria-hidden="true"
+        >
+          🆓
+        </div>
+        <h3 class="font-semibold text-slate-100">Actually free</h3>
+      </div>
+      <p class="text-sm leading-relaxed text-slate-400">
+        No accounts, no paywalls, no usage limits. Every tool is free for
+        individuals and teams alike.
+      </p>
+    </div>
+    <div
+      class="rounded-2xl border border-dashed border-white/15 bg-black/20 p-6"
+    >
+      <div class="mb-4 flex items-center gap-3">
+        <div
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-amber-400/20 bg-amber-500/10 text-lg"
+          aria-hidden="true"
+        >
+          ⚡
+        </div>
+        <h3 class="font-semibold text-slate-100">No setup at all</h3>
+      </div>
+      <p class="text-sm leading-relaxed text-slate-400">
+        Nothing to install or configure. Open a page, paste your input, get the
+        result — most tools update as you type.
+      </p>
+    </div>
+  </div>
+</section>

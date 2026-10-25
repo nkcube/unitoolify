@@ -1,0 +1,83 @@
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="inputText" class="text-lg md:text-xl font-semibold"
+      >Input</label
+    >
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="inputText"
+    name="inputText"
+    class="textarea"
+    placeholder="Type or paste your text here to encode…"
+  ></textarea>
+
+  <div class="file-upload">
+    <label for="inputFile">Upload a File</label>
+    <input type="file" id="inputFile" name="inputFile" />
+  </div>
+  <div id="fileNameDisplay" role="status" class="text-xs text-slate-400"></div>
+
+  <div class="flex flex-col gap-2">
+    <label class="check">
+      <input
+        type="checkbox"
+        id="urlSafe"
+        name="urlSafe"
+        class="accent-primary"
+      />
+      URL-safe encoding (Base64URL RFC 4648)
+    </label>
+    <label class="check">
+      <input
+        type="checkbox"
+        id="splitLines"
+        name="splitLines"
+        class="accent-primary"
+      />
+      Split lines into chunks (MIME 76 chars)
+    </label>
+    <label class="check">
+      <input
+        type="checkbox"
+        id="liveMode"
+        name="liveMode"
+        checked
+        class="accent-primary"
+      />
+      Live mode (encode as you type)
+    </label>
+  </div>
+
+  <button class="btn btn-primary btn-block" id="encodeBtn">
+    Encode to Base64
+  </button>
+</div>
+
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="outputText" class="text-lg md:text-xl font-semibold"
+      >Base64 Output</label
+    >
+    <button class="btn btn-ghost btn-sm" id="copyBtn">Copy</button>
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="outputText"
+    name="outputText"
+    readonly
+    class="textarea"
+    placeholder="Encoded result will appear here…"
+  ></textarea>
+  <p
+    id="meta"
+    class="text-xs text-slate-400"
+    role="status"
+    aria-live="polite"
+  ></p>
+  <button class="btn btn-ghost btn-block hidden" id="downloadBtn">
+    Download Result
+  </button>
+</div>

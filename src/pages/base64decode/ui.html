@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="flex min-h-11 justify-between items-center">
+    <label for="inputText" class="text-lg md:text-xl font-semibold"
+      >Input Base64</label
+    >
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="inputText"
+    name="inputText"
+    class="textarea"
+    placeholder="Type or paste your Base64 string here to decode…"
+  ></textarea>
+
+  <div class="relative overflow-hidden inline-block w-full">
+    <button
+      class="w-full bg-white/5 border border-white/10 text-slate-50 py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-white/10"
+    >
+      Upload Base64 File
+    </button>
+    <input
+      type="file"
+      id="inputFile"
+      name="inputFile"
+      class="text-[100px] absolute left-0 top-0 opacity-0 cursor-pointer"
+    />
+  </div>
+  <div id="fileNameDisplay" role="status" class="text-xs text-slate-400"></div>
+
+  <div class="flex flex-col gap-2">
+    <label class="check">
+      <input
+        type="checkbox"
+        id="liveMode"
+        name="liveMode"
+        checked
+        class="accent-primary"
+      />
+      Live mode (decode as you type)
+    </label>
+  </div>
+
+  <button class="btn btn-primary btn-block" id="decodeBtn">
+    Decode from Base64
+  </button>
+</div>
+
+<div class="card">
+  <div class="flex min-h-11 justify-between items-center">
+    <label for="outputText" class="text-lg md:text-xl font-semibold"
+      >Decoded Output</label
+    >
+    <button class="btn btn-ghost btn-sm" id="copyBtn">Copy</button>
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="outputText"
+    name="outputText"
+    readonly
+    class="textarea"
+    placeholder="Decoded text will appear here…"
+  ></textarea>
+  <p
+    id="meta"
+    class="text-xs text-slate-400"
+    role="status"
+    aria-live="polite"
+  ></p>
+  <button class="btn btn-ghost btn-block" id="downloadBtn">
+    Download Decoded File
+  </button>
+</div>

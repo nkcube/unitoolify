@@ -1,0 +1,47 @@
+<section class="panel" aria-labelledby="about-composerize">
+  <h2 class="panel-title" id="about-composerize">About Composerize</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Got a <code>docker run</code> command that's grown into a wall of flags?
+    Paste it here and get the equivalent <code>docker-compose.yml</code> service
+    back. That's the whole tool.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    It parses the common flags — ports, volumes, env vars, restart policies,
+    networks — and emits clean YAML you can drop into a compose file and version
+    alongside your code. Everything runs in the browser, which matters when your
+    command contains a token or a path you'd rather not paste into some random
+    website.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The usual reason to bother: ad-hoc <code>docker run</code> commands don't
+    get versioned, don't get reviewed, and die with your shell history. Compose
+    files live in the repo where the rest of your infrastructure lives.
+  </p>
+</section>
+
+<section class="panel">
+  <h2 class="panel-title">How to convert docker run to Docker Compose</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Paste your docker run command above. Composerize converts supported flags
+    into a Docker Compose service. Copy the output into docker-compose.yml and
+    review it before starting the container.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    For example, docker run --name web -p 8080:80 nginx maps the nginx image,
+    the web container name, and port 8080 on your host to port 80 in the
+    container. A minimal equivalent Compose file is:
+  </p>
+  <pre
+    class="overflow-x-auto bg-black/20 rounded-lg p-4 text-sm text-slate-200 mb-4"
+  ><code>services:
+  web:
+    image: nginx
+    container_name: web
+    ports:
+      - &quot;8080:80&quot;</code></pre>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Save the file, then use docker compose config to check it and docker compose
+    up -d to start it. Review volumes, environment variables, and networking for
+    your environment; not every Docker flag has an equivalent Compose setting.
+  </p>
+</section>

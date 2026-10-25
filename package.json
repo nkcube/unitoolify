@@ -1,0 +1,37 @@
+{
+  "name": "unitoolify",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Browser-based developer utilities. Client-side only, no uploads.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:css": "tailwindcss -i src/styles/app.css -o assets/css/app.css --minify",
+    "build:vendor": "node scripts/build-vendor.mjs",
+    "build:icons": "node scripts/build-icons.mjs",
+    "build:all": "npm run build:vendor && npm run build && npm run build:css && npm run build:icons",
+    "check:drift": "npm run build:all && git diff --exit-code",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"src/**,node_modules/**,test-results/**,yandex_*.html,google*.html,baidu_verify_codeva-DpypYaT0xr.html\"",
+    "lint:format": "prettier --check \"**/*.{html,js,css,mjs,json,md}\"",
+    "lint:spell": "cspell --no-progress \"**/*.{html,md,js,mjs,css,json}\"",
+    "test": "playwright test",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/cli": "^4.1.16",
+    "cspell": "^9.2.1",
+    "esbuild": "^0.25.11",
+    "htmlhint": "^1.6.3",
+    "nunjucks": "^3.2.4",
+    "prettier": "^3.6.2",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.16"
+  },
+  "dependencies": {
+    "composerize": "^1.7.6",
+    "decomposerize": "^1.4.4",
+    "js-yaml": "^4.1.0"
+  }
+}

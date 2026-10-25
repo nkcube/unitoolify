@@ -1,0 +1,26 @@
+<section class="panel">
+  <h1 class="mb-3 text-2xl font-bold text-slate-50 md:text-3xl">
+    404 — that page isn't here
+  </h1>
+  <p class="mb-6 leading-relaxed text-slate-400">
+    The URL might be mistyped, or the tool may have moved (some sections were
+    renamed). Everything still lives on the home page.
+  </p>
+  <div class="flex flex-wrap gap-3">
+    <a class="btn btn-primary" href="/">All tools</a>
+    <a class="btn btn-ghost" href="/prettify-json/">JSON formatter</a>
+    <a class="btn btn-ghost" href="/base64encode/">Base64 encode</a>
+    <a class="btn btn-ghost" href="/uuid-generator/">UUID generator</a>
+  </div>
+</section>
+
+<section class="panel mt-6" aria-labelledby="all-tools-404">
+  <h2 id="all-tools-404" class="panel-title">Jump straight to a tool</h2>
+  <ul class="flex flex-wrap gap-2">
+    {% for t in tools %}
+    <li>
+      <a class="btn btn-ghost btn-sm" href="{{ t.url }}">{{ t.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

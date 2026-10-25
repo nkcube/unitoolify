@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="inputText" class="text-lg font-semibold md:text-xl"
+      >Input</label
+    >
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="inputText"
+    name="inputText"
+    class="textarea"
+    placeholder="e.g. hello%20world%20%26%20%E4%BD%A0%E5%A5%BD"
+  ></textarea>
+
+  <div class="flex flex-col gap-3">
+    <label class="flex flex-col gap-1 text-sm text-slate-400">
+      <span>Mode</span>
+      <select id="mode" name="mode" class="select">
+        <option value="component">Component — decode %XX sequences</option>
+        <option value="uri">Full URL — keep reserved characters</option>
+      </select>
+    </label>
+    <label class="check">
+      <input
+        type="checkbox"
+        id="plusAsSpace"
+        name="plusAsSpace"
+        checked
+        class="accent-primary"
+      />
+      Treat + as a space (form encoding)
+    </label>
+    <label class="check">
+      <input
+        type="checkbox"
+        id="liveMode"
+        name="liveMode"
+        checked
+        class="accent-primary"
+      />
+      Live mode (decode as you type)
+    </label>
+  </div>
+
+  <button class="btn btn-primary btn-block" id="actionBtn" type="button">
+    Decode String
+  </button>
+</div>
+
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="outputText" class="text-lg font-semibold md:text-xl"
+      >Output</label
+    >
+    <button class="btn btn-ghost btn-sm" id="copyBtn" type="button">
+      Copy
+    </button>
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="outputText"
+    name="outputText"
+    readonly
+    class="textarea"
+    placeholder="Decoded text will appear here…"
+  ></textarea>
+  <p
+    id="meta"
+    class="text-xs text-slate-400"
+    role="status"
+    aria-live="polite"
+  ></p>
+</div>

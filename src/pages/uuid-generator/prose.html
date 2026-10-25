@@ -1,0 +1,20 @@
+<section class="panel" aria-labelledby="about-uuid-generator">
+  <h2 class="panel-title" id="about-uuid-generator">About UUID Generator</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Generates UUIDs — v4 (random) or v1 (timestamp-based) — in whatever quantity
+    you need, up to 10,000 at a time. It all happens in the browser, so your
+    identifiers are generated locally and never sent anywhere.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    You probably know when you need one: a primary key, an API resource ID, a
+    session token, test fixtures. The details this tool handles are the boring
+    but useful ones — uppercase output if your database or system prefers it,
+    and stripping the hyphens for a compact 32-character format.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    One thing worth knowing if you pick v1: it embeds the timestamp (and the
+    generating machine's MAC address), so values come out roughly time-ordered —
+    but they also leak when and where they were made. v4 is random and is the
+    safe default for almost everything.
+  </p>
+</section>

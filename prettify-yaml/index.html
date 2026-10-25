@@ -1,82 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  data-ga="G-2FWD7FC8GL"
+  style="
+    --color-primary: hsl(283 66% 54%);
+    --color-primary-hover: hsl(283 66% 47%);
+    --color-on-primary: #ffffff;
+    --title-gradient: linear-gradient(
+      to right,
+      hsl(283 78% 68%),
+      hsl(305 78% 48%)
+    );
+  "
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pretty Print YAML Online – YAML Formatter | Unitoolify</title>
     <meta
       name="description"
-      content="Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter."
+      content="Free online YAML formatter: reformat YAML with consistent indentation and surface syntax errors before you deploy. Runs locally, nothing is uploaded."
     />
     <link rel="canonical" href="https://www.unitoolify.com/prettify-yaml/" />
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
       content="Pretty Print YAML Online – YAML Formatter"
     />
     <meta
       property="og:description"
-      content="Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter."
+      content="Free online YAML formatter: reformat YAML with consistent indentation and surface syntax errors before you deploy. Runs locally, nothing is uploaded."
     />
     <meta
       property="og:url"
       content="https://www.unitoolify.com/prettify-yaml/"
     />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://www.unitoolify.com/assets/img/og/prettify-yaml.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pretty Print YAML Online – YAML Formatter"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
       content="Pretty Print YAML Online – YAML Formatter"
     />
     <meta
       name="twitter:description"
-      content="Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter."
+      content="Free online YAML formatter: reformat YAML with consistent indentation and surface syntax errors before you deploy. Runs locally, nothing is uploaded."
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #3b82f6;
-        --color-primary-hover: #2563eb;
-        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-      }
-      .error-msg {
-        @apply text-red-400 text-sm mt-1;
-      }
-      .textarea-error {
-        @apply !border-red-500/80;
-      }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-2FWD7FC8GL");
-    </script>
-    <!-- js-yaml library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-    <script src="/assets/js/theme.js"></script>
+    <meta
+      name="twitter:image"
+      content="https://www.unitoolify.com/assets/img/og/prettify-yaml.png"
+    />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/assets/img/mask-icon.svg" color="#3b82f6" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Pretty Print YAML Online – YAML Formatter",
-        "alternateName": "Prettify YAML Tool",
+        "name": "YAML Formatter",
+        "alternateName": "YAML Formatter",
         "url": "https://www.unitoolify.com/prettify-yaml/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Pretty print YAML online with consistent 2- or 4-space indentation. Format YAML, check syntax, and copy or download the result. Free browser-based formatter.",
+        "description": "Free online YAML formatter: reformat YAML with consistent indentation and surface syntax errors before you deploy. Runs locally, nothing is uploaded.",
+        "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -89,6 +91,32 @@
           "Support for docker-compose and Kubernetes manifests",
           "Live formatting as you type",
           "Copy and download formatted YAML"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unitoolify",
+          "url": "https://www.unitoolify.com"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.unitoolify.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Formatters",
+            "item": "https://www.unitoolify.com/#formatters"
+          },
+          { "@type": "ListItem", "position": 3, "name": "YAML Formatter" }
         ]
       }
     </script>
@@ -132,61 +160,70 @@
         ]
       }
     </script>
-    <meta name="theme-color" content="#0f172a" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="/assets/css/interface.css" />
   </head>
   <body
-    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+    data-page="prettify-yaml"
+    class="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50"
   >
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="py-6 px-4 md:py-8 text-center">
-      <h1
-        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+    <header>
+      <div
+        class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 pt-6 md:px-8 md:pt-8"
       >
-        Pretty Print YAML Online – YAML Formatter
-      </h1>
-      <p class="text-slate-400 mb-6 md:mb-8">
-        Pretty print YAML online with consistent indentation and syntax
-        checking.
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-        <a
-          href="../prettify-json/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >Prettify JSON</a
-        >
-        <a
-          href="../prettify-yaml/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
-          >Prettify YAML</a
-        >
-        <a
-          href="../convert-json-to-yaml/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >JSON to YAML</a
-        >
-        <a
-          href="../convert-yaml-to-json/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >YAML to JSON</a
-        >
         <a
           href="/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >&larr; Home</a
+          class="text-lg font-bold tracking-tight text-slate-100 no-underline"
+          >Unitoolify</a
         >
+        <nav aria-label="Primary">
+          <ul class="flex flex-wrap items-center gap-1">
+            <li>
+              <a class="nav-link" href="/prettify-json/">JSON Formatter</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/base64encode/">Base64</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/uuid-generator/">UUID</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#tools">All tools</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-
+    <nav
+      aria-label="Breadcrumb"
+      class="breadcrumbs mx-auto w-full max-w-7xl px-4 pt-4 md:px-8"
+    >
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#formatters">Formatters</a></li>
+        <li><span aria-current="page">YAML Formatter</span></li>
+      </ol>
+    </nav>
     <main
       id="main-content"
       tabindex="-1"
-      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+      class="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-6 px-4 pb-8 md:grid-cols-2 md:gap-8 md:px-8"
     >
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
-      >
+      <noscript class="col-span-full">
+        <p class="noscript">
+          These tools run entirely in your browser, which means they need
+          JavaScript. Enable it and reload — nothing is ever sent to a server.
+        </p>
+      </noscript>
+      <div class="col-span-full pt-4 pb-2 text-center">
+        <h1 class="title-gradient text-2xl font-bold pb-2 md:text-4xl">
+          YAML Formatter
+        </h1>
+        <p class="text-slate-400">
+          Pretty print YAML online with consistent indentation and syntax
+          checking.
+        </p>
+      </div>
+      <div class="card">
         <div class="flex justify-between items-center">
           <label for="inputText" class="text-lg md:text-xl font-semibold"
             >Input YAML</label
@@ -198,7 +235,7 @@
           autocomplete="off"
           id="inputText"
           name="inputText"
-          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          class="textarea"
           placeholder="Paste your raw YAML here…"
         ></textarea>
         <div
@@ -209,9 +246,7 @@
         ></div>
 
         <div class="flex flex-col gap-2">
-          <label
-            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
-          >
+          <label class="check">
             <input
               type="checkbox"
               id="liveMode"
@@ -221,47 +256,28 @@
             />
             Live mode (format as you type)
           </label>
-          <label
-            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
-          >
+          <label class="check">
             Indent space:
-            <select
-              id="indentSpace"
-              name="indentSpace"
-              class="bg-white/5 text-white border border-white/10 rounded px-2 py-1 text-sm"
-            >
+            <select id="indentSpace" name="indentSpace" class="select">
               <option value="2">2 Spaces</option>
               <option value="4">4 Spaces</option>
             </select>
           </label>
         </div>
 
-        <button
-          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
-          id="formatBtn"
-        >
+        <button class="btn btn-primary btn-block" id="formatBtn">
           Format YAML
         </button>
       </div>
 
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
-      >
+      <div class="card">
         <div class="flex justify-between items-center">
           <label for="outputText" class="text-lg md:text-xl font-semibold"
             >Formatted YAML</label
           >
           <div class="flex gap-2">
-            <button
-              class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
-              id="copyBtn"
-            >
-              Copy
-            </button>
-            <button
-              class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
-              id="downloadBtn"
-            >
+            <button class="btn btn-ghost btn-sm" id="copyBtn">Copy</button>
+            <button class="btn btn-ghost btn-sm" id="downloadBtn">
               Download
             </button>
           </div>
@@ -272,15 +288,18 @@
           id="outputText"
           name="outputText"
           readonly
-          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+          class="textarea"
           placeholder="Formatted result will appear here…"
         ></textarea>
+        <p
+          id="meta"
+          class="text-xs text-slate-400"
+          role="status"
+          aria-live="polite"
+        ></p>
       </div>
-
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="about-prettify-yaml">
+        <h2 class="panel-title" id="about-prettify-yaml">
           About Prettify YAML
         </h2>
         <p class="text-slate-400 leading-relaxed mb-4">
@@ -300,14 +319,10 @@
           configs that contain secrets through it. Pick 2 or 4 spaces for the
           output, then copy or download.
         </p>
-      </div>
+      </section>
 
-      <section
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
-          How to pretty print YAML
-        </h2>
+      <section class="panel">
+        <h2 class="panel-title">How to pretty print YAML</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
           Paste YAML into the input and choose 2 or 4 spaces for indentation.
           Live mode formats as you type; turn it off and click Format YAML to
@@ -333,21 +348,21 @@ app:
           configurations.
         </p>
       </section>
-
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="faq-heading">
+        <h2
+          id="faq-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Frequently Asked Questions
         </h2>
         <div class="space-y-4">
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               What is a YAML formatter used for?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               A YAML formatter standardizes the layout of YAML files with
               consistent indentation so they are readable and valid. It is
               commonly used on configuration files, docker-compose.yml files,
@@ -355,12 +370,12 @@ app:
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Can it validate Kubernetes manifests?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               This tool validates YAML syntax and structure, which catches the
               most common Kubernetes manifest errors such as broken indentation,
               duplicate keys and malformed lists. For full schema validation
@@ -368,12 +383,12 @@ app:
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Why is YAML indentation so strict?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               YAML uses indentation (spaces, not tabs) to define structure —
               unlike JSON, there are no braces. One wrong space changes the
               meaning of the whole document, which is why a formatter that
@@ -381,123 +396,220 @@ app:
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Is my YAML private?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Yes. Formatting and validation run entirely in your browser. Your
               YAML never leaves your device, so it is safe to format configs
               containing secrets or internal infrastructure details.
             </p>
           </details>
         </div>
-      </div>
+      </section>
 
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="related-heading">
+        <h2
+          id="related-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Related Tools
         </h2>
         <div class="flex flex-wrap gap-3">
-          <a
-            href="../convert-yaml-to-json/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
+          <a class="btn btn-ghost" href="/convert-yaml-to-json/"
             >YAML to JSON</a
           >
-          <a
-            href="../prettify-json/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >Prettify JSON</a
-          >
-          <a
-            href="../convert-json-to-yaml/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
+          <a class="btn btn-ghost" href="/prettify-json/">JSON Formatter</a>
+          <a class="btn btn-ghost" href="/convert-json-to-yaml/"
             >JSON to YAML</a
           >
-          <a
-            href="../decomposerize/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >Decomposerize</a
+          <a class="btn btn-ghost" href="/decomposerize/"
+            >Compose → docker run</a
           >
         </div>
-      </div>
+      </section>
     </main>
-
-    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-      &copy; 2026 Unitoolify. All rights reserved.
+    <footer class="mt-auto w-full border-t border-white/10">
+      <div
+        class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 md:px-8 lg:grid-cols-4"
+      >
+        <div class="max-w-sm">
+          <div class="mb-2 font-semibold text-slate-200">Unitoolify</div>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Developer tools that run in your browser. Encode, format, convert
+            and generate — your input never leaves your device.
+          </p>
+        </div>
+        <nav aria-label="Popular tools">
+          <div class="mb-2 font-semibold text-slate-200">Popular Tools</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 Encode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 Decode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-yaml/"
+                >YAML Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID Generator</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/convert-json-to-yaml/"
+                >JSON to YAML</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run → Compose</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/url-encode-string/"
+                >URL Encode</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Tool categories">
+          <div class="mb-2 font-semibold text-slate-200">Categories</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#encoders"
+                >Encoders / Decoders</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#formatters"
+                >Formatters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#converters"
+                >Converters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#generators"
+                >Generators</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#utilities"
+                >Utilities</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Popular searches">
+          <div class="mb-2 font-semibold text-slate-200">Popular Searches</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 encode online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID v4 generator online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON formatter online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 file decoder online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run to compose converter</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="border-t border-white/10 py-6 text-center text-sm text-slate-400"
+      >
+        &copy; 2026 Unitoolify ·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/privacy/"
+          >Privacy</a
+        >
+        ·
+        <button
+          type="button"
+          class="cursor-pointer underline hover:text-slate-200"
+          data-consent-open
+        >
+          Cookie settings</button
+        >·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/sitemap.xml"
+          >Sitemap</a
+        >
+      </div>
     </footer>
-
-    <script>
-      const inputText = document.getElementById("inputText");
-      const outputText = document.getElementById("outputText");
-      const liveMode = document.getElementById("liveMode");
-      const indentSpace = document.getElementById("indentSpace");
-      const formatBtn = document.getElementById("formatBtn");
-      const copyBtn = document.getElementById("copyBtn");
-      const downloadBtn = document.getElementById("downloadBtn");
-      const errorMsg = document.getElementById("errorMsg");
-
-      function formatYAML() {
-        const rawVal = inputText.value.trim();
-        if (!rawVal) {
-          outputText.value = "";
-          errorMsg.textContent = "";
-          inputText.classList.remove("textarea-error");
-          return;
-        }
-
-        try {
-          const parsed = jsyaml.load(rawVal);
-          if (parsed === undefined || typeof parsed === "string") {
-            outputText.value = rawVal;
-            return;
-          }
-
-          const space = parseInt(indentSpace.value, 10);
-          outputText.value = jsyaml.dump(parsed, { indent: space });
-          errorMsg.textContent = "";
-          inputText.classList.remove("textarea-error");
-        } catch (e) {
-          if (!liveMode.checked) {
-            errorMsg.textContent = "Invalid YAML: " + e.message;
-            inputText.classList.add("textarea-error");
-          }
-        }
-      }
-
-      inputText.addEventListener("input", () => {
-        if (liveMode.checked) formatYAML();
-      });
-
-      indentSpace.addEventListener("change", () => {
-        if (inputText.value.trim() !== "") formatYAML();
-      });
-
-      formatBtn.addEventListener("click", () => {
-        if (!liveMode.checked) formatYAML();
-      });
-
-      copyBtn.addEventListener("click", () => {
-        if (!outputText.value) return;
-        outputText.select();
-        document.execCommand("copy");
-        copyBtn.textContent = "Copied!";
-        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
-      });
-
-      downloadBtn.addEventListener("click", () => {
-        if (!outputText.value) return;
-        const blob = new Blob([outputText.value], { type: "text/yaml" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "formatted.yaml";
-        a.click();
-        URL.revokeObjectURL(url);
-      });
-    </script>
+    <script src="/assets/js/app.js" defer></script>
+    <script src="/assets/vendor/js-yaml.js" defer></script>
+    <script src="/assets/js/prettify-yaml.js" defer></script>
   </body>
 </html>

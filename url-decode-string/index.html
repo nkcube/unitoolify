@@ -1,77 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  data-ga="G-2FWD7FC8GL"
+  style="
+    --color-primary: hsl(170 66% 54%);
+    --color-primary-hover: hsl(170 66% 47%);
+    --color-on-primary: #0f172a;
+    --title-gradient: linear-gradient(
+      to right,
+      hsl(170 78% 68%),
+      hsl(192 78% 48%)
+    );
+  "
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>URL Decoder – Decode Percent Encoding Online | Unitoolify</title>
     <meta
       name="description"
-      content="Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser."
+      content="URL decode online: convert percent-encoded strings back to readable text. Handles + as space and malformed escapes. Free and fully client-side."
     />
     <link
       rel="canonical"
       href="https://www.unitoolify.com/url-decode-string/"
     />
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
       content="URL Decoder – Decode Percent Encoding Online"
     />
     <meta
       property="og:description"
-      content="Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser."
+      content="URL decode online: convert percent-encoded strings back to readable text. Handles + as space and malformed escapes. Free and fully client-side."
     />
     <meta
       property="og:url"
       content="https://www.unitoolify.com/url-decode-string/"
     />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://www.unitoolify.com/assets/img/og/url-decode-string.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="URL Decoder – Decode Percent Encoding Online"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
       content="URL Decoder – Decode Percent Encoding Online"
     />
     <meta
       name="twitter:description"
-      content="Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser."
+      content="URL decode online: convert percent-encoded strings back to readable text. Handles + as space and malformed escapes. Free and fully client-side."
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #3b82f6;
-        --color-primary-hover: #2563eb;
-        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-      }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-2FWD7FC8GL");
-    </script>
-    <script src="/assets/js/theme.js"></script>
+    <meta
+      name="twitter:image"
+      content="https://www.unitoolify.com/assets/img/og/url-decode-string.png"
+    />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/assets/img/mask-icon.svg" color="#3b82f6" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "URL Decoder – Decode Percent Encoding Online",
-        "alternateName": "URL Decode Tool",
+        "name": "URL Decode Online",
+        "alternateName": "URL Decode",
         "url": "https://www.unitoolify.com/url-decode-string/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Decode a URL encoded string online. Convert percent encoding such as %20 and %2F into readable text with this free URL decoder, directly in your browser.",
+        "description": "URL decode online: convert percent-encoded strings back to readable text. Handles + as space and malformed escapes. Free and fully client-side.",
+        "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -84,6 +94,32 @@
           "Full UTF-8 support (including CJK characters)",
           "Live mode as you type",
           "One-click copy"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unitoolify",
+          "url": "https://www.unitoolify.com"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.unitoolify.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Encoders / Decoders",
+            "item": "https://www.unitoolify.com/#encoders"
+          },
+          { "@type": "ListItem", "position": 3, "name": "URL Decode" }
         ]
       }
     </script>
@@ -127,53 +163,72 @@
         ]
       }
     </script>
-    <meta name="theme-color" content="#0f172a" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="/assets/css/interface.css" />
   </head>
   <body
-    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+    data-page="url-decode-string"
+    class="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50"
   >
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="py-6 px-4 md:py-8 text-center">
-      <h1
-        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+    <header>
+      <div
+        class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 pt-6 md:px-8 md:pt-8"
       >
-        URL Decoder – Decode Percent Encoding Online
-      </h1>
-      <p class="text-slate-400 mb-6 md:mb-8">
-        Decode a URL encoded string online: turn percent encoding back into
-        readable text.
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-        <a
-          href="../url-encode-string/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >Encode</a
-        >
-        <a
-          href="../url-decode-string/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
-          >Decode</a
-        >
         <a
           href="/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >&larr; Home</a
+          class="text-lg font-bold tracking-tight text-slate-100 no-underline"
+          >Unitoolify</a
         >
+        <nav aria-label="Primary">
+          <ul class="flex flex-wrap items-center gap-1">
+            <li>
+              <a class="nav-link" href="/prettify-json/">JSON Formatter</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/base64encode/">Base64</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/uuid-generator/">UUID</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#tools">All tools</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-
+    <nav
+      aria-label="Breadcrumb"
+      class="breadcrumbs mx-auto w-full max-w-7xl px-4 pt-4 md:px-8"
+    >
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#encoders">Encoders / Decoders</a></li>
+        <li><span aria-current="page">URL Decode</span></li>
+      </ol>
+    </nav>
     <main
       id="main-content"
       tabindex="-1"
-      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+      class="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-6 px-4 pb-8 md:grid-cols-2 md:gap-8 md:px-8"
     >
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
-      >
+      <noscript class="col-span-full">
+        <p class="noscript">
+          These tools run entirely in your browser, which means they need
+          JavaScript. Enable it and reload — nothing is ever sent to a server.
+        </p>
+      </noscript>
+      <div class="col-span-full pt-4 pb-2 text-center">
+        <h1 class="title-gradient text-2xl font-bold pb-2 md:text-4xl">
+          URL Decode Online
+        </h1>
+        <p class="text-slate-400">
+          Decode a URL encoded string online: turn percent encoding back into
+          readable text.
+        </p>
+      </div>
+      <div class="card">
         <div class="flex justify-between items-center">
-          <label for="inputText" class="text-lg md:text-xl font-semibold"
+          <label for="inputText" class="text-lg font-semibold md:text-xl"
             >Input</label
           >
         </div>
@@ -182,14 +237,31 @@
           autocomplete="off"
           id="inputText"
           name="inputText"
-          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Type or paste your text here to decode…"
+          class="textarea"
+          placeholder="e.g. hello%20world%20%26%20%E4%BD%A0%E5%A5%BD"
         ></textarea>
 
-        <div class="flex flex-col gap-2">
-          <label
-            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
-          >
+        <div class="flex flex-col gap-3">
+          <label class="flex flex-col gap-1 text-sm text-slate-400">
+            <span>Mode</span>
+            <select id="mode" name="mode" class="select">
+              <option value="component">
+                Component — decode %XX sequences
+              </option>
+              <option value="uri">Full URL — keep reserved characters</option>
+            </select>
+          </label>
+          <label class="check">
+            <input
+              type="checkbox"
+              id="plusAsSpace"
+              name="plusAsSpace"
+              checked
+              class="accent-primary"
+            />
+            Treat + as a space (form encoding)
+          </label>
+          <label class="check">
             <input
               type="checkbox"
               id="liveMode"
@@ -201,25 +273,17 @@
           </label>
         </div>
 
-        <button
-          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
-          id="actionBtn"
-        >
+        <button class="btn btn-primary btn-block" id="actionBtn" type="button">
           Decode String
         </button>
       </div>
 
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
-      >
+      <div class="card">
         <div class="flex justify-between items-center">
-          <label for="outputText" class="text-lg md:text-xl font-semibold"
+          <label for="outputText" class="text-lg font-semibold md:text-xl"
             >Output</label
           >
-          <button
-            class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
-            id="copyBtn"
-          >
+          <button class="btn btn-ghost btn-sm" id="copyBtn" type="button">
             Copy
           </button>
         </div>
@@ -229,17 +293,18 @@
           id="outputText"
           name="outputText"
           readonly
-          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Result will appear here…"
+          class="textarea"
+          placeholder="Decoded text will appear here…"
         ></textarea>
+        <p
+          id="meta"
+          class="text-xs text-slate-400"
+          role="status"
+          aria-live="polite"
+        ></p>
       </div>
-
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
-          About URL Decoding
-        </h2>
+      <section class="panel" aria-labelledby="about-url-decoding">
+        <h2 class="panel-title" id="about-url-decoding">About URL Decoding</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
           The reverse of the encoder: a percent-encoded string like
           <code>%20</code> goes back to a space. Under the hood it's the
@@ -256,14 +321,10 @@
         <p class="text-slate-400 leading-relaxed mb-4">
           The whole thing runs client-side — nothing you paste is sent anywhere.
         </p>
-      </div>
+      </section>
 
-      <section
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
-          How to decode percent encoding
-        </h2>
+      <section class="panel">
+        <h2 class="panel-title">How to decode percent encoding</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
           Paste your URL encoded string into the input. With live mode enabled,
           the decoded text appears as you type. For example, Hello%20World%21
@@ -281,134 +342,257 @@
           again.
         </p>
       </section>
-
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="faq-heading">
+        <h2
+          id="faq-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Frequently Asked Questions
         </h2>
         <div class="space-y-4">
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               What is URL decoding?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               URL decoding reverses percent-encoding: it takes strings like %20
               or %E4%B8%AD and converts them back into their original characters
-              (a space or a Chinese character). It uses the browser's native
+              (a space or a Chinese character). It uses the browser&#39;s native
               decodeURIComponent function.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               How do I decode a query string with multiple parameters?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Paste the entire encoded query string (for example
               name=John%20Doe%26city%3DParis) into the input. The decoder
               restores every parameter to its readable form at once.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Can it decode UTF-8 percent-encoding, such as Chinese characters?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Yes. decodeURIComponent fully supports UTF-8, so sequences like
               %E4%B8%AD%E6%96%87 decode correctly to Chinese text.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Is decoding done locally in my browser?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Yes. Everything runs client-side with JavaScript, and your input
               is never sent to any server.
             </p>
           </details>
         </div>
-      </div>
+      </section>
 
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="related-heading">
+        <h2
+          id="related-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Related Tools
         </h2>
         <div class="flex flex-wrap gap-3">
-          <a
-            href="../url-encode-string/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >URL Encode</a
-          >
-          <a
-            href="../base64decode/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >Base64 Decode</a
-          >
-          <a
-            href="../html-decode-string/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >HTML Decode</a
-          >
-          <a
-            href="../prettify-json/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >Prettify JSON</a
-          >
+          <a class="btn btn-ghost" href="/url-encode-string/">URL Encode</a>
+          <a class="btn btn-ghost" href="/base64decode/">Base64 Decode</a>
+          <a class="btn btn-ghost" href="/html-decode-string/">HTML Decode</a>
+          <a class="btn btn-ghost" href="/prettify-json/">JSON Formatter</a>
         </div>
-      </div>
+      </section>
     </main>
-
-    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-      &copy; 2026 Unitoolify. All rights reserved.
+    <footer class="mt-auto w-full border-t border-white/10">
+      <div
+        class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 md:px-8 lg:grid-cols-4"
+      >
+        <div class="max-w-sm">
+          <div class="mb-2 font-semibold text-slate-200">Unitoolify</div>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Developer tools that run in your browser. Encode, format, convert
+            and generate — your input never leaves your device.
+          </p>
+        </div>
+        <nav aria-label="Popular tools">
+          <div class="mb-2 font-semibold text-slate-200">Popular Tools</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 Encode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 Decode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-yaml/"
+                >YAML Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID Generator</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/convert-json-to-yaml/"
+                >JSON to YAML</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run → Compose</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/url-encode-string/"
+                >URL Encode</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Tool categories">
+          <div class="mb-2 font-semibold text-slate-200">Categories</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#encoders"
+                >Encoders / Decoders</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#formatters"
+                >Formatters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#converters"
+                >Converters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#generators"
+                >Generators</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#utilities"
+                >Utilities</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Popular searches">
+          <div class="mb-2 font-semibold text-slate-200">Popular Searches</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 encode online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID v4 generator online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON formatter online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 file decoder online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run to compose converter</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="border-t border-white/10 py-6 text-center text-sm text-slate-400"
+      >
+        &copy; 2026 Unitoolify ·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/privacy/"
+          >Privacy</a
+        >
+        ·
+        <button
+          type="button"
+          class="cursor-pointer underline hover:text-slate-200"
+          data-consent-open
+        >
+          Cookie settings</button
+        >·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/sitemap.xml"
+          >Sitemap</a
+        >
+      </div>
     </footer>
-
-    <script>
-      const inputText = document.getElementById("inputText");
-      const outputText = document.getElementById("outputText");
-      const liveMode = document.getElementById("liveMode");
-      const actionBtn = document.getElementById("actionBtn");
-      const copyBtn = document.getElementById("copyBtn");
-
-      function performAction() {
-        const input = inputText.value;
-        if (!input) {
-          outputText.value = "";
-          return;
-        }
-        let result = "";
-        try {
-          result = decodeURIComponent(input);
-        } catch (e) {
-          result = "Error: " + e.message;
-        }
-        outputText.value = result;
-      }
-
-      // Event listeners
-      inputText.addEventListener("input", () => {
-        if (liveMode.checked) performAction();
-      });
-
-      actionBtn.addEventListener("click", performAction);
-
-      copyBtn.addEventListener("click", () => {
-        outputText.select();
-        document.execCommand("copy");
-        copyBtn.textContent = "Copied!";
-        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
-      });
-    </script>
+    <script src="/assets/js/app.js" defer></script>
+    <script src="/assets/js/url-decode-string.js" defer></script>
   </body>
 </html>

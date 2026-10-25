@@ -1,0 +1,40 @@
+<section class="panel" aria-labelledby="about-base64-decoding">
+  <h2 class="panel-title" id="about-base64-decoding">About Base64 Decoding</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The reverse of the encoder: paste a Base64 string — or upload a .b64 file —
+    and get the original text or binary data back. Everything happens locally in
+    your browser, so the string you paste never leaves your machine.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    You'll end up here when an API returns a Base64-encoded field and you want
+    to see what's actually inside, when a
+    <code>data:image/png;base64,...</code> URI needs to become a real image
+    file, or when someone hands you a JWT and you want to eyeball its payload.
+    Text, images, PDFs — if it can be Base64'd, this can undo it.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Standard Base64 and the URL-safe Base64URL variant are both handled
+    automatically, so there's no need to tell the tool which one you've got. If
+    the decoded bytes turn out to be a file rather than text, hit "Download
+    Decoded File" to save it as-is.
+  </p>
+</section>
+
+<section class="panel">
+  <h2 class="panel-title">How to use the Base64 file decoder</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Paste Base64 text or select a text file containing Base64 data, such as a
+    .b64 file. For example, SGVsbG8= decodes to Hello. URL-safe Base64 is also
+    accepted.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    For encoded images, PDFs, or other binary data, choose Download Decoded
+    File. The download uses the name decoded_file.bin; rename its extension only
+    if you know the original file type.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    This file decoder handles Base64-encoded content. It does not decrypt
+    encrypted files or repair damaged documents. Binary data may not display as
+    readable text even when decoding succeeds.
+  </p>
+</section>

@@ -1,0 +1,12 @@
+node_modules
+src
+scripts
+tests
+.github
+.vscode
+.workbuddy
+package.json
+package-lock.json
+playwright.config.mjs
+prettier.config.mjs
+README.md

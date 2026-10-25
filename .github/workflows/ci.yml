@@ -1,69 +1,91 @@
-name: CI Checks
+name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  link-checker:
-    name: Broken Link Checker
+  build:
+    name: Build & drift check
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v7
-      
-      - name: Run Lychee
-        uses: lycheeverse/lychee-action@v2
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci
+
+      # Generated HTML/CSS/images are committed, so a stale build is a bug.
+      - name: Build everything
+        run: npm run build:all
+
+      - name: Fail if generated output differs from source
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::Generated files are out of date. Run npm run build:all and commit the result."
+            git status --porcelain
+            git --no-pager diff --stat
+            exit 1
+          fi
+
+  lint:
+    name: HTML, format and spelling
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint:html
+      - run: npm run lint:format
+      - run: npm run lint:spell
+
+  links:
+    name: Broken links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: lycheeverse/lychee-action@v2
         with:
           args: --verbose --no-progress --root-dir . './**/*.html' './**/*.md'
           fail: true
 
-  html-lint:
-    name: HTML Linter
+  test:
+    name: Behaviour and accessibility
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v7
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          
-      - name: Install HTMLHint
-        run: npm install -g htmlhint
-        
-      - name: Run HTMLHint
-        run: htmlhint "**/*.html" --ignore "yandex_*.html,google*.html,baidu_verify_codeva-DpypYaT0xr.html"
+      - uses: actions/checkout@v7
 
-  format-check:
-    name: Prettier Format Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v7
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: '24'
-          
-      - name: Install Prettier
-        run: npm install -g prettier
-        
-      - name: Check Formatting
-        run: prettier --check "**/*.{html,js,css,md}"
+          node-version: "24"
+          cache: npm
 
-  spell-check:
-    name: Spell Checker
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v7
-        
-      - name: Run CSpell
-        uses: streetsidesoftware/cspell-action@v9
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+
+      - uses: actions/upload-artifact@v7
+        if: failure()
         with:
-          files: '**/*.{html,md,js,css}'
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 7

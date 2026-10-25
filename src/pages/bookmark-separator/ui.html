@@ -1,0 +1,74 @@
+<div class="card items-center text-center md:p-10">
+  <div
+    role="tablist"
+    aria-label="Separator orientation"
+    class="flex flex-wrap justify-center gap-2"
+  >
+    <button
+      type="button"
+      role="tab"
+      id="tab-vert"
+      aria-selected="true"
+      aria-controls="panel-vert"
+      class="btn btn-primary btn-sm"
+    >
+      Vertical &nbsp;|
+    </button>
+    <button
+      type="button"
+      role="tab"
+      id="tab-horz"
+      aria-selected="false"
+      aria-controls="panel-horz"
+      class="btn btn-ghost btn-sm"
+    >
+      Horizontal &nbsp;───
+    </button>
+  </div>
+
+  <div
+    id="panel-vert"
+    role="tabpanel"
+    aria-labelledby="tab-vert"
+    class="flex flex-col items-center gap-4"
+  >
+    <p class="text-slate-400">
+      Drag this button onto your bookmarks bar — it drops in as a thin vertical
+      line.
+    </p>
+    <a
+      id="dragLinkVert"
+      href="#bookmark-separator-vert"
+      class="drag-link drag-link-vert"
+      title="Drag me to your bookmarks bar"
+    ></a>
+    <p class="text-sm text-slate-400">
+      Repeat as often as you like. Edge users: each drag generates a fresh URL,
+      so duplicate protection never kicks in.
+    </p>
+  </div>
+
+  <div
+    id="panel-horz"
+    role="tabpanel"
+    aria-labelledby="tab-horz"
+    class="flex flex-col items-center gap-4"
+    hidden
+  >
+    <p class="text-slate-400">
+      Drag this button onto your bookmarks bar — it drops in as a horizontal
+      divider.
+    </p>
+    <a
+      id="dragLinkHorz"
+      href="#bookmark-separator-horz"
+      class="drag-link"
+      title="Drag me to your bookmarks bar"
+      >────────────</a
+    >
+    <p class="text-sm text-slate-400">
+      Best for grouping a wide bar into sections. Same trick, different
+      character.
+    </p>
+  </div>
+</div>

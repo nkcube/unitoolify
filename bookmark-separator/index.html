@@ -1,85 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  data-ga="G-2FWD7FC8GL"
+  style="
+    --color-primary: hsl(6 66% 50%);
+    --color-primary-hover: hsl(6 66% 43%);
+    --color-on-primary: #ffffff;
+    --title-gradient: linear-gradient(
+      to right,
+      hsl(6 78% 64%),
+      hsl(28 78% 44%)
+    );
+  "
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chrome Bookmark Separator – Organize Bookmarks | Unitoolify</title>
     <meta
       name="description"
-      content="Free tool to add vertical separators to your Chrome or Edge bookmarks bar. Just drag and drop the button to visually organize folders and links."
+      content="Add vertical or horizontal separators to your Chrome or Edge bookmarks bar. Drag one bookmark, get a clean divider. No extension, no uploads."
     />
     <link
       rel="canonical"
       href="https://www.unitoolify.com/bookmark-separator/"
     />
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
-      content="Chrome Bookmark Separator – Vertical &amp; Horizontal"
+      content="Chrome Bookmark Separator – Organize Bookmarks"
     />
     <meta
       property="og:description"
-      content="Add visual separators to your Chrome or Edge bookmarks bar with a simple drag and drop. Free tool."
+      content="Add vertical or horizontal separators to your Chrome or Edge bookmarks bar. Drag one bookmark, get a clean divider. No extension, no uploads."
     />
     <meta
       property="og:url"
       content="https://www.unitoolify.com/bookmark-separator/"
     />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://www.unitoolify.com/assets/img/og/bookmark-separator.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Chrome Bookmark Separator – Organize Bookmarks"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Chrome Bookmark Separator – Vertical &amp; Horizontal"
+      content="Chrome Bookmark Separator – Organize Bookmarks"
     />
     <meta
       name="twitter:description"
-      content="Add visual separators to your Chrome or Edge bookmarks bar with a simple drag and drop. Free tool."
+      content="Add vertical or horizontal separators to your Chrome or Edge bookmarks bar. Drag one bookmark, get a clean divider. No extension, no uploads."
     />
-    <link
-      id="favicon"
-      rel="icon"
-      href="favicon-vert.svg"
-      type="image/svg+xml"
+    <meta
+      name="twitter:image"
+      content="https://www.unitoolify.com/assets/img/og/bookmark-separator.png"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #3b82f6;
-        --color-primary-hover: #2563eb;
-        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-      }
-      #dragLink::after {
-        content: "|";
-      }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-2FWD7FC8GL");
-    </script>
-    <script src="/assets/js/theme.js"></script>
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/assets/img/mask-icon.svg" color="#3b82f6" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Chrome Bookmark Separator",
-        "alternateName": "Bookmark Separator Tool",
+        "name": "Bookmark Bar Separator",
+        "alternateName": "Bookmark Separator",
         "url": "https://www.unitoolify.com/bookmark-separator/",
-        "applicationCategory": "BrowserApplication",
-        "operatingSystem": "Chrome and Edge",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free tool that adds vertical or horizontal visual separators to the Chrome or Edge bookmarks bar via a drag-and-drop bookmarklet.",
+        "description": "Add vertical or horizontal separators to your Chrome or Edge bookmarks bar. Drag one bookmark, get a clean divider. No extension, no uploads.",
+        "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -92,6 +94,32 @@
           "Works around Edge duplicate-bookmark limits",
           "Unlimited separators",
           "Syncs like any normal bookmark"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unitoolify",
+          "url": "https://www.unitoolify.com"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.unitoolify.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Utilities",
+            "item": "https://www.unitoolify.com/#utilities"
+          },
+          { "@type": "ListItem", "position": 3, "name": "Bookmark Separator" }
         ]
       }
     </script>
@@ -135,209 +163,429 @@
         ]
       }
     </script>
-    <meta name="theme-color" content="#0f172a" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="/assets/css/interface.css" />
   </head>
   <body
-    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col items-center"
+    data-page="bookmark-separator"
+    class="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50"
   >
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="py-6 px-4 md:py-8 text-center">
-      <h1
-        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+    <header>
+      <div
+        class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 pt-6 md:px-8 md:pt-8"
       >
-        Unitoolify Bookmark Separator
-      </h1>
-      <p class="text-slate-400 mb-6 md:mb-8">
-        Organize your Chrome/Edge bookmarks bar with visual separators
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-        <a
-          href="index.html"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
-          >Vertical Separator</a
-        >
-        <a
-          href="horz.html"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >Horizontal Separator</a
-        >
         <a
           href="/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >&larr; Home</a
+          class="text-lg font-bold tracking-tight text-slate-100 no-underline"
+          >Unitoolify</a
         >
+        <nav aria-label="Primary">
+          <ul class="flex flex-wrap items-center gap-1">
+            <li>
+              <a class="nav-link" href="/prettify-json/">JSON Formatter</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/base64encode/">Base64</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/uuid-generator/">UUID</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#tools">All tools</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-
+    <nav
+      aria-label="Breadcrumb"
+      class="breadcrumbs mx-auto w-full max-w-7xl px-4 pt-4 md:px-8"
+    >
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#utilities">Utilities</a></li>
+        <li><span aria-current="page">Bookmark Separator</span></li>
+      </ol>
+    </nav>
     <main
       id="main-content"
       tabindex="-1"
-      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 flex flex-col gap-8 items-center"
+      class="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-4 pb-8 md:px-8 md:gap-8"
     >
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 flex flex-col items-center text-center gap-6 max-w-5xl mx-auto w-full"
-      >
-        <h2 class="text-xl md:text-2xl font-medium">Vertical Separator</h2>
+      <noscript class="col-span-full">
+        <p class="noscript">
+          These tools run entirely in your browser, which means they need
+          JavaScript. Enable it and reload — nothing is ever sent to a server.
+        </p>
+      </noscript>
+      <div class="col-span-full pt-4 pb-2 text-center">
+        <h1 class="title-gradient text-2xl font-bold pb-2 md:text-4xl">
+          Bookmark Bar Separator
+        </h1>
         <p class="text-slate-400">
-          Drag the button below to your bookmarks bar
+          Organize your Chrome/Edge bookmarks bar with visual separators
         </p>
-
-        <a
-          href="#vert"
-          class="bg-primary text-white border border-primary-hover py-3 px-8 rounded-lg font-bold text-xl no-underline cursor-grab transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-primary-hover active:cursor-grabbing select-none"
-          id="dragLink"
-          title="Drag me to your bookmarks bar"
-        ></a>
-
-        <p class="mt-4 text-slate-400 text-sm md:text-base">
-          Looking for a horizontal separator?
-          <a
-            href="horz.html"
-            class="text-blue-400 underline hover:text-blue-300"
-            >Click here</a
+      </div>
+      <div class="card items-center text-center md:p-10">
+        <div
+          role="tablist"
+          aria-label="Separator orientation"
+          class="flex flex-wrap justify-center gap-2"
+        >
+          <button
+            type="button"
+            role="tab"
+            id="tab-vert"
+            aria-selected="true"
+            aria-controls="panel-vert"
+            class="btn btn-primary btn-sm"
           >
-        </p>
-      </div>
+            Vertical &nbsp;|
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-horz"
+            aria-selected="false"
+            aria-controls="panel-horz"
+            class="btn btn-ghost btn-sm"
+          >
+            Horizontal &nbsp;───
+          </button>
+        </div>
 
-      <div
-        class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
-          How it works
-        </h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
+        <div
+          id="panel-vert"
+          role="tabpanel"
+          aria-labelledby="tab-vert"
+          class="flex flex-col items-center gap-4"
+        >
+          <p class="text-slate-400">
+            Drag this button onto your bookmarks bar — it drops in as a thin
+            vertical line.
+          </p>
+          <a
+            id="dragLinkVert"
+            href="#bookmark-separator-vert"
+            class="drag-link drag-link-vert"
+            title="Drag me to your bookmarks bar"
+          ></a>
+          <p class="text-sm text-slate-400">
+            Repeat as often as you like. Edge users: each drag generates a fresh
+            URL, so duplicate protection never kicks in.
+          </p>
+        </div>
+
+        <div
+          id="panel-horz"
+          role="tabpanel"
+          aria-labelledby="tab-horz"
+          class="flex flex-col items-center gap-4"
+          hidden
+        >
+          <p class="text-slate-400">
+            Drag this button onto your bookmarks bar — it drops in as a
+            horizontal divider.
+          </p>
+          <a
+            id="dragLinkHorz"
+            href="#bookmark-separator-horz"
+            class="drag-link"
+            title="Drag me to your bookmarks bar"
+            >────────────</a
+          >
+          <p class="text-sm text-slate-400">
+            Best for grouping a wide bar into sections. Same trick, different
+            character.
+          </p>
+        </div>
+      </div>
+      <section class="panel panel-narrow" aria-labelledby="how-it-works">
+        <h2 class="panel-title" id="how-it-works">How it works</h2>
+        <p class="mb-4 leading-relaxed text-slate-400">
           Chrome and Edge never shipped a way to put separators on the bookmarks
-          bar, so this page is the workaround: the button above is a bookmark
-          that happens to render as a thin vertical line (|). Drag it onto the
-          bar and you're done.
+          bar, so this page is the workaround: the button above is an ordinary
+          bookmark that happens to render as a thin line. Drag it onto the bar
+          and you are done — no extension, no sync service, nothing to install.
         </p>
-        <p class="text-slate-400 leading-relaxed mb-4">
-          <strong>Note for Edge users:</strong> Edge refuses to add duplicate
-          bookmarks, so every time you click or drag the button it gets a fresh
-          random ID (UUID). That's why you can add as many separators as you
-          want without hitting a wall.
+        <p class="mb-4 leading-relaxed text-slate-400">
+          <strong class="text-slate-200">Vertical or horizontal.</strong> The
+          vertical separator is a bookmark with an empty title (so it takes up
+          almost no room), while the horizontal one uses a run of box-drawing
+          characters as its title. Pick whichever reads better against your
+          existing bookmarks.
         </p>
-        <p class="text-slate-400 leading-relaxed mb-4">
-          The separator is just a normal bookmark, so it syncs through your
-          browser account and survives restarts. A couple of vertical lines are
-          usually enough to keep a busy bar organized — no extension required.
+        <p class="mb-4 leading-relaxed text-slate-400">
+          <strong class="text-slate-200">Note for Edge users:</strong> Edge
+          refuses to add duplicate bookmarks, so every time you press or drag a
+          button it gets a fresh random fragment in its URL. That is why you can
+          add as many separators as you want without hitting a duplicate wall.
         </p>
-      </div>
+        <p class="leading-relaxed text-slate-400">
+          A separator is just a bookmark, so it syncs through your browser
+          account and survives restarts. Two or three lines are usually enough
+          to keep a busy bar organised.
+        </p>
+      </section>
 
-      <div
-        class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel panel-narrow" aria-labelledby="remove">
+        <h2 class="panel-title" id="remove">Removing one</h2>
+        <p class="leading-relaxed text-slate-400">
+          Right-click the separator on your bookmarks bar and choose Delete.
+          There is no state stored anywhere else — this page only generates the
+          bookmark, it does not remember or sync anything you add.
+        </p>
+      </section>
+      <section class="panel" aria-labelledby="faq-heading">
+        <h2
+          id="faq-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Frequently Asked Questions
         </h2>
         <div class="space-y-4">
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               How do I add a separator to my Chrome or Edge bookmarks bar?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Open this page, then drag the separator button onto your bookmarks
               bar. It will appear as a small vertical line (|) between your
               folders and links. Repeat as many times as you want separators.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
-              Why can't I add multiple separators in Edge?
+            <summary class="cursor-pointer font-medium text-slate-200">
+              Why can&#39;t I add multiple separators in Edge?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Edge prevents adding duplicate bookmarks. To work around this,
               every time you click or drag the separator button it gets a unique
               random ID (UUID), so you can add as many separators as you like.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Will my separators sync across devices?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Yes. The separator is stored as a normal bookmark, so it syncs
               through your Chrome or Edge account just like any other bookmark.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Does this work in Firefox or Safari?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               The drag-and-drop separator is designed for Chromium-based
               browsers (Chrome and Edge) which support the bookmarks bar.
-              Firefox's bookmarks bar works similarly, but Safari hides its
+              Firefox&#39;s bookmarks bar works similarly, but Safari hides its
               bookmarks bar by default.
             </p>
           </details>
         </div>
-      </div>
+      </section>
 
-      <div
-        class="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-5xl mx-auto w-full"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="related-heading">
+        <h2
+          id="related-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Related Tools
         </h2>
         <div class="flex flex-wrap gap-3">
-          <a
-            href="horz.html"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >Horizontal Separator</a
-          >
-          <a
-            href="../uuid-generator/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >UUID Generator</a
-          >
-          <a
-            href="/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >All Developer Tools</a
-          >
+          <a class="btn btn-ghost" href="/uuid-generator/">UUID Generator</a>
+          <a class="btn btn-ghost" href="/base64encode/">Base64 Encode</a>
+          <a class="btn btn-ghost" href="/prettify-json/">JSON Formatter</a>
         </div>
-      </div>
+      </section>
     </main>
-
-    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm mt-auto">
-      &copy; 2026 Unitoolify. All rights reserved.
+    <footer class="mt-auto w-full border-t border-white/10">
+      <div
+        class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 md:px-8 lg:grid-cols-4"
+      >
+        <div class="max-w-sm">
+          <div class="mb-2 font-semibold text-slate-200">Unitoolify</div>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Developer tools that run in your browser. Encode, format, convert
+            and generate — your input never leaves your device.
+          </p>
+        </div>
+        <nav aria-label="Popular tools">
+          <div class="mb-2 font-semibold text-slate-200">Popular Tools</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 Encode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 Decode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-yaml/"
+                >YAML Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID Generator</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/convert-json-to-yaml/"
+                >JSON to YAML</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run → Compose</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/url-encode-string/"
+                >URL Encode</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Tool categories">
+          <div class="mb-2 font-semibold text-slate-200">Categories</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#encoders"
+                >Encoders / Decoders</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#formatters"
+                >Formatters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#converters"
+                >Converters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#generators"
+                >Generators</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#utilities"
+                >Utilities</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Popular searches">
+          <div class="mb-2 font-semibold text-slate-200">Popular Searches</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 encode online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID v4 generator online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON formatter online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 file decoder online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run to compose converter</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="border-t border-white/10 py-6 text-center text-sm text-slate-400"
+      >
+        &copy; 2026 Unitoolify ·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/privacy/"
+          >Privacy</a
+        >
+        ·
+        <button
+          type="button"
+          class="cursor-pointer underline hover:text-slate-200"
+          data-consent-open
+        >
+          Cookie settings</button
+        >·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/sitemap.xml"
+          >Sitemap</a
+        >
+      </div>
     </footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const link = document.getElementById("dragLink");
-
-        function refreshHash() {
-          const randomKey =
-            typeof crypto !== "undefined" && crypto.randomUUID
-              ? crypto.randomUUID()
-              : Math.random().toString(36).substring(2) +
-                Date.now().toString(36);
-
-          const differentiatorKey = `bookmark-separator--${randomKey}`;
-          link.setAttribute("href", `#${differentiatorKey}`);
-          window.location.replace(`#${differentiatorKey}`);
-        }
-
-        refreshHash();
-
-        link.addEventListener("mousedown", (event) => {
-          if (event.button === 0) {
-            refreshHash();
-          }
-        });
-      });
-    </script>
+    <script src="/assets/js/app.js" defer></script>
+    <script src="/assets/js/bookmark-separator.js" defer></script>
   </body>
 </html>

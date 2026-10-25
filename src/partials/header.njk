@@ -1,0 +1,18 @@
+<header>
+  <div
+    class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 pt-6 md:px-8 md:pt-8"
+  >
+    <a href="/" class="text-lg font-bold tracking-tight text-slate-100 no-underline"
+      >Unitoolify</a
+    >
+    <nav aria-label="Primary">
+      <ul class="flex flex-wrap items-center gap-1">
+        {% for item in nav %}
+        <li>
+          <a class="nav-link" href="{{ item.url }}">{{ item.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

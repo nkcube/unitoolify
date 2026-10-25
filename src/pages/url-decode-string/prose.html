@@ -1,0 +1,37 @@
+<section class="panel" aria-labelledby="about-url-decoding">
+  <h2 class="panel-title" id="about-url-decoding">About URL Decoding</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The reverse of the encoder: a percent-encoded string like
+    <code>%20</code> goes back to a space. Under the hood it's the browser's own
+    <code>decodeURIComponent()</code>, so the behavior matches what you'd get in
+    JavaScript.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Handy when you're reading through access logs full of encoded URLs, when a
+    query string arrives with %-escaped parameters you actually want to read, or
+    when a third-party API returns percent-encoded text. UTF-8 is handled
+    properly, so Chinese, Japanese and accented characters all come back intact.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The whole thing runs client-side — nothing you paste is sent anywhere.
+  </p>
+</section>
+
+<section class="panel">
+  <h2 class="panel-title">How to decode percent encoding</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Paste your URL encoded string into the input. With live mode enabled, the
+    decoded text appears as you type. For example, Hello%20World%21 becomes
+    Hello World! and %2F becomes /.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    This tool uses decodeURIComponent to decode percent-encoded UTF-8 text. A
+    literal plus sign (+) stays a plus sign; for form-encoded values where +
+    means a space, replace it with %20 before decoding.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Decode one layer at a time: %2520 becomes %20 on the first pass and a space
+    on the second. Incomplete escapes such as %2 or invalid UTF-8 sequences
+    produce an error; check the source string before trying again.
+  </p>
+</section>

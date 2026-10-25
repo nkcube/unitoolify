@@ -1,77 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  data-ga="G-2FWD7FC8GL"
+  style="
+    --color-primary: hsl(38 66% 54%);
+    --color-primary-hover: hsl(38 66% 47%);
+    --color-on-primary: #0f172a;
+    --title-gradient: linear-gradient(
+      to right,
+      hsl(38 78% 68%),
+      hsl(60 78% 48%)
+    );
+  "
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Decoder Online – Convert Entities to Text | Unitoolify</title>
     <meta
       name="description"
-      content="Free online HTML decoder. Convert HTML entities like &amp;lt;, &amp;amp;, &amp;quot; back to plain text characters instantly in your browser. Private, fast, free."
+      content="HTML decode online: convert named and numeric entities back into plain text, including emoji and CJK. No uploads — decoding happens in your browser."
     />
     <link
       rel="canonical"
       href="https://www.unitoolify.com/html-decode-string/"
     />
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unitoolify" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
-      content="HTML Decoder Online – Convert Entities to Text Free"
+      content="HTML Decoder Online – Convert Entities to Text"
     />
     <meta
       property="og:description"
-      content="Free online HTML entity decoder. Turn &amp;lt;, &amp;amp;, &amp;quot; back into plain characters instantly, 100% in your browser."
+      content="HTML decode online: convert named and numeric entities back into plain text, including emoji and CJK. No uploads — decoding happens in your browser."
     />
     <meta
       property="og:url"
       content="https://www.unitoolify.com/html-decode-string/"
     />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://www.unitoolify.com/assets/img/og/html-decode-string.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="HTML Decoder Online – Convert Entities to Text"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="HTML Decoder Online – Convert Entities to Text Free"
+      content="HTML Decoder Online – Convert Entities to Text"
     />
     <meta
       name="twitter:description"
-      content="Free online HTML entity decoder. Turn &amp;lt;, &amp;amp;, &amp;quot; back into plain characters instantly, 100% in your browser."
+      content="HTML decode online: convert named and numeric entities back into plain text, including emoji and CJK. No uploads — decoding happens in your browser."
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #3b82f6;
-        --color-primary-hover: #2563eb;
-        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-      }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2FWD7FC8GL"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-2FWD7FC8GL");
-    </script>
-    <script src="/assets/js/theme.js"></script>
+    <meta
+      name="twitter:image"
+      content="https://www.unitoolify.com/assets/img/og/html-decode-string.png"
+    />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/assets/img/mask-icon.svg" color="#3b82f6" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "HTML Decoder Online",
-        "alternateName": "HTML Decode Tool",
+        "name": "HTML Decode Online",
+        "alternateName": "HTML Decode",
         "url": "https://www.unitoolify.com/html-decode-string/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free online HTML decoder that converts HTML entities back into their original plain-text characters.",
+        "description": "HTML decode online: convert named and numeric entities back into plain text, including emoji and CJK. No uploads — decoding happens in your browser.",
+        "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -84,6 +94,32 @@
           "Recover raw text from sanitized content",
           "Live mode as you type",
           "One-click copy"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Unitoolify",
+          "url": "https://www.unitoolify.com"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.unitoolify.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Encoders / Decoders",
+            "item": "https://www.unitoolify.com/#encoders"
+          },
+          { "@type": "ListItem", "position": 3, "name": "HTML Decode" }
         ]
       }
     </script>
@@ -97,7 +133,7 @@
             "name": "What is HTML decoding?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "HTML decoding reverses HTML encoding: it converts entities such as &amp;lt; back into their original characters (&lt;). This is useful for reading raw data that has been sanitized or escaped for the web."
+              "text": "HTML decoding reverses HTML encoding: it converts entities such as < back into their original characters (<). This is useful for reading raw data that has been sanitized or escaped for the web."
             }
           },
           {
@@ -110,10 +146,10 @@
           },
           {
             "@type": "Question",
-            "name": "Does it handle numeric entities like &#39;?",
+            "name": "Does it handle numeric entities like '?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Both named entities (like &amp;amp;) and numeric entities (like &#39; or &#169;) are converted back to their plain-text equivalents."
+              "text": "Yes. Both named entities (like &amp;) and numeric entities (like ' or &#169;) are converted back to their plain-text equivalents."
             }
           },
           {
@@ -127,52 +163,69 @@
         ]
       }
     </script>
-    <meta name="theme-color" content="#0f172a" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="/assets/css/interface.css" />
   </head>
   <body
-    class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50 min-h-screen flex flex-col"
+    data-page="html-decode-string"
+    class="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 to-slate-800 text-slate-50"
   >
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="py-6 px-4 md:py-8 text-center">
-      <h1
-        class="text-2xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent pb-2"
+    <header>
+      <div
+        class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 pt-6 md:px-8 md:pt-8"
       >
-        Unitoolify HTML Decode
-      </h1>
-      <p class="text-slate-400 mb-6 md:mb-8">
-        Convert HTML entities back to plain text
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 mb-6 md:mb-8">
-        <a
-          href="../html-encode-string/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >Encode</a
-        >
-        <a
-          href="../html-decode-string/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-primary border border-primary transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200"
-          >Decode</a
-        >
         <a
           href="/"
-          class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-          >&larr; Home</a
+          class="text-lg font-bold tracking-tight text-slate-100 no-underline"
+          >Unitoolify</a
         >
+        <nav aria-label="Primary">
+          <ul class="flex flex-wrap items-center gap-1">
+            <li>
+              <a class="nav-link" href="/prettify-json/">JSON Formatter</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/base64encode/">Base64</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/uuid-generator/">UUID</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#tools">All tools</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-
+    <nav
+      aria-label="Breadcrumb"
+      class="breadcrumbs mx-auto w-full max-w-7xl px-4 pt-4 md:px-8"
+    >
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#encoders">Encoders / Decoders</a></li>
+        <li><span aria-current="page">HTML Decode</span></li>
+      </ol>
+    </nav>
     <main
       id="main-content"
       tabindex="-1"
-      class="flex-1 max-w-7xl mx-auto w-full px-4 pb-8 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2"
+      class="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-6 px-4 pb-8 md:grid-cols-2 md:gap-8 md:px-8"
     >
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
-      >
+      <noscript class="col-span-full">
+        <p class="noscript">
+          These tools run entirely in your browser, which means they need
+          JavaScript. Enable it and reload — nothing is ever sent to a server.
+        </p>
+      </noscript>
+      <div class="col-span-full pt-4 pb-2 text-center">
+        <h1 class="title-gradient text-2xl font-bold pb-2 md:text-4xl">
+          HTML Decode Online
+        </h1>
+        <p class="text-slate-400">Convert HTML entities back to plain text</p>
+      </div>
+      <div class="card">
         <div class="flex justify-between items-center">
-          <label for="inputText" class="text-lg md:text-xl font-semibold"
+          <label for="inputText" class="text-lg font-semibold md:text-xl"
             >Input</label
           >
         </div>
@@ -181,42 +234,32 @@
           autocomplete="off"
           id="inputText"
           name="inputText"
-          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Type or paste your text here to decode…"
+          class="textarea"
+          placeholder="e.g. &lt;p&gt;Fish &amp;amp; chips&lt;/p&gt;"
         ></textarea>
-        <div class="flex flex-col gap-2">
-          <label
-            class="flex items-center gap-2 text-sm text-slate-400 cursor-pointer"
-          >
-            <input
-              type="checkbox"
-              id="liveMode"
-              name="liveMode"
-              checked
-              class="accent-primary"
-            />
-            Live mode (decode as you type)
-          </label>
-        </div>
-        <button
-          class="bg-primary text-white border-none py-3 px-6 rounded-lg font-semibold cursor-pointer transition-colors duration-200 w-full hover:bg-primary-hover"
-          id="actionBtn"
-        >
-          Decode String
+
+        <label class="check">
+          <input
+            type="checkbox"
+            id="liveMode"
+            name="liveMode"
+            checked
+            class="accent-primary"
+          />
+          Live mode (decode as you type)
+        </label>
+
+        <button class="btn btn-primary btn-block" id="actionBtn" type="button">
+          Decode HTML
         </button>
       </div>
 
-      <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 flex flex-col gap-4"
-      >
+      <div class="card">
         <div class="flex justify-between items-center">
-          <label for="outputText" class="text-lg md:text-xl font-semibold"
+          <label for="outputText" class="text-lg font-semibold md:text-xl"
             >Output</label
           >
-          <button
-            class="bg-white/5 border border-white/10 text-slate-50 py-1.5 px-3 rounded-lg text-sm cursor-pointer transition-colors duration-200 hover:bg-white/10"
-            id="copyBtn"
-          >
+          <button class="btn btn-ghost btn-sm" id="copyBtn" type="button">
             Copy
           </button>
         </div>
@@ -226,15 +269,18 @@
           id="outputText"
           name="outputText"
           readonly
-          class="w-full h-56 md:h-[350px] bg-black/20 border border-white/10 rounded-lg text-slate-50 p-4 resize-y font-mono text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-          placeholder="Result will appear here…"
+          class="textarea"
+          placeholder="Decoded text will appear here…"
         ></textarea>
+        <p
+          id="meta"
+          class="text-xs text-slate-400"
+          role="status"
+          aria-live="polite"
+        ></p>
       </div>
-
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 mt-4 md:mt-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="about-html-decoding">
+        <h2 class="panel-title" id="about-html-decoding">
           About HTML Decoding
         </h2>
         <p class="text-slate-400 leading-relaxed mb-4">
@@ -253,35 +299,35 @@
           Decoding happens locally in your browser — no data leaves your
           machine.
         </p>
-      </div>
-
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      </section>
+      <section class="panel" aria-labelledby="faq-heading">
+        <h2
+          id="faq-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Frequently Asked Questions
         </h2>
         <div class="space-y-4">
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               What is HTML decoding?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               HTML decoding reverses HTML encoding: it converts entities such as
-              &amp;lt; back into their original characters (&lt;). This is
-              useful for reading raw data that has been sanitized or escaped for
-              the web.
+              &lt; back into their original characters (&lt;). This is useful
+              for reading raw data that has been sanitized or escaped for the
+              web.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               When do I need to decode HTML entities?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Whenever you work with escaped content: parsing RSS or XML feeds,
               reading scraped web content, importing exported HTML, or
               inspecting data stored by CMS platforms that escape special
@@ -289,102 +335,226 @@
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Does it handle numeric entities like &#39;?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Yes. Both named entities (like &amp;amp;) and numeric entities
-              (like &#39; or &#169;) are converted back to their plain-text
+              (like &#39; or &amp;#169;) are converted back to their plain-text
               equivalents.
             </p>
           </details>
           <details
-            class="group bg-black/20 rounded-lg p-4 border border-white/10"
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
-            <summary class="text-slate-200 font-medium cursor-pointer">
+            <summary class="cursor-pointer font-medium text-slate-200">
               Is decoding done locally in my browser?
             </summary>
-            <p class="text-slate-400 leading-relaxed mt-2">
+            <p class="mt-2 leading-relaxed text-slate-400">
               Yes. The conversion runs entirely client-side with JavaScript, and
               your input is never sent to any server.
             </p>
           </details>
         </div>
-      </div>
+      </section>
 
-      <div
-        class="col-span-full bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10"
-      >
-        <h2 class="mb-4 text-slate-200 text-lg md:text-xl font-semibold">
+      <section class="panel" aria-labelledby="related-heading">
+        <h2
+          id="related-heading"
+          class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+        >
           Related Tools
         </h2>
         <div class="flex flex-wrap gap-3">
-          <a
-            href="../html-encode-string/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >HTML Encode</a
-          >
-          <a
-            href="../url-decode-string/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >URL Decode</a
-          >
-          <a
-            href="../base64decode/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
-            >Base64 Decode</a
-          >
-          <a
-            href="../convert-yaml-to-json/"
-            class="text-slate-50 no-underline px-4 py-2 rounded-lg bg-white/5 border border-white/10 transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-200 hover:bg-white/10"
+          <a class="btn btn-ghost" href="/html-encode-string/">HTML Encode</a>
+          <a class="btn btn-ghost" href="/url-decode-string/">URL Decode</a>
+          <a class="btn btn-ghost" href="/base64decode/">Base64 Decode</a>
+          <a class="btn btn-ghost" href="/convert-yaml-to-json/"
             >YAML to JSON</a
           >
         </div>
-      </div>
+      </section>
     </main>
-
-    <footer class="text-center py-6 md:py-8 text-slate-400 text-sm">
-      &copy; 2026 Unitoolify. All rights reserved.
+    <footer class="mt-auto w-full border-t border-white/10">
+      <div
+        class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:grid-cols-2 md:px-8 lg:grid-cols-4"
+      >
+        <div class="max-w-sm">
+          <div class="mb-2 font-semibold text-slate-200">Unitoolify</div>
+          <p class="text-sm leading-relaxed text-slate-400">
+            Developer tools that run in your browser. Encode, format, convert
+            and generate — your input never leaves your device.
+          </p>
+        </div>
+        <nav aria-label="Popular tools">
+          <div class="mb-2 font-semibold text-slate-200">Popular Tools</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 Encode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 Decode</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-yaml/"
+                >YAML Formatter</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID Generator</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/convert-json-to-yaml/"
+                >JSON to YAML</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run → Compose</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/url-encode-string/"
+                >URL Encode</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Tool categories">
+          <div class="mb-2 font-semibold text-slate-200">Categories</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#encoders"
+                >Encoders / Decoders</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#formatters"
+                >Formatters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#converters"
+                >Converters</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#generators"
+                >Generators</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/#utilities"
+                >Utilities</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label="Popular searches">
+          <div class="mb-2 font-semibold text-slate-200">Popular Searches</div>
+          <ul class="grid grid-cols-1 gap-y-1.5 text-sm">
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64encode/"
+                >Base64 encode online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/uuid-generator/"
+                >UUID v4 generator online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/prettify-json/"
+                >JSON formatter online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/base64decode/"
+                >Base64 file decoder online</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-400 no-underline hover:text-slate-200"
+                href="/composerize/"
+                >docker run to compose converter</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="border-t border-white/10 py-6 text-center text-sm text-slate-400"
+      >
+        &copy; 2026 Unitoolify ·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/privacy/"
+          >Privacy</a
+        >
+        ·
+        <button
+          type="button"
+          class="cursor-pointer underline hover:text-slate-200"
+          data-consent-open
+        >
+          Cookie settings</button
+        >·
+        <a
+          class="text-slate-400 underline hover:text-slate-200"
+          href="/sitemap.xml"
+          >Sitemap</a
+        >
+      </div>
     </footer>
-
-    <script>
-      const inputText = document.getElementById("inputText");
-      const outputText = document.getElementById("outputText");
-      const liveMode = document.getElementById("liveMode");
-      const actionBtn = document.getElementById("actionBtn");
-      const copyBtn = document.getElementById("copyBtn");
-
-      function performAction() {
-        const input = inputText.value;
-        if (!input) {
-          outputText.value = "";
-          return;
-        }
-        let result = "";
-        try {
-          const div = document.createElement("textarea");
-          div.innerHTML = input;
-          result = div.value;
-        } catch (e) {
-          result = "Error: " + e.message;
-        }
-        outputText.value = result;
-      }
-
-      inputText.addEventListener("input", () => {
-        if (liveMode.checked) performAction();
-      });
-
-      actionBtn.addEventListener("click", performAction);
-
-      copyBtn.addEventListener("click", () => {
-        outputText.select();
-        document.execCommand("copy");
-        copyBtn.textContent = "Copied!";
-        setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
-      });
-    </script>
+    <script src="/assets/js/app.js" defer></script>
+    <script src="/assets/js/html-decode-string.js" defer></script>
   </body>
 </html>

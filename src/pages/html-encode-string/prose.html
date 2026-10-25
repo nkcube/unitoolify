@@ -1,0 +1,19 @@
+<section class="panel" aria-labelledby="about-html-encoding">
+  <h2 class="panel-title" id="about-html-encoding">About HTML Encoding</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    HTML encoding escapes the five characters that have meaning in markup —
+    <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>,
+    <code>&quot;</code> and <code>&#39;</code> — so the browser shows them as
+    literal text instead of interpreting them. That's the whole trick behind
+    displaying code on a page without it rendering.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    If your site renders anything users typed — comments, forum posts, chat
+    messages — escaping it is the first thing standing between you and an XSS
+    mess. It's also exactly what code blocks on blogs and docs sites do under
+    the hood.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Runs entirely in your browser; nothing you paste is uploaded anywhere.
+  </p>
+</section>

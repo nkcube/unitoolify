@@ -1,0 +1,42 @@
+<section class="panel" aria-labelledby="about-base64-encoding">
+  <h2 class="panel-title" id="about-base64-encoding">About Base64 Encoding</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    This is a straightforward Base64 encoder. Paste some text — or upload a file
+    — and you get the Base64 string back. It all runs in your browser, so
+    whatever you type or drop in never gets sent anywhere.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Base64 turns binary data into plain ASCII text using a 64-character alphabet
+    (A-Z, a-z, 0-9, "+" and "/"). That's what makes it the go-to way to embed an
+    image directly in HTML or CSS as a
+    <code>data:image/png;base64,...</code> URI, to get binary attachments
+    through MIME-based email, or to store binary values inside a JSON payload.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    In practice you'll reach for it whenever something needs to travel through a
+    text-only channel: an icon inline in CSS, a small file tucked into a JSON
+    document, a blob of bytes inside a database column. Paste or upload, copy,
+    done.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The extra options exist for when plain Base64 isn't quite right.
+    <strong>URL-safe mode</strong> swaps "+" and "/" for "-" and "_" and drops
+    the trailing "=" padding — what you want if the string is going into a URL,
+    a filename or a JWT. <strong>Line chunking</strong> breaks the output into
+    76-character lines, which some older email and MIME setups expect.
+  </p>
+</section>
+
+<section class="panel">
+  <h2 class="panel-title">How to Base64 encode online</h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Type or paste text into the input to encode it. For example, Hello becomes
+    SGVsbG8=. Copy the result or download it for use in a text-based workflow.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    To encode a file, choose Upload a File instead. Enable URL-safe output when
+    you need Base64URL, or line chunking when your destination expects wrapped
+    Base64 text. Base64 is an encoding, not encryption; anyone with the output
+    can decode it.
+  </p>
+</section>

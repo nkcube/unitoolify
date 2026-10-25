@@ -1,0 +1,12 @@
+<nav
+  aria-label="Breadcrumb"
+  class="breadcrumbs mx-auto w-full max-w-7xl px-4 pt-4 md:px-8"
+>
+  <ol>
+    {% for crumb in page.breadcrumbs %} {% if crumb.url %}
+    <li><a href="{{ crumb.url }}">{{ crumb.name }}</a></li>
+    {% else %}
+    <li><span aria-current="page">{{ crumb.name }}</span></li>
+    {% endif %} {% endfor %}
+  </ol>
+</nav>

@@ -1,0 +1,28 @@
+{
+  "title": "Free Online Developer Tools – Base64, JSON, UUID | Unitoolify",
+  "description": "Free browser-based developer tools: Base64 encoder/decoder, JSON and YAML formatters, UUID generator, URL and HTML encoders, Docker compose converters.",
+  "ogTitle": "Free Online Developer Tools – Base64, JSON, UUID & More",
+  "ogDescription": "Base64, JSON and YAML formatters, UUID generator, URL and HTML encoders and Docker compose converters. Free, private, in-browser.",
+  "faq": [
+    {
+      "q": "What is Unitoolify?",
+      "a": "A small collection of browser-based developer tools: Base64 encode/decode, URL and HTML escaping, JSON and YAML formatting, JSON/YAML conversion, UUID generation, Docker compose conversion and a bookmark-bar organizer. No installs, no accounts — open a page and use it."
+    },
+    {
+      "q": "Is my data private when I use these tools?",
+      "a": "Yes — every tool runs client-side. Your input is processed by JavaScript in your own browser and never sent to a server, which is kind of the point of the site."
+    },
+    {
+      "q": "Do I need to create an account or pay?",
+      "a": "No account, no payment, no usage caps. Open the tool, paste your input, copy the result."
+    },
+    {
+      "q": "Do the tools work on mobile devices?",
+      "a": "They're responsive and run in any modern browser, so phone, tablet or laptop all behave the same."
+    },
+    {
+      "q": "Which is the most popular tool on Unitoolify?",
+      "a": "The Base64 encoder , the Base64 decoder and the JSON formatter get the most traffic, with the UUID generator and the Docker compose converter not far behind."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<section class="panel" aria-labelledby="related-heading">
+  <h2
+    id="related-heading"
+    class="mb-4 text-lg font-semibold text-slate-200 md:text-xl"
+  >
+    Related Tools
+  </h2>
+  <div class="flex flex-wrap gap-3">
+    {% for item in page.relatedTools %}
+    <a class="btn btn-ghost" href="{{ item.url }}">{{ item.name }}</a>
+    {% endfor %}
+  </div>
+</section>

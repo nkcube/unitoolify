@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="inputText" class="text-lg font-semibold md:text-xl"
+      >Input</label
+    >
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="inputText"
+    name="inputText"
+    class="textarea"
+    placeholder="e.g. &lt;p&gt;Fish &amp;amp; chips&lt;/p&gt;"
+  ></textarea>
+
+  <label class="check">
+    <input
+      type="checkbox"
+      id="liveMode"
+      name="liveMode"
+      checked
+      class="accent-primary"
+    />
+    Live mode (decode as you type)
+  </label>
+
+  <button class="btn btn-primary btn-block" id="actionBtn" type="button">
+    Decode HTML
+  </button>
+</div>
+
+<div class="card">
+  <div class="flex justify-between items-center">
+    <label for="outputText" class="text-lg font-semibold md:text-xl"
+      >Output</label
+    >
+    <button class="btn btn-ghost btn-sm" id="copyBtn" type="button">
+      Copy
+    </button>
+  </div>
+  <textarea
+    spellcheck="false"
+    autocomplete="off"
+    id="outputText"
+    name="outputText"
+    readonly
+    class="textarea"
+    placeholder="Decoded text will appear here…"
+  ></textarea>
+  <p
+    id="meta"
+    class="text-xs text-slate-400"
+    role="status"
+    aria-live="polite"
+  ></p>
+</div>
