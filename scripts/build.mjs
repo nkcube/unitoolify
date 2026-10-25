@@ -206,9 +206,14 @@ for (const tool of tools) {
       const inner = solo
         ? "grid grid-cols-1 gap-4"
         : `grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-${cols}`;
+      // The blurb is centred on the heading's glyph box rather than
+      // baseline-aligned: with `flex-wrap` Safari ignores the baseline and
+      // falls back to flex-start, which left the sentence floating at the top
+      // of the heading. `leading-none` collapses the heading's line box so the
+      // two centres land on the same line.
       return `<section id="${category.id}" class="scroll-mt-8 ${span}">
-  <div class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:mb-5">
-    <h2 class="text-lg font-bold text-slate-50 md:text-xl">${category.name}</h2>
+  <div class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:mb-6">
+    <h2 class="text-lg leading-none font-bold text-slate-50 md:text-xl">${category.name}</h2>
     <p class="text-sm text-slate-400">${category.blurb}</p>
   </div>
   <div class="${inner}">${cards}</div>
