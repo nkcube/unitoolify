@@ -227,19 +227,6 @@
     @apply opacity-100;
   }
 
-  /* A hairline that fades out at both ends: enough to close a section without
-     the hard seam a full-width border draws on a dark page. */
-  .section-rule {
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgb(255 255 255 / 0.18) 14%,
-      rgb(255 255 255 / 0.18) 86%,
-      transparent
-    );
-  }
-
   /* ---- page chrome ---- */
   .drag-link {
     @apply inline-flex cursor-grab items-center justify-center rounded-lg border border-primary-hover bg-primary px-8 py-3 text-xl font-bold text-on-primary no-underline shadow-lg transition duration-200 select-none hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-xl active:cursor-grabbing;

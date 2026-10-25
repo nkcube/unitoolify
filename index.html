@@ -252,7 +252,7 @@
     <main
       id="main-content"
       tabindex="-1"
-      class="mx-auto w-full max-w-7xl flex-1 px-4 pb-16 md:px-8 md:pb-24"
+      class="mx-auto w-full max-w-7xl flex-1 px-4 pb-8 md:px-8"
     >
       <noscript class="col-span-full">
         <p class="noscript">
@@ -260,7 +260,7 @@
           JavaScript. Enable it and reload — nothing is ever sent to a server.
         </p>
       </noscript>
-      <section class="pt-4 pb-8 text-center md:pt-8 md:pb-12">
+      <section class="pt-4 pb-2 text-center md:pt-8">
         <h1 class="title-gradient pb-2 text-3xl font-extrabold md:text-5xl">
           Unitoolify
         </h1>
@@ -286,334 +286,339 @@
         </div>
       </section>
 
-      <div class="section-rule" aria-hidden="true"></div>
-
-      <section
-        id="tools"
-        class="mt-12 grid scroll-mt-8 gap-y-16 sm:gap-y-20 md:mt-16 md:grid-cols-6 md:gap-x-6 md:gap-y-24 xl:gap-y-28"
-        aria-label="All tools"
-      >
-        <section id="encoders" class="scroll-mt-8 md:col-span-6">
-          <div
-            class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:mb-6"
-          >
-            <h2 class="text-lg leading-none font-bold text-slate-50 md:text-xl">
+      <section id="tools" class="scroll-mt-8" aria-label="All tools">
+        <div class="grid gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+          <section id="encoders" class="scroll-mt-8">
+            <h2 class="mb-4 text-lg font-bold text-slate-50 md:text-xl">
               Encoders / Decoders
             </h2>
-            <p class="text-sm text-slate-400">
+            <p class="mb-4 text-sm text-slate-400">
               Turn data into another representation and back.
             </p>
-          </div>
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            <a href="/base64encode/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🔒</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                Base64 Encode
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Encode text or files to Base64 in your browser. URL-safe mode
-                and MIME line chunking included.
-              </p>
-            </a>
-            <a href="/base64decode/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🔓</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                Base64 Decode
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Decode Base64 back to text or binary files. Handles Base64URL
-                automatically, all locally.
-              </p>
-            </a>
-            <a href="/url-encode-string/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🔗</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                URL Encode
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Percent-encode any string for URLs, query strings or form
-                bodies.
-              </p>
-            </a>
-            <a href="/url-decode-string/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🔗</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                URL Decode
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Turn percent-encoded strings back into readable text,
-                tolerantly.
-              </p>
-            </a>
-            <a href="/html-encode-string/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🌐</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                HTML Encode
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Escape HTML entities for text or attribute contexts, or encode
-                all non-ASCII.
-              </p>
-            </a>
-            <a href="/html-decode-string/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🌐</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                HTML Decode
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Convert HTML entities back into raw text characters.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section id="formatters" class="scroll-mt-8 md:col-span-6">
-          <div
-            class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:mb-6"
-          >
-            <h2 class="text-lg leading-none font-bold text-slate-50 md:text-xl">
+            <div class="grid grid-cols-1 gap-4">
+              <a href="/base64encode/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🔒</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  Base64 Encode
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Encode text or files to Base64 in your browser. URL-safe mode
+                  and MIME line chunking included.
+                </p>
+              </a>
+              <a href="/base64decode/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🔓</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  Base64 Decode
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Decode Base64 back to text or binary files. Handles Base64URL
+                  automatically, all locally.
+                </p>
+              </a>
+              <a href="/url-encode-string/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🔗</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  URL Encode
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Percent-encode any string for URLs, query strings or form
+                  bodies.
+                </p>
+              </a>
+              <a href="/url-decode-string/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🔗</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  URL Decode
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Turn percent-encoded strings back into readable text,
+                  tolerantly.
+                </p>
+              </a>
+              <a href="/html-encode-string/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🌐</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  HTML Encode
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Escape HTML entities for text or attribute contexts, or encode
+                  all non-ASCII.
+                </p>
+              </a>
+              <a href="/html-decode-string/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🌐</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  HTML Decode
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Convert HTML entities back into raw text characters.
+                </p>
+              </a>
+            </div>
+          </section>
+          <section id="formatters" class="scroll-mt-8">
+            <h2 class="mb-4 text-lg font-bold text-slate-50 md:text-xl">
               Formatters
             </h2>
-            <p class="text-sm text-slate-400">
+            <p class="mb-4 text-sm text-slate-400">
               Make minified config readable again.
             </p>
-          </div>
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2">
-            <a href="/prettify-json/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >✨</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                JSON Formatter
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Pretty-print and validate JSON with 2-space, 4-space or tab
-                indentation.
-              </p>
-            </a>
-            <a href="/prettify-yaml/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >✨</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                YAML Formatter
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Re-indent YAML consistently and catch broken syntax before
-                deploying.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section id="converters" class="scroll-mt-8 md:col-span-6">
-          <div
-            class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:mb-6"
-          >
-            <h2 class="text-lg leading-none font-bold text-slate-50 md:text-xl">
+            <div class="grid grid-cols-1 gap-4">
+              <a href="/prettify-json/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >✨</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  JSON Formatter
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Pretty-print and validate JSON with 2-space, 4-space or tab
+                  indentation.
+                </p>
+              </a>
+              <a href="/prettify-yaml/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >✨</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  YAML Formatter
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Re-indent YAML consistently and catch broken syntax before
+                  deploying.
+                </p>
+              </a>
+            </div>
+          </section>
+          <section id="converters" class="scroll-mt-8">
+            <h2 class="mb-4 text-lg font-bold text-slate-50 md:text-xl">
               Converters
             </h2>
-            <p class="text-sm text-slate-400">
+            <p class="mb-4 text-sm text-slate-400">
               Move between JSON, YAML and Docker formats.
             </p>
-          </div>
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2">
-            <a href="/convert-json-to-yaml/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >⇌</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                JSON to YAML
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Turn JSON into human-readable, maintainable YAML.
-              </p>
-            </a>
-            <a href="/convert-yaml-to-json/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >⇌</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                YAML to JSON
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Convert YAML configs into strict JSON for APIs and apps.
-              </p>
-            </a>
-            <a href="/composerize/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🐳</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                docker run → Compose
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Paste a docker run command, get a docker-compose.yml service.
-              </p>
-            </a>
-            <a href="/decomposerize/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🔄</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                Compose → docker run
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Reverse a docker-compose.yml back into raw docker run commands.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section id="generators" class="scroll-mt-8 md:col-span-3">
-          <div
-            class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:mb-6"
-          >
-            <h2 class="text-lg leading-none font-bold text-slate-50 md:text-xl">
+            <div class="grid grid-cols-1 gap-4">
+              <a href="/convert-json-to-yaml/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >⇌</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  JSON to YAML
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Turn JSON into human-readable, maintainable YAML.
+                </p>
+              </a>
+              <a href="/convert-yaml-to-json/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >⇌</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  YAML to JSON
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Convert YAML configs into strict JSON for APIs and apps.
+                </p>
+              </a>
+              <a href="/composerize/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🐳</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  docker run → Compose
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Paste a docker run command, get a docker-compose.yml service.
+                </p>
+              </a>
+              <a href="/decomposerize/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🔄</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  Compose → docker run
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Reverse a docker-compose.yml back into raw docker run
+                  commands.
+                </p>
+              </a>
+            </div>
+          </section>
+          <section id="generators" class="scroll-mt-8">
+            <h2 class="mb-4 text-lg font-bold text-slate-50 md:text-xl">
               Generators
             </h2>
-            <p class="text-sm text-slate-400">
+            <p class="mb-4 text-sm text-slate-400">
               Produce identifiers without a server.
             </p>
-          </div>
-          <div class="grid grid-cols-1 gap-4">
-            <a href="/uuid-generator/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >🔑</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                UUID Generator
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Generate v4 or v1 UUIDs in bulk, up to 10,000 at a time.
-              </p>
-            </a>
-          </div>
-        </section>
-        <section id="utilities" class="scroll-mt-8 md:col-span-3">
-          <div
-            class="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:mb-6"
-          >
-            <h2 class="text-lg leading-none font-bold text-slate-50 md:text-xl">
+            <div class="grid grid-cols-1 gap-4">
+              <a href="/uuid-generator/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >🔑</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  UUID Generator
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Generate v4 or v1 UUIDs in bulk, up to 10,000 at a time.
+                </p>
+              </a>
+            </div>
+          </section>
+          <section id="utilities" class="scroll-mt-8">
+            <h2 class="mb-4 text-lg font-bold text-slate-50 md:text-xl">
               Utilities
             </h2>
-            <p class="text-sm text-slate-400">
+            <p class="mb-4 text-sm text-slate-400">
               Small fixes for everyday browser annoyances.
             </p>
-          </div>
-          <div class="grid grid-cols-1 gap-4">
-            <a href="/bookmark-separator/" class="tool-card group">
-              <span
-                aria-hidden="true"
-                class="flex items-center justify-center text-2xl leading-none"
-                >✂️</span
-              >
-              <div class="min-w-0 text-base font-semibold md:text-[17px]">
-                Bookmark Separator
-              </div>
-              <p class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400">
-                Add vertical or horizontal separators to your Chrome or Edge
-                bookmarks bar.
-              </p>
-            </a>
-          </div>
-        </section>
+            <div class="grid grid-cols-1 gap-4">
+              <a href="/bookmark-separator/" class="tool-card group">
+                <span
+                  aria-hidden="true"
+                  class="flex items-center justify-center text-2xl leading-none"
+                  >✂️</span
+                >
+                <div class="min-w-0 text-base font-semibold md:text-[17px]">
+                  Bookmark Separator
+                </div>
+                <p
+                  class="col-span-2 mt-2 text-sm leading-relaxed text-slate-400"
+                >
+                  Add vertical or horizontal separators to your Chrome or Edge
+                  bookmarks bar.
+                </p>
+              </a>
+            </div>
+          </section>
+        </div>
       </section>
 
-      <section class="mt-16 md:mt-24" aria-labelledby="why-heading">
-        <div class="rounded-3xl border border-white/10 bg-black/20 p-6 md:p-10">
-          <h2
-            id="why-heading"
-            class="text-lg font-bold text-slate-50 md:text-xl"
+      <section class="mt-4" aria-labelledby="why-heading">
+        <h2
+          id="why-heading"
+          class="mb-6 text-center text-lg font-bold text-slate-50 md:text-xl"
+        >
+          Why Unitoolify?
+        </h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div
+            class="rounded-2xl border border-dashed border-white/15 bg-black/20 p-6"
           >
-            Why Unitoolify?
-          </h2>
-          <p class="mt-1.5 max-w-2xl text-sm text-slate-400">
-            Three things worth knowing, in case you are weighing up the
-            alternatives.
-          </p>
-          <div class="mt-8 grid gap-8 lg:grid-cols-3 lg:gap-10">
-            <div>
-              <div class="flex items-center gap-3">
-                <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-emerald-400/20 bg-emerald-500/10 text-lg"
-                  aria-hidden="true"
-                >
-                  🔒
-                </div>
-                <h3 class="font-semibold text-slate-100">Private by default</h3>
+            <div class="mb-4 flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-emerald-400/20 bg-emerald-500/10 text-lg"
+                aria-hidden="true"
+              >
+                🔒
               </div>
-              <p class="mt-3 text-sm leading-relaxed text-slate-400">
-                Every tool runs client-side. Whatever you paste — API keys,
-                configs, tokens — is processed in your browser, so there is
-                nothing on our side to log or leak.
-              </p>
+              <h3 class="font-semibold text-slate-100">Private by default</h3>
             </div>
-            <div>
-              <div class="flex items-center gap-3">
-                <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-sky-400/20 bg-sky-500/10 text-lg"
-                  aria-hidden="true"
-                >
-                  🆓
-                </div>
-                <h3 class="font-semibold text-slate-100">Actually free</h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Every tool runs client-side. Whatever you paste — API keys,
+              configs, tokens — is processed in your browser, so there is
+              nothing on our side to log or leak.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-dashed border-white/15 bg-black/20 p-6"
+          >
+            <div class="mb-4 flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-sky-400/20 bg-sky-500/10 text-lg"
+                aria-hidden="true"
+              >
+                🆓
               </div>
-              <p class="mt-3 text-sm leading-relaxed text-slate-400">
-                No accounts, no paywalls, no usage limits. Every tool is free
-                for individuals and teams alike.
-              </p>
+              <h3 class="font-semibold text-slate-100">Actually free</h3>
             </div>
-            <div>
-              <div class="flex items-center gap-3">
-                <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-amber-400/20 bg-amber-500/10 text-lg"
-                  aria-hidden="true"
-                >
-                  ⚡
-                </div>
-                <h3 class="font-semibold text-slate-100">No setup at all</h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              No accounts, no paywalls, no usage limits. Every tool is free for
+              individuals and teams alike.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-dashed border-white/15 bg-black/20 p-6"
+          >
+            <div class="mb-4 flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-amber-400/20 bg-amber-500/10 text-lg"
+                aria-hidden="true"
+              >
+                ⚡
               </div>
-              <p class="mt-3 text-sm leading-relaxed text-slate-400">
-                Nothing to install or configure. Open a page, paste your input,
-                get the result — most tools update as you type.
-              </p>
+              <h3 class="font-semibold text-slate-100">No setup at all</h3>
             </div>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Nothing to install or configure. Open a page, paste your input,
+              get the result — most tools update as you type.
+            </p>
           </div>
         </div>
       </section>
