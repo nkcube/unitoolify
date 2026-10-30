@@ -3,6 +3,9 @@ import { test, expect } from "@playwright/test";
 test.beforeEach(async ({ page }) => {
   // Don't let the consent banner intercept clicks during tests.
   await page.addInitScript(() => localStorage.setItem("ut-consent", "denied"));
+  await page.route("https://pagead2.googlesyndication.com/**", (route) => {
+    route.fulfill({ status: 200, contentType: "text/javascript", body: "" });
+  });
 });
 
 /** Live formatting is debounced (200 ms), so let it settle before reading. */

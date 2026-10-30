@@ -70,8 +70,9 @@ jobs:
           args: >-
             --verbose --no-progress --root-dir . --exclude-path node_modules
             --exclude-path .workbuddy --exclude-path src --exclude
-            '^https://www\.unitoolify\.com' --accept 200,206,429 './**/*.html'
-            './**/*.md'
+            '^https://www\.unitoolify\.com' --exclude
+            '^https://pagead2\.googlesyndication\.com' --accept 200,206,429
+            './**/*.html' './**/*.md'
           fail: true
 
   test:

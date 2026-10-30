@@ -24,6 +24,9 @@ const PAGES = [
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("ut-consent", "denied"));
+  await page.route("https://pagead2.googlesyndication.com/**", (route) => {
+    route.fulfill({ status: 200, contentType: "text/javascript", body: "" });
+  });
 });
 
 const TOOL_PAGES = PAGES.filter((p) => !["/", "/privacy/"].includes(p));
@@ -111,7 +114,8 @@ test("no third-party requests on a tool page", async ({ page }) => {
     const url = req.url();
     if (
       !url.startsWith("http://127.0.0.1:4173") &&
-      !url.startsWith("http://localhost:4173")
+      !url.startsWith("http://localhost:4173") &&
+      !url.startsWith("https://pagead2.googlesyndication.com/")
     ) {
       external.push(url);
     }
