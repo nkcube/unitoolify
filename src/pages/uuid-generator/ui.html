@@ -6,7 +6,7 @@
   <div class="flex flex-col gap-4">
     <fieldset class="flex flex-col gap-2">
       <legend class="text-sm font-medium text-slate-50">Version</legend>
-      <div class="flex gap-6">
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
         <label class="check text-slate-300">
           <input
             type="radio"
@@ -21,12 +21,25 @@
           <input
             type="radio"
             name="uuidVersion"
+            value="7"
+            class="accent-primary"
+          />
+          v7 (Time-sorted)
+        </label>
+        <label class="check text-slate-300">
+          <input
+            type="radio"
+            name="uuidVersion"
             value="1"
             class="accent-primary"
           />
           v1 (Timestamp)
         </label>
       </div>
+      <p class="text-xs leading-relaxed text-slate-500">
+        v4 is the safe default. Choose v7 when the ID becomes a database key and
+        you want inserts to stay in order.
+      </p>
     </fieldset>
 
     <div class="flex flex-col gap-1">

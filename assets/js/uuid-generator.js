@@ -29,11 +29,7 @@
     return out;
   }
 
-  function uuidv4() {
-    if (typeof crypto.randomUUID === "function") return crypto.randomUUID();
-    var bytes = crypto.getRandomValues(new Uint8Array(16));
-    bytes[6] = (bytes[6] & 0x0f) | 0x40;
-    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  function format(bytes) {
     var hex = toHex(bytes);
     return (
       hex.slice(0, 8) +
@@ -46,6 +42,47 @@
       "-" +
       hex.slice(20)
     );
+  }
+
+  function uuidv4() {
+    if (typeof crypto.randomUUID === "function") return crypto.randomUUID();
+    var bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    return format(bytes);
+  }
+
+  // v7 (RFC 9562) starts with a 48-bit Unix millisecond timestamp, then a
+  // 12-bit counter, then 62 random bits. Sorting the strings therefore sorts
+  // them by creation time, which is what makes them kind to a B-tree index.
+  var v7Ms = -1;
+  var v7Seq = 0;
+
+  function uuidv7() {
+    var now = Date.now();
+    if (now > v7Ms) {
+      v7Ms = now;
+      var seed = crypto.getRandomValues(new Uint8Array(2));
+      v7Seq = ((seed[0] << 8) | seed[1]) & 0x0fff;
+    } else if (++v7Seq > 0x0fff) {
+      // More than 4096 IDs in one millisecond: borrow the next millisecond
+      // rather than wrapping the counter back to zero and breaking the order.
+      v7Ms += 1;
+      v7Seq = 0;
+    }
+
+    var bytes = crypto.getRandomValues(new Uint8Array(16));
+    var ts = BigInt(v7Ms);
+    bytes[0] = Number((ts >> 40n) & 0xffn);
+    bytes[1] = Number((ts >> 32n) & 0xffn);
+    bytes[2] = Number((ts >> 24n) & 0xffn);
+    bytes[3] = Number((ts >> 16n) & 0xffn);
+    bytes[4] = Number((ts >> 8n) & 0xffn);
+    bytes[5] = Number(ts & 0xffn);
+    bytes[6] = 0x70 | ((v7Seq >> 8) & 0x0f);
+    bytes[7] = v7Seq & 0xff;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    return format(bytes);
   }
 
   function uuidv1() {
@@ -91,7 +128,8 @@
 
     var ids = new Array(count);
     for (var i = 0; i < count; i++) {
-      var id = version === "1" ? uuidv1() : uuidv4();
+      var id =
+        version === "1" ? uuidv1() : version === "7" ? uuidv7() : uuidv4();
       if (upper) id = id.toUpperCase();
       if (stripDashes) id = id.replace(/-/g, "");
       ids[i] = id;

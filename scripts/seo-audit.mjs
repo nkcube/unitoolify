@@ -233,8 +233,16 @@ async function main() {
   }
 
   // Pages --------------------------------------------------------------
+  // The sitemap always lists absolute production URLs, so --base has to be
+  // applied to the locs as well; otherwise a local run silently audits the
+  // live site and reports numbers that have nothing to do with the build
+  // sitting on disk.
+  const origin = new URL(BASE).origin;
   const rows = [];
-  for (const loc of locs) rows.push(await audit_page(loc));
+  for (const loc of locs) {
+    const target = loc.replace(/^https?:\/\/[^/]+/, origin);
+    rows.push(await audit_page(target));
+  }
 
   // A field repeated across pages is a wasted slot, not a style choice.
   for (const [i, row] of rows.entries()) {

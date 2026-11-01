@@ -561,14 +561,15 @@
       "category": "generators",
       "icon": "🔑",
       "accent": "fuchsia",
-      "h1": "UUID Generator",
-      "card": "Generate v4 or v1 UUIDs in bulk, up to 10,000 at a time.",
-      "description": "Free online UUID generator: create random v4 or timestamp v1 identifiers in bulk up to 10,000, uppercase or without hyphens. 100% in-browser.",
-      "title": "UUID v4 Generator Online – Free & Private | Unitoolify",
-      "subtitle": "Generate UUIDs (v1, v4) in bulk, right in your browser",
+      "h1": "UUID v4 Generator",
+      "card": "Generate v4, v7 or v1 UUIDs in bulk, up to 10,000 at a time.",
+      "description": "Free UUID v4 generator: random v4 IDs in bulk up to 10,000, plus time-ordered v7 and v1. Uppercase or hyphen-free output, all in your browser.",
+      "title": "UUID v4 Generator Online – Free v4, v7 & v1 | Unitoolify",
+      "subtitle": "v4 by default, plus time-ordered v7 and v1 — in bulk, in your browser",
       "features": [
-        "Generate UUID v4 (random) and v1 (timestamp)",
+        "Generate UUID v4 (random), v7 (time-sorted) and v1 (timestamp)",
         "Bulk generation up to 10,000 UUIDs",
+        "v7 stays strictly increasing within a single millisecond",
         "Uppercase letters option",
         "Remove hyphens option",
         "Copy all or download as .txt"
@@ -579,12 +580,28 @@
           "a": "A UUID (Universally Unique Identifier) is a 128-bit label formatted as 36 characters (32 hexadecimal digits with four hyphens), for example 550e8400-e29b-41d4-a716-446655440000. UUIDs are used to identify records, entities and resources without a central registry."
         },
         {
+          "q": "What is a UUID v4 and how is it generated?",
+          "a": "A v4 UUID is 122 random bits plus 6 fixed bits that mark the version and variant. The random part comes from a cryptographic generator, so two v4 values are independent of each other and of the machine that made them. You can recognize one by the 4 at the start of the third group and the 8, 9, a or b at the start of the fourth."
+        },
+        {
+          "q": "What is UUID v7 and when should I use it?",
+          "a": "UUID v7, standardized in RFC 9562, puts a 48-bit Unix millisecond timestamp at the front, then a 12-bit counter, then 62 random bits. Because the timestamp leads, the strings sort by creation time — which keeps inserts sequential in a B-tree primary key instead of scattering them. Use v7 for database keys and event rows; the trade-off is that the creation time is readable from the ID."
+        },
+        {
+          "q": "Is uuidv4 the same as UUID v4?",
+          "a": "Yes. The value is identical; only the spelling differs by ecosystem. \"UUID v4\" is the RFC name, \"uuidv4\" is the JavaScript function name from the uuid package, \"uuid4\" is Python (uuid.uuid4()) and Java calls it UUID.randomUUID(). Searching for v4 UUID generator or UUID generator v4 asks the same question."
+        },
+        {
+          "q": "Can I use a UUID as a database primary key?",
+          "a": "Yes, and it is common. Two things are worth knowing: a UUID is 16 bytes against 8 for a bigint, so the index is physically larger, and a random v4 key inserts at random positions, which costs you page splits on large tables. A v7 key sorts by time and appends at the end of the index, so it keeps the storage benefit of a UUID without that particular cost."
+        },
+        {
           "q": "What is the difference between UUID v1 and v4?",
-          "a": "UUID v4 is generated from random numbers and is the usual choice for database keys and API IDs. UUID v1 embeds a timestamp plus a node identifier, so values sort roughly by creation time. This tool uses a random node ID instead of your network card's MAC address, so generated IDs cannot be traced back to a device."
+          "a": "UUID v4 is generated from random numbers and is the usual choice for database keys and API IDs. UUID v1 embeds a timestamp plus a node identifier, so values sort roughly by creation time. This tool uses a random node ID instead of your network card MAC address, so generated IDs cannot be traced back to a device."
         },
         {
           "q": "Can I generate many UUIDs at once?",
-          "a": "Yes. Set the count up to 10,000 and click \"Generate UUIDs\" to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file."
+          "a": "Yes. Set the count up to 10,000 and click \"Generate UUIDs\" to create them in bulk — handy when you are seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file."
         },
         {
           "q": "Can I remove hyphens or use uppercase letters?",
@@ -592,7 +609,7 @@
         },
         {
           "q": "Are generated UUIDs private?",
-          "a": "Yes. Generation happens entirely in your browser with the standard uuid library. Your UUIDs are never sent to any server, so they are safe to use as tokens, keys and identifiers."
+          "a": "Yes. Generation happens entirely in your browser using the Web Crypto API. Your UUIDs are never sent to any server, so they are safe to use as keys and identifiers."
         }
       ],
       "related": [
@@ -637,6 +654,22 @@
         {
           "q": "Does this work in Firefox or Safari?",
           "a": "The drag-and-drop separator is designed for Chromium-based browsers (Chrome and Edge) which support the bookmarks bar. Firefox's bookmarks bar works similarly, but Safari hides its bookmarks bar by default."
+        },
+        {
+          "q": "Can I add a bookmark separator without dragging anything?",
+          "a": "Yes. Right-click the bookmarks bar and choose \"Add page…\", then set the name to | and the URL to anything — this page works fine. A bookmark whose name is a single pipe renders as the same vertical line as the drag-and-drop button. You can also edit any existing bookmark and change its name to |."
+        },
+        {
+          "q": "Which character makes the best bookmark separator?",
+          "a": "The plain pipe | is the safest choice: it renders in every font and stays narrow. If you want something taller, │ (U+2502, box-drawing light vertical) or ┃ (U+2503, heavy vertical) look closer to a real rule. For a horizontal divider use a run of ─ (U+2500), because those strokes join into one continuous line — most other dashes leave visible gaps."
+        },
+        {
+          "q": "Why does my separator show a long URL instead of a line?",
+          "a": "When a bookmark has no name, some browsers fall back to displaying the address, so the item becomes a long URL on the bar. Right-click it, choose Edit and type | as the name. In Chrome, clearing the name entirely leaves just the favicon, which is even narrower than a pipe."
+        },
+        {
+          "q": "Do bookmark separators work on phones and tablets?",
+          "a": "No. Mobile browsers have no bookmarks bar to draw on, so separators are a desktop-only idea — Chrome and Edge on Android, and Safari on iOS, show bookmarks in a list instead. If you rely on a synced account, the separators you add on a desktop do still sync to the other desktop browsers on that account."
         }
       ],
       "related": ["uuid-generator", "base64encode", "prettify-json"]

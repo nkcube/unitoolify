@@ -215,6 +215,27 @@ test.describe("UUID generator", () => {
     expect(lines[0]).toMatch(/^[0-9A-F]{12}1[0-9A-F]{3}[89AB][0-9A-F]{15}$/);
     expect(new Set(lines).size).toBe(50);
   });
+
+  test("v7 is RFC 9562 shaped, time-ordered and carries a real timestamp", async ({
+    page,
+  }) => {
+    await page.goto("/uuid-generator/");
+    await page.locator('input[name="uuidVersion"][value="7"]').check();
+    await page.locator("#uuidCount").fill("500");
+    await page.locator("#generateBtn").click();
+    const lines = (await page.locator("#outputText").inputValue()).split("\n");
+    expect(lines).toHaveLength(500);
+    for (const line of lines) {
+      expect(line).toMatch(
+        /^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/,
+      );
+    }
+    // A v7 batch generated in one millisecond still has to come out sorted.
+    expect([...lines].sort()).toEqual(lines);
+    // The leading 48 bits are Unix milliseconds, so they must decode to now.
+    const embedded = parseInt(lines[0].replace(/-/g, "").slice(0, 12), 16);
+    expect(Math.abs(Date.now() - embedded)).toBeLessThan(60_000);
+  });
 });
 
 test.describe("Docker converters", () => {

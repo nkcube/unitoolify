@@ -16,10 +16,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UUID v4 Generator Online – Free &amp; Private | Unitoolify</title>
+    <title>UUID v4 Generator Online – Free v4, v7 &amp; v1 | Unitoolify</title>
     <meta
       name="description"
-      content="Free online UUID generator: create random v4 or timestamp v1 identifiers in bulk up to 10,000, uppercase or without hyphens. 100% in-browser."
+      content="Free UUID v4 generator: random v4 IDs in bulk up to 10,000, plus time-ordered v7 and v1. Uppercase or hyphen-free output, all in your browser."
     />
     <link rel="canonical" href="https://www.unitoolify.com/uuid-generator/" />
     <meta name="robots" content="index, follow" />
@@ -28,11 +28,11 @@
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
-      content="UUID v4 Generator Online – Free &amp; Private"
+      content="UUID v4 Generator Online – Free v4, v7 &amp; v1"
     />
     <meta
       property="og:description"
-      content="Free online UUID generator: create random v4 or timestamp v1 identifiers in bulk up to 10,000, uppercase or without hyphens. 100% in-browser."
+      content="Free UUID v4 generator: random v4 IDs in bulk up to 10,000, plus time-ordered v7 and v1. Uppercase or hyphen-free output, all in your browser."
     />
     <meta
       property="og:url"
@@ -46,16 +46,16 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="UUID v4 Generator Online – Free &amp; Private"
+      content="UUID v4 Generator Online – Free v4, v7 &amp; v1"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="UUID v4 Generator Online – Free &amp; Private"
+      content="UUID v4 Generator Online – Free v4, v7 &amp; v1"
     />
     <meta
       name="twitter:description"
-      content="Free online UUID generator: create random v4 or timestamp v1 identifiers in bulk up to 10,000, uppercase or without hyphens. 100% in-browser."
+      content="Free UUID v4 generator: random v4 IDs in bulk up to 10,000, plus time-ordered v7 and v1. Uppercase or hyphen-free output, all in your browser."
     />
     <meta
       name="twitter:image"
@@ -76,13 +76,13 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "UUID Generator",
+        "name": "UUID v4 Generator",
         "alternateName": "UUID Generator",
         "url": "https://www.unitoolify.com/uuid-generator/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any (browser)",
         "browserRequirements": "Requires JavaScript",
-        "description": "Free online UUID generator: create random v4 or timestamp v1 identifiers in bulk up to 10,000, uppercase or without hyphens. 100% in-browser.",
+        "description": "Free UUID v4 generator: random v4 IDs in bulk up to 10,000, plus time-ordered v7 and v1. Uppercase or hyphen-free output, all in your browser.",
         "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
@@ -91,8 +91,9 @@
           "availability": "https://schema.org/InStock"
         },
         "featureList": [
-          "Generate UUID v4 (random) and v1 (timestamp)",
+          "Generate UUID v4 (random), v7 (time-sorted) and v1 (timestamp)",
           "Bulk generation up to 10,000 UUIDs",
+          "v7 stays strictly increasing within a single millisecond",
           "Uppercase letters option",
           "Remove hyphens option",
           "Copy all or download as .txt"
@@ -140,10 +141,42 @@
           },
           {
             "@type": "Question",
+            "name": "What is a UUID v4 and how is it generated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A v4 UUID is 122 random bits plus 6 fixed bits that mark the version and variant. The random part comes from a cryptographic generator, so two v4 values are independent of each other and of the machine that made them. You can recognize one by the 4 at the start of the third group and the 8, 9, a or b at the start of the fourth."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is UUID v7 and when should I use it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UUID v7, standardized in RFC 9562, puts a 48-bit Unix millisecond timestamp at the front, then a 12-bit counter, then 62 random bits. Because the timestamp leads, the strings sort by creation time — which keeps inserts sequential in a B-tree primary key instead of scattering them. Use v7 for database keys and event rows; the trade-off is that the creation time is readable from the ID."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is uuidv4 the same as UUID v4?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The value is identical; only the spelling differs by ecosystem. \"UUID v4\" is the RFC name, \"uuidv4\" is the JavaScript function name from the uuid package, \"uuid4\" is Python (uuid.uuid4()) and Java calls it UUID.randomUUID(). Searching for v4 UUID generator or UUID generator v4 asks the same question."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use a UUID as a database primary key?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, and it is common. Two things are worth knowing: a UUID is 16 bytes against 8 for a bigint, so the index is physically larger, and a random v4 key inserts at random positions, which costs you page splits on large tables. A v7 key sorts by time and appends at the end of the index, so it keeps the storage benefit of a UUID without that particular cost."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "What is the difference between UUID v1 and v4?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "UUID v4 is generated from random numbers and is the usual choice for database keys and API IDs. UUID v1 embeds a timestamp plus a node identifier, so values sort roughly by creation time. This tool uses a random node ID instead of your network card's MAC address, so generated IDs cannot be traced back to a device."
+              "text": "UUID v4 is generated from random numbers and is the usual choice for database keys and API IDs. UUID v1 embeds a timestamp plus a node identifier, so values sort roughly by creation time. This tool uses a random node ID instead of your network card MAC address, so generated IDs cannot be traced back to a device."
             }
           },
           {
@@ -151,7 +184,7 @@
             "name": "Can I generate many UUIDs at once?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Set the count up to 10,000 and click \"Generate UUIDs\" to create them in bulk — handy when you're seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file."
+              "text": "Yes. Set the count up to 10,000 and click \"Generate UUIDs\" to create them in bulk — handy when you are seeding test data, fixtures or migration scripts. Copy all or download them as a .txt file."
             }
           },
           {
@@ -167,7 +200,7 @@
             "name": "Are generated UUIDs private?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Generation happens entirely in your browser with the standard uuid library. Your UUIDs are never sent to any server, so they are safe to use as tokens, keys and identifiers."
+              "text": "Yes. Generation happens entirely in your browser using the Web Crypto API. Your UUIDs are never sent to any server, so they are safe to use as keys and identifiers."
             }
           }
         ]
@@ -229,10 +262,10 @@
       </noscript>
       <div class="col-span-full pt-4 pb-2 text-center">
         <h1 class="title-gradient text-2xl font-bold pb-2 md:text-4xl">
-          UUID Generator
+          UUID v4 Generator
         </h1>
         <p class="text-slate-400">
-          Generate UUIDs (v1, v4) in bulk, right in your browser
+          v4 by default, plus time-ordered v7 and v1 — in bulk, in your browser
         </p>
       </div>
       <div class="card">
@@ -243,7 +276,7 @@
         <div class="flex flex-col gap-4">
           <fieldset class="flex flex-col gap-2">
             <legend class="text-sm font-medium text-slate-50">Version</legend>
-            <div class="flex gap-6">
+            <div class="flex flex-wrap gap-x-6 gap-y-2">
               <label class="check text-slate-300">
                 <input
                   type="radio"
@@ -258,12 +291,25 @@
                 <input
                   type="radio"
                   name="uuidVersion"
+                  value="7"
+                  class="accent-primary"
+                />
+                v7 (Time-sorted)
+              </label>
+              <label class="check text-slate-300">
+                <input
+                  type="radio"
+                  name="uuidVersion"
                   value="1"
                   class="accent-primary"
                 />
                 v1 (Timestamp)
               </label>
             </div>
+            <p class="text-xs leading-relaxed text-slate-500">
+              v4 is the safe default. Choose v7 when the ID becomes a database
+              key and you want inserts to stay in order.
+            </p>
           </fieldset>
 
           <div class="flex flex-col gap-1">
@@ -331,13 +377,13 @@
       </div>
       <section class="panel" aria-labelledby="about-uuid-generator">
         <h2 class="panel-title" id="about-uuid-generator">
-          About UUID Generator
+          What this UUID v4 generator does
         </h2>
         <p class="text-slate-400 leading-relaxed mb-4">
-          Generates UUIDs — v4 (random) or v1 (timestamp-based) — in whatever
-          quantity you need, up to 10,000 at a time. It all happens in the
-          browser, so your identifiers are generated locally and never sent
-          anywhere.
+          Generates UUIDs in bulk — v4 (random) by default, with v7
+          (time-sorted) and v1 (timestamp) one click away — up to 10,000 at a
+          time. It all happens in the browser, so your identifiers are generated
+          locally and never sent anywhere.
         </p>
         <p class="text-slate-400 leading-relaxed mb-4">
           You probably know when you need one: a primary key, an API resource
@@ -346,11 +392,185 @@
           system prefers it, and stripping the hyphens for a compact
           32-character format.
         </p>
+      </section>
+
+      <section class="panel" aria-labelledby="what-is-v4">
+        <h2 class="panel-title" id="what-is-v4">What a UUID v4 actually is</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
-          One thing worth knowing if you pick v1: it embeds the timestamp (and
-          the generating machine's MAC address), so values come out roughly
-          time-ordered — but they also leak when and where they were made. v4 is
-          random and is the safe default for almost everything.
+          Thirty-six characters, five groups, four hyphens:
+          <code class="text-slate-200"
+            >550e8400-e29b-41d4-a716-446655440000</code
+          >. The <code class="text-slate-200">4</code> at the start of the third
+          group is the version. The first character of the fourth group is the
+          variant, and it is always one of
+          <code class="text-slate-200">8</code>,
+          <code class="text-slate-200">9</code>,
+          <code class="text-slate-200">a</code> or
+          <code class="text-slate-200">b</code> — that is the pattern to check
+          when you are validating a string you did not generate yourself.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Of the 128 bits, 122 are random and 6 are those fixed version and
+          variant bits. The randomness comes from
+          <code class="text-slate-200">crypto.getRandomValues</code>, not from
+          <code class="text-slate-200">Math.random</code> — a distinction that
+          matters, because a seeded or predictable generator makes collisions
+          findable instead of merely unlikely.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          How unlikely? You would have to generate roughly 2.7 × 10¹⁸ v4 UUIDs
+          before the chance of any two matching reached 50%. At a billion IDs a
+          second that is about 86 years of generating, so for practical purposes
+          a v4 collision is not a thing you defend against — you defend against
+          a broken random source.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="v4-vs-v7">
+        <h2 class="panel-title" id="v4-vs-v7">
+          UUID v4 vs v7 — which one should be the primary key?
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Both are 128-bit, both are UUIDs, and the difference is entirely in
+          the first bits. v4 starts with randomness. v7, standardized in RFC
+          9562, starts with a 48-bit Unix millisecond timestamp, then a 12-bit
+          counter, then 62 random bits.
+        </p>
+        <div class="mb-4 hidden md:block">
+          <table class="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr class="border-b border-white/10 text-slate-200">
+                <th scope="col" class="py-2 pr-4 font-semibold">Version</th>
+                <th scope="col" class="py-2 pr-4 font-semibold">Sort order</th>
+                <th scope="col" class="py-2 pr-4 font-semibold">
+                  Reach for it when
+                </th>
+                <th scope="col" class="py-2 font-semibold">The catch</th>
+              </tr>
+            </thead>
+            <tbody class="align-top text-slate-400">
+              <tr class="border-b border-white/5">
+                <th scope="row" class="py-2 pr-4 font-medium text-slate-300">
+                  v4
+                </th>
+                <td class="py-2 pr-4">Random</td>
+                <td class="py-2 pr-4">
+                  Public IDs, tokens, anything exposed in a URL or API
+                </td>
+                <td class="py-2">
+                  Random inserts scatter across a B-tree index
+                </td>
+              </tr>
+              <tr class="border-b border-white/5">
+                <th scope="row" class="py-2 pr-4 font-medium text-slate-300">
+                  v7
+                </th>
+                <td class="py-2 pr-4">By creation time</td>
+                <td class="py-2 pr-4">
+                  Primary keys, event rows, anything inserted in bulk
+                </td>
+                <td class="py-2">The creation time is readable from the ID</td>
+              </tr>
+              <tr>
+                <th scope="row" class="py-2 pr-4 font-medium text-slate-300">
+                  v1
+                </th>
+                <td class="py-2 pr-4">By creation time</td>
+                <td class="py-2 pr-4">Legacy systems that already expect v1</td>
+                <td class="py-2">
+                  Also embeds a node ID — a MAC address, in most implementations
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="mb-4 space-y-3 md:hidden">
+          <li class="rounded-lg border border-white/10 p-3">
+            <p class="mb-1 font-medium text-slate-200">v4 — random</p>
+            <p class="text-sm leading-relaxed text-slate-400">
+              For public IDs, tokens, anything exposed in a URL or API. The
+              catch: random inserts scatter across a B-tree index.
+            </p>
+          </li>
+          <li class="rounded-lg border border-white/10 p-3">
+            <p class="mb-1 font-medium text-slate-200">v7 — by creation time</p>
+            <p class="text-sm leading-relaxed text-slate-400">
+              For primary keys, event rows, anything inserted in bulk. The
+              catch: the creation time is readable from the ID.
+            </p>
+          </li>
+          <li class="rounded-lg border border-white/10 p-3">
+            <p class="mb-1 font-medium text-slate-200">v1 — by creation time</p>
+            <p class="text-sm leading-relaxed text-slate-400">
+              For legacy systems that already expect v1. The catch: it also
+              embeds a node ID — a MAC address, in most implementations.
+            </p>
+          </li>
+        </ul>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The sorting matters more than it sounds. A B-tree index stores keys in
+          order, so a random v4 key lands in an arbitrary leaf page: the index
+          grows in every direction at once, pages split, and the working set
+          stops fitting in memory. A v7 key always appends near the right edge,
+          which keeps the index compact and the writes sequential. If your table
+          is small this is noise; once it is tens of millions of rows it is the
+          difference between a healthy cache hit ratio and a hot spot.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The counter in the middle exists for the case that would otherwise
+          break ordering: several IDs generated inside the same millisecond.
+          This generator seeds it randomly per millisecond and increments it, so
+          IDs stay strictly increasing even when 10,000 of them are created in
+          one batch. The 48-bit timestamp does not run out until the year 10889.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          About that catch: a v7 ID tells anyone holding it roughly when the row
+          was created. Usually that is harmless. If it is not — a public URL
+          where the creation time is commercially interesting — keep v4, or keep
+          v7 internal and expose a separate opaque ID.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="naming">
+        <h2 class="panel-title" id="naming">
+          “UUID v4”, “uuidv4”, “uuid4” — the same thing?
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Yes. The value is identical no matter how the name is written; the
+          spelling only tells you which ecosystem the writer came from.
+          <strong class="text-slate-200">UUID v4</strong> is the RFC name.
+          <strong class="text-slate-200">uuidv4</strong> is how it appears in
+          JavaScript — the <code class="text-slate-200">uuid</code> package
+          exposes exactly that function name.
+          <strong class="text-slate-200">uuid4</strong> is the Python one, as in
+          <code class="text-slate-200">uuid.uuid4()</code>, and Java spells it
+          <code class="text-slate-200">UUID.randomUUID()</code> without a
+          version number at all.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          So “v4 UUID generator” and “UUID generator v4” are the same request,
+          and this page is the same answer: one algorithm, four spellings, same
+          36 characters out.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="formats">
+        <h2 class="panel-title" id="formats">
+          Hyphens, uppercase, and the 32-character form
+        </h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The canonical form has hyphens and lowercase hex. Two variations cover
+          most of the reasons you would want something else:
+          <strong class="text-slate-200">remove hyphens</strong> gives the
+          32-character form that some databases, APIs and file names expect, and
+          <strong class="text-slate-200">uppercase</strong> gives A–F in
+          capitals for systems that store or print identifiers that way.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Both are still the same 128 bits — the hyphens and the letter case
+          carry no data, so a stripped UUID converts back by reinserting the
+          dashes at 8, 12, 16 and 20. If two systems disagree about which form
+          they accept, this is why.
         </p>
       </section>
       <section class="panel" aria-labelledby="faq-heading">
@@ -379,13 +599,74 @@
             class="group rounded-lg border border-white/10 bg-black/20 p-4"
           >
             <summary class="cursor-pointer font-medium text-slate-200">
+              What is a UUID v4 and how is it generated?
+            </summary>
+            <p class="mt-2 leading-relaxed text-slate-400">
+              A v4 UUID is 122 random bits plus 6 fixed bits that mark the
+              version and variant. The random part comes from a cryptographic
+              generator, so two v4 values are independent of each other and of
+              the machine that made them. You can recognize one by the 4 at the
+              start of the third group and the 8, 9, a or b at the start of the
+              fourth.
+            </p>
+          </details>
+          <details
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
+          >
+            <summary class="cursor-pointer font-medium text-slate-200">
+              What is UUID v7 and when should I use it?
+            </summary>
+            <p class="mt-2 leading-relaxed text-slate-400">
+              UUID v7, standardized in RFC 9562, puts a 48-bit Unix millisecond
+              timestamp at the front, then a 12-bit counter, then 62 random
+              bits. Because the timestamp leads, the strings sort by creation
+              time — which keeps inserts sequential in a B-tree primary key
+              instead of scattering them. Use v7 for database keys and event
+              rows; the trade-off is that the creation time is readable from the
+              ID.
+            </p>
+          </details>
+          <details
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
+          >
+            <summary class="cursor-pointer font-medium text-slate-200">
+              Is uuidv4 the same as UUID v4?
+            </summary>
+            <p class="mt-2 leading-relaxed text-slate-400">
+              Yes. The value is identical; only the spelling differs by
+              ecosystem. &quot;UUID v4&quot; is the RFC name, &quot;uuidv4&quot;
+              is the JavaScript function name from the uuid package,
+              &quot;uuid4&quot; is Python (uuid.uuid4()) and Java calls it
+              UUID.randomUUID(). Searching for v4 UUID generator or UUID
+              generator v4 asks the same question.
+            </p>
+          </details>
+          <details
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
+          >
+            <summary class="cursor-pointer font-medium text-slate-200">
+              Can I use a UUID as a database primary key?
+            </summary>
+            <p class="mt-2 leading-relaxed text-slate-400">
+              Yes, and it is common. Two things are worth knowing: a UUID is 16
+              bytes against 8 for a bigint, so the index is physically larger,
+              and a random v4 key inserts at random positions, which costs you
+              page splits on large tables. A v7 key sorts by time and appends at
+              the end of the index, so it keeps the storage benefit of a UUID
+              without that particular cost.
+            </p>
+          </details>
+          <details
+            class="group rounded-lg border border-white/10 bg-black/20 p-4"
+          >
+            <summary class="cursor-pointer font-medium text-slate-200">
               What is the difference between UUID v1 and v4?
             </summary>
             <p class="mt-2 leading-relaxed text-slate-400">
               UUID v4 is generated from random numbers and is the usual choice
               for database keys and API IDs. UUID v1 embeds a timestamp plus a
               node identifier, so values sort roughly by creation time. This
-              tool uses a random node ID instead of your network card&#39;s MAC
+              tool uses a random node ID instead of your network card MAC
               address, so generated IDs cannot be traced back to a device.
             </p>
           </details>
@@ -397,7 +678,7 @@
             </summary>
             <p class="mt-2 leading-relaxed text-slate-400">
               Yes. Set the count up to 10,000 and click &quot;Generate
-              UUIDs&quot; to create them in bulk — handy when you&#39;re seeding
+              UUIDs&quot; to create them in bulk — handy when you are seeding
               test data, fixtures or migration scripts. Copy all or download
               them as a .txt file.
             </p>
@@ -421,9 +702,9 @@
               Are generated UUIDs private?
             </summary>
             <p class="mt-2 leading-relaxed text-slate-400">
-              Yes. Generation happens entirely in your browser with the standard
-              uuid library. Your UUIDs are never sent to any server, so they are
-              safe to use as tokens, keys and identifiers.
+              Yes. Generation happens entirely in your browser using the Web
+              Crypto API. Your UUIDs are never sent to any server, so they are
+              safe to use as keys and identifiers.
             </p>
           </details>
         </div>

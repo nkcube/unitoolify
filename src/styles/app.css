@@ -236,6 +236,10 @@
     content: "|";
   }
 
+  .kbd {
+    @apply rounded border border-white/20 bg-white/10 px-1.5 py-0.5 font-mono text-[0.8em] text-slate-200;
+  }
+
   .skip-link {
     position: fixed;
     top: 1rem;

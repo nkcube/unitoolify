@@ -21,7 +21,139 @@
   <p class="leading-relaxed text-slate-400">
     A separator is just a bookmark, so it syncs through your browser account and
     survives restarts. Two or three lines are usually enough to keep a busy bar
-    organised.
+    organized.
+  </p>
+</section>
+
+<section class="panel panel-narrow" aria-labelledby="add-chrome">
+  <h2 class="panel-title" id="add-chrome">
+    Adding one to the Chrome bookmarks bar, step by step
+  </h2>
+  <ol class="mb-4 list-decimal space-y-2 pl-5 leading-relaxed text-slate-400">
+    <li>
+      Show the bar if it is hidden — <kbd class="kbd">⌘</kbd>+<kbd class="kbd"
+        >⇧</kbd
+      >+<kbd class="kbd">B</kbd> on a Mac, <kbd class="kbd">Ctrl</kbd>+<kbd
+        class="kbd"
+        >Shift</kbd
+      >+<kbd class="kbd">B</kbd> on Windows and Linux.
+    </li>
+    <li>
+      Drag the button above onto the bar. Drop it where you want the divider to
+      sit; the insertion marker shows the exact spot.
+    </li>
+    <li>
+      If the drag does not take, right-click the bar and choose
+      <strong class="text-slate-200">Add page…</strong>: name it
+      <code class="text-slate-200">|</code> and give it any URL. A bookmark
+      called <code class="text-slate-200">|</code> is the same line.
+    </li>
+    <li>
+      To move or rename it later, right-click the separator and pick
+      <strong class="text-slate-200">Edit</strong>. Clearing the name entirely
+      leaves only the favicon, which is the thinnest result of all.
+    </li>
+  </ol>
+  <p class="leading-relaxed text-slate-400">
+    Nothing about this is a hack inside the browser: a bookmark's label is free
+    text, and a label can be a punctuation mark. That is the whole trick.
+  </p>
+</section>
+
+<section class="panel panel-narrow" aria-labelledby="characters">
+  <h2 class="panel-title" id="characters">
+    Which character makes the best separator?
+  </h2>
+  <p class="mb-4 leading-relaxed text-slate-400">
+    Anything that renders as a line works, but the choice is not cosmetic — some
+    characters sit differently depending on the font and the platform, and a
+    character that looks tall in a text editor can look like a speck on the
+    toolbar. These are the ones that survive most setups:
+  </p>
+  <ul class="mb-4 space-y-2 leading-relaxed text-slate-400">
+    <li>
+      <code class="text-slate-200">|</code> — the plain pipe. Narrow, renders
+      everywhere, the usual choice for a vertical divider.
+    </li>
+    <li>
+      <code class="text-slate-200">│</code> — box-drawing light vertical
+      (U+2502). Taller than the pipe, closer to a real rule.
+    </li>
+    <li>
+      <code class="text-slate-200">┃</code> — box-drawing heavy vertical. Use it
+      if the light version disappears against your toolbar color.
+    </li>
+    <li>
+      <code class="text-slate-200">───</code> — box-drawing horizontal (U+2500),
+      repeated. The only useful horizontal option, since its strokes join into
+      one continuous line.
+    </li>
+  </ul>
+  <p class="leading-relaxed text-slate-400">
+    Avoid emoji and symbols like <code class="text-slate-200">•</code> or
+    <code class="text-slate-200">★</code> if you want a divider: they read as
+    decoration, they are wider, and they change shape between platforms.
+  </p>
+</section>
+
+<section class="panel panel-narrow" aria-labelledby="other-browsers">
+  <h2 class="panel-title" id="other-browsers">Firefox, Safari and Edge</h2>
+  <p class="mb-4 leading-relaxed text-slate-400">
+    <strong class="text-slate-200">Edge</strong> is Chromium underneath, so
+    everything above applies unchanged — including the duplicate rule, which is
+    why the button here mints a new URL each time you pick it up.
+  </p>
+  <p class="mb-4 leading-relaxed text-slate-400">
+    <strong class="text-slate-200">Firefox</strong> hides the bookmarks toolbar
+    by default: right-click the toolbar area, tick
+    <strong class="text-slate-200">Bookmarks Toolbar → Always Show</strong>,
+    then drag the button onto it. Firefox accepts the same separator characters,
+    and you can also create one through
+    <strong class="text-slate-200">Library → Bookmarks → Add Bookmark</strong>.
+  </p>
+  <p class="leading-relaxed text-slate-400">
+    <strong class="text-slate-200">Safari</strong> calls the bar
+    <strong class="text-slate-200">Favorites</strong>: enable it with
+    <kbd class="kbd">⌘</kbd>+<kbd class="kbd">⇧</kbd>+<kbd class="kbd">B</kbd>
+    under View, and drag the button onto it the same way. Note that Chrome, Edge
+    and Firefox sync bookmarks across devices, while Safari only does so through
+    iCloud — and no mobile browser has a bookmarks bar at all, so separators are
+    a desktop-only idea.
+  </p>
+</section>
+
+<section class="panel panel-narrow" aria-labelledby="troubleshooting">
+  <h2 class="panel-title" id="troubleshooting">
+    If the separator does not show up
+  </h2>
+  <ul class="mb-4 list-disc space-y-2 pl-5 leading-relaxed text-slate-400">
+    <li>
+      <strong class="text-slate-200">The bar is hidden.</strong> A separator on
+      an invisible bar looks exactly like no separator. Toggle the bar first.
+    </li>
+    <li>
+      <strong class="text-slate-200">The bookmark is showing a URL.</strong>
+      Some browsers fall back to the address when a link has no text.
+      Right-click the bookmark, choose Edit, and type
+      <code class="text-slate-200">|</code>
+      as the name.
+    </li>
+    <li>
+      <strong class="text-slate-200">Nothing was added at all.</strong> Drag
+      from the button itself, not from the page background, and drop it directly
+      on the bar rather than on a folder.
+    </li>
+    <li>
+      <strong class="text-slate-200"
+        >Edge says the bookmark already exists.</strong
+      >
+      Reload this page and drag again — the URL fragment changes on every press,
+      so the duplicate check passes.
+    </li>
+  </ul>
+  <p class="leading-relaxed text-slate-400">
+    Since a separator carries no state, there is nothing to reset. If one
+    misbehaves, delete it and drag a fresh one.
   </p>
 </section>
 

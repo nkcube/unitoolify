@@ -1,9 +1,12 @@
 <section class="panel" aria-labelledby="about-uuid-generator">
-  <h2 class="panel-title" id="about-uuid-generator">About UUID Generator</h2>
+  <h2 class="panel-title" id="about-uuid-generator">
+    What this UUID v4 generator does
+  </h2>
   <p class="text-slate-400 leading-relaxed mb-4">
-    Generates UUIDs — v4 (random) or v1 (timestamp-based) — in whatever quantity
-    you need, up to 10,000 at a time. It all happens in the browser, so your
-    identifiers are generated locally and never sent anywhere.
+    Generates UUIDs in bulk — v4 (random) by default, with v7 (time-sorted) and
+    v1 (timestamp) one click away — up to 10,000 at a time. It all happens in
+    the browser, so your identifiers are generated locally and never sent
+    anywhere.
   </p>
   <p class="text-slate-400 leading-relaxed mb-4">
     You probably know when you need one: a primary key, an API resource ID, a
@@ -11,10 +14,170 @@
     but useful ones — uppercase output if your database or system prefers it,
     and stripping the hyphens for a compact 32-character format.
   </p>
+</section>
+
+<section class="panel" aria-labelledby="what-is-v4">
+  <h2 class="panel-title" id="what-is-v4">What a UUID v4 actually is</h2>
   <p class="text-slate-400 leading-relaxed mb-4">
-    One thing worth knowing if you pick v1: it embeds the timestamp (and the
-    generating machine's MAC address), so values come out roughly time-ordered —
-    but they also leak when and where they were made. v4 is random and is the
-    safe default for almost everything.
+    Thirty-six characters, five groups, four hyphens:
+    <code class="text-slate-200">550e8400-e29b-41d4-a716-446655440000</code>.
+    The <code class="text-slate-200">4</code> at the start of the third group is
+    the version. The first character of the fourth group is the variant, and it
+    is always one of <code class="text-slate-200">8</code>,
+    <code class="text-slate-200">9</code>,
+    <code class="text-slate-200">a</code> or
+    <code class="text-slate-200">b</code> — that is the pattern to check when
+    you are validating a string you did not generate yourself.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Of the 128 bits, 122 are random and 6 are those fixed version and variant
+    bits. The randomness comes from
+    <code class="text-slate-200">crypto.getRandomValues</code>, not from
+    <code class="text-slate-200">Math.random</code> — a distinction that
+    matters, because a seeded or predictable generator makes collisions findable
+    instead of merely unlikely.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    How unlikely? You would have to generate roughly 2.7 × 10¹⁸ v4 UUIDs before
+    the chance of any two matching reached 50%. At a billion IDs a second that
+    is about 86 years of generating, so for practical purposes a v4 collision is
+    not a thing you defend against — you defend against a broken random source.
+  </p>
+</section>
+
+<section class="panel" aria-labelledby="v4-vs-v7">
+  <h2 class="panel-title" id="v4-vs-v7">
+    UUID v4 vs v7 — which one should be the primary key?
+  </h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Both are 128-bit, both are UUIDs, and the difference is entirely in the
+    first bits. v4 starts with randomness. v7, standardized in RFC 9562, starts
+    with a 48-bit Unix millisecond timestamp, then a 12-bit counter, then 62
+    random bits.
+  </p>
+  <div class="mb-4 hidden md:block">
+    <table class="w-full border-collapse text-left text-sm">
+      <thead>
+        <tr class="border-b border-white/10 text-slate-200">
+          <th scope="col" class="py-2 pr-4 font-semibold">Version</th>
+          <th scope="col" class="py-2 pr-4 font-semibold">Sort order</th>
+          <th scope="col" class="py-2 pr-4 font-semibold">Reach for it when</th>
+          <th scope="col" class="py-2 font-semibold">The catch</th>
+        </tr>
+      </thead>
+      <tbody class="align-top text-slate-400">
+        <tr class="border-b border-white/5">
+          <th scope="row" class="py-2 pr-4 font-medium text-slate-300">v4</th>
+          <td class="py-2 pr-4">Random</td>
+          <td class="py-2 pr-4">
+            Public IDs, tokens, anything exposed in a URL or API
+          </td>
+          <td class="py-2">Random inserts scatter across a B-tree index</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <th scope="row" class="py-2 pr-4 font-medium text-slate-300">v7</th>
+          <td class="py-2 pr-4">By creation time</td>
+          <td class="py-2 pr-4">
+            Primary keys, event rows, anything inserted in bulk
+          </td>
+          <td class="py-2">The creation time is readable from the ID</td>
+        </tr>
+        <tr>
+          <th scope="row" class="py-2 pr-4 font-medium text-slate-300">v1</th>
+          <td class="py-2 pr-4">By creation time</td>
+          <td class="py-2 pr-4">Legacy systems that already expect v1</td>
+          <td class="py-2">
+            Also embeds a node ID — a MAC address, in most implementations
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="mb-4 space-y-3 md:hidden">
+    <li class="rounded-lg border border-white/10 p-3">
+      <p class="mb-1 font-medium text-slate-200">v4 — random</p>
+      <p class="text-sm leading-relaxed text-slate-400">
+        For public IDs, tokens, anything exposed in a URL or API. The catch:
+        random inserts scatter across a B-tree index.
+      </p>
+    </li>
+    <li class="rounded-lg border border-white/10 p-3">
+      <p class="mb-1 font-medium text-slate-200">v7 — by creation time</p>
+      <p class="text-sm leading-relaxed text-slate-400">
+        For primary keys, event rows, anything inserted in bulk. The catch: the
+        creation time is readable from the ID.
+      </p>
+    </li>
+    <li class="rounded-lg border border-white/10 p-3">
+      <p class="mb-1 font-medium text-slate-200">v1 — by creation time</p>
+      <p class="text-sm leading-relaxed text-slate-400">
+        For legacy systems that already expect v1. The catch: it also embeds a
+        node ID — a MAC address, in most implementations.
+      </p>
+    </li>
+  </ul>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The sorting matters more than it sounds. A B-tree index stores keys in
+    order, so a random v4 key lands in an arbitrary leaf page: the index grows
+    in every direction at once, pages split, and the working set stops fitting
+    in memory. A v7 key always appends near the right edge, which keeps the
+    index compact and the writes sequential. If your table is small this is
+    noise; once it is tens of millions of rows it is the difference between a
+    healthy cache hit ratio and a hot spot.
+  </p>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The counter in the middle exists for the case that would otherwise break
+    ordering: several IDs generated inside the same millisecond. This generator
+    seeds it randomly per millisecond and increments it, so IDs stay strictly
+    increasing even when 10,000 of them are created in one batch. The 48-bit
+    timestamp does not run out until the year 10889.
+  </p>
+  <p class="text-slate-400 leading-relaxed">
+    About that catch: a v7 ID tells anyone holding it roughly when the row was
+    created. Usually that is harmless. If it is not — a public URL where the
+    creation time is commercially interesting — keep v4, or keep v7 internal and
+    expose a separate opaque ID.
+  </p>
+</section>
+
+<section class="panel" aria-labelledby="naming">
+  <h2 class="panel-title" id="naming">
+    “UUID v4”, “uuidv4”, “uuid4” — the same thing?
+  </h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    Yes. The value is identical no matter how the name is written; the spelling
+    only tells you which ecosystem the writer came from.
+    <strong class="text-slate-200">UUID v4</strong> is the RFC name.
+    <strong class="text-slate-200">uuidv4</strong> is how it appears in
+    JavaScript — the <code class="text-slate-200">uuid</code> package exposes
+    exactly that function name. <strong class="text-slate-200">uuid4</strong> is
+    the Python one, as in <code class="text-slate-200">uuid.uuid4()</code>, and
+    Java spells it <code class="text-slate-200">UUID.randomUUID()</code> without
+    a version number at all.
+  </p>
+  <p class="text-slate-400 leading-relaxed">
+    So “v4 UUID generator” and “UUID generator v4” are the same request, and
+    this page is the same answer: one algorithm, four spellings, same 36
+    characters out.
+  </p>
+</section>
+
+<section class="panel" aria-labelledby="formats">
+  <h2 class="panel-title" id="formats">
+    Hyphens, uppercase, and the 32-character form
+  </h2>
+  <p class="text-slate-400 leading-relaxed mb-4">
+    The canonical form has hyphens and lowercase hex. Two variations cover most
+    of the reasons you would want something else:
+    <strong class="text-slate-200">remove hyphens</strong> gives the
+    32-character form that some databases, APIs and file names expect, and
+    <strong class="text-slate-200">uppercase</strong> gives A–F in capitals for
+    systems that store or print identifiers that way.
+  </p>
+  <p class="text-slate-400 leading-relaxed">
+    Both are still the same 128 bits — the hyphens and the letter case carry no
+    data, so a stripped UUID converts back by reinserting the dashes at 8, 12,
+    16 and 20. If two systems disagree about which form they accept, this is
+    why.
   </p>
 </section>
