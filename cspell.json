@@ -4,6 +4,7 @@
   "words": [
     "alse",
     "Ansible",
+    "backlink",
     "base64",
     "base64url",
     "Base64URL",
@@ -41,6 +42,7 @@
     "GitHub",
     "GitLab",
     "glassmorphism",
+    "Googlebot",
     "googletagmanager",
     "healthcheck",
     "horz",
@@ -49,6 +51,8 @@
     "HSTS",
     "htmlhint",
     "idempotency",
+    "indexability",
+    "Indexability",
     "js-yaml",
     "jsyaml",
     "JWT",
@@ -114,7 +118,8 @@
     "WCAG",
     "webhook",
     "webhooks",
-    "webmanifest"
+    "webmanifest",
+    "xrobots"
   ],
   "ignorePaths": [
     "node_modules/**",

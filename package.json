@@ -15,7 +15,8 @@
     "lint:format": "prettier --check \"**/*.{html,js,css,mjs,json,md}\"",
     "lint:spell": "cspell --no-progress \"**/*.{html,md,js,mjs,css,json}\"",
     "test": "playwright test",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "audit:seo": "node scripts/seo-audit.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
